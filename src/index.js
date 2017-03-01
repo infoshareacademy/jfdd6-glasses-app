@@ -5,14 +5,22 @@ import { Router, Route, browserHistory } from 'react-router'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-import App from './components/app'
+import Nav from './components/navigation'
+import MovieView from './components/movie-view'
+import MoviesView from './components/movies-view'
+import UserView from './components/user-view'
 import UsersView from './components/users-view'
+import EventView from './components/event-view'
 
 ReactDOM.render(
   (
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/" component={Nav}>
+        <Route path="movie" component={MovieView} />
+        <Route path="movies" component={MoviesView} />
+        <Route path="user" component={UserView} />
         <Route path="users" component={UsersView} />
+        <Route path="event" component={EventView} />
       </Route>
     </Router>
   ),
