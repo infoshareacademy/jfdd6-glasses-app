@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import Nav from './components/navigation'
-import MovieView from './components/movie-view'
-import MoviesView from './components/movies-view'
-import UserView from './components/user-view'
-import UsersView from './components/users-view'
-import EventView from './components/event-view'
+import MovieView from './components/movie/movie-view'
+import MoviesView from './components/movies/movies-view'
+import UserView from './components/user/user-view'
+import UsersView from './components/users/users-view'
+import EventView from './components/event/event-view'
 
 ReactDOM.render(
   (
