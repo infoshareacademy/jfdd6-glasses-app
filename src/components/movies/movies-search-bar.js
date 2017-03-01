@@ -7,6 +7,6 @@ const SearchBar = () => (
       <FormControl type="text" placeholder="text" />
     </form>
   </div>
-);
+)
 
 export default SearchBar
