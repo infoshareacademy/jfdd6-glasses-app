@@ -1,12 +1,12 @@
 import React from 'react'
-import {FormControl} from 'react-bootstrap'
+import {Grid, FormControl} from 'react-bootstrap'
 
 const SearchBar = () => (
-  <div>
+  <Grid>
     <form>
       <FormControl type="text" placeholder="text" />
     </form>
-  </div>
+  </Grid>
 )
 
 export default SearchBar

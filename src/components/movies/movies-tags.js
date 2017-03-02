@@ -1,7 +1,8 @@
 import React from 'react'
+import {Grid} from 'react-bootstrap'
 
 const Tags = () => (
-  <div>tag</div>
+  <Grid>tag</Grid>
 )
 
 export default Tags

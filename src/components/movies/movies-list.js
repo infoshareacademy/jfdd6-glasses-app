@@ -1,7 +1,8 @@
 import React from 'react'
+import {Grid} from 'react-bootstrap'
 
 const MovieList= () => (
-  <div>list</div>
+  <Grid>list</Grid>
 )
 
 export default MovieList
