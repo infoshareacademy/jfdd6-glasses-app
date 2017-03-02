@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Table} from 'react-bootstrap'
+import {Grid} from 'react-bootstrap'
 import users from '../../data/users.json'
 
 const myUser = 2
