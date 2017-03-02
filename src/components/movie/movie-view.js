@@ -55,6 +55,7 @@ const MovieView = () => (
       <Col md={6} mdPull={6}>
 
         <table>
+          <tbody>
 
           <tr>
             {
@@ -66,7 +67,7 @@ const MovieView = () => (
             }
 
           </tr>
-        </table>
+          </tbody></table>
       </Col>
     </Row>
   </Grid>
