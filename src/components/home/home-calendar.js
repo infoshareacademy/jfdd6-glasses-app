@@ -4,12 +4,21 @@
 import React from 'react'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-const HomeCalendar = () => (
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+
+// Setup the localizer by providing the moment (or globalize) Object
+// to the correct localizer.
+BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
+
+const HomeCalendar = (props) => (
   <div>
     <h1>Kalendarz</h1>
-    <h1>Kalendarz</h1>
-    <h1>Kalendarz</h1>
-
+    <BigCalendar
+      events={[]}
+      startAccessor='startDate'
+      endAccessor='endDate'
+    />
   </div>
 );
 
