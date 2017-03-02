@@ -4,7 +4,12 @@
 import React from 'react'
 
 const HomeCalendar = () => (
-  <div>Kalendarz</div>
+  <div>
+    <h1>Kalendarz</h1>
+    <h1>Kalendarz</h1>
+    <h1>Kalendarz</h1>
+
+  </div>
 );
 
 export default HomeCalendar

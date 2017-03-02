@@ -4,7 +4,7 @@
 import React from 'react'
 
 const HomeSlider = () => (
-  <div>Pole slajdera</div>
+  <h1>Pole baaaardzooo dłuuuugiego slajdera</h1>
 );
 
 export default HomeSlider
