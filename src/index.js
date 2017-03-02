@@ -5,6 +5,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
+
 import Nav from './components/navigation'
 import HomeView from './components/home/home-view'
 import MovieView from './components/movie/movie-view'

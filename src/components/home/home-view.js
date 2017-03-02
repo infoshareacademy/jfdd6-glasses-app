@@ -2,6 +2,7 @@
  * Created by mitroc on 01.03.17.
  */
 import React from 'react'
+
 import HomeCalendar from './home-calendar'
 import HomePostal from './home-postal'
 import HomeSlider from './home-slider'
