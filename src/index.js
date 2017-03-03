@@ -23,7 +23,7 @@ ReactDOM.render(
         <Route path="home" component={HomeView} />
         <Route path="movie" component={MovieView} />
         <Route path="movies" component={MoviesView} />
-        <Route path="user" component={UserView} />
+        <Route path="user/:userId" component={UserView} />
         <Route path="users" component={UsersView} />
         <Route path="event" component={EventView} />
       </Route>
