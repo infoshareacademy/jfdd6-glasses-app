@@ -12,8 +12,7 @@ import moment from 'moment';
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const HomeCalendar = (props) => (
-  <div>
-    <h1>Kalendarz</h1>
+  <div style={{height: 400}}>
     <BigCalendar
       events={[]}
       startAccessor='startDate'

@@ -9,7 +9,7 @@ import HomeSlider from './home-slider'
 import HomeUpcomingEvents from './home-upcoming-events'
 
 const HomeView = () => (
-  <container className="container-fluid text-center">
+  <container className="container-flex text-center">
     <row className="row">
       <div className="col-xs-8 bg-success">
         <HomeSlider />
