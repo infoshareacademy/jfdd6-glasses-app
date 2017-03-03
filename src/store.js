@@ -1,20 +1,10 @@
-import { createStore } from 'redux'
+import {createStore, combineReducers} from 'redux'
 
-const initialState = {
+import moviesReducer from './state/movies'
 
-}
-
-const reducer = (state = initialState, action = {}) => {
-  switch(action.type) {
-    case 'TODO':
-      return {
-
-      }
-    default:
-      return state
-  }
-}
-
+const reducer = combineReducers({
+  movies: moviesReducer
+})
 
 const store = createStore(
   reducer,
