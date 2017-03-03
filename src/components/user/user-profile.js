@@ -8,7 +8,7 @@ const GroupsView = () => (
   <Grid>
     <h3>User:</h3>
 
-    <p><img src={users[myUser].avatar} /></p>
+    <p><img src={users[myUser].avatar} alt="avatar"/></p>
 
     <p>
       {users[myUser].first_name} {users[myUser].last_name}, {users[myUser].gender}
