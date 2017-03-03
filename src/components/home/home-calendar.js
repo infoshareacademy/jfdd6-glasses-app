@@ -5,14 +5,14 @@ import React from 'react'
 
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import events from '../../data/events-js'
+import events from '../../data/events'
 
 // Setup the localizer by providing the moment (or globalize) Object
 // to the correct localizer.
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const HomeCalendar = (props) => (
-  <div style={{height: 400}}>
+  <div style={{height: 450}}>
     <BigCalendar
       events={events}
     />

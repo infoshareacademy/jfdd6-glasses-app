@@ -14,7 +14,7 @@ export default [
   {
     'title': 'DTS STARTS',
     'start': new Date(2017, 2, 13, 0, 0, 0),
-    'end': new Date(2017, 2, 20, 0, 0, 0)
+    'end': new Date(2017, 2, 15, 0, 0, 0)
   },
 
   {
