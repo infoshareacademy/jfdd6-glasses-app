@@ -1,0 +1,24 @@
+.movies-container {
+  background-color: darkslateblue;
+  color: white;
+  padding-top: 30px;
+}
+
+.movies-list tr td:first-child {
+  width: 10%;
+}
+
+.movies-list img {
+  width: 50px;
+}
+
+.movies-tags {
+  height: 160px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.movies-border {
+  border: 1px dashed white;
+}
