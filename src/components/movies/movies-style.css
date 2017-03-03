@@ -22,3 +22,7 @@
 .movies-border {
   border: 1px dashed white;
 }
+
+.movies-tag-button {
+  margin: 5px;
+}
