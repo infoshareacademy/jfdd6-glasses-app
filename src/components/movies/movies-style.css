@@ -4,13 +4,12 @@
   padding-top: 30px;
 }
 
-.movies-list {
-  tr td:first-child {
-    width: 10%;
-  }
-  img {
-    width: 50px;
-  }
+.movies-list tr td:first-child {
+  width: 10%;
+}
+
+.movies-list img {
+  width: 50px;
 }
 
 .movies-tags {
