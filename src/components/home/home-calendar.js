@@ -2,7 +2,6 @@
  * Created by mitroc on 01.03.17.
  */
 import React from 'react'
-import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';

@@ -5,7 +5,7 @@ import moment from 'moment'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
-// import 'react-big-calendar/lib/css/react-big-calendar.css'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import Nav from './components/navigation'
 import HomeView from './components/home/home-view'
