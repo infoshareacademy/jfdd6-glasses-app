@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router'
+import { Provider } from 'react-redux'
+import store from './store'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
@@ -18,16 +20,18 @@ import EventView from './components/event/event-view'
 
 ReactDOM.render(
   (
-    <Router history={browserHistory}>
-      <Route path="/" component={Nav}>
-        <Route path="home" component={HomeView} />
-        <Route path="movie" component={MovieView} />
-        <Route path="movies" component={MoviesView} />
-        <Route path="user/:userId" component={UserView} />
-        <Route path="users" component={UsersView} />
-        <Route path="event" component={EventView} />
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router history={browserHistory}>
+        <Route path="/" component={Nav}>
+          <Route path="home" component={HomeView}/>
+          <Route path="movie" component={MovieView}/>
+          <Route path="movies" component={MoviesView}/>
+          <Route path="user/:userId" component={UserView}/>
+          <Route path="users" component={UsersView}/>
+          <Route path="event" component={EventView}/>
+        </Route>
+      </Router>
+    </Provider>
   ),
   document.getElementById('root')
 );
