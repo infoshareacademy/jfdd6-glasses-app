@@ -1,5 +1,7 @@
-const initialState = {
+import movies from '../data/movies.json'
 
+const initialState = {
+  moviesData: movies
 }
 
 const reducer = (state = initialState, action = {}) => {

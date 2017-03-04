@@ -1,8 +1,8 @@
 import React from 'react'
-import {Row, Col, Table} from 'react-bootstrap'
-import movies from '../../data/movies.json'
+import { Row, Col, Table } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-const MovieList= () => (
+const MovieList= ({ movies }) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
@@ -19,4 +19,8 @@ const MovieList= () => (
   </Row>
 )
 
-export default MovieList
+export default connect(
+  state => ({ movies: state.movies.moviesData }),
+  dispatch => ({  })
+)(MovieList)
+
