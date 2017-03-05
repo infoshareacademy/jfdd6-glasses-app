@@ -1,12 +1,12 @@
 import React from 'react'
-import {FormControl} from 'react-bootstrap'
+import {Col, FormControl} from 'react-bootstrap'
 
 const SearchBar = () => (
-  <div>
+  <Col xs={8} xsOffset={2}>
     <form>
       <FormControl type="text" placeholder="text" />
     </form>
-  </div>
+  </Col>
 )
 
 export default SearchBar
