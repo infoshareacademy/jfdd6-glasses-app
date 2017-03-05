@@ -1,14 +1,18 @@
 import React from 'react'
-import { Row, Col, Table } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { Row, Col, Table } from 'react-bootstrap'
 
-const MovieList = ({ movies, tag }) => (
+const MovieList = ({ movies, customTags }) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
         <tbody>
         {movies
-          .filter(movie => movie.tags.indexOf(tag) !== -1)
+          .filter(movie =>
+            customTags.every(tag =>
+              movie.tags.indexOf(tag) !== -1
+            )
+          )
           .map(movie => (
           <tr key={movie.id}>
             <td><img src={movie.poster} alt={movie.name}/></td>
@@ -24,8 +28,7 @@ const MovieList = ({ movies, tag }) => (
 export default connect(
   state => ({
     movies: state.movies.moviesData,
-    tag: state.movies.tag
-  }),
-  dispatch => ({  })
+    customTags: state.movies.customTags
+  })
 )(MovieList)
 

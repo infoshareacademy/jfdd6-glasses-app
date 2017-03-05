@@ -6,15 +6,20 @@ const movies = data.sort((a, b) => a.name.localeCompare(b.name))
 const initialState = {
   moviesData: movies,
   tagsList: tagsList,
-  tag: 1
+  customTags: []
 }
 
 const reducer = (state = initialState, action = {}) => {
   switch(action.type) {
-    case 'movies/TAG':
+    case 'movies/tags/CUSTOM':
       return {
         ...state,
-        tag: action.value
+        customTags: [...state.customTags, action.value]
+      }
+    case 'movies/tags/RESET':
+      return {
+        ...state,
+        customTags: initialState.customTags
       }
     default:
       return state
