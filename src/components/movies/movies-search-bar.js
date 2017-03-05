@@ -1,16 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {Col, FormControl} from 'react-bootstrap'
+import { Col, FormGroup, InputGroup, FormControl, Button } from 'react-bootstrap'
 
 const SearchBar = ({ fieldValue, sendQuery }) => (
   <Col xs={8} xsOffset={2}>
-    <form>
-      <FormControl
-        type="text"
-        value={fieldValue}
-        onChange={(event) => sendQuery(event.target.value)}
-        placeholder="wyszukaj" />
-    </form>
+    <FormGroup>
+      <InputGroup>
+        <FormControl
+          type="text"
+          value={fieldValue}
+          onChange={(event) => sendQuery(event.target.value)}
+          placeholder="wyszukaj"
+        />
+
+        <InputGroup.Button>
+          <Button type="button">Wyszukaj</Button>
+        </InputGroup.Button>
+      </InputGroup>
+    </FormGroup>
   </Col>
 )
 
