@@ -2,6 +2,7 @@ import React from 'react'
 import {Grid, Row, Col} from 'react-bootstrap'
 import movies from '../../data/movies.json'
 import MovieCarousel from './movie-carousel'
+import MovieDescription from './movie-description'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
@@ -26,16 +27,7 @@ const MovieView = () => (
 
       </Col>
       <Col xs={6} md={6}>
-
-        {
-          movies.filter(
-            movie => movie.description.length < 250
-          ).map(
-            movie => (
-              <p key={movie.id}>{movie.description}</p>
-            )
-          )
-        }
+        <MovieDescription />
       </Col>
     </Row>
     <Row className="show-grid">
