@@ -8,7 +8,7 @@ const MovieList = ({ movies, tag }) => (
       <Table bordered className="movies-list">
         <tbody>
         {movies
-          .filter(movie => movie.id === tag)
+          .filter(movie => movie.tags.indexOf(tag) !== -1)
           .map(movie => (
           <tr key={movie.id}>
             <td><img src={movie.poster} alt={movie.name}/></td>
