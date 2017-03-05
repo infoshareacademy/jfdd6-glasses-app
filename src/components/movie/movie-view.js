@@ -3,6 +3,7 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import movies from '../../data/movies.json'
 import MovieCarousel from './movie-carousel'
 import MovieDescription from './movie-description'
+import UserList from './movie-user-list'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
@@ -53,6 +54,7 @@ const MovieView = () => (
             }
 
           </tr>
+          <UserList/>
           </tbody></table>
       </Col>
     </Row>
