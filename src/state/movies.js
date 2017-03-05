@@ -25,7 +25,13 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/search/QUERY':
       return {
         ...state,
-        query: action.value
+        query: action.value,
+        moviesData: initialState.moviesData
+      }
+    case 'movies/search/EXECUTE':
+      return {
+        ...state,
+        moviesData: action.value
       }
     default:
       return state
