@@ -1,7 +1,8 @@
 import movie from '../data/movies.json'
 
 const initialState = {
-  movieData: movie
+  movieData: movie,
+  id:  0
 }
 
 
