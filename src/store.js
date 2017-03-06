@@ -1,9 +1,11 @@
 import {createStore, combineReducers} from 'redux'
 
 import moviesReducer from './state/movies'
+import movieReducer from './state/movie'
 
 const reducer = combineReducers({
-  movies: moviesReducer
+  movies: moviesReducer,
+  movie: movieReducer
 })
 
 const store = createStore(
