@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Row, Col, Button } from 'react-bootstrap'
 
 const Tags = ({ tags, customTags, sendTag, resetTags}) => {
-  console.log(customTags)
+  // console.log(customTags)
   return (
     <Col xs={10} xsOffset={1}>
       <Row>
