@@ -4,11 +4,15 @@ import { connect} from 'react-redux'
 import users from '../../data/users.json'
 import titles from '../../data/movies.json'
 
-const myUser = 2
 
-const filteredUser = users.find(user => user.id === myUser)
 
-const UserFilmList = () => (
+
+const UserFilmList = (props) => {
+  console.log('film', props.id)
+
+  const filteredUser = users.find(user => user.id === parseInt(props.id, 10))
+
+   return (
   <Grid>
     <h3>Lista filmów użytkownika: {filteredUser.login}</h3>
 
@@ -32,7 +36,7 @@ const UserFilmList = () => (
       </tbody>
     </Table>
     </Grid>
-);
+)}
 
 //export default UserFilmList
 export default connect(
