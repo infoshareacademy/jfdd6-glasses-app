@@ -37,6 +37,6 @@ const UserFilmList = () => (
 //export default UserFilmList
 export default connect(
   state => ({
-    groups: state.groups.groupsData //wyciągam ze stanu aplikacji listę grup
+    user: state.user.userData //wyciągam ze stanu aplikacji listę grup
   })
 )(UserFilmList)
