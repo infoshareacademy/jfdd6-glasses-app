@@ -1,14 +1,12 @@
 import React from 'react'
-import movieData from './../../data/movies.json'
+import {connect} from 'react-redux'
 
-const UserList = () => (
+const UserList = ({id, userImport}) => (
   <tr>
     {
-      movieData.filter(
-        movie => movie.id < 5
-      ).map(
-        movie => (
-          <td key={movie.id}><img src={movie.poster} alt="" /></td>
+      userImport.map(
+        user => (
+          <td key={user.id}><img src={user.avatar} alt="" /></td>
         )
       )
     }
@@ -16,4 +14,8 @@ const UserList = () => (
   </tr>
 )
 
-export default UserList
+export default connect (
+  state => ({
+    userImport: state.user.userData
+  })
+) (UserList)
