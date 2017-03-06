@@ -1,5 +1,6 @@
 import React from 'react'
 import {Grid, Table} from 'react-bootstrap'
+import { connect} from 'react-redux'
 import users from '../../data/users.json'
 import titles from '../../data/movies.json'
 
@@ -38,4 +39,4 @@ export default connect(
   state => ({
     groups: state.groups.groupsData //wyciągam ze stanu aplikacji listę grup
   })
-)(GroupView)
+)(UserFilmList)
