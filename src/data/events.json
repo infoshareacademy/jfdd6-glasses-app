@@ -2,77 +2,113 @@
   {
     "id": "1",
     "title": "Reksio",
-    "start": "2017-03-30T22:00:00.000Z",
-    "end": "2017-03-31T22:00:00.000Z"
+    "start": "2017-04-30T12:30:00.000Z",
+    "end": "2017-04-30T15:00:00.000Z",
+    "desc": "W tym odcinku zobaczymy jaką Reksio ma chawirę w budzie. Dwa piętra i spiżarnia."
   },
   {
     "id": "2",
     "title": "Kuibuś Puchatek",
-    "start": "2017-04-06T22:00:00.000Z",
-    "end": "2017-04-09T22:00:00.000Z"
+    "start": "2017-04-06T10:00:00.000Z",
+    "end": "2017-04-06T12:00:00.000Z",
+    "desc": "Rano, bo dziecko zostaje w domu. Zapraszam"
   },
   {
     "id": "3",
-    "title": "DTS STARTS",
-    "start": "2017-03-12T23:00:00.000Z",
-    "end": "2017-03-19T23:00:00.000Z"
+    "title": "Obcy",
+    "start": "2017-03-12T21:00:00.000Z",
+    "end": "2017-03-12T23:00:00.000Z",
+    "desc": "No klasyka gatunku"
   },
   {
     "id": "4",
-    "title": "DTS ENDS",
-    "start": "2017-11-05T23:00:00.000Z",
-    "end": "2017-11-12T23:00:00.000Z"
+    "title": "Nienawistna ósemka",
+    "start": "2017-04-06T20:00:00.000Z",
+    "end": "2017-04-06T22:00:00.000Z",
+    "desc": "Tarantino jak zwykle w formie. Nie zabierajcie dzieciaków. :)"
   },
   {
     "id": "5",
-    "title": "Some Event",
-    "start": "2017-04-08T22:00:00.000Z",
-    "end": "2017-04-08T22:00:00.000Z"
+    "title": "Monty Python i święty Graal",
+    "start": "2017-03-18T19:00:00.000Z",
+    "end": "2017-03-18T22:00:00.000Z",
+    "desc": "No tu komentarz jest zbędny"
   },
   {
     "id": "6",
-    "title": "Conference",
-    "start": "2017-04-10T22:00:00.000Z",
-    "end": "2017-04-12T22:00:00.000Z",
-    "desc": "Big conference for important people"
+    "title": "Wszystko co chcielibyście wiedzieć o seksie, ale boicie się zapytać",
+    "start": "2017-03-12T22:00:00.000Z",
+    "end": "2017-03-12T22:30:00.000Z",
+    "desc": "Świetny film, zapraszam"
   },
   {
     "id": "7",
-    "title": "Meeting",
-    "start": "2017-04-12T08:30:00.000Z",
-    "end": "2017-04-12T10:30:00.000Z",
-    "desc": "Pre-meeting meeting, to prepare for the meeting"
+    "title": "Nóż w wodzie",
+    "start": "2017-04-15T17:30:00.000Z",
+    "end": "2017-04-15T19:30:00.000Z",
+    "desc": "Straszne smęty, ale wszyscy o tym mówią, więc może trzeba się za to zabrać."
   },
   {
     "id": "8",
-    "title": "Lunch",
-    "start": "2017-04-12T10:00:00.000Z",
-    "end": "2017-04-12T11:00:00.000Z",
-    "desc": "Power lunch"
+    "title": "Anakonda",
+    "start": "2017-04-18T10:00:00.000Z",
+    "end": "2017-04-18T11:00:00.000Z",
+    "desc": "Niezapomniany Ice-T w roli życia"
   },
   {
     "id": "9",
-    "title": "Meeting",
-    "start": "2017-04-12T12:00:00.000Z",
-    "end": "2017-04-12T13:00:00.000Z"
+    "title": "Piła 3",
+    "start": "2017-04-13T12:00:00.000Z",
+    "end": "2017-04-13T13:00:00.000Z",
+    "desc": "Sama się boję oglądać"
   },
   {
     "id": "10",
     "title": "Happy Hour",
     "start": "2017-04-12T15:00:00.000Z",
     "end": "2017-04-12T15:30:00.000Z",
-    "desc": "Most important meal of the day"
+    "desc": "Nie, to nie jest o macu"
   },
   {
     "id": "11",
     "title": "Dinner",
     "start": "2017-04-12T18:00:00.000Z",
-    "end": "2017-04-12T19:00:00.000Z"
+    "end": "2017-04-12T19:00:00.000Z",
+    "desc": "Jakieś badziewie, ale chata pusta"
   },
   {
     "id": "12",
-    "title": "Birthday Party",
+    "title": "Pulp Fiction",
+    "start": "2017-04-02T05:00:00.000Z",
+    "end": "2017-04-02T08:30:00.000Z",
+    "desc": "Mój ulubiony"
+  },
+  {
+    "id": "13",
+    "title": "Dragon Ball",
     "start": "2017-04-13T05:00:00.000Z",
-    "end": "2017-04-13T08:30:00.000Z"
+    "end": "2017-04-13T08:30:00.000Z",
+    "desc": "Specjalnie dla Bartka"
+  },
+  {
+    "id": "14",
+    "title": "Superman",
+    "start": "2017-05-14T05:00:00.000Z",
+    "end": "2017-05-14T08:30:00.000Z",
+    "desc": "Mój ulubiony"
+  },
+  {
+    "id": "15",
+    "title": "Potop",
+    "start": "2017-04-13T05:00:00.000Z",
+    "end": "2017-04-13T08:30:00.000Z",
+    "desc": "Mój ulubiony"
+  },
+  {
+    "id": "16",
+    "title": "Krzyżacy",
+    "start": "2017-05-21T05:00:00.000Z",
+    "end": "2017-05-21T08:30:00.000Z",
+    "desc": "Mój ulubiony"
   }
 ]
