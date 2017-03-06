@@ -6,6 +6,7 @@ import MovieDescription from './movie-description'
 import UserList from './movie-user-list'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import {connect} from 'react-redux'
 
 
 const MovieView = () => (
@@ -46,4 +47,8 @@ const MovieView = () => (
   </Grid>
 );
 
-export default MovieView
+export default connect (
+  state => ({
+
+  }),
+)(MovieView)

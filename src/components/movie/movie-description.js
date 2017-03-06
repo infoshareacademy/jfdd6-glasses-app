@@ -1,11 +1,12 @@
 import React from 'react'
-import movieData from './../../data/movies.json'
+import {connect} from 'react-redux'
 
-
-const MovieDescription = () => (
+const MovieDescription = ({movieImport}) => {
+  console.log(movieImport);
+  return (
   <div>
     {
-    movieData.filter(
+      movieImport.filter(
       movie => movie.description.length < 250
     ).map(
       movie => (
@@ -15,6 +16,10 @@ const MovieDescription = () => (
     }
   </div>
 
-)
+)}
 
-export default MovieDescription
+export default connect (
+  state => ({
+movieImport: state.movie.movieData
+  }),
+)(MovieDescription)
