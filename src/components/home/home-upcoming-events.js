@@ -1,9 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Grid, Table } from 'react-bootstrap'
+import { Grid, Table, Row, Col } from 'react-bootstrap'
 
 const HomeUpcomingEvents = ({events}) => (
   <Grid>
+    <Row>
+      <Col xs={12}>
     <h1>Wydarzenia</h1>
     <Table striped>
       <thead>
@@ -23,6 +25,8 @@ const HomeUpcomingEvents = ({events}) => (
         }
         </tbody>
     </Table>
+        </Col>
+    </Row>
   </Grid>
 );
 

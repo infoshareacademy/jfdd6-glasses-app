@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid} from 'react-bootstrap'
+import { Col, Grid, Row } from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
 import HomePostal from './home-postal'
@@ -8,24 +8,26 @@ import HomeUpcomingEvents from './home-upcoming-events'
 
 const HomeView = () => (
   <Grid className="text-center">
-    <row className="row">
-      <div className="col-xs-8 bg-success">
+    <Row>
+      <Col xs={8}>
         <HomeSlider />
-      </div>
-      <div className="col-xs-4 bg-info">
+      </Col>
+
+      <Col xs={4}>
         <HomePostal/>
-      </div>
-    </row>
-    <row className="row">
-      <div className="col-xs-8 bg-primary jumbotron">
+      </Col>
+    </Row>
+
+    <Row>
+      <Col xs={8}>
         <HomeCalendar/>
-      </div>
+      </Col>
 
-      <div className="col-xs-4">
+      <Col xs={4}>
         <HomeUpcomingEvents/>
-      </div>
+      </Col>
 
-    </row>
+    </Row>
   </Grid>
 );
 
