@@ -1,0 +1,67 @@
+
+[
+  {
+    "title": "All Day Event",
+    "start": "2015-03-30T22:00:00.000Z",
+    "end": "2015-03-31T22:00:00.000Z"
+  },
+  {
+    "title": "Long Event",
+    "start": "2015-04-06T22:00:00.000Z",
+    "end": "2015-04-09T22:00:00.000Z"
+  },
+  {
+    "title": "DTS STARTS",
+    "start": "2016-03-12T23:00:00.000Z",
+    "end": "2016-03-19T23:00:00.000Z"
+  },
+  {
+    "title": "DTS ENDS",
+    "start": "2016-11-05T23:00:00.000Z",
+    "end": "2016-11-12T23:00:00.000Z"
+  },
+  {
+    "title": "Some Event",
+    "start": "2015-04-08T22:00:00.000Z",
+    "end": "2015-04-08T22:00:00.000Z"
+  },
+  {
+    "title": "Conference",
+    "start": "2015-04-10T22:00:00.000Z",
+    "end": "2015-04-12T22:00:00.000Z",
+    "desc": "Big conference for important people"
+  },
+  {
+    "title": "Meeting",
+    "start": "2015-04-12T08:30:00.000Z",
+    "end": "2015-04-12T10:30:00.000Z",
+    "desc": "Pre-meeting meeting, to prepare for the meeting"
+  },
+  {
+    "title": "Lunch",
+    "start": "2015-04-12T10:00:00.000Z",
+    "end": "2015-04-12T11:00:00.000Z",
+    "desc": "Power lunch"
+  },
+  {
+    "title": "Meeting",
+    "start": "2015-04-12T12:00:00.000Z",
+    "end": "2015-04-12T13:00:00.000Z"
+  },
+  {
+    "title": "Happy Hour",
+    "start": "2015-04-12T15:00:00.000Z",
+    "end": "2015-04-12T15:30:00.000Z",
+    "desc": "Most important meal of the day"
+  },
+  {
+    "title": "Dinner",
+    "start": "2015-04-12T18:00:00.000Z",
+    "end": "2015-04-12T19:00:00.000Z"
+  },
+  {
+    "title": "Birthday Party",
+    "start": "2015-04-13T05:00:00.000Z",
+    "end": "2015-04-13T08:30:00.000Z"
+  }
+]

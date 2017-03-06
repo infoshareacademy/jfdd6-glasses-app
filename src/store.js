@@ -2,10 +2,12 @@ import {createStore, combineReducers} from 'redux'
 
 import moviesReducer from './state/movies'
 import movieReducer from './state/movie'
+import eventsReducer from './state/events'
 
 const reducer = combineReducers({
   movies: moviesReducer,
-  movie: movieReducer
+  movie: movieReducer,
+  events: eventsReducer
 })
 
 const store = createStore(
