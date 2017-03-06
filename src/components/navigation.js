@@ -8,7 +8,7 @@ const App = (props) => (
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to="/">
+          <Link to="/home">
             Strona główna
           </Link>
         </Navbar.Brand>
@@ -22,7 +22,7 @@ const App = (props) => (
           <LinkContainer to="/movies">
             <NavItem eventKey={2}>Lista filmów</NavItem>
           </LinkContainer>
-          <LinkContainer to="/user">
+          <LinkContainer to="/user/1">
             <NavItem eventKey={3}>Sąsiad</NavItem>
           </LinkContainer>
           <LinkContainer to="/users">

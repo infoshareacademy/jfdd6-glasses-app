@@ -1,9 +1,28 @@
 import React from 'react'
+import {Grid} from 'react-bootstrap'
+import users from '../../data/users.json'
 
-const UserProfile = () => (
-  <p style={{backgroundColor: 'pink'}}>
-    This is USER PROFILE
-  </p>
-);
+const myUser = 2
 
-export default UserProfile
+const GroupsView = () => (
+  <Grid>
+    <h3>User:</h3>
+
+    <p><img src={users[myUser].avatar} alt="avatar"/></p>
+
+    <p>
+      {users[myUser].first_name} {users[myUser].last_name}, {users[myUser].gender}
+    </p>
+
+    <p>
+      Login: {users[myUser].login}
+    </p>
+
+    <p>
+      About {users[myUser].first_name}: {users[myUser].description}
+    </p>
+
+  </Grid>
+)
+
+export default GroupsView
