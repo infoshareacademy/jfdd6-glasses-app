@@ -1,28 +1,40 @@
 import React from 'react'
 import {Grid} from 'react-bootstrap'
+import { connect} from 'react-redux'
 import users from '../../data/users.json'
 
-const myUser = 0
 
-const GroupsView = () => (
-  <Grid>
-    <h3>User:</h3>
 
-    <p><img src={users[myUser].avatar} alt="avatar"/></p>
 
-    <p>
-      {users[myUser].first_name} {users[myUser].last_name}, {users[myUser].gender}
-    </p>
+const GroupsView = (props) => {
 
-    <p>
-      Login: {users[myUser].login}
-    </p>
+  const filteredUser = users.find(user => user.id === parseInt(props.id, 10))
 
-    <p>
-      About {users[myUser].first_name}: {users[myUser].description}
-    </p>
+  return (
+    <Grid>
+      <h3>User:</h3>
 
-  </Grid>
-)
+      <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
-export default GroupsView
+      <p>
+        {filteredUser.first_name} {filteredUser.last_name}, {filteredUser.gender}
+      </p>
+
+      <p>
+        Login: {filteredUser.login}
+      </p>
+
+      <p>
+        About {filteredUser.first_name}: {filteredUser.description}
+      </p>
+
+    </Grid>
+  )
+}
+
+
+export default connect(
+  state => ({
+    user: state.user.userData //wyciągam ze stanu aplikacji listę
+  })
+)(GroupsView)

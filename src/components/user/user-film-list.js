@@ -8,7 +8,6 @@ import titles from '../../data/movies.json'
 
 
 const UserFilmList = (props) => {
-  console.log('film', props.id)
 
   const filteredUser = users.find(user => user.id === parseInt(props.id, 10))
 
@@ -41,6 +40,6 @@ const UserFilmList = (props) => {
 //export default UserFilmList
 export default connect(
   state => ({
-    user: state.user.userData //wyciągam ze stanu aplikacji listę grup
+    user: state.user.userData //wyciągam ze stanu aplikacji listę
   })
 )(UserFilmList)
