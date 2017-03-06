@@ -1,4 +1,5 @@
 import React from 'react'
+import {Grid} from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
 import HomePostal from './home-postal'
@@ -6,7 +7,7 @@ import HomeSlider from './home-slider'
 import HomeUpcomingEvents from './home-upcoming-events'
 
 const HomeView = () => (
-  <container className="container-flex text-center">
+  <Grid className="text-center">
     <row className="row">
       <div className="col-xs-8 bg-success">
         <HomeSlider />
@@ -19,11 +20,13 @@ const HomeView = () => (
       <div className="col-xs-8 bg-primary jumbotron">
         <HomeCalendar/>
       </div>
-      <div className="col-xs-4 bg-warning">
+
+      <div className="col-xs-4">
         <HomeUpcomingEvents/>
       </div>
+
     </row>
-  </container>
+  </Grid>
 );
 
 export default HomeView
