@@ -2,7 +2,7 @@ import React from 'react'
 import {Grid} from 'react-bootstrap'
 import users from '../../data/users.json'
 
-const myUser = 2
+const myUser = 0
 
 const GroupsView = () => (
   <Grid>
