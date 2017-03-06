@@ -10,7 +10,7 @@ import {connect} from 'react-redux'
 
 
 const MovieView = (props) => {
-  const id = props.params.movieId
+  const id = props.params.movieId;
   return (
 
 
@@ -39,7 +39,7 @@ const MovieView = (props) => {
           <h2>Lista użytkowników, ktorzy mają ten film i chętnie umówią się na wspólny seans:</h2>
           <table>
             <tbody>
-            <UserList/>
+            <UserList id={id}/>
             </tbody>
           </table>
         </Col>
