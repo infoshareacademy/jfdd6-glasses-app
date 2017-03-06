@@ -1,14 +1,37 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import { Grid, Table, Row, Col } from 'react-bootstrap'
 
-const HomeUpcomingEvents = () => (
-  <div>
-    <h1>Pole najbilższych wydarzeń</h1>
-    <h1>Pole najbilższych wydarzeń</h1>
-    <h1>Pole najbilższych wydarzeń</h1>
-    <h1>Pole najbilższych wydarzeń</h1>
-    <h1>Pole najbilższych wydarzeń</h1>
-    <h1>Pole najbilższych wydarzeń</h1>
-  </div>
+const HomeUpcomingEvents = ({events}) => (
+  <Grid>
+    <Row>
+      <Col xs={12}>
+    <h1>Wydarzenia</h1>
+    <Table striped>
+      <thead>
+        <tr>
+          <th>Nazwa wydarzenia</th>
+        </tr>
+      </thead>
+        <tbody>
+        {
+          events.map(
+            event => (
+            <tr key={event.id}>
+              <td>{event.title}</td>
+            </tr>
+            )
+          )
+        }
+        </tbody>
+    </Table>
+        </Col>
+    </Row>
+  </Grid>
 );
 
-export default HomeUpcomingEvents
+export default connect(
+  state => ({
+    events: state.events.eventsData
+  })
+)(HomeUpcomingEvents)

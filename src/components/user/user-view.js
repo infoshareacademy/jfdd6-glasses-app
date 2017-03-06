@@ -3,9 +3,10 @@ import MapFeature from './user-map'
 import UserProfile from './user-profile.js'
 import UserFilmList from './user-film-list.js'
 
-const UserView = () => (
+const UserView = (props) => (
 <div>
-    <UserProfile />
+    <p>{props.params.userId}</p>
+    <UserProfile userId={props.params.userId} />
     <UserFilmList />
     <MapFeature />
 </div>
