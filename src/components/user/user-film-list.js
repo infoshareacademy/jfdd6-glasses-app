@@ -30,7 +30,7 @@ const UserFilmList = (props) => {
         titles.filter(
           title => filteredUser.movies.indexOf(title.id) !== -1
         ).map(
-          userTitle => <tr key={userTitle.id}><td><Link to={''}>{userTitle.name}</Link></td></tr>
+          userTitle => <tr key={userTitle.id}><td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td></tr>
         )
       }
       </tbody>
