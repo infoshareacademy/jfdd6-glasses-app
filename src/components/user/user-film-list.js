@@ -1,6 +1,7 @@
 import React from 'react'
 import {Grid, Table} from 'react-bootstrap'
 import { connect} from 'react-redux'
+import { Link } from 'react-router'
 import users from '../../data/users.json'
 import titles from '../../data/movies.json'
 
@@ -29,7 +30,7 @@ const UserFilmList = (props) => {
         titles.filter(
           title => filteredUser.movies.indexOf(title.id) !== -1
         ).map(
-          userTitle => <tr key={userTitle.id}><td>{userTitle.name}</td></tr>
+          userTitle => <tr key={userTitle.id}><td><Link to={''}>{userTitle.name}</Link></td></tr>
         )
       }
       </tbody>
