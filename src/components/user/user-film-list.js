@@ -1,13 +1,19 @@
 import React from 'react'
 import {Grid, Table} from 'react-bootstrap'
+import { connect} from 'react-redux'
 import users from '../../data/users.json'
+import titles from '../../data/movies.json'
 
 
-const myUser = 0
 
-const UserFilmList = () => (
+
+const UserFilmList = (props) => {
+
+  const filteredUser = users.find(user => user.id === parseInt(props.id, 10))
+
+   return (
   <Grid>
-    <h3>Lista filmów użytkownika: {users[myUser].login}</h3>
+    <h3>Lista filmów użytkownika: {filteredUser.login}</h3>
 
 
     <Table striped>
@@ -19,19 +25,21 @@ const UserFilmList = () => (
 
 
       <tbody>
-      {users[myUser].movies.map( function (movie, index) {return <tr key={index}><td>{movie}</td></tr>; } )}
-
-
+      {
+        titles.filter(
+          title => filteredUser.movies.indexOf(title.id) !== -1
+        ).map(
+          userTitle => <tr key={userTitle.id}><td>{userTitle.name}</td></tr>
+        )
+      }
       </tbody>
     </Table>
-
-
-
-
-  <p style={{backgroundColor: 'yellow'}}>
-    This is a FILM LIST
-  </p>
     </Grid>
-);
+)}
 
-export default UserFilmList
+//export default UserFilmList
+export default connect(
+  state => ({
+    user: state.user.userData //wyciągam ze stanu aplikacji listę
+  })
+)(UserFilmList)
