@@ -1,77 +1,59 @@
 import React from 'react'
-import {Grid, Row, Col, Carousel} from 'react-bootstrap'
-import movies from "./data/movie-data.json"
+import {Grid, Row, Col} from 'react-bootstrap'
+import MovieSearch from './movie-search'
+import MovieCarousel from './movie-carousel'
+import MovieDescription from './movie-description'
+import UserList from './movie-user-list'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import {connect} from 'react-redux'
 
 
-const MovieView = () => (
-
-  <Grid>
-    <Row className="show-grid">
-      <Col xs={12} md={6}>
-        <Carousel>
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src="favicon.ico"/>
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src="favicon.ico"/>
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={900} height={500} alt="900x500" src="favicon.ico"/>
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+const MovieView = (props) => {
+  const id = props.params.movieId;
+  return (
 
 
-      </Col>
-      <Col xs={6} md={6}>
+    <Grid>
+      <Row className="show-grid">
+        <Col xs={12} md={12}>
+          <MovieSearch/>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={12}>
+          <h2>Tytuł filmu: </h2>
+        </Col>
+      </Row>
+      <Row className="show-grid">
+        <Col xs={12} md={6}>
+          <MovieCarousel />
+        </Col>
+        <Col xs={6} md={6}>
+          <h2>Tytuł filmu</h2>
+          <MovieDescription id={id}/>
+        </Col>
+      </Row>
+      <Row className="show-grid">
+        <Col md={12}>
+          <h2>Lista użytkowników, ktorzy mają ten film i chętnie umówią się na wspólny seans:</h2>
+          <table>
+            <tbody>
+            <UserList id={id}/>
+            </tbody>
+          </table>
+        </Col>
+      </Row>
+      <Row className="show-grid">
+        <Col xs={12} md={12}>
+          <h2>Footer</h2>
+        </Col></Row>
+    </Grid>
+  );
+}
 
-        {
-          movies.filter(
-            movie => movie.opis.length > 30
-          ).map(
-            movie => (
-              <p key={movie.id}>{movie.opis}</p>
-            )
-          )
-        }
-      </Col>
-    </Row>
-    <Row className="show-grid">
-      <Col md={6} mdPush={6}>
-
-
-      </Col>
-      <Col md={6} mdPull={6}>
-
-        <table>
-          <tbody>
-
-          <tr>
-            {
-              movies.map(
-                movie => (
-                  <td key={movie.id}>{movie.name}</td>
-                )
-              )
-            }
-
-          </tr>
-          </tbody></table>
-      </Col>
-    </Row>
-  </Grid>
-
-);
-
-export default MovieView
+export default connect (
+  state => ({
+    movieImport: state.movie.movieData
+  })
+)(MovieView)
