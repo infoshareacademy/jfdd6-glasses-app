@@ -12,4 +12,14 @@ const MoviesView = () => (
   </Grid>
 )
 
+{
+  document.onclick = change
+  function change() {
+    if (document.querySelectorAll('.movies-search-hints li').length > 0) {
+      document.getElementById('hints').style.display = 'none'
+    }
+  }
+}
+
+
 export default MoviesView
