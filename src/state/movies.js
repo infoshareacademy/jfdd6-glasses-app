@@ -15,7 +15,12 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/tags/CUSTOM':
       return {
         ...state,
-        customTags: [...state.customTags, action.value]
+        customTags: state.customTags.filter(tag => tag !== action.value).concat(action.value)
+      }
+    case 'movies/tags/REMOVE':
+      return {
+        ...state,
+        customTags: state.customTags.filter(tag => tag !== action.value)
       }
     case 'movies/tags/RESET':
       return {
