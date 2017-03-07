@@ -6,14 +6,14 @@ const UserList = ({id, userImport}) => {
   console.log(id);
   const b = id;
   console.log(b);
-  const abc = userImport.filter(user => user.movies.includes(+b) ? user.movies : "");
+  const abc = userImport.userData.filter(user => user.movies.includes(+b) ? user.movies : "");
 
   console.log(abc);
   console.log(userImport);
   return (
     <tr>
       {
-        userImport.filter(
+        userImport.userData.filter(
           user => user.movies.includes(+id),
         ).map(
           user => (
@@ -33,6 +33,6 @@ const UserList = ({id, userImport}) => {
 
 export default connect(
   state => ({
-    userImport: state.user.userData
+    userImport: state.user
   })
 )(UserList)
