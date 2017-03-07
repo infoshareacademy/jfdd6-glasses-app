@@ -1,8 +1,7 @@
-import movie from '../data/movies.json'
+import events from '../data/events'
 
 const initialState = {
-  movieData: movie,
-  id:  0
+  eventsData: events
 }
 
 
@@ -13,4 +12,3 @@ export default (state = initialState, action = {}) => {
       return state
   }
 }
-

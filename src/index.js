@@ -24,7 +24,7 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path="/" component={Nav}>
           <Route path="home" component={HomeView}/>
-          <Route path="movie" component={MovieView}/>
+          <Route path="movie/:movieId" component={MovieView}/>
           <Route path="movies" component={MoviesView}/>
           <Route path="user/:userId" component={UserView}/>
           <Route path="users" component={UsersView}/>
