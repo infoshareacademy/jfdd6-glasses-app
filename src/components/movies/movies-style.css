@@ -36,7 +36,6 @@
 }
 
 .movies-search-hints {
-  display: block;
   position: absolute;
   z-index: 20;
   width: 75%;

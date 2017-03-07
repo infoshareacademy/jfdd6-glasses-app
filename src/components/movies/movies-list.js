@@ -10,9 +10,6 @@ const MovieList = ({ movies, customTags, query }) => (
         <tbody>
         {movies
           .filter(movie =>
-            query.length > 2 ? movie.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 : true
-          )
-          .filter(movie =>
             customTags.every(tag =>
               movie.tags.indexOf(tag) !== -1
             )
