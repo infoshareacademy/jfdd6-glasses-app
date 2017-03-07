@@ -12,6 +12,10 @@
   width: 50px;
 }
 
+.movies-list a {
+  color: white;
+}
+
 .movies-tags {
   height: 160px;
   padding: 20px;

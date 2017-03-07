@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { Row, Col, Table } from 'react-bootstrap'
 
 const MovieList = ({ movies, customTags, query }) => (
@@ -19,7 +20,11 @@ const MovieList = ({ movies, customTags, query }) => (
           .map(movie => (
           <tr key={movie.id}>
             <td><img src={movie.poster} alt={movie.name}/></td>
-            <td>{movie.name}</td>
+            <td>
+              <Link to={'/movie/' + movie.id}>
+              {movie.name}
+              </Link>
+              </td>
           </tr>
         ))}
         </tbody>
