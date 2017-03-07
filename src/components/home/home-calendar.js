@@ -1,21 +1,21 @@
-/**
- * Created by mitroc on 01.03.17.
- */
 import React from 'react'
 
 import BigCalendar from 'react-big-calendar';
-import moment from 'moment';
+import moment from 'moment'
+import events from '../../data/events.json'
 
-// Setup the localizer by providing the moment (or globalize) Object
-// to the correct localizer.
-BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
+BigCalendar.momentLocalizer(moment);
 
 const HomeCalendar = (props) => (
-  <div style={{height: 400}}>
+  <div style={{height: 550}}>
     <BigCalendar
-      events={[]}
-      startAccessor='startDate'
-      endAccessor='endDate'
+      events={events.map(
+        event => ({
+          ...event,
+          start: new Date(event.start),
+          end: new Date(event.end)
+        })
+      )}
     />
   </div>
 );
