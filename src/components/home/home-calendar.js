@@ -7,7 +7,7 @@ import events from '../../data/events.json'
 BigCalendar.momentLocalizer(moment);
 
 const HomeCalendar = (props) => (
-  <div style={{height: 450}}>
+  <div style={{height: 550}}>
     <BigCalendar
       events={events.map(
         event => ({
