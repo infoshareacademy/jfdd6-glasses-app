@@ -7,8 +7,7 @@ import eventsReducer from './state/events'
 
 const reducer = combineReducers({
   movies: moviesReducer,
-  movie: movieReducer,
-  user: userReducer
+  user: userReducer,
   movie: movieReducer,
   events: eventsReducer
 })

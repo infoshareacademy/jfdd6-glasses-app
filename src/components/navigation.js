@@ -16,7 +16,7 @@ const App = (props) => (
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <LinkContainer to="/movie">
+          <LinkContainer to="/movie/1">
             <NavItem eventKey={1}>Film</NavItem>
           </LinkContainer>
           <LinkContainer to="/movies">
