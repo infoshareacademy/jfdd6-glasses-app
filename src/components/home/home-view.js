@@ -17,10 +17,10 @@ const HomeView = () => (
       </Col>
     </Row>
     <Row>
-      <Col xs={8}>
+      <Col xs={6}>
         <HomeCalendar/>
       </Col>
-      <Col xs={4}>
+      <Col xs={6}>
         <HomeUpcomingEvents/>
       </Col>
     </Row>

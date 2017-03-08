@@ -1,43 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Table, Button } from 'react-bootstrap'
+import moment from 'moment'
 
 import { change } from '../../state/home'
 
+moment.locale('pl')
+
 const HomeUpcomingEvents = ({events, eventsLimit, change}) => {
-  const eventsImproved = events.slice().sort(
-    (prevEvent, nextEvent) =>(
-      new Date(nextEvent.start) - new Date(prevEvent.start)
-    )).slice(0, eventsLimit).map(
-    event => ({
-      ...event,
-      startYear: new Date(event.start).getFullYear(),
-      startMonth:
-        (new Date(event.start).getMonth()) >= 10 ?
-          new Date(event.start).getMonth() :
-            '0' + new Date(event.start).getMonth(),
-      startDay:
-        (new Date(event.start).getDate()) >= 10 ?
-          new Date(event.start).getDate() :
-            '0' + new Date(event.start).getDate(),
-
-      startHour:
-        (new Date(event.start).getHours()) >= 10 ?
-          new Date(event.start).getHours() :
-            '0' + new Date(event.start).getHours(),
-
-      startMinute:
-        (new Date(event.start).getMinutes()) >=10 ?
-          new Date(event.start).getMinutes() :
-            '0' + new Date(event.start).getMinutes()
-    })
-  )
-
   return (
   <div>
-    <h2>Wydarzenia</h2>
-    <Button onClick={() => change(1)}>Zwiększ</Button>
-    <Button onClick={() => change(-1)}>Zmniejsz</Button>
+    <h2>Nadchodzące Projekcje</h2>
+    <Button onClick={() => change(1)}>Więcej</Button>
+    <Button onClick={() => change(-1)}>Mniej</Button>
     <Table striped responsive>
       <thead>
         <tr>
@@ -47,18 +22,20 @@ const HomeUpcomingEvents = ({events, eventsLimit, change}) => {
       </thead>
         <tbody>
         {
-          eventsImproved.map(
+          events.slice().filter(
+            event =>
+              moment(event.start) >= moment()
+          ).sort(
+            (prevEvent, nextEvent) =>
+              moment(prevEvent.start) - moment(nextEvent.start)
+          ).slice(
+            0, eventsLimit + 1
+          ).map(
             event => (
-            <tr key={event.id}>
-              <td>{event.title}</td>
-              <td>
-                {event.startYear + '-'}
-                {event.startMonth + '-'}
-                {event.startDay + ' '}
-                {event.startHour + ':'}
-                {event.startMinute}
-              </td>
-            </tr>
+              <tr key={event.id}>
+                <td>{event.title}</td>
+                <td>{moment(event.start).format('dddd, D MMMM, H:mm')}</td>
+              </tr>
             )
           )
         }

@@ -1,4 +1,4 @@
-import events from '../data/events'
+import events from '../data/home-events'
 
 //Action types
 const CHANGE = 'home/CHANGE'
@@ -12,7 +12,7 @@ export const change = (value) => ({
 //Initial state
 const initialState = {
   homeEventsData: events,
-  homeEventsLimit: 8
+  homeEventsLimit: 4
 }
 
 //Reducer

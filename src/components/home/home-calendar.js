@@ -2,9 +2,10 @@ import React from 'react'
 
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment'
-import events from '../../data/events.json'
+import events from '../../data/home-events.json'
 
-BigCalendar.momentLocalizer(moment);
+BigCalendar.momentLocalizer(moment)
+moment.locale('pl')
 
 const HomeCalendar = (props) => (
   <div style={{height: 550}}>
