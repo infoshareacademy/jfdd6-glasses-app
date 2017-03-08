@@ -5,7 +5,7 @@ import {Link} from 'react-router'
 
 const UserFilmList = ({id, users, moviesList}) => {
 
-  const filteredUser = users.find(arg => arg.id === parseInt(id, 10))
+  const filteredUser = users.find(user => user.id === parseInt(id, 10))
 
   return (
     <Grid>
