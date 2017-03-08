@@ -1,14 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Table } from 'react-bootstrap'
+import { Table, Button } from 'react-bootstrap'
 
-const HomeUpcomingEvents = ({events}) => {
-  const limit = 8
+import { change } from '../../state/home'
 
+const HomeUpcomingEvents = ({events, eventsLimit, change}) => {
   const eventsImproved = events.slice().sort(
     (prevEvent, nextEvent) =>(
       new Date(nextEvent.start) - new Date(prevEvent.start)
-    )).slice(0, limit).map(
+    )).slice(0, eventsLimit).map(
     event => ({
       ...event,
       startYear: new Date(event.start).getFullYear(),
@@ -36,6 +36,8 @@ const HomeUpcomingEvents = ({events}) => {
   return (
   <div>
     <h2>Wydarzenia</h2>
+    <Button onClick={() => change(1)}>Zwiększ</Button>
+    <Button onClick={() => change(-1)}>Zmniejsz</Button>
     <Table striped responsive>
       <thead>
         <tr>
@@ -65,9 +67,12 @@ const HomeUpcomingEvents = ({events}) => {
   </div>
 )}
 
-
 export default connect(
   state => ({
-    events: state.events.eventsData
+    events: state.home.homeEventsData,
+    eventsLimit: state.home.homeEventsLimit
+  }),
+  dispatch => ({
+    change: (value) => dispatch(change(value))
   })
 )(HomeUpcomingEvents)
