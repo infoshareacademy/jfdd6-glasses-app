@@ -15,7 +15,7 @@ import HomeView from './components/home/home-view'
 import MovieView from './components/movie/movie-view'
 import MoviesView from './components/movies/movies-view'
 import UserView from './components/user/user-view'
-import UsersView from './components/users/users-view'
+import UsersView from './components/users/all-users-view'
 import EventView from './components/event/event-view'
 
 ReactDOM.render(
