@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Row, Col, Alert} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 import MovieSearch from './movie-search'
 import MovieCarousel from './movie-carousel'
 import MovieDescription from './movie-description'
@@ -13,7 +13,7 @@ class MovieView extends React.Component {
 
   render() {
 
-    const id = this.props.params.movieId
+    const id = this.props.params.movieId;
 
     return (
 
@@ -63,5 +63,4 @@ export default connect(
       movieImport: state.movie
     }
     )
-)
-(MovieView)
+) (MovieView)

@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router'
 
 const UserList = ({id, userImport}) => {
-  console.log(id);
+
   const b = id;
-  console.log(b);
+console.debug(userImport);
   const abc = userImport.userData.filter(user => user.movies.includes(+b) ? user.movies : "");
 
   console.log(abc);

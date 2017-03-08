@@ -6,7 +6,7 @@ const FETCH__FAIL = 'movie/FETCH__FAILED'
 export const fetchMovie = () => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    process.env.PUBLIC_URL + '/data/movie.json'
+    process.env.PUBLIC_URL + '/data/movies.json'
   ).then(
     response => {
       if (response.ok) {
