@@ -6,6 +6,10 @@ import { Col, FormGroup, InputGroup, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
 
+  componentWillUnmount() {
+    this.props.createQuery('')
+  }
+
   hideHints(e) {
     const currentTarget = e.currentTarget;
 
