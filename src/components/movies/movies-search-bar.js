@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const {fieldValue, createQuery, movies} = this.props
+    const {fieldValue, createQuery, movies, tags} = this.props
 
     return (
       <Col xs={8} xsOffset={2}>
@@ -53,8 +53,18 @@ class SearchBar extends React.Component {
               )
               .slice(0, 10)
               .map(movie =>
-                <li key={movie.id}>
+                <li key={movie.id} className="movies-search-hints-titles">
                   <Link to={'/movie/' + movie.id}>{movie.name}</Link>
+                </li>
+              )
+            }
+            {tags
+              .filter(tag =>
+                fieldValue.length > 1 ? tag.name.indexOf(fieldValue.toLowerCase()) !== -1 : false
+              )
+              .map(tag =>
+                <li key={tag.id} className="movies-search-hints-tags">
+                    {tag.name}
                 </li>
               )
             }
@@ -68,7 +78,8 @@ class SearchBar extends React.Component {
 export default connect(
   state => ({
     fieldValue: state.movies.query,
-    movies: state.movies.moviesData
+    movies: state.movies.moviesData,
+    tags: state.movies.tagsList
   }),
   dispatch => ({
     createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value })

@@ -34,32 +34,43 @@
   position: relative;
 }
 
+.movies-stick-hints {
+  margin-bottom: 0;
+}
+
 .movies-search-hints {
   position: absolute;
   z-index: 20;
   width: 75%;
   margin: 0;
+  padding: 0;
   background-color: ghostwhite;
   list-style-type: none;
-  padding: 0;
-  color: darkslateblue;
+  /*color: darkslateblue;*/
 }
 
 .movies-search-hints a {
   display: block;
   text-decoration: none;
-  color: darkslateblue;
 }
 
 .movies-search-hints li {
   padding: 5px 10px;
 }
 
-.movies-search-hints li:hover {
+.movies-search-hints-titles a {
+  color: darkslateblue;
+}
+
+.movies-search-hints-titles:hover {
   background-color: lightsteelblue;
 }
 
-.movies-stick-hints {
-  margin-bottom: 0;
+.movies-search-hints-tags {
+  color: green;
+}
+
+.movies-search-hints-tags:hover {
+  background-color: lightgreen;
 }
 
