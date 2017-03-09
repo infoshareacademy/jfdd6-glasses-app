@@ -1,38 +1,49 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import {fetchUsers} from '../../state/user'
 
-const UserList = ({id, userImport}) => {
 
-  const b = id;
-console.debug(userImport);
-  const abc = userImport.userData.filter(user => user.movies.includes(+b) ? user.movies : "");
+class UserList extends React.Component {
+  // componentWillMount() {
+  //   this.props.fetchUsers()
+  // }
 
-  console.log(abc);
-  console.log(userImport);
-  return (
-    <tr>
-      {
-        userImport.userData.filter(
-          user => user.movies.includes(+id),
-        ).map(
-          user => (
-            <td key={user.id}>
-              <Link to={'/user/' + user.id}>
-                <img src={user.avatar} alt=""/>
-              </Link>
-            </td>
-          )
-        )
-      }
+  render() {
 
-    </tr>
-  );
+    const { id } = this.props;
 
+    return (
+      <tr>
+        {
+          this.props.users ? this.props.users.filter(
+            user => user.movies.includes(+id),
+          ).map(
+            user => (
+              <td key={user.id}>
+                <Link to={'/user/' + user.id}>
+                  <img src={user.avatar} alt=""/>
+                </Link>
+              </td>
+            )
+          ) :
+            <td> brak danych</td>
+        }
+
+      </tr>
+    );
+
+  }
 }
+
+
 
 export default connect(
   state => ({
-    userImport: state.user
+    users: state.users
+  }),
+  dispatch => ({
+    fetchUsers: () => dispatch(fetchUsers())
   })
-)(UserList)
+) (UserList)
+

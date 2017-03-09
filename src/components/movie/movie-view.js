@@ -7,9 +7,17 @@ import UserList from './movie-user-list'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import {connect} from 'react-redux'
+import {fetchMovie} from '../../state/movie'
+import {fetchUsers} from '../../state/user'
 
 
 class MovieView extends React.Component {
+  componentWillMount() {
+    this.props.fetchMovie();
+    this.props.fetchUsers()
+
+  }
+
 
   render() {
 
@@ -58,9 +66,11 @@ class MovieView extends React.Component {
 }
 
 export default connect(
-  state =>
-    ( {
-      movieImport: state.movie
-    }
-    )
-) (MovieView)
+  state => ({
+
+  }),
+  dispatch => ({
+    fetchMovie: () => dispatch(fetchMovie()),
+    fetchUsers: () => dispatch(fetchUsers())
+  })
+)(MovieView)

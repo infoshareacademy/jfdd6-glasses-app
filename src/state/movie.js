@@ -1,10 +1,10 @@
-const FETCH__BEGIN = 'movie/FETCH__BEGIN'
-const FETCH__SUCCESS = 'movie/FETCH__SUCCESS'
-const FETCH__FAIL = 'movie/FETCH__FAILED'
+const FETCH__BEGIN = 'movie/FETCH__BEGIN';
+const FETCH__SUCCESS = 'movie/FETCH__SUCCESS';
+const FETCH__FAIL = 'movie/FETCH__FAILED';
 
 
 export const fetchMovie = () => dispatch => {
-  dispatch({ type: FETCH__BEGIN })
+  dispatch({ type: FETCH__BEGIN });
   return fetch(
     process.env.PUBLIC_URL + '/data/movies.json'
   ).then(
@@ -13,7 +13,7 @@ export const fetchMovie = () => dispatch => {
         return response.json().catch(
           error => dispatch({
             type: FETCH__FAIL,
-            error: 'Malformed JSON response'
+            error: 'cxvbgxcvbc JSON response'
           })
         )
       }
@@ -30,13 +30,13 @@ export const fetchMovie = () => dispatch => {
       error: error.message
     })
   )
-}
+};
 
 const initialState = {
   data: null,
   fetching: false,
   error: null
-}
+};
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
@@ -45,19 +45,19 @@ export default (state = initialState, action = {}) => {
         ...state,
         fetching: true,
         error: null
-      }
+      };
     case FETCH__SUCCESS:
       return {
         ...state,
         data: action.data,
         fetching: false
-      }
+      };
     case FETCH__FAIL:
       return {
         ...state,
         fetching: false,
         error: action.error
-      }
+      };
     default:
       return state
   }
