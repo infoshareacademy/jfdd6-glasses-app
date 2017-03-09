@@ -16,8 +16,8 @@
   {
     "id": "3",
     "title": "Obcy",
-    "start": "2017-03-12 21:00:00",
-    "end": "2017-03-12 23:00:00",
+    "start": "2017-03-12T21:00:00",
+    "end": "2017-03-12T22:00:00",
     "desc": "No klasyka gatunku"
   },
   {
@@ -37,7 +37,7 @@
   {
     "id": "6",
     "title": "Wszystko co chcielibyście wiedzieć o seksie, ale boicie się zapytać",
-    "start": "2017-03-12 22:00:00",
+    "start": "2017-03-12 21:00:00",
     "end": "2017-03-12 22:30:00",
     "desc": "Świetny film, zapraszam"
   },

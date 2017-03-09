@@ -1,5 +1,5 @@
 import React from 'react'
-import connect from 'react-redux'
+import { connect } from 'react-redux'
 
 import { Col, Grid, Row } from 'react-bootstrap'
 
@@ -8,30 +8,30 @@ import HomePostal from './home-postal'
 import HomeSlider from './home-slider'
 import HomeUpcomingEvents from './home-upcoming-events'
 
-import { fetchEvents } from '../../state/home'
+import { fetchData } from '../../state/home'
 
 class HomeView extends React.Component {
 
   componentWillMount() {
-    this.props.fetchEventsHelper()
+    this.props.fetchData()
   }
 
   render(){
     return(
       <Grid>
         <Row>
-          <Col xs={8}>
+          <Col xs={12} md={8}>
             <HomeSlider />
           </Col>
-          <Col xs={4}>
+          <Col xs={12} md={4}>
             <HomePostal/>
           </Col>
         </Row>
         <Row>
-          <Col xs={6}>
+          <Col xs={12} md={8}>
             <HomeCalendar/>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={4}>
             <HomeUpcomingEvents/>
           </Col>
         </Row>
@@ -41,8 +41,9 @@ class HomeView extends React.Component {
 }
 
 export default connect(
-  state => ({}),
+  state => ({
+  }),
   dispatch => ({
-    fetchEventsHelper: () => dispatch(fetchEvents())
+    fetchData: () => dispatch(fetchData())
   })
 )(HomeView)

@@ -2,7 +2,7 @@ const FETCH__BEGIN = 'home/FETCH__BEGIN'
 const FETCH__SUCCESS = 'home/FETCH__SUCCESS'
 const FETCH__FAIL = 'home/FETCH__FAILED'
 
-export const fetchEvents = () => dispatch => {
+export const fetchData = () => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
     process.env.PUBLIC_URL + '/data/home-events.json'
