@@ -13,7 +13,7 @@ export const fetchMovie = () => dispatch => {
         return response.json().catch(
           error => dispatch({
             type: FETCH__FAIL,
-            error: 'cxvbgxcvbc JSON response'
+            error: 'Malformed JSON response'
           })
         )
       }

@@ -1,24 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchMovie} from '../../state/movie'
 
 class MovieDescription extends React.Component {
-  // componentWillMount() {
-  //   this.props.fetchMovie()
-  // }
+
 
   render() {
+    const { id, movie } = this.props;
     return (
       <div>
-        {/*{*/}
-        {/*movieImport.filter(*/}
-        {/*movie => movie.id === parseInt(id, 10)*/}
-        {/*).map(*/}
-        {/*movie => (*/}
-        {/*<p key={movie.id}>{movie.description}</p>*/}
-        {/*)*/}
-        {/*)*/}
-        {/*}*/}
+        {
+          movie.data? movie.data.filter(
+        movie => movie.id === parseInt(id, 10)
+        ).map(
+        movie => (
+        <p key={movie.id}>{movie.description}</p>
+        )
+        ) : <p>brak danych</p>
+        }
       </div>
 
     )
@@ -27,9 +25,6 @@ class MovieDescription extends React.Component {
 
 export default connect(
   state => ({
-    movies: state.movies
-  }),
-  dispatch => ({
-    fetchMovie: () => dispatch(fetchMovie())
+    movie: state.movie
   })
 )(MovieDescription)

@@ -40,7 +40,7 @@ class MovieView extends React.Component {
           <Col xs={12} md={6}>
             <MovieCarousel />
           </Col>
-          <Col xs={6} md={6}>
+          <Col xs={12} md={6}>
             <h2>Tytuł filmu</h2>
             <MovieDescription id={id}/>
           </Col>
@@ -67,7 +67,8 @@ class MovieView extends React.Component {
 
 export default connect(
   state => ({
-
+    // users: state.users,
+    // movies: state.movies
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),

@@ -1,22 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
-import {fetchUsers} from '../../state/user'
 
 
 class UserList extends React.Component {
-  // componentWillMount() {
-  //   this.props.fetchUsers()
-  // }
 
   render() {
 
-    const { id } = this.props;
-
+    const { user, id } = this.props;
     return (
       <tr>
         {
-          this.props.users ? this.props.users.filter(
+          user.data ? user.data.filter(
             user => user.movies.includes(+id),
           ).map(
             user => (
@@ -40,10 +35,7 @@ class UserList extends React.Component {
 
 export default connect(
   state => ({
-    users: state.users
-  }),
-  dispatch => ({
-    fetchUsers: () => dispatch(fetchUsers())
+    user: state.user
   })
 ) (UserList)
 
