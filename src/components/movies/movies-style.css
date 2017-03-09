@@ -43,7 +43,7 @@
 .movies-search-hints {
   position: absolute;
   z-index: 20;
-  width: 75%;
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: ghostwhite;
@@ -76,3 +76,7 @@
   background-color: lightgreen;
 }
 
+.col-xs-6, .col-xs-1 {
+  padding-left: 0;
+  padding-right: 0;
+}

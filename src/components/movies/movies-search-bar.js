@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import QueryButton from './movies-search'
-import { Col, FormGroup, InputGroup, FormControl } from 'react-bootstrap'
+import { Col, Row, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
 
@@ -11,21 +11,22 @@ class SearchBar extends React.Component {
   }
 
   hideHints() {
-    setTimeout( () => document.getElementById('hints').style.display = 'none', 150 )
+    document.getElementById('hints').style.display = 'none'
   }
 
   showHints() {
     document.getElementById('hints').style.display = 'block'
   }
 
+
   render() {
-    const {fieldValue, createQuery, movies, tags, filterByTag} = this.props
+    const {fieldValue, createQuery, movies, tags, filterByTag, filterByHintTag} = this.props
 
     return (
-      <Col xs={8} xsOffset={2}>
-        <div className="movies-position-hints" onBlur={this.hideHints}>
-          <FormGroup className="movies-stick-hints">
-            <InputGroup>
+      <Row>
+      <Col xs={6} xsOffset={2}>
+        <div className="movies-position-hints">
+          <div className="movies-stick-hints">
               <FormControl
                 id="search"
                 type="text"
@@ -34,39 +35,47 @@ class SearchBar extends React.Component {
                 onKeyDown={this.showHints}
                 placeholder="wyszukaj"
               />
-
-              <InputGroup.Button>
-                <QueryButton />
-              </InputGroup.Button>
-            </InputGroup>
-          </FormGroup>
-          <ul id="hints" className="movies-search-hints">
-            {movies
-              .filter(movie =>
-                fieldValue.length > 1 ? movie.name.toLowerCase().indexOf(fieldValue.toLowerCase()) !== -1 : false
-              )
-              .slice(0, 10)
-              .map(movie =>
-                <li key={movie.id} className="movies-search-hints-titles">
-                  <Link to={'/movie/' + movie.id}>{movie.name}</Link>
-                </li>
-              )
-            }
-            {tags
-              .filter(tag =>
-                fieldValue.length > 1 ? tag.name.indexOf(fieldValue.toLowerCase()) !== -1 : false
-              )
-              .map(tag =>
-                <li key={tag.id} className="movies-search-hints-tags">
-                  <div onClick={() => filterByTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1))}>
-                    {tag.name}
-                  </div>
-                </li>
-              )
-            }
-          </ul>
+              <ul id="hints" className="movies-search-hints">
+                {movies
+                  .filter(movie =>
+                    fieldValue.length > 1 ? movie.name.toLowerCase().indexOf(fieldValue.toLowerCase()) !== -1 : false
+                  )
+                  .slice(0, 10)
+                  .map(movie =>
+                    <li key={movie.id} className="movies-search-hints-titles">
+                      <Link to={'/movie/' + movie.id}>{movie.name}</Link>
+                    </li>
+                  )
+                }
+                {tags
+                  .filter(tag =>
+                    fieldValue.length > 1 ? tag.name.indexOf(fieldValue.toLowerCase()) !== -1 : false
+                  )
+                  .map(tag =>
+                    <li key={tag.id} className="movies-search-hints-tags">
+                      <div
+                        tabIndex="0"
+                        onClick={() => filterByTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1))}
+                        onKeyUp={ (event) => {
+                          if (event.keyCode === 13) {
+                            this.hideHints();
+                            filterByHintTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1), tag.name);
+                          }
+                        }}
+                      >
+                        {tag.name}
+                      </div>
+                    </li>
+                  )
+                }
+              </ul>
+          </div>
         </div>
       </Col>
+      <Col xs={1}>
+      <QueryButton />
+        </Col>
+        </Row>
     )
   }
 }
@@ -79,6 +88,7 @@ export default connect(
   }),
   dispatch => ({
     createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value }),
-    filterByTag: (value) => dispatch({ type: 'movies/search/EXECUTE', value })
+    filterByTag: (value) => dispatch({ type: 'movies/search/EXECUTE', value }),
+    filterByHintTag: (value, tagName) => dispatch({ type: 'movies/search/EXECUTE_HINT', value, tagName })
   })
 )(SearchBar)

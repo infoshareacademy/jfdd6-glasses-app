@@ -38,6 +38,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         moviesData: action.value
       }
+    case 'movies/search/EXECUTE_HINT':
+      return {
+        ...state,
+        moviesData: action.value,
+        query: action.tagName
+      }
     default:
       return state
   }
