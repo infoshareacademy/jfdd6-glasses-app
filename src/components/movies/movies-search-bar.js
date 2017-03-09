@@ -6,18 +6,28 @@ import { Col, Row, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
 
+  componentDidMount() {
+    document.addEventListener('click', this.hideHints)
+  }
+
   componentWillUnmount() {
+    document.removeEventListener('click', this.hideHints)
     this.props.createQuery('')
   }
 
   hideHints() {
+    if (document.querySelectorAll('.movies-search-hints li').length > 0) {
+      document.getElementById('hints').style.display = 'none'
+    }
+  }
+
+  hideHintsOnEnterKey() {
     document.getElementById('hints').style.display = 'none'
   }
 
   showHints() {
     document.getElementById('hints').style.display = 'block'
   }
-
 
   render() {
     const {fieldValue, createQuery, movies, tags, filterByTag, filterByHintTag} = this.props
@@ -58,7 +68,7 @@ class SearchBar extends React.Component {
                         onClick={() => filterByTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1))}
                         onKeyUp={ (event) => {
                           if (event.keyCode === 13) {
-                            this.hideHints();
+                            this.hideHintsOnEnterKey();
                             filterByHintTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1), tag.name);
                           }
                         }}
@@ -89,6 +99,6 @@ export default connect(
   dispatch => ({
     createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value }),
     filterByTag: (value) => dispatch({ type: 'movies/search/EXECUTE', value }),
-    filterByHintTag: (value, tagName) => dispatch({ type: 'movies/search/EXECUTE_HINT', value, tagName })
+    filterByHintTag: (moviesList, tagName) => dispatch({ type: 'movies/search/EXECUTE_HINT', moviesList, tagName })
   })
 )(SearchBar)

@@ -1,7 +1,7 @@
 import data from '../data/movies.json'
 import tagsList from '../data/tags.json'
 
-const movies = data.sort((a, b) => a.name.localeCompare(b.name))
+const movies = data.slice().sort((a, b) => a.name.localeCompare(b.name))
 
 const initialState = {
   moviesData: movies,
@@ -41,7 +41,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/search/EXECUTE_HINT':
       return {
         ...state,
-        moviesData: action.value,
+        moviesData: action.moviesList,
         query: action.tagName
       }
     default:
