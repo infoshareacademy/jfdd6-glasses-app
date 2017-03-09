@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
 
     return (
       <Row>
-      <Col xs={6} xsOffset={2}>
+      <Col xs={6} xsOffset={2} className="no-padding">
         <div className="movies-position-hints">
           <div className="movies-stick-hints">
               <FormControl
@@ -82,7 +82,7 @@ class SearchBar extends React.Component {
           </div>
         </div>
       </Col>
-      <Col xs={1}>
+      <Col xs={1} className="no-padding">
       <QueryButton />
         </Col>
         </Row>

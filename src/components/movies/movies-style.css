@@ -48,7 +48,6 @@
   padding: 0;
   background-color: ghostwhite;
   list-style-type: none;
-  /*color: darkslateblue;*/
 }
 
 .movies-search-hints a {
@@ -76,7 +75,7 @@
   background-color: lightgreen;
 }
 
-.col-xs-6, .col-xs-1 {
+.no-padding {
   padding-left: 0;
   padding-right: 0;
 }
