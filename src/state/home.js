@@ -1,27 +1,61 @@
-import events from '../data/home-events'
+const FETCH__BEGIN = 'home/FETCH__BEGIN'
+const FETCH__SUCCESS = 'home/FETCH__SUCCESS'
+const FETCH__FAIL = 'home/FETCH__FAILED'
 
-//Action types
-const CHANGE = 'home/CHANGE'
-
-//Action creator
-export const change = (value) => ({
-  type: CHANGE,
-  value
-})
-
-//Initial state
-const initialState = {
-  homeEventsData: events,
-  homeEventsLimit: 4
+export const fetchEvents = () => dispatch => {
+  dispatch({ type: FETCH__BEGIN })
+  return fetch(
+    process.env.PUBLIC_URL + '/data/home-events.json'
+  ).then(
+    response => {
+      if (response.ok) {
+        return response.json().catch(
+          error => dispatch({
+            type: FETCH__FAIL,
+            error: 'Malformed JSON response'
+          })
+        )
+      }
+      throw new Error('Connection error')
+    }
+  ).then(
+    data => dispatch({
+      type: FETCH__SUCCESS,
+      data
+    })
+  ).catch(
+    error => dispatch({
+      type: FETCH__FAIL,
+      error: error.message
+    })
+  )
 }
 
-//Reducer
+const initialState = {
+  data: null,
+  fetching: false,
+  error: null
+}
+
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE:
+    case FETCH__BEGIN:
       return {
         ...state,
-        homeEventsLimit: state.homeEventsLimit + action.value
+        fetching: true,
+        error: null
+      }
+    case FETCH__SUCCESS:
+      return {
+        ...state,
+        data: action.data,
+        fetching: false
+      }
+    case FETCH__FAIL:
+      return {
+        ...state,
+        fetching: false,
+        error: action.error
       }
     default:
       return state
