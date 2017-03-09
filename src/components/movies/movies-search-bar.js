@@ -10,14 +10,8 @@ class SearchBar extends React.Component {
     this.props.createQuery('')
   }
 
-  hideHints(e) {
-    const currentTarget = e.currentTarget;
-
-    setTimeout(() => {
-      if (!currentTarget.contains(document.activeElement)) {
-        document.getElementById('hints').style.display = 'none'
-      }
-    }, 0);
+  hideHints() {
+    setTimeout( () => document.getElementById('hints').style.display = 'none', 150 )
   }
 
   showHints() {
@@ -25,7 +19,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const {fieldValue, createQuery, movies, tags} = this.props
+    const {fieldValue, createQuery, movies, tags, filterByTag} = this.props
 
     return (
       <Col xs={8} xsOffset={2}>
@@ -64,7 +58,9 @@ class SearchBar extends React.Component {
               )
               .map(tag =>
                 <li key={tag.id} className="movies-search-hints-tags">
+                  <div onClick={() => filterByTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1))}>
                     {tag.name}
+                  </div>
                 </li>
               )
             }
@@ -82,6 +78,7 @@ export default connect(
     tags: state.movies.tagsList
   }),
   dispatch => ({
-    createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value })
+    createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value }),
+    filterByTag: (value) => dispatch({ type: 'movies/search/EXECUTE', value })
   })
 )(SearchBar)
