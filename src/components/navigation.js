@@ -22,7 +22,7 @@ const App = (props) => (
           <LinkContainer to="/movies">
             <NavItem eventKey={2}>Lista filmów</NavItem>
           </LinkContainer>
-          <LinkContainer to="/user/:userId">
+          <LinkContainer to="/user/3">
             <NavItem eventKey={3}>Sąsiad</NavItem>
           </LinkContainer>
           <LinkContainer to="/users">
