@@ -9,13 +9,21 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
       <Row>
         <Col className="movies-tags movies-border">
           {tags.map((tag) => (
-              <Button
+            customTags.indexOf(tag.id) === -1
+            ? <Button
                 key={tag.id}
                 value={tag.id}
                 bsSize="small"
-                bsStyle={customTags.indexOf(tag.id) === -1 ? 'default' : 'success'}
                 className="movies-tag-button"
-                onClick={customTags.indexOf(tag.id) === -1 ? () => sendTag(tag.id) : () => removeTag(tag.id)}
+                onClick={() => sendTag(tag.id)}
+              >{tag.id} {tag.name}</Button>
+            : <Button
+                key={tag.id}
+                value={tag.id}
+                bsStyle="success"
+                bsSize="small"
+                className="movies-tag-button"
+                onClick={() => removeTag(tag.id)}
               >{tag.id} {tag.name}</Button>
             )
           )}
