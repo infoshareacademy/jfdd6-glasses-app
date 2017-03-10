@@ -5,6 +5,9 @@ import {Link} from 'react-router'
 
 const UserFilmList = ({id, users, moviesList}) => {
 
+  if (users === null) {
+    return <p>Waiting for user data...</p>
+  }
   const filteredUser = users.find(user => user.id === parseInt(id, 10))
 
   return (
@@ -34,7 +37,7 @@ const UserFilmList = ({id, users, moviesList}) => {
 
 export default connect(
   state => ({
-    users: state.user.userData,
+    users: state.user.data,
     moviesList: state.movies.moviesData
   })
 )(UserFilmList)
