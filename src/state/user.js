@@ -1,10 +1,11 @@
-import movie from '../data/movies.json'
+import users from '../data/users.json'
+import moviesList from  '../data/movies.json'
+
 
 const initialState = {
-  movieData: movie,
-  id:  0
+  userData: users,
+  moviesList: moviesList
 }
-
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
@@ -13,4 +14,3 @@ export default (state = initialState, action = {}) => {
       return state
   }
 }
-

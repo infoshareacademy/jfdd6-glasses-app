@@ -16,13 +16,13 @@ const App = (props) => (
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <LinkContainer to="/movie">
+          <LinkContainer to="/movie/1">
             <NavItem eventKey={1}>Film</NavItem>
           </LinkContainer>
           <LinkContainer to="/movies">
             <NavItem eventKey={2}>Lista filmów</NavItem>
           </LinkContainer>
-          <LinkContainer to="/user/1">
+          <LinkContainer to="/user/3">
             <NavItem eventKey={3}>Sąsiad</NavItem>
           </LinkContainer>
           <LinkContainer to="/users">

@@ -1,32 +1,26 @@
 import React from 'react'
-import { Table } from 'react-bootstrap'
+import {Table, Grid} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {Link} from 'react-router'
 
-const Users = ({users, title}) => {
-  const userNodes = users ? users.map(
-      user => (
-        <tr key={user.id}>
-        <td>{user.id}</td>
-          <td>{user.name}</td>
-          <td>{user.surname}</td>
-        </tr>
-      )
-    ) : []
-
-  return (
-    <div>
-      <h1>{title}</h1>
+const AllUsers = ({users}) =>
+  (
+    <Grid>
+      <h1>Wszyscy użytkownicy</h1>
       <Table striped bordered>
         <tbody>
-        {
-          users === undefined ?
-            <tr><td>Sorry, we are missing props here</td></tr> :
-            users.length === 0 ?
-             <tr><td>No users for me</td></tr> : userNodes
-        }
+        {users.map(
+          (arg) => <tr key={arg.id}>
+            <td><Link to={'/user/' + arg.id}>{arg.first_name} {arg.last_name}</Link></td>
+          </tr>
+        )}
         </tbody>
       </Table>
-    </div>
+    </Grid>
   )
-}
 
-export default Users
+export default connect(
+  state => ({
+    users: state.user.userData,
+  })
+)(AllUsers)
