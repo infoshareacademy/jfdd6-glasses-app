@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button, ButtonGroup } from 'react-bootstrap'
 import moment from 'moment'
 
 import { change } from '../../state/home-filters'
@@ -11,9 +11,12 @@ const UpcomingEvents = ({events, eventsLimit, change}) => {
   return (
   <div>
     <br />
-    <Button onClick={() => change(1)}>Więcej</Button>
-    <Button onClick={() => change(-1)}>Mniej</Button>
-    <Table striped responsive>
+    <ButtonGroup>
+      <Button onClick={() => change(1)}>Więcej</Button>
+      <Button onClick={() => change(-1)}>Mniej</Button>
+    </ButtonGroup>
+    <br /><br />
+    <Table striped hover bordered responsive>
       <thead>
         <tr>
           <th>Projekcja filmu</th>
