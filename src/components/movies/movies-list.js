@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { Row, Col, Table } from 'react-bootstrap'
 
-const MovieList = ({ movies, customTags }) => (
+const MovieList = ({ movies, customTags, query }) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
@@ -16,7 +17,11 @@ const MovieList = ({ movies, customTags }) => (
           .map(movie => (
           <tr key={movie.id}>
             <td><img src={movie.poster} alt={movie.name}/></td>
-            <td>{movie.name}</td>
+            <td>
+              <Link to={'/movie/' + movie.id}>
+              {movie.name}
+              </Link>
+              </td>
           </tr>
         ))}
         </tbody>
@@ -28,7 +33,8 @@ const MovieList = ({ movies, customTags }) => (
 export default connect(
   state => ({
     movies: state.movies.moviesData,
-    customTags: state.movies.customTags
+    customTags: state.movies.customTags,
+    query: state.movies.query
   })
 )(MovieList)
 

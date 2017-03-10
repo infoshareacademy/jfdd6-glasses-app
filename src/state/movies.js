@@ -1,7 +1,7 @@
 import data from '../data/movies.json'
 import tagsList from '../data/tags.json'
 
-const movies = data.sort((a, b) => a.name.localeCompare(b.name))
+const movies = data.slice().sort((a, b) => a.name.localeCompare(b.name))
 
 const initialState = {
   moviesData: movies,
@@ -15,7 +15,12 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/tags/CUSTOM':
       return {
         ...state,
-        customTags: [...state.customTags, action.value]
+        customTags: state.customTags.filter(tag => tag !== action.value).concat(action.value)
+      }
+    case 'movies/tags/REMOVE':
+      return {
+        ...state,
+        customTags: state.customTags.filter(tag => tag !== action.value)
       }
     case 'movies/tags/RESET':
       return {
@@ -32,6 +37,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         moviesData: action.value
+      }
+    case 'movies/search/EXECUTE_HINT':
+      return {
+        ...state,
+        moviesData: action.moviesList,
+        query: action.tagName
       }
     default:
       return state
