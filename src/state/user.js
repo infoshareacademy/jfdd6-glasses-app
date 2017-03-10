@@ -2,9 +2,9 @@ const FETCH__BEGIN = 'users/FETCH__BEGIN';
 const FETCH__SUCCESS = 'users/FETCH__SUCCESS';
 const FETCH__FAIL = 'users/FETCH__FAILED';
 
-
 export const fetchUsers = () => dispatch => {
   dispatch({ type: FETCH__BEGIN });
+
   return fetch(
     process.env.PUBLIC_URL + '/data/users.json'
   ).then(
