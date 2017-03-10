@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { Col, Grid, Row } from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
-import HomePostal from './home-postal'
-import HomeSlider from './home-slider'
+/*import HomePostal from './home-postal'
+import HomeSlider from './home-slider'*/
 import HomeUpcomingEvents from './home-upcoming-events'
 
 import { fetchData } from '../../state/home'
@@ -20,12 +20,12 @@ class HomeView extends React.Component {
     return(
       <Grid>
         <Row>
-          <Col xs={12} md={8}>
+ {/*         <Col xs={12} md={8}>
             <HomeSlider />
           </Col>
           <Col xs={12} md={4}>
             <HomePostal/>
-          </Col>
+          </Col>*/}
         </Row>
         <Row>
           <Col xs={12} md={8}>
