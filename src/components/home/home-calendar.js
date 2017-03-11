@@ -1,23 +1,32 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment'
-import events from '../../data/events.json'
 
-BigCalendar.momentLocalizer(moment);
+BigCalendar.momentLocalizer(moment)
+moment.locale('pl')
 
-const HomeCalendar = (props) => (
+const HomeCalendar = ({calendarEvents}) => {
+
+  return (
   <div style={{height: 550}}>
     <BigCalendar
-      events={events.map(
+      events={calendarEvents ?
+        calendarEvents.map(
         event => ({
           ...event,
           start: new Date(event.start),
           end: new Date(event.end)
         })
-      )}
+      ) : []
+      }
     />
   </div>
-);
+  )}
 
-export default HomeCalendar
+export default connect (
+  state => ({
+    calendarEvents: state.home.data,
+  }),
+  dispatch => ({})
+)(HomeCalendar)
