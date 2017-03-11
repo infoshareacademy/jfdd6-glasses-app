@@ -13,11 +13,13 @@ class AllUsers extends React.Component {
         <h1>Wszyscy użytkownicy</h1>
         <Table striped bordered>
           <tbody>
-          {users.data.map(
+          {users.data ? users.data.map(
             (arg) => <tr key={arg.id}>
               <td><Link to={'/user/' + arg.id}>{arg.first_name} {arg.last_name}</Link></td>
             </tr>
-          )}
+          ) :
+          <tr><td>Brak danych</td></tr>
+          }
           </tbody>
         </Table>
       </Grid>
