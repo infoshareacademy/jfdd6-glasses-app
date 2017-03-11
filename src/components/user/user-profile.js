@@ -10,7 +10,7 @@ class UserProfile extends React.Component {
   render() {
 
     const {id, users} = this.props;
-    const filteredUser = users.data ? users.data.find(user => user.id === parseInt(id, 10)) : null;
+    const filteredUser = users.data.filter(user => user.id === parseInt(id, 10));
 
     return (
       <Grid>
