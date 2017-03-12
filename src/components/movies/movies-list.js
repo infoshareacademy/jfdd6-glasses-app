@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { Row, Col, Table } from 'react-bootstrap'
 
-const MovieList = ({ movies, customTags, query }) => (
+const MovieList = ({ movies, customTags }) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
@@ -33,8 +33,7 @@ const MovieList = ({ movies, customTags, query }) => (
 export default connect(
   state => ({
     movies: state.movies.moviesData,
-    customTags: state.movies.customTags,
-    query: state.movies.query
+    customTags: state.movies.customTags
   })
 )(MovieList)
 
