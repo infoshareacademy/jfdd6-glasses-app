@@ -8,22 +8,31 @@ const MovieList = ({ movies, customTags }) => (
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
         <tbody>
-        {movies
-          .filter(movie =>
-            customTags.every(tag =>
-              movie.tags.indexOf(tag) !== -1
-            )
-          )
-          .map(movie => (
-          <tr key={movie.id}>
-            <td><img src={movie.poster} alt={movie.name}/></td>
-            <td>
-              <Link to={'/movie/' + movie.id}>
-              {movie.name}
-              </Link>
-              </td>
-          </tr>
-        ))}
+        {
+          movies.length === 0
+            ?
+            <tr>
+              <td>Ładowanie&hellip;</td>
+            </tr>
+            :
+            movies
+              .filter(movie =>
+                customTags.every(tag =>
+                  movie.tags.indexOf(tag) !== -1
+                )
+              )
+              .map(movie => (
+                  <tr key={movie.id}>
+                    <td><img src={movie.poster} alt={movie.name}/></td>
+                    <td>
+                      <Link to={'/movie/' + movie.id}>
+                        {movie.name}
+                      </Link>
+                    </td>
+                  </tr>
+                )
+              )
+        }
         </tbody>
       </Table>
     </Col>
