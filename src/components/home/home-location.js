@@ -37,4 +37,8 @@ class HomeLocation extends React.Component {
   }
 }
 
+HomeLocation.PropTypes = {
+  // tbd
+}
+
 export default HomeLocation

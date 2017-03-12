@@ -7,17 +7,7 @@ import { change } from '../../state/home-filters'
 
 moment.locale('pl')
 
-export default connect(
-  state => ({
-    events: state.home.data,
-    step: state.homeFilters.step,
-    start: state.homeFilters.start
-  }),
-  dispatch => ({
-    change: (value) => dispatch(change(value))
-  })
-)(
-  ({events, step, start, change}) => {
+const HomeEvents = ({events, step, start, change}) => {
   return (
     <div className="home-table">
 
@@ -39,47 +29,64 @@ export default connect(
           </Button>
         </ButtonToolbar>
       </div>
-
-        {
-          events ?
-            events.slice().filter(
-              event =>
-              moment(event.start) >= moment()
-            ).sort(
-              (prevEvent, nextEvent) =>
-              moment(prevEvent.start) - moment(nextEvent.start)
-            ).slice(
-              start, start + step
-            ).map(
-              event => (
-                <Panel
-                  bsStyle="success"
-                  defaultExpanded
-                  collapsible
-                  key={event.id}
-                  header={event.title}
+      {
+        events ?
+          events.slice().filter(
+            event =>
+            moment(event.start) >= moment()
+          ).sort(
+            (prevEvent, nextEvent) =>
+            moment(prevEvent.start) - moment(nextEvent.start)
+          ).slice(
+            start, start + step
+          ).map(
+            event => (
+              <Panel
+                bsStyle="success"
+                defaultExpanded
+                collapsible
+                key={event.id}
+                header={event.title}
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
+                }}>
+                {moment(event.start).format('dddd, D MMMM, H:mm')}
+                <ListGroupItem
                   style={{
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis'
                   }}>
-                  {moment(event.start).format('dddd, D MMMM, H:mm')}
-                  <ListGroupItem
-                    style={{
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-                  }}>
-                    {event.desc}
-                  </ListGroupItem>
-                  <ListGroupItem>
-                    Lokalizacja: {event.dist}
-                  </ListGroupItem>
-                </Panel>
-              )
-            ): null
-        }
+                  {event.desc}
+                </ListGroupItem>
+                <ListGroupItem>
+                  Lokalizacja: {event.dist}
+                </ListGroupItem>
+              </Panel>
+            )
+          ): null
+      }
     </div>
   )
- }
-)
+}
+
+HomeEvents.PropTypes = {
+  events: React.PropTypes.array.isRequired,
+  step: React.PropTypes.number.isRequired,
+  start: React.PropTypes.number.isRequired,
+  change: React.PropTypes.func.isRequired
+}
+
+export default connect(
+  state => ({
+    events: state.home.data,
+    step: state.homeFilters.step,
+    start: state.homeFilters.start
+  }),
+  dispatch => ({
+    change: (value) => dispatch(change(value))
+  })
+)(HomeEvents)
+
