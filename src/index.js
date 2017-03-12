@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './components/movies/movies-style.css'
+import 'react-input-range/lib/css/index.css'
 
 import Nav from './components/navigation'
 import HomeView from './components/home/home-view'

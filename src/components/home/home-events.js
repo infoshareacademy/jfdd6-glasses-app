@@ -20,18 +20,26 @@ export default connect(
   ({events, step, start, change}) => {
   return (
     <div className="home-table">
-      <br />
+
       <div style={{
         display: 'flex',
         justifyContent: 'center'
       }}
       >
-        <ButtonToolbar>
-          <Button onClick={() => change(-1)}>Poprzednie Projekcje</Button>
-          <Button onClick={() => change(1)}>Następne Projekcje</Button>
+        <ButtonToolbar style={{
+          paddingBottom: 9
+        }}>
+          <Button
+            bsSize="small"
+            onClick={() => change(-1)}>Poprzednie Projekcje
+          </Button>
+          <Button
+            bsSize="small"
+            onClick={() => change(1)}>Następne Projekcje
+          </Button>
         </ButtonToolbar>
       </div>
-      <br />
+
         {
           events ?
             events.slice().filter(
@@ -54,17 +62,19 @@ export default connect(
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis'
-                  }}
-                >
+                  }}>
                   {moment(event.start).format('dddd, D MMMM, H:mm')}
                   <ListGroupItem
                     style={{
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis'
-                  }}
-
-                  >{event.desc}</ListGroupItem>
+                  }}>
+                    {event.desc}
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    Lokalizacja: {event.dist}
+                  </ListGroupItem>
                 </Panel>
               )
             ): null

@@ -9,7 +9,7 @@ moment.locale('pl')
 const HomeCalendar = ({calendarEvents}) => {
 
   return (
-  <div style={{height: 550}}>
+  <div style={{height: 600}}>
     <BigCalendar
       events={calendarEvents ?
         calendarEvents.map(
