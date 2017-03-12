@@ -1,17 +1,14 @@
 import React from 'react'
 import {Grid} from 'react-bootstrap'
-import { connect} from 'react-redux'
-//import users from '../../data/users.json'
-
-
+import {connect} from 'react-redux'
 
 class UserProfile extends React.Component {
-
   render() {
-
     const {id, users} = this.props;
-    const filteredUser = users.data.filter(user => user.id === parseInt(id, 10));
-
+    if (users.data === null) {
+      return <p>Waiting for user data…</p>
+    }
+    const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
       <Grid>
         <h3>User:</h3>
@@ -37,6 +34,6 @@ class UserProfile extends React.Component {
 
 export default connect(
   state => ({
-    users: state.user //wyciągam ze stanu aplikacji listę
+    users: state.user
   })
 )(UserProfile)

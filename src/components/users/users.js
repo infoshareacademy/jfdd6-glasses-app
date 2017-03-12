@@ -5,10 +5,8 @@ import {Link} from 'react-router'
 
 class AllUsers extends React.Component {
   render() {
-
     const {users} = this.props;
     return (
-
       <Grid>
         <h1>Wszyscy użytkownicy</h1>
         <Table striped bordered>
