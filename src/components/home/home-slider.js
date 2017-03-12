@@ -20,7 +20,6 @@ class HomeSlider extends React.Component {
           value={this.state.value}
           formatLabel={(value) => `${value} m`}
           onChange={(value) => this.setState({value})}
-          onChangeComplete={console.log('asdf')}
         />
         <br />
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
+import { FormGroup, FormControl } from 'react-bootstrap'
 
 class HomeLocation extends React.Component {
   constructor(props){
@@ -11,7 +11,6 @@ class HomeLocation extends React.Component {
   }
 
   getValidationState() {
-    const length = this.state.value.length
     // to be discussed
   }
 

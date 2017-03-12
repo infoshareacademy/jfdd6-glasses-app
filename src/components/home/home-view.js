@@ -40,9 +40,14 @@ class HomeView extends React.Component {
   }
 }
 
+HomeView.propTypes = {
+  fetchData: React.PropTypes.func.isRequired,
+}
+
 export default connect(
   state => ({}),
   dispatch => ({
     fetchData: () => dispatch(fetchData())
   })
 )(HomeView)
+
