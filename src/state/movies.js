@@ -16,7 +16,7 @@ export const fetchData = (filePath) => dispatch => {
         ).catch(
           error => dispatch({
             type: 'movies/FETCH__FAIL',
-            error: 'Malformed JSON response'
+            error: 'Malformed ' + file + ' response'
           })
         )
       }
@@ -68,7 +68,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         fetching: false,
-        error: action.error
+        error: state.error ? state.error + ', ' + action.error : action.error
       }
     case 'movies/tags/CUSTOM':
       return {
