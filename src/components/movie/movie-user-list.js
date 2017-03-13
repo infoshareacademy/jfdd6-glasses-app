@@ -2,37 +2,35 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
 
-const UserList = ({id, userImport}) => {
-  console.log(id);
-  const b = id;
-  console.log(b);
-  const abc = userImport.filter(user => user.movies.includes(+b) ? user.movies : "");
+class UserList extends React.Component {
 
-  console.log(abc);
-  console.log(userImport);
-  return (
-    <tr>
-      {
-        userImport.filter(
-          user => user.movies.includes(+id),
-        ).map(
-          user => (
-            <td key={user.id}>
-              <Link to={'/user/' + user.id}>
-                <img src={user.avatar} alt=""/>
-              </Link>
-            </td>
-          )
-        )
-      }
+  render() {
+    const {user, id} = this.props;
 
-    </tr>
-  );
-
+    return (
+      <tr>
+        {
+          user.data ? user.data.filter(
+              user => user.movies.includes(+id),
+            ).map(
+              user => (
+                <td key={user.id}>
+                  <Link to={'/user/' + user.id}>
+                    <img src={user.avatar} alt={user.first_name + ' avatar'} title={user.first_name}/>
+                  </Link>
+                </td>
+              )
+            ) :
+            <td> brak danych</td>
+        }
+      </tr>
+    );
+  }
 }
 
 export default connect(
   state => ({
-    userImport: state.user.userData
+    user: state.user
   })
 )(UserList)
+
