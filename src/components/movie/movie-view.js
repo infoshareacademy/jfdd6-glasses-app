@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
-import MovieSearch from './movie-search'
+// import MovieSearch from './movie-search'
 import MovieCarousel from './movie-carousel'
 import MovieDescription from './movie-description'
 import MovieTitle from './movie-title'
@@ -22,16 +22,11 @@ class MovieView extends React.Component {
 
     return (
       <Grid>
-        <Row className="show-grid">
-          <Col xs={12} md={12}>
-            <MovieSearch/>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} md={12}>
-            <h2>Tytuł filmu: </h2>
-          </Col>
-        </Row>
+        {/*<Row className="show-grid">*/}
+          {/*<Col xs={12} md={12}>*/}
+            {/*<MovieSearch/>*/}
+          {/*</Col>*/}
+        {/*</Row>*/}
         <Row className="show-grid">
           <Col xs={12} md={6}>
             <MovieCarousel />
@@ -51,10 +46,10 @@ class MovieView extends React.Component {
             </table>
           </Col>
         </Row>
-        <Row className="show-grid">
-          <Col xs={12} md={12}>
-            <h2>Footer</h2>
-          </Col></Row>
+        {/*<Row className="show-grid">*/}
+          {/*<Col xs={12} md={12}>*/}
+            {/*<h2>Footer</h2>*/}
+          {/*</Col></Row>*/}
       </Grid>
     )
   }
