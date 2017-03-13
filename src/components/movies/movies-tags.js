@@ -8,25 +8,30 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
     <Col xs={10} xsOffset={1}>
       <Row>
         <Col className="movies-tags movies-border">
-          {tags.map((tag) => (
-            customTags.indexOf(tag.id) === -1
-            ? <Button
-                key={tag.id}
-                value={tag.id}
-                bsSize="small"
-                className="movies-tag-button"
-                onClick={() => sendTag(tag.id)}
-              >{tag.id} {tag.name}</Button>
-            : <Button
-                key={tag.id}
-                value={tag.id}
-                bsStyle="success"
-                bsSize="small"
-                className="movies-tag-button"
-                onClick={() => removeTag(tag.id)}
-              >{tag.id} {tag.name}</Button>
-            )
-          )}
+          {
+            tags.length === 0
+              ? <p>Ładowanie&hellip;</p>
+              :
+              tags.map((tag) => (
+                  customTags.indexOf(tag.id) === -1
+                    ? <Button
+                      key={tag.id}
+                      value={tag.id}
+                      bsSize="small"
+                      className="movies-tag-button"
+                      onClick={() => sendTag(tag.id)}
+                    >{tag.id} {tag.name}</Button>
+                    : <Button
+                      key={tag.id}
+                      value={tag.id}
+                      bsStyle="success"
+                      bsSize="small"
+                      className="movies-tag-button"
+                      onClick={() => removeTag(tag.id)}
+                    >{tag.id} {tag.name}</Button>
+                )
+              )
+          }
           <Button
             bsStyle="warning"
             className="movies-tag-button"
