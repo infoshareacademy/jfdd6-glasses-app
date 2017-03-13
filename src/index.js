@@ -17,6 +17,7 @@ import MoviesView from './components/movies/movies-view'
 import UserView from './components/user/user-view'
 import UsersView from './components/users/users-view'
 import EventView from './components/event/event-view'
+import TestsView from './components/tests/tests-view'
 
 ReactDOM.render(
   (
@@ -29,7 +30,8 @@ ReactDOM.render(
           <Route path="user/:userId" component={UserView}/>
           <Route path="users" component={UsersView}/>
           <Route path="event" component={EventView}/>
-        </Route>
+          <Route path="tests" component={TestsView} />
+         </Route>
       </Router>
     </Provider>
   ),
