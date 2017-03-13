@@ -7,9 +7,8 @@ BigCalendar.momentLocalizer(moment)
 moment.locale('pl')
 
 const HomeCalendar = ({calendarEvents}) => {
-
   return (
-  <div style={{height: 550}}>
+  <div style={{height: 600}}>
     <BigCalendar
       events={calendarEvents ?
         calendarEvents.map(
@@ -23,6 +22,17 @@ const HomeCalendar = ({calendarEvents}) => {
     />
   </div>
   )}
+
+HomeCalendar.propTypes = {
+  calendarEvents: React.PropTypes.arrayOf(React.PropTypes.shape({
+    id: React.PropTypes.number.isRequired,
+    title: React.PropTypes.string.isRequired,
+    start: React.PropTypes.string.isRequired,
+    end: React.PropTypes.string.isRequired,
+    desc: React.PropTypes.string,
+    dist: React.PropTypes.number.isRequired
+  }))
+}
 
 export default connect (
   state => ({

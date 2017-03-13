@@ -1,14 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
-import { Col, Grid, Row } from 'react-bootstrap'
+import {Col, Grid, Row} from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
-/*import HomePostal from './home-postal'
-import HomeSlider from './home-slider'*/
-import HomeUpcomingEvents from './home-upcoming-events'
+import HomeLocation from './home-location'
+import HomeSlider from './home-slider'
+import HomeUpcomingEvents from './home-events'
 
-import { fetchData } from '../../state/home'
+import {fetchData} from '../../state/home'
 
 class HomeView extends React.Component {
 
@@ -16,16 +16,16 @@ class HomeView extends React.Component {
     this.props.fetchData()
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Grid>
         <Row>
- {/*         <Col xs={12} md={8}>
+          <Col xs={12} md={4}>
+            <HomeLocation/>
+          </Col>
+          <Col xs={12} md={8}>
             <HomeSlider />
           </Col>
-          <Col xs={12} md={4}>
-            <HomePostal/>
-          </Col>*/}
         </Row>
         <Row>
           <Col xs={12} md={8}>
@@ -40,10 +40,14 @@ class HomeView extends React.Component {
   }
 }
 
+HomeView.propTypes = {
+  fetchData: React.PropTypes.func.isRequired,
+}
+
 export default connect(
-  state => ({
-  }),
+  state => ({}),
   dispatch => ({
     fetchData: () => dispatch(fetchData())
   })
 )(HomeView)
+
