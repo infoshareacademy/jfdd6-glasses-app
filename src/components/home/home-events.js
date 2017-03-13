@@ -8,8 +8,6 @@ import { change } from '../../state/home-filters'
 moment.locale('pl')
 
 const HomeEvents = ({ events, step, start, change, range }) => {
-  console.log(typeof range)
-  // console.log(events[0].dist)
   return (
     <div className="home-table">
 
@@ -35,7 +33,8 @@ const HomeEvents = ({ events, step, start, change, range }) => {
         events ?
           events.slice().filter(
             event =>
-              moment(event.start) >= moment()
+              moment(event.start) >= moment() &&
+              event.dist < range
           ).sort(
             (prevEvent, nextEvent) =>
             moment(prevEvent.start) - moment(nextEvent.start)
@@ -78,7 +77,7 @@ HomeEvents.PropTypes = {
   events: React.PropTypes.array.isRequired,
   step: React.PropTypes.number.isRequired,
   start: React.PropTypes.number.isRequired,
-  change: React.PropTypes.func.isRequired,
+  change: React.PropTypes.func.isRequired
 }
 
 export default connect(
@@ -86,7 +85,7 @@ export default connect(
     events: state.home.data,
     step: state.homeFilters.step,
     start: state.homeFilters.start,
-    range: state.range.value,
+    range: state.range.value
   }),
   dispatch => ({
     change: (value) => dispatch(change(value))
