@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-class MovieDescription extends React.Component {
-
+class MovieTitle extends React.Component {
 
   render() {
     const { id, movie } = this.props;
@@ -10,12 +9,12 @@ class MovieDescription extends React.Component {
       <div>
         {
           movie.data? movie.data.filter(
-        movie => movie.id === parseInt(id, 10)
-        ).map(
-        movie => (
-        <p key={movie.id}>{movie.description}</p>
-        )
-        ) : <p>brak danych</p>
+              movie => movie.id === parseInt(id, 10)
+            ).map(
+              movie => (
+                <h2 key={movie.id}>{movie.name}</h2>
+              )
+            ) : <p>brak danych</p>
         }
       </div>
 
@@ -27,4 +26,4 @@ export default connect(
   state => ({
     movie: state.movie
   })
-)(MovieDescription)
+)(MovieTitle)

@@ -9,7 +9,8 @@ export const change = (value) => ({
 
 // INITIAL VALUE
 const initialState = {
-  eventsLimit: 5
+  start: 0,
+  step: 3,
 }
 
 // REDUCER
@@ -18,10 +19,11 @@ export default (state = initialState, action = {}) => {
     case CHANGE:
       return {
         ...state,
-        eventsLimit: state.eventsLimit + action.value
+        start: state.start + action.value * state.step < 0 ?
+          initialState.start :
+          state.start + action.value * state.step
       }
     default:
       return state
   }
 }
-

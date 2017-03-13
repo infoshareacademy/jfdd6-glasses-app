@@ -26,6 +26,6 @@ const MovieCarousel = () => (
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-)
+);
 
 export default MovieCarousel
