@@ -1,5 +1,5 @@
 const initialState = {
-  value: 500
+  value: 3000
 }
 
 export default (state = initialState, action = {}) => {
