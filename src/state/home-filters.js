@@ -10,7 +10,7 @@ export const change = (value) => ({
 // INITIAL VALUE
 const initialState = {
   start: 0,
-  step: 3
+  step: 3,
 }
 
 // REDUCER

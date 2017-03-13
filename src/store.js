@@ -6,7 +6,7 @@ import movieReducer from './state/movie'
 import userReducer from './state/user'
 import homeReducer from './state/home'
 import homeFiltersReducer from './state/home-filters'
-import testsReducer from './state/tests'
+import rangeReducer from './state/range'
 
 const reducer = combineReducers({
   movies: moviesReducer,
@@ -14,7 +14,7 @@ const reducer = combineReducers({
   movie: movieReducer,
   home: homeReducer,
   homeFilters: homeFiltersReducer,
-  tests: testsReducer
+  range: rangeReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
