@@ -3,27 +3,36 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { Row, Col, Table } from 'react-bootstrap'
 
-const MovieList = ({ movies, customTags, query }) => (
+const MovieList = ({ movies, customTags }) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list">
         <tbody>
-        {movies
-          .filter(movie =>
-            customTags.every(tag =>
-              movie.tags.indexOf(tag) !== -1
-            )
-          )
-          .map(movie => (
-          <tr key={movie.id}>
-            <td><img src={movie.poster} alt={movie.name}/></td>
-            <td>
-              <Link to={'/movie/' + movie.id}>
-              {movie.name}
-              </Link>
-              </td>
-          </tr>
-        ))}
+        {
+          movies.length === 0
+            ?
+            <tr>
+              <td>Ładowanie&hellip;</td>
+            </tr>
+            :
+            movies
+              .filter(movie =>
+                customTags.every(tag =>
+                  movie.tags.indexOf(tag) !== -1
+                )
+              )
+              .map(movie => (
+                  <tr key={movie.id}>
+                    <td><img src={movie.poster} alt={movie.name}/></td>
+                    <td>
+                      <Link to={'/movie/' + movie.id}>
+                        {movie.name}
+                      </Link>
+                    </td>
+                  </tr>
+                )
+              )
+        }
         </tbody>
       </Table>
     </Col>
@@ -33,8 +42,7 @@ const MovieList = ({ movies, customTags, query }) => (
 export default connect(
   state => ({
     movies: state.movies.moviesData,
-    customTags: state.movies.customTags,
-    query: state.movies.query
+    customTags: state.movies.customTags
   })
 )(MovieList)
 
