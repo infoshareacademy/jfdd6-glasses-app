@@ -1,73 +1,59 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Table } from 'react-bootstrap'
+import { Table, Button, ButtonGroup } from 'react-bootstrap'
+import moment from 'moment'
 
-const HomeUpcomingEvents = ({events}) => {
-  const limit = 8
+import { change } from '../../state/home-filters'
 
-  const eventsImproved = events.slice().sort(
-    (prevEvent, nextEvent) =>(
-      new Date(nextEvent.start) - new Date(prevEvent.start)
-    )).slice(0, limit).map(
-    event => ({
-      ...event,
-      startYear: new Date(event.start).getFullYear(),
-      startMonth:
-        (new Date(event.start).getMonth()) >= 10 ?
-          new Date(event.start).getMonth() :
-            '0' + new Date(event.start).getMonth(),
-      startDay:
-        (new Date(event.start).getDate()) >= 10 ?
-          new Date(event.start).getDate() :
-            '0' + new Date(event.start).getDate(),
+moment.locale('pl')
 
-      startHour:
-        (new Date(event.start).getHours()) >= 10 ?
-          new Date(event.start).getHours() :
-            '0' + new Date(event.start).getHours(),
-
-      startMinute:
-        (new Date(event.start).getMinutes()) >=10 ?
-          new Date(event.start).getMinutes() :
-            '0' + new Date(event.start).getMinutes()
-    })
-  )
-
+const UpcomingEvents = ({events, eventsLimit, change}) => {
   return (
   <div>
-    <h2>Wydarzenia</h2>
-    <Table striped responsive>
+    <br />
+    <ButtonGroup>
+      <Button onClick={() => change(1)}>Więcej</Button>
+      <Button onClick={() => change(-1)}>Mniej</Button>
+    </ButtonGroup>
+    <br /><br />
+    <Table striped hover bordered responsive>
       <thead>
         <tr>
-          <th>Nazwa wydarzenia</th>
+          <th>Projekcja filmu</th>
           <th>Początek projekcji</th>
         </tr>
       </thead>
         <tbody>
         {
-          eventsImproved.map(
+          events ?
+          events.slice().filter(
+            event =>
+              moment(event.start) >= moment()
+          ).sort(
+            (prevEvent, nextEvent) =>
+              moment(prevEvent.start) - moment(nextEvent.start)
+          ).slice(
+            0, eventsLimit + 1
+          ).map(
             event => (
-            <tr key={event.id}>
-              <td>{event.title}</td>
-              <td>
-                {event.startYear + '-'}
-                {event.startMonth + '-'}
-                {event.startDay + ' '}
-                {event.startHour + ':'}
-                {event.startMinute}
-              </td>
-            </tr>
+              <tr key={event.id}>
+                <td>{event.title}</td>
+                <td>{moment(event.start).format('dddd, D MMMM, H:mm')}</td>
+              </tr>
             )
-          )
+          ): null
         }
         </tbody>
     </Table>
   </div>
 )}
 
-
 export default connect(
   state => ({
-    events: state.events.eventsData
+    events: state.home.data,
+    eventsLimit: state.homeFilters.eventsLimit
+  }),
+  dispatch => ({
+    change: (value) => dispatch(change(value))
   })
-)(HomeUpcomingEvents)
+)(UpcomingEvents)
