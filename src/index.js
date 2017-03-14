@@ -19,6 +19,7 @@ import UsersView from './components/users/users-view'
 import EventView from './components/event/event-view'
 import LoginView from './components/login/login-view'
 
+import './components/styles/styles-all.css'
 
 ReactDOM.render(
   (
