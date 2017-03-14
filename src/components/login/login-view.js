@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Grid, Row, Col, Image} from 'react-bootstrap'
+import {Grid, Row, Col, Image, Button} from 'react-bootstrap'
 import FieldGroup from './forms'
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,11 +17,12 @@ class LoginView extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col xs={12} sm={6}>
+              <p className="welcome">Witaj sąsiedzie!</p>
               <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive />
             </Col>
             <Col xs={12} sm={6}>
 
-              <form>
+              <form className="form-background">
                 <FieldGroup
                   id="formControlsText"
                   type="text"
@@ -35,6 +36,10 @@ class LoginView extends React.Component {
                   label="Twoje hasło:"
                   placeholder="Hasło"
                 />
+
+                <Button type="submit">
+                  Zaloguj
+                </Button>
 
               </form>
 
