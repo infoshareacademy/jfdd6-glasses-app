@@ -8,7 +8,7 @@ const App = (props) => (
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to="/home">
+          <Link to="/">
             Strona główna
           </Link>
         </Navbar.Brand>
