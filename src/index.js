@@ -10,7 +10,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './components/movies/movies-style.css'
 import 'react-input-range/lib/css/index.css'
 
-import Nav from './components/navigation'
+import Nav from './components/app'
 import HomeView from './components/home/home-view'
 import MovieView from './components/movie/movie-view'
 import MoviesView from './components/movies/movies-view'

@@ -73,16 +73,8 @@ const HomeEvents = ({ events, step, start, change, range }) => {
   )
 }
 
-HomeEvents.PropTypes = {
-  events: React.PropTypes.array.isRequired,
-  step: React.PropTypes.number.isRequired,
-  start: React.PropTypes.number.isRequired,
-  change: React.PropTypes.func.isRequired
-}
-
 export default connect(
   state => ({
-    events: state.home.data,
     step: state.homeFilters.step,
     start: state.homeFilters.start,
     range: state.range.value
@@ -92,3 +84,9 @@ export default connect(
   })
 )(HomeEvents)
 
+HomeEvents.PropTypes = {
+  events: React.PropTypes.array.isRequired,
+  step: React.PropTypes.number.isRequired,
+  start: React.PropTypes.number.isRequired,
+  change: React.PropTypes.func.isRequired
+}
