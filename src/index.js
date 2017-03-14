@@ -10,7 +10,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './components/movies/movies-style.css'
 import 'react-input-range/lib/css/index.css'
 
-import Nav from './components/app'
+import App from './components/app'
 import HomeView from './components/home/home-view'
 import MovieView from './components/movie/movie-view'
 import MoviesView from './components/movies/movies-view'
@@ -23,7 +23,7 @@ ReactDOM.render(
   (
     <Provider store={store}>
       <Router history={browserHistory}>
-        <Route path="/" component={Nav}>
+        <Route path="/" component={App}>
           <IndexRoute path="home" component={HomeView}/>
           <Route path="movie/:movieId" component={MovieView}/>
           <Route path="movies" component={MoviesView}/>

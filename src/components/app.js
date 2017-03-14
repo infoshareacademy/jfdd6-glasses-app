@@ -8,33 +8,34 @@ const App = (props) => (
     <Navbar>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to="/">
-            Strona główna
-          </Link>
+          LOGO
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
+          <LinkContainer to="/">
+            <NavItem eventKey={1}>Wydarzenia</NavItem>
+          </LinkContainer>
           <LinkContainer to="/movie/1">
-            <NavItem eventKey={1}>Film</NavItem>
+            <NavItem eventKey={2}>Film</NavItem>
           </LinkContainer>
           <LinkContainer to="/movies">
-            <NavItem eventKey={2}>Lista filmów</NavItem>
+            <NavItem eventKey={3}>Lista filmów</NavItem>
           </LinkContainer>
           <LinkContainer to="/user/3">
-            <NavItem eventKey={3}>Sąsiad</NavItem>
+            <NavItem eventKey={4}>Sąsiad</NavItem>
           </LinkContainer>
           <LinkContainer to="/users">
-            <NavItem eventKey={4}>Lista sąsiadów</NavItem>
+            <NavItem eventKey={5}>Lista sąsiadów</NavItem>
           </LinkContainer>
           <LinkContainer to="/event">
-            <NavItem eventKey={5}>Wydarzenie</NavItem>
+            <NavItem eventKey={6}>Wydarzenie</NavItem>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    {props.children}
+  {props.children}
   </div>
 )
 
