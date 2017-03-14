@@ -15,10 +15,15 @@ class LoginView extends React.Component {
     return (
       <div className="log-in-background">
         <Grid>
-          <Row className="show-grid">
-            <Col xs={12} sm={6}>
+          <Row className="show-grid login-container">
+            <Col xs={12} sm={6} className="black-background">
               <p className="welcome">Witaj sąsiedzie!</p>
-              <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive />
+              <p>
+                Połącz się ze swoimi znajomymi – i innymi ciekawymi ludźmi.
+                Otrzymuj natychmiastowe aktualizacje na tematy, które Cię interesują.
+                Obserwuj rozwój wydarzeń w czasie rzeczywistym, z każdej strony.
+              </p>
+              <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive/>
             </Col>
             <Col xs={12} sm={6}>
 

@@ -13,6 +13,9 @@ body {
   margin-top: -20px;
   height: 70vh; }
 
+.login-container {
+  margin-top: 50px; }
+
 .logo {
   max-height: 150px;
   width: auto; }
@@ -21,12 +24,19 @@ body {
   background-color: white;
   border-radius: 5px;
   padding: 15px;
-  margin: 30px 0;
   max-width: 400px; }
+
+.black-background {
+  background-color: rgba(33, 33, 33, 0.7);
+  padding: 30px; }
 
 .welcome {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
+  color: white; }
+
+.welcome ~ p {
+  font-size: 1.3rem;
   color: white; }
 
 /*# sourceMappingURL=styles-all.css.map */
