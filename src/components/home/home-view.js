@@ -9,7 +9,7 @@ import HomeLocation from './home-location'
 import HomeSlider from './home-slider'
 import HomeEvents from './home-events'
 
-import { fetchData } from '../../state/home'
+import { fetchData } from '../../state/home-fetch'
 
 class HomeView extends React.Component {
 
@@ -54,8 +54,8 @@ class HomeView extends React.Component {
 
 export default connect(
   state => ({
-    events: state.home.data,
-    range: state.range.value
+    events: state.homeFetch.data,
+    range: state.homeFilters.value
   }),
   dispatch => ({
     fetchData: () => dispatch(fetchData())
