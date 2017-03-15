@@ -41,18 +41,19 @@ const App = (props) => (
                   </LinkContainer>
                 </NavDropdown>
               </Nav>
-
               <Nav pullRight>
-
-                <NavDropdown eventKey={4} id="dropdown2" title="Użytkownik">
-                  <LinkContainer to="/user/3">
-                    <NavItem eventKey={4.1}>Moje Konto</NavItem>
-                  </LinkContainer>
-                  <LinkContainer to="/">
-                    <NavItem eventKey={4.2}>Wyloguj</NavItem>
-                  </LinkContainer>
-                </NavDropdown>
+              <NavDropdown  eventKey={4} id="dropdown2" title="Użytkownik">
+                <LinkContainer to="/user/3">
+                  <NavItem eventKey={4.1}>Moje Konto</NavItem>
+                </LinkContainer>
+                <LinkContainer to="/">
+                  <NavItem eventKey={4.2}>Wyloguj</NavItem>
+                </LinkContainer>
+              </NavDropdown>
               </Nav>
+              <Navbar.Text pullRight>
+                Zalogowany jako:
+              </Navbar.Text>
             </Navbar.Collapse>
           </Navbar>
           {props.children}
