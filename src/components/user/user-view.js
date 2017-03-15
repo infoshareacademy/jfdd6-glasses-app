@@ -28,8 +28,7 @@ class UserView extends React.Component {
 }
   export default connect(
   state => ({
-  // users: state.users,
-  // movie: state.movie
+
 }),
 dispatch => ({
   fetchMovie: () => dispatch(fetchMovie()),
