@@ -1,15 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import moment from 'moment'
 
-import {Col, Grid, Row} from 'react-bootstrap'
+import { Col, Grid, Row } from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
 import HomeLocation from './home-location'
 import HomeSlider from './home-slider'
 import HomeEvents from './home-events'
 
-import {fetchData} from '../../state/home'
+import { fetchData } from '../../state/home'
 
 class HomeView extends React.Component {
 
