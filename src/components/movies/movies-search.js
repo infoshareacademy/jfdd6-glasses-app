@@ -13,7 +13,7 @@ const QueryButton = ({ query, movies, activateQuery }) => (
 
 export default connect(
   state => ({
-    query: state.movies.query,
+    query: state.moviesFilters.query,
     movies: state.movies.moviesData
   }),
   dispatch => ({

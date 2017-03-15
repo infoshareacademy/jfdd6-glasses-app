@@ -48,9 +48,9 @@ const MovieList = ({movies, customTags, query, queryTag}) => (
 export default connect(
   state => ({
     movies: state.movies.moviesData,
-    customTags: state.movies.customTags,
-    query: state.movies.query,
-    queryTag: state.movies.queryTag
+    customTags: state.moviesFilters.customTags,
+    query: state.moviesFilters.query,
+    queryTag: state.moviesFilters.queryTag
   })
 )(MovieList)
 
