@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { Row, Col, Table } from 'react-bootstrap'
 
-const MovieList = ({ movies, customTags, query }) => (
+const MovieList = ({movies, customTags, query, queryTag}) => (
   <Row>
     <Col xs={10} xsOffset={1}>
       <Table bordered striped className="movies-list">
@@ -18,6 +18,9 @@ const MovieList = ({ movies, customTags, query }) => (
             movies
               .filter(movie =>
                 movie.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+              )
+              .filter(movie =>
+                queryTag > 0 ? movie.tags.indexOf(queryTag) !== -1 : true
               )
               .filter(movie =>
                 customTags.every(tag =>
@@ -46,7 +49,8 @@ export default connect(
   state => ({
     movies: state.movies.moviesData,
     customTags: state.movies.customTags,
-    query: state.movies.query
+    query: state.movies.query,
+    queryTag: state.movies.queryTag
   })
 )(MovieList)
 

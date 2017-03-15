@@ -34,11 +34,11 @@ const initialState = {
   fetching: false,
   error: null,
   moviesData: [],
-  moviesFetch: [],
   tagsList: [],
   customTags: [],
   staticQuery: '',
-  query: ''
+  query: '',
+  queryTag: 0
 }
 
 const reducer = (state = initialState, action = {}) => {
@@ -54,8 +54,7 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           fetching: false,
-          moviesData: action.data.sort((a, b) => a.name.localeCompare(b.name)),
-          moviesFetch: action.data.sort((a, b) => a.name.localeCompare(b.name))
+          moviesData: action.data.sort((a, b) => a.name.localeCompare(b.name))
         }
       } else if (action.file === 'tags.json') {
         return {
@@ -90,7 +89,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         staticQuery: action.value,
-        query: initialState.query
+        query: initialState.query,
+        queryTag: initialState.queryTag
       }
     case 'movies/search/EXECUTE':
       return {
@@ -100,8 +100,8 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/search/EXECUTE_HINT':
       return {
         ...state,
-        moviesData: action.moviesList,
-        query: action.tagName
+        staticQuery: action.tagName,
+        queryTag: action.tagId
       }
     default:
       return state
