@@ -10,9 +10,6 @@ import '../../styles/styles-all.css'
 class LoginView extends React.Component {
   componentWillMount() {
   }
-
-  //zrobić state
-
   render() {
     return (
       <div className="log-in-background">
@@ -25,7 +22,7 @@ class LoginView extends React.Component {
                 Otrzymuj natychmiastowe aktualizacje na tematy, które Cię interesują.
                 Obserwuj rozwój wydarzeń w czasie rzeczywistym, z każdej strony.
               </p>
-              <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive/>
+              <Image src={require("../../img/logo.png")} alt="Logo Klatka" className="logo" responsive/>
             </Col>
             <Col xs={12} sm={6}>
 
