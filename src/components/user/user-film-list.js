@@ -1,7 +1,8 @@
 import React from 'react'
-import {Grid, Table} from 'react-bootstrap'
+import {Table} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import './user-styles.css';
 
 
 class UserFilmList extends React.Component {
@@ -16,14 +17,9 @@ class UserFilmList extends React.Component {
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10))
 
     return (
-      <Grid>
-        <h3>Lista filmów użytkownika: {filteredUser.login}</h3>
+      <div>
+        <h3>Filmy użytkownika <span className="name"> {filteredUser.login}</span></h3>
         <Table striped>
-          <thead>
-          <tr>
-            <th>Jakie ma filmy</th>
-          </tr>
-          </thead>
           <tbody>
           {
             moviesList.data ? moviesList.data.filter(
@@ -38,7 +34,7 @@ class UserFilmList extends React.Component {
           }
           </tbody>
         </Table>
-      </Grid>
+      </div>
     )
   }
 }
