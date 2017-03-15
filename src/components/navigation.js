@@ -28,7 +28,7 @@ const App = (props) => (
           <LinkContainer to="/users">
             <NavItem eventKey={4}>Lista sąsiadów</NavItem>
           </LinkContainer>
-          <LinkContainer to="/event">
+          <LinkContainer to="/event/2">
             <NavItem eventKey={5}>Wydarzenie</NavItem>
           </LinkContainer>
         </Nav>
