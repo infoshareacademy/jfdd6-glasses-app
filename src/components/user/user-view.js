@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
 
-import {Grid, Row, Col, Image, Button} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 class UserView extends React.Component {
   componentWillMount() {
@@ -22,8 +22,8 @@ class UserView extends React.Component {
 
       <Grid>
         <Row className="row">
-          <Col xs={12} sm={6}><UserProfile id={userId}/></Col>
           <Col xs={12} sm={6}><UserFilmList id={userId}/></Col>
+          <Col xs={12} sm={6}><UserProfile id={userId}/></Col>
         </Row>
       </Grid>
     )
