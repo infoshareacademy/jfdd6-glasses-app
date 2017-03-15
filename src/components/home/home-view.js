@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import moment from 'moment'
 
 import {Col, Grid, Row} from 'react-bootstrap'
 
@@ -17,21 +18,16 @@ class HomeView extends React.Component {
   }
 
   render() {
-    const { events } = this.props
-    // Mapping events starts here.
-    // When finished pass event instead of events!
-    // const eventsFiltered = events ?
-    //   events.slice().filter(
-    //     event =>
-    //       moment( event.start ) >= moment() &&
-    //         event.dist < range
-    //   ).sort(
-    //     ( prev, next ) =>
-    //       moment( prev.start ) - moment( next.start ))
-    //     .slice(
-    //       start, start + step
-    //     ).map(
-    //       event => event) : null
+    const { events, range } = this.props
+
+    const eventsFiltered = events ?
+      events.slice().filter(
+        event =>
+          moment( event.start ) >= moment() &&
+            event.dist < range
+      ).sort(
+        ( prev, next ) =>
+          moment( prev.start ) - moment( next.start )) : null
 
     return (
       <Grid>
@@ -45,10 +41,10 @@ class HomeView extends React.Component {
         </Row>
         <Row>
           <Col xs={12} md={8}>
-            <HomeCalendar events={ events }/>
+            <HomeCalendar events={ eventsFiltered }/>
           </Col>
           <Col xs={12} md={4}>
-            <HomeEvents events={ events }/>
+            <HomeEvents events={ eventsFiltered }/>
           </Col>
         </Row>
       </Grid>
@@ -58,7 +54,8 @@ class HomeView extends React.Component {
 
 export default connect(
   state => ({
-    events: state.home.data
+    events: state.home.data,
+    range: state.range.value
   }),
   dispatch => ({
     fetchData: () => dispatch(fetchData())
