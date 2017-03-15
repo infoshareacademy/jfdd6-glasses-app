@@ -30,7 +30,8 @@ body {
 
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px; }
+  padding: 30px;
+min-height: 400px}
 
 .welcome {
   font-family: 'Anton', sans-serif;
