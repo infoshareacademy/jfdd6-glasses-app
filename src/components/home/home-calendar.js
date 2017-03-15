@@ -6,8 +6,9 @@ BigCalendar.momentLocalizer(moment)
 moment.locale('pl')
 
 const HomeCalendar = ({ events }) => {
+
   return (
-  <div style={{ height: 600 }}>
+  <div style={{ height: 635 }}>
     <BigCalendar
       events={ events ?
         events.map(
@@ -18,6 +19,7 @@ const HomeCalendar = ({ events }) => {
           })
         ) : []
       }
+      onSelectEvent={event => alert(event.title)}
     />
   </div>
   )}
