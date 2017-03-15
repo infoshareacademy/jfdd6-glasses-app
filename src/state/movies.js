@@ -37,6 +37,7 @@ const initialState = {
   moviesFetch: [],
   tagsList: [],
   customTags: [],
+  staticQuery: '',
   query: ''
 }
 
@@ -88,13 +89,13 @@ const reducer = (state = initialState, action = {}) => {
     case 'movies/search/QUERY':
       return {
         ...state,
-        query: action.value,
-        moviesData: state.moviesFetch
+        staticQuery: action.value,
+        query: initialState.query
       }
     case 'movies/search/EXECUTE':
       return {
         ...state,
-        moviesData: action.value
+        query: state.staticQuery
       }
     case 'movies/search/EXECUTE_HINT':
       return {

@@ -92,7 +92,7 @@ class SearchBar extends React.Component {
 
 export default connect(
   state => ({
-    fieldValue: state.movies.query,
+    fieldValue: state.movies.staticQuery,
     movies: state.movies.moviesData,
     tags: state.movies.tagsList
   }),
