@@ -10,7 +10,7 @@ body {
   background-color: #4d4d4d; }
 
 .log-in-background {
-  background: url(../img/login-background.jpg);
+  background: url(../components/img/login-background.jpg);
   background-size: cover;
   margin-top: -20px;
   height: 70vh; }

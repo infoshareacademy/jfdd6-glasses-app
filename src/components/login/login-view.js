@@ -5,11 +5,13 @@ import FieldGroup from './forms'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import '../styles/styles-all.css'
+import '../../styles/styles-all.css'
 
 class LoginView extends React.Component {
   componentWillMount() {
   }
+
+  //zrobić state
 
   render() {
     return (
