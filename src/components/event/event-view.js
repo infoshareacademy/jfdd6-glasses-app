@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
+import EventUserProfile from './event-user-profile'
 
 class EventView extends React.Component {
   componentWillMount() {
@@ -25,8 +26,8 @@ class EventView extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={12}>
-            <p>abc</p>
+          <Col xs={12} md={6}>
+            <EventUserProfile id="7" />
           </Col>
         </Row>
 
