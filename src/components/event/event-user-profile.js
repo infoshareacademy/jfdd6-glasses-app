@@ -13,7 +13,7 @@ class EventUserProfile extends React.Component {
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
 
-      <Grid className="profile-container">
+      <Grid className="profile-container-event">
         <h2>Seans organizuje:</h2>
         <Col xs={12} md={2}>
           <p>
