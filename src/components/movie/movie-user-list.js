@@ -16,7 +16,10 @@ class UserList extends React.Component {
               user => (
                 <td key={user.id}>
                   <Link to={'/user/' + user.id}>
-                    <img src={user.avatar} alt={user.first_name + ' avatar'} title={user.first_name}/>
+                    <img src={user.avatar}
+                         width="75px"
+                         alt={user.first_name + ' avatar'}
+                         title={user.first_name}/>
                   </Link>
                 </td>
               )
