@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button, ButtonToolbar, Panel, ListGroupItem } from 'react-bootstrap'
+import { Link } from 'react-router'
 import moment from 'moment'
 
 import { change } from '../../state/home-filters'
@@ -43,7 +44,8 @@ const HomeEvents = ({ events, start, change }) => {
                   start, start + step
                 ).map(
                   event => (
-                    <Panel
+                    <Link key={event.id} to={"/event/" + event.id}>
+                      <Panel
                       bsStyle="info"
                       defaultExpanded
                       key={event.id}
@@ -66,6 +68,7 @@ const HomeEvents = ({ events, start, change }) => {
                         Lokalizacja: {event.dist}
                       </ListGroupItem>
                     </Panel>
+                    </Link>
                   )
                 )
       }

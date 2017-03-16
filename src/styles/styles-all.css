@@ -41,4 +41,7 @@ body {
   font-size: 1.3rem;
   color: white; }
 
+div.home-table a {
+  text-decoration: none;
+}
 /*# sourceMappingURL=styles-all.css.map */
