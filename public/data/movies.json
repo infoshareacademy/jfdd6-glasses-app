@@ -58,11 +58,34 @@
     "tags":["dramat", "wojenny", "żołnierz", "", ""],
     "description":"Wizja wojny w Wietnamie i okrutnego procesu dehumanizacji człowieka, który sprawia, iż żołnierze zmieniają się w maszyny do zabijania. Bohaterowie filmu zostają wysłani na obóz wojskowy z piekła rodem, pod komendę pozbawionego ludzkich odruchów D.I"},
 
-{"id":13,"name":"Solarbreeze","description":"Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.","poster":"https://robohash.org/officiaesseet.jpg?size=100x100&set=set1","tags":[9,1,15]},
-{"id":14,"name":"Sonair","description":"Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.","poster":"https://robohash.org/aconsecteturfugiat.jpg?size=100x100&set=set1","tags":[1,10,13,6,7,3]},
-{"id":15,"name":"Biodex","description":"Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","poster":"https://robohash.org/inofficiisdoloremque.jpg?size=100x100&set=set1","tags":[15,3,9,5]},
-{"id":16,"name":"Y-Solowarm","description":"Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.","poster":"https://robohash.org/omnisliberoea.jpg?size=100x100&set=set1","tags":[2,13,9]},
-{"id":17,"name":"Latlux","description":"Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.","poster":"https://robohash.org/omnisnostrumblanditiis.jpg?size=100x100&set=set1","tags":[12,6,8,14,11]},
-{"id":18,"name":"Tin","description":"Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.","poster":"https://robohash.org/animierrorconsequatur.jpg?size=100x100&set=set1","tags":[2,7,13,15,4,10]},
-{"id":19,"name":"Kanlam","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.","poster":"https://robohash.org/adenimofficia.jpg?size=100x100&set=set1","tags":[15,5,12,1]},
-{"id":20,"name":"Prodder","description":"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.","poster":"https://robohash.org/quiainearum.jpg?size=100x100&set=set1","tags":[8,4,14,1,10]}]
+  {"id":13,"name":"Julie i Julia","year":"2009","director":"Nora Ephron","poster":"https://robohash.org/aconsecteturfugiat.jpg?size=100x100&set=set1",
+  "tags":["Meryl Streep","gotowanie","biograficzny",13,6,7,3],
+  "description":"Młoda sekretarka próbuje w rok przygotować wszystkie dania, które zawiera książka z przepisami jej idolki. Całe doświadczenie opisuje na swoim blogu."},
+
+  {"id":14,"name":"Chef","year":"2014","director":"Jon Favreau","poster":"https://robohash.org/omnisliberoea.jpg?size=100x100&set=set1",
+  "tags":["gotowanie","ojciec i syn","komedia", "food truck"],
+  "description":"Carl Casper jest szefem kuchni renomowanej restauracji w Los Angeles. Podchodzi do pracy z wielką pasją, a każda potrawa, którą wymyśla, to prawdziwe dzieło sztuki. Jednak kłótnia ze znienawidzonym krytykiem kulinarnym, w której znaczący udział ma niefortunny i niezwykle popularny wpis Carla na Twitterze oraz wynikły z tego konflikt z właścicielem restauracji, powodują, że Carl rzuca pracę. Postanawia zacząć wszystko od nowa, korzystając ze wsparcia przyjaciół."},
+
+  {"id":15,"name":"Mamma Mia!","year":"2008","director":"Phyllida Lloyd ","poster":"https://robohash.org/inofficiisdoloremque.jpg?size=100x100&set=set1",
+  "tags":["Meryl Streep","musical","ABBA","ślub"],
+  "description":"Film opowiada historię młodej i ślicznej Sophie, która niebawem ma wyjść za mąż. Dziewczyna chciałaby, aby do ślubnego kobierca zaprowadził ją jej ojciec. Problem w tym, że nigdy poznała. Jej matka, Donna, zdradza tożsamość trzech mężczyzn, z którymi przed laty coś ją łączyło. Cała trójka zostaje zaproszona na ślub."},
+
+  {"id":16,"name":"Smak curry","year":"2013","director":"Ritesh Batra","poster":"https://robohash.org/omnisliberoea.jpg?size=100x100&set=set1",
+  "tags":["gotowanie","kino indyjskie","dramat"],
+  "description":"Drogi samotnego wdowca i młodej mężatki krzyżują się, gdy kobieta omyłkowo wysyła do mężczyzny obiad ze swoją najlepszą potrawą."},
+
+  {"id":17,"name":"Czasem słońce, czasem deszcz","year":"2001","director":"Karan Johar","poster":"https://robohash.org/omnisnostrumblanditiis.jpg?size=100x100&set=set1",
+  "tags":["kino indyjskie", "Bollywood","musical",8,14,11],
+  "description":"Pochodzący z bogatej rodziny Rahul planuje ślub z biedną dziewczyną. Ojciec wyrzuca chłopaka z domu. Po latach jego młodszy brat chce pogodzić zwaśnioną rodzinę."},
+
+  {"id":18,"name":"Lagaan: Dawno temu w Indiach","year":"2001","director":"Ashutosh Gowariker","poster":"https://robohash.org/animierrorconsequatur.jpg?size=100x100&set=set1",
+  "tags":["kino indyjskie","sport","krykiet",7,13,15,4,10],
+  "description":"W wiktoriańskich Indiach skromnie żyjący mieszkańcy jednej z rolniczych prowincji cierpią przez wysokie podatki od zboża, które muszą oddawać swoim angielskim władcom. Kiedy to sadystyczny kapitan Russel postanawia, że ludzie mieszkający na jego obszarze będą mu płacić dwa razy większe podatki niż dotychczas, jeden z wieśniaków pod wodzą charyzmatycznego Bhuvana widzi tylko jedno wyjście z sytuacji. Mieszkańcy wchodzą w ironicznie zainicjowany przez Anglików zakład: jeśli uda im się pokonać Anglików w krykieta (nieznaną dla nich grę), zwolnieni będą od płacenia podatków przez następne trzy lata. Jeśli jednak im się nie uda, będą zmuszeni zapłacić potrójnie."},
+
+  {"id":19,"name":"McFarland, USA","year":"2015","director":"Niki Caro","poster":"https://robohash.org/adenimofficia.jpg?size=100x100&set=set1",
+  "tags":["sport","biograficzny","dramat","familijny","Kevin Costner"],
+  "description":"Trener lekkoatletyki prowadzi sportowców z małej kalifornijskiej miejscowości do  występów w krajowych mistrzostwach."},
+
+  {"id":20,"name":"Ostatni gwizdek","year":"2014","director":"Ivan Reitman","poster":"https://robohash.org/quiainearum.jpg?size=100x100&set=set1",
+  "tags":["Kevin Costner","sportowy","dramat","futbol amerykański",10],
+  "description":"Sony Weaver ma za zadanie wyselekcjonować grupę najbardziej uzdolnionych zawodników futbolu i tym samym zadowolić fanów Cleveland."}]
