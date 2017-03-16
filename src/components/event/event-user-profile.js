@@ -21,8 +21,13 @@ class EventUserProfile extends React.Component {
 
         </Col>
         <Col xs={12} md={3}>
+
           <p>
-            <span className="strong"> Login: {filteredUser.first_name} {filteredUser.last_name}</span>
+            <span className="name">{filteredUser.login}</span>
+          </p>
+
+          <p>
+            <span className="strong">{filteredUser.first_name} {filteredUser.last_name}</span>
           </p>
 
           <p>

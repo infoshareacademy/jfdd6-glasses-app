@@ -5,6 +5,7 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import EventUserProfile from './event-user-profile'
+import '../user/user-styles.css';
 
 class EventView extends React.Component {
   componentWillMount() {
@@ -30,8 +31,6 @@ class EventView extends React.Component {
             <EventUserProfile id="7" />
           </Col>
         </Row>
-
-
       </Grid>
     )
   }
