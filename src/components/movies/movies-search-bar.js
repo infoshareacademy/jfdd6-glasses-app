@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const {fieldValue, createQuery, movies, tags, filterByTag, filterByHintTag} = this.props
+    const {fieldValue, createQuery, movies, tags, activateTagQuery} = this.props
 
     return (
       <Row>
@@ -65,11 +65,11 @@ class SearchBar extends React.Component {
                     <li key={tag.id} className="movies-search-hints-tags">
                       <div
                         tabIndex="0"
-                        onClick={() => filterByTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1))}
+                        onClick={() => activateTagQuery(tag.id, tag.name)}
                         onKeyUp={ (event) => {
                           if (event.keyCode === 13) {
                             this.hideHintsOnEnterKey();
-                            filterByHintTag(movies.filter(movie => movie.tags.indexOf(tag.id) !== -1), tag.name);
+                            activateTagQuery(tag.id, tag.name);
                           }
                         }}
                       >
@@ -92,13 +92,12 @@ class SearchBar extends React.Component {
 
 export default connect(
   state => ({
-    fieldValue: state.movies.query,
+    fieldValue: state.moviesFilters.staticQuery,
     movies: state.movies.moviesData,
     tags: state.movies.tagsList
   }),
   dispatch => ({
     createQuery: (value) => dispatch({ type: 'movies/search/QUERY', value }),
-    filterByTag: (value) => dispatch({ type: 'movies/search/EXECUTE', value }),
-    filterByHintTag: (moviesList, tagName) => dispatch({ type: 'movies/search/EXECUTE_HINT', moviesList, tagName })
+    activateTagQuery: (tagId, tagName) => dispatch({ type: 'movies/search/EXECUTE_HINT', tagId, tagName })
   })
 )(SearchBar)

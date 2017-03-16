@@ -1,6 +1,4 @@
 .movies-container {
-  background-color: darkslateblue;
-  color: white;
   padding-top: 30px;
 }
 
@@ -15,7 +13,6 @@
 .movies-list a {
   display: block;
   text-decoration: none;
-  color: white;
 }
 
 .movies-tags {
@@ -25,7 +22,7 @@
 }
 
 .movies-border {
-  border: 1px dashed white;
+  border: 1px dashed lightgrey;
 }
 
 .movies-tag-button {
@@ -60,7 +57,7 @@
 }
 
 .movies-search-hints-titles a {
-  color: darkslateblue;
+  /*color: darkslateblue;*/
 }
 
 .movies-search-hints-titles:hover {
