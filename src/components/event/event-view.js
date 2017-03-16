@@ -16,16 +16,19 @@ class EventView extends React.Component {
     return (
       <Grid>
         <Row>
-          <Col>
-        <MovieTitle id={id}/>
+          <Col xs={12} md={6}>
             <div width="500px" height="500px">FOTO FILMU</div>
-            </Col>
-          </Row>
+          </Col>
+          <Col xs={12} md={6}>
+            <MovieTitle id={id}/>
+            <MovieDescription id={id}/>
+          </Col>
+        </Row>
         <Row>
-          <Col>
-        <MovieDescription id={id}/>
-            </Col>
-          </Row>
+          <Col xs={12} md={12}>
+            <p>abc</p>
+          </Col>
+        </Row>
 
 
       </Grid>
