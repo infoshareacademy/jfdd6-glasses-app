@@ -7,7 +7,9 @@ import { change } from '../../state/home-filters'
 
 moment.locale('pl')
 
-const HomeEvents = ({ events, step, start, change }) => {
+const HomeEvents = ({ events, start, change }) => {
+  const step = 3
+
   return (
     <div className="home-table">
 
@@ -21,46 +23,51 @@ const HomeEvents = ({ events, step, start, change }) => {
         }}>
           <Button
             bsSize="small"
-            onClick={() => change(-1, events.length)}>Poprzednie Projekcje
+            onClick={() => change(-step, events)}>Poprzednie Projekcje
           </Button>
           <Button
             bsSize="small"
-            onClick={() => change(1, events.length)}>Następne Projekcje
+            onClick={() => change(step, events)}>Następne Projekcje
           </Button>
         </ButtonToolbar>
       </div>
       {
-        events ?
-        events.slice(
-            start, start + step
-          ).map(
-            event => (
-              <Panel
-                bsStyle="success"
-                defaultExpanded
-                collapsible
-                key={event.id}
-                header={event.title}
-                style={{
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis'
-                }}>
-                {moment(event.start).format('dddd, D MMMM, H:mm')}
-                <ListGroupItem
-                  style={{
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-                  }}>
-                  {event.desc}
-                </ListGroupItem>
-                <ListGroupItem>
-                  Lokalizacja: {event.dist}
-                </ListGroupItem>
-              </Panel>
-            )
-          ) : null
+        !events ?
+          null :
+            events.length === 0 ?
+              <Panel header='Brak wydarzeń w zasięgu wyszukiwania.'
+                     bsStyle="danger">
+                Wyszukaj wydarzenia w większej odległości od Twojej lokalizacji.
+              </Panel> :
+              events.slice(
+                  start, start + step
+                ).map(
+                  event => (
+                    <Panel
+                      bsStyle="info"
+                      defaultExpanded
+                      key={event.id}
+                      header={event.title}
+                      style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                      }}>
+                      {moment(event.start).format('dddd, D MMMM, H:mm')}
+                      <ListGroupItem
+                        style={{
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis'
+                        }}>
+                        {event.desc}
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        Lokalizacja: {event.dist}
+                      </ListGroupItem>
+                    </Panel>
+                  )
+                )
       }
     </div>
   )
@@ -68,7 +75,6 @@ const HomeEvents = ({ events, step, start, change }) => {
 
 export default connect(
   state => ({
-    step: state.homeFilters.step,
     start: state.homeFilters.start
   }),
   dispatch => ({
