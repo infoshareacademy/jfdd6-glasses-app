@@ -7,7 +7,7 @@ import { change } from '../../state/home-filters'
 
 moment.locale('pl')
 
-const HomeEvents = ({ events, step, start, change, range }) => {
+const HomeEvents = ({ events, step, start, change }) => {
   return (
     <div className="home-table">
 
@@ -21,24 +21,17 @@ const HomeEvents = ({ events, step, start, change, range }) => {
         }}>
           <Button
             bsSize="small"
-            onClick={() => change(-1)}>Poprzednie Projekcje
+            onClick={() => change(-1, events.length)}>Poprzednie Projekcje
           </Button>
           <Button
             bsSize="small"
-            onClick={() => change(1)}>Następne Projekcje
+            onClick={() => change(1, events.length)}>Następne Projekcje
           </Button>
         </ButtonToolbar>
       </div>
       {
         events ?
-          events.slice().filter(
-            event =>
-              moment(event.start) >= moment() &&
-              event.dist < range
-          ).sort(
-            (prevEvent, nextEvent) =>
-            moment(prevEvent.start) - moment(nextEvent.start)
-          ).slice(
+        events.slice(
             start, start + step
           ).map(
             event => (
@@ -67,11 +60,21 @@ const HomeEvents = ({ events, step, start, change, range }) => {
                 </ListGroupItem>
               </Panel>
             )
-          ): null
+          ) : null
       }
     </div>
   )
 }
+
+export default connect(
+  state => ({
+    step: state.homeFilters.step,
+    start: state.homeFilters.start
+  }),
+  dispatch => ({
+    change: (value, eventsLength) => dispatch(change(value, eventsLength))
+  })
+)(HomeEvents)
 
 HomeEvents.PropTypes = {
   events: React.PropTypes.array.isRequired,
@@ -79,16 +82,3 @@ HomeEvents.PropTypes = {
   start: React.PropTypes.number.isRequired,
   change: React.PropTypes.func.isRequired
 }
-
-export default connect(
-  state => ({
-    events: state.home.data,
-    step: state.homeFilters.step,
-    start: state.homeFilters.start,
-    range: state.range.value
-  }),
-  dispatch => ({
-    change: (value) => dispatch(change(value))
-  })
-)(HomeEvents)
-

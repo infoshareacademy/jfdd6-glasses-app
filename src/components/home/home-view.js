@@ -1,14 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import moment from 'moment'
 
-import {Col, Grid, Row} from 'react-bootstrap'
+import { Col, Grid, Row } from 'react-bootstrap'
 
 import HomeCalendar from './home-calendar'
 import HomeLocation from './home-location'
 import HomeSlider from './home-slider'
-import HomeUpcomingEvents from './home-events'
+import HomeEvents from './home-events'
 
-import {fetchData} from '../../state/home'
+import { fetchData } from '../../state/home'
 
 class HomeView extends React.Component {
 
@@ -17,6 +18,17 @@ class HomeView extends React.Component {
   }
 
   render() {
+    const { events, range } = this.props
+
+    const eventsFiltered = events ?
+      events.slice().filter(
+        event =>
+          moment( event.start ) >= moment() &&
+            event.dist < range
+      ).sort(
+        ( prev, next ) =>
+          moment( prev.start ) - moment( next.start )) : null
+
     return (
       <Grid>
         <Row>
@@ -29,10 +41,10 @@ class HomeView extends React.Component {
         </Row>
         <Row>
           <Col xs={12} md={8}>
-            <HomeCalendar/>
+            <HomeCalendar events={ eventsFiltered }/>
           </Col>
           <Col xs={12} md={4}>
-            <HomeUpcomingEvents/>
+            <HomeEvents events={ eventsFiltered }/>
           </Col>
         </Row>
       </Grid>
@@ -40,14 +52,16 @@ class HomeView extends React.Component {
   }
 }
 
-HomeView.propTypes = {
-  fetchData: React.PropTypes.func.isRequired,
-}
-
 export default connect(
-  state => ({}),
+  state => ({
+    events: state.home.data,
+    range: state.range.value
+  }),
   dispatch => ({
     fetchData: () => dispatch(fetchData())
   })
 )(HomeView)
 
+HomeView.propTypes = {
+  fetchData: React.PropTypes.func.isRequired,
+}

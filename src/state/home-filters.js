@@ -2,15 +2,17 @@
 const CHANGE = 'home/CHANGE'
 
 // ACTION CREATORS
-export const change = (value) => ({
+export const change = (value, eventsLength) => ({
   type: CHANGE,
-  value
+  value,
+  eventsLength
 })
 
 // INITIAL VALUE
 const initialState = {
   start: 0,
   step: 3,
+  eventsLength: 3
 }
 
 // REDUCER
