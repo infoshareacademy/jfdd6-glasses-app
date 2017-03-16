@@ -7,7 +7,9 @@ import { change } from '../../state/home-filters'
 
 moment.locale('pl')
 
-const HomeEvents = ({ events, step, start, change, range }) => {
+const HomeEvents = ({ events, start, change }) => {
+  const step = 3
+
   return (
     <div className="home-table">
 
@@ -21,57 +23,64 @@ const HomeEvents = ({ events, step, start, change, range }) => {
         }}>
           <Button
             bsSize="small"
-            onClick={() => change(-1)}>Poprzednie Projekcje
+            onClick={() => change(-step, events)}>Poprzednie Projekcje
           </Button>
           <Button
             bsSize="small"
-            onClick={() => change(1)}>Następne Projekcje
+            onClick={() => change(step, events)}>Następne Projekcje
           </Button>
         </ButtonToolbar>
       </div>
       {
-        events ?
-          events.slice().filter(
-            event =>
-              moment(event.start) >= moment() &&
-              event.dist < range
-          ).sort(
-            (prevEvent, nextEvent) =>
-            moment(prevEvent.start) - moment(nextEvent.start)
-          ).slice(
-            start, start + step
-          ).map(
-            event => (
-              <Panel
-                bsStyle="success"
-                defaultExpanded
-                collapsible
-                key={event.id}
-                header={event.title}
-                style={{
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis'
-                }}>
-                {moment(event.start).format('dddd, D MMMM, H:mm')}
-                <ListGroupItem
-                  style={{
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-                  }}>
-                  {event.desc}
-                </ListGroupItem>
-                <ListGroupItem>
-                  Lokalizacja: {event.dist}
-                </ListGroupItem>
-              </Panel>
-            )
-          ): null
+        !events ?
+          null :
+            events.length === 0 ?
+              <Panel header='Brak wydarzeń w zasięgu wyszukiwania.'
+                     bsStyle="danger">
+                Wyszukaj wydarzenia w większej odległości od Twojej lokalizacji.
+              </Panel> :
+              events.slice(
+                  start, start + step
+                ).map(
+                  event => (
+                    <Panel
+                      bsStyle="info"
+                      defaultExpanded
+                      key={event.id}
+                      header={event.title}
+                      style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                      }}>
+                      {moment(event.start).format('dddd, D MMMM, H:mm')}
+                      <ListGroupItem
+                        style={{
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis'
+                        }}>
+                        {event.desc}
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        Lokalizacja: {event.dist}
+                      </ListGroupItem>
+                    </Panel>
+                  )
+                )
       }
     </div>
   )
 }
+
+export default connect(
+  state => ({
+    start: state.homeFilters.start
+  }),
+  dispatch => ({
+    change: (value, eventsLength) => dispatch(change(value, eventsLength))
+  })
+)(HomeEvents)
 
 HomeEvents.PropTypes = {
   events: React.PropTypes.array.isRequired,
@@ -79,16 +88,3 @@ HomeEvents.PropTypes = {
   start: React.PropTypes.number.isRequired,
   change: React.PropTypes.func.isRequired
 }
-
-export default connect(
-  state => ({
-    events: state.home.data,
-    step: state.homeFilters.step,
-    start: state.homeFilters.start,
-    range: state.range.value
-  }),
-  dispatch => ({
-    change: (value) => dispatch(change(value))
-  })
-)(HomeEvents)
-

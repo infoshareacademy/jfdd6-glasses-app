@@ -1,11 +1,13 @@
 import React from 'react'
-import MapFeature from './user-map'
+//import MapFeature from './user-map'
 import UserProfile from './user-profile.js'
 import UserFilmList from './user-film-list.js'
-
 import {connect} from 'react-redux'
+
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
+
+import {Grid, Row, Col} from 'react-bootstrap'
 
 class UserView extends React.Component {
   componentWillMount() {
@@ -18,18 +20,18 @@ class UserView extends React.Component {
 
     return (
 
-      <div>
-        <UserProfile id={userId}/>
-        <UserFilmList id={userId}/>
-        <MapFeature />
-      </div>
+      <Grid>
+        <Row className="row">
+          <Col xs={12} sm={6}><UserFilmList id={userId}/></Col>
+          <Col xs={12} sm={6}><UserProfile id={userId}/></Col>
+        </Row>
+      </Grid>
     )
   }
 }
   export default connect(
   state => ({
-  // users: state.users,
-  // movie: state.movie
+
 }),
 dispatch => ({
   fetchMovie: () => dispatch(fetchMovie()),

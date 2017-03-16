@@ -5,18 +5,16 @@ import moviesReducer from './state/movies'
 import moviesFiltersReducer from './state/movies-filters'
 import movieReducer from './state/movie'
 import userReducer from './state/user'
-import homeReducer from './state/home'
+import homeFetchReducer from './state/home-fetch'
 import homeFiltersReducer from './state/home-filters'
-import rangeReducer from './state/range'
 
 const reducer = combineReducers({
   movies: moviesReducer,
   moviesFilters: moviesFiltersReducer,
   user: userReducer,
   movie: movieReducer,
-  home: homeReducer,
+  homeFetch: homeFetchReducer,
   homeFilters: homeFiltersReducer,
-  range: rangeReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
