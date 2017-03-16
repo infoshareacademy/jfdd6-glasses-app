@@ -1,5 +1,6 @@
 import React from 'react'
-import {Grid} from 'react-bootstrap'
+//import {Grid} from 'react-bootstrap'
+import './user-styles.css';
 import {connect} from 'react-redux'
 
 class UserProfile extends React.Component {
@@ -10,7 +11,7 @@ class UserProfile extends React.Component {
     }
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
-      <Grid>
+      <div className="profile-container black-background">
         <h3>User:</h3>
 
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
@@ -27,7 +28,7 @@ class UserProfile extends React.Component {
           About {filteredUser.first_name}: {filteredUser.description}
         </p>
 
-      </Grid>
+      </div>
     )
   }
 }
