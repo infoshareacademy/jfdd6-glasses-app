@@ -36,7 +36,7 @@ const App = (props) => (
                   <LinkContainer to="/users">
                     <NavItem eventKey={3.4}>Lista sąsiadów</NavItem>
                   </LinkContainer>
-                  <LinkContainer to="/event">
+                  <LinkContainer to="/event/2">
                     <NavItem eventKey={3.5}>Wydarzenie</NavItem>
                   </LinkContainer>
                 </NavDropdown>
