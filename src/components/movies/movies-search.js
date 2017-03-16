@@ -2,10 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-bootstrap'
 
-const QueryButton = ({ query, movies, sendResult }) => (
+const QueryButton = ({ query, movies, activateQuery }) => (
   <Button
     type="button"
-    onClick={ () => sendResult(movies.filter(movie => movie.name.toLowerCase().indexOf(query.toLowerCase()) !== -1)) }
+    onClick={ () => activateQuery() }
   >
     Wyszukaj
   </Button>
@@ -13,10 +13,10 @@ const QueryButton = ({ query, movies, sendResult }) => (
 
 export default connect(
   state => ({
-    query: state.movies.query,
+    query: state.moviesFilters.query,
     movies: state.movies.moviesData
   }),
   dispatch => ({
-    sendResult: (value) => dispatch({ type: 'movies/search/EXECUTE', value })
+    activateQuery: (value) => dispatch({ type: 'movies/search/EXECUTE', value })
   })
 )(QueryButton)

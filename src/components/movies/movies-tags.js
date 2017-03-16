@@ -46,7 +46,7 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
 export default connect(
   state => ({
     tags: state.movies.tagsList,
-    customTags: state.movies.customTags
+    customTags: state.moviesFilters.customTags
   }),
   dispatch => ({
     sendTag: (value) => dispatch({ type: 'movies/tags/CUSTOM', value }),
