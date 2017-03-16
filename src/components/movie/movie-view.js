@@ -28,17 +28,17 @@ class MovieView extends React.Component {
         {/*</Col>*/}
         {/*</Row>*/}
         <Row className="show-grid">
-          <Col xs={12} md={6}>
-            <MovieCarousel />
+          <Col xs={12} md={4} mdOffset={1}>
+            <MovieCarousel id={id}/>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5} mdOffset={1} mdPull={1}>
             <MovieTitle id={id}/>
             <MovieDescription id={id}/>
           </Col>
         </Row>
         <Row className="show-grid">
-          <Col md={12}>
-            <h2>Lista użytkowników, ktorzy mają ten film i chętnie umówią się na wspólny seans:</h2>
+          <Col md={10} mdOffset={1}>
+            <h4>Obejrzyj ten film z sąsiadem !! Zobacz kto już go posiada: </h4>
             <table>
               <tbody>
               <UserList id={id}/>

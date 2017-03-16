@@ -2,7 +2,7 @@
 @import url("http://fonts.googleapis.com/css?family=Anton&amp;subset=latin,latin-ext");
 
 .row {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 }
 
 .col {
@@ -16,6 +16,10 @@
   font-size: 2rem;
   color: #DC810E;}
 
+.movie-title h2{
+  margin-top: 0;
+}
+
 .movie-description {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px;
@@ -24,9 +28,17 @@
 
 .title {
   background-color: rgba(33, 33, 33, 0.7);
+  padding: 30px;
 }
 
-/*.movie-img {*/
-  /*width: 40%;*/
-  /*height: 60%;*/
-/*}*/
+.carousel {
+  min-width: 280px;
+  min-height: 480px;
+}
+.movie-img {
+  max-height: 480px;
+  width: 100%;
+  margin:auto;
+  display:block;
+  /*object-fit: contain;*/
+}

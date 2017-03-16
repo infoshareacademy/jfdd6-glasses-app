@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
+import './event-styles.css';
+
 
 class EventView extends React.Component {
   componentWillMount() {
@@ -12,12 +14,25 @@ class EventView extends React.Component {
 
   render() {
     const id = this.props.params.eventId;
-
+    const { movie} = this.props;
     return (
       <Grid>
         <Row>
-          <Col xs={12} md={6}>
-            <div width="500px" height="500px">FOTO FILMU</div>
+          <Col xs={12} md={4} mdOffset={1}>
+            <div className="event-movie-img">
+
+              {
+                movie.data ? movie.data.filter(
+                    movie => movie.id === parseInt(id, 10)
+                  ).map(
+                    movie => (
+                      <img className="movie-img" alt={movie.name + ' poster'} src={movie.pics[0]} key={movie.id}/>
+
+                    )
+                  ) : <img className="movie-img" alt={movie.name + ' poster'} src="http://lorempixel.com/320/440/sports/"/>
+              }
+
+            </div>
           </Col>
           <Col xs={12} md={6}>
             <MovieTitle id={id}/>
