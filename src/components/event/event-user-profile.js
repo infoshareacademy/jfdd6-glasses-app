@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Col, Grid} from 'react-bootstrap'
+import './event-styles.css';
 
 
 class EventUserProfile extends React.Component {
@@ -12,29 +13,23 @@ class EventUserProfile extends React.Component {
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
 
-      <Grid>
-        <Col xs={12} md={3}>
-
-          <h2>Seans organizuje:</h2>
-
-          <p><img src={filteredUser.avatar} alt="avatar"/></p>
-
-        </Col>
-        <Col xs={12} md={3}>
-
+      <Grid className="profile-container">
+        <h2>Seans organizuje:</h2>
+        <Col xs={12} md={2}>
           <p>
             <span className="name">{filteredUser.login}</span>
           </p>
-
+          <p><img src={filteredUser.avatar} alt="avatar"/></p>
+        </Col>
+        <Col xs={12} md={4}>
           <p>
-            <span className="strong">{filteredUser.first_name} {filteredUser.last_name}</span>
+            <h3>{filteredUser.first_name} {filteredUser.last_name}</h3>
           </p>
 
           <p>
-            <span className="strong"> About {filteredUser.first_name}: </span>
+            <span className="strong"> O {filteredUser.first_name}: </span>
             {filteredUser.description}
           </p>
-
         </Col>
       </Grid>
     )

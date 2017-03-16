@@ -4,12 +4,14 @@ import {connect} from 'react-redux'
 import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
+import {fetchUsers} from '../../state/user'
 import EventUserProfile from './event-user-profile'
-import '../user/user-styles.css';
+import './event-styles.css';
 
 class EventView extends React.Component {
   componentWillMount() {
     this.props.fetchMovie();
+    this.props.fetchUsers()
   }
 
   render() {
@@ -42,5 +44,6 @@ export default connect(
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
+    fetchUsers: () => dispatch(fetchUsers())
   })
 )(EventView)
