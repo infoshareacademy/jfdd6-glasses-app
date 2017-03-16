@@ -41,7 +41,7 @@ class HomeView extends React.Component {
         </Row>
         <Row>
           <Col xs={12} md={8}>
-            <HomeCalendar events={ eventsFiltered }/>
+            <HomeCalendar events={ eventsFiltered } router={this.props.router}/>
           </Col>
           <Col xs={12} md={4}>
             <HomeEvents events={ eventsFiltered }/>

@@ -5,7 +5,7 @@ import moment from 'moment'
 BigCalendar.momentLocalizer(moment)
 moment.locale('pl')
 
-const HomeCalendar = ({ events }) => {
+const HomeCalendar = ({ events, router }) => {
 
   return (
   <div style={{ height: 635 }}>
@@ -19,7 +19,7 @@ const HomeCalendar = ({ events }) => {
           })
         ) : []
       }
-      onSelectEvent={event => alert(event.title)}
+      onSelectEvent={event => router.push('/events/' + event.id)}
     />
   </div>
   )}
