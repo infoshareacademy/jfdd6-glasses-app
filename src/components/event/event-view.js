@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
@@ -15,9 +15,19 @@ class EventView extends React.Component {
 
     return (
       <Grid>
+        <Row>
+          <Col>
         <MovieTitle id={id}/>
+            <div width="500px" height="500px">FOTO FILMU</div>
+            </Col>
+          </Row>
+        <Row>
+          <Col>
         <MovieDescription id={id}/>
-        <div width="500px" height="500px">FOTO FILMU</div>
+            </Col>
+          </Row>
+
+
       </Grid>
     )
   }
