@@ -20,7 +20,7 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
                       bsSize="small"
                       className="movies-tag-button"
                       onClick={() => sendTag(tag.id)}
-                    >{tag.id} {tag.name}</Button>
+                    >{tag.name}</Button>
                     : <Button
                       key={tag.id}
                       value={tag.id}
@@ -28,7 +28,7 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
                       bsSize="small"
                       className="movies-tag-button"
                       onClick={() => removeTag(tag.id)}
-                    >{tag.id} {tag.name}</Button>
+                    >{tag.name}</Button>
                 )
               )
           }
