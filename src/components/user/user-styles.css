@@ -26,8 +26,11 @@
   font-size: 2rem;
   color: #DC810E;}
 
-.welcome ~ p {
-  font-size: 1.3rem;
-  color: white; }
+.film-table {
+  background-color: #5f5f5f;
+  color: #DC810E;
+}
 
-/*# sourceMappingURL=styles-all.css.map */
+.film-table a {
+  color: #DC810E;
+}
