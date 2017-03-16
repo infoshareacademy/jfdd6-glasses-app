@@ -11,19 +11,19 @@ class UserList extends React.Component {
       <tr>
         {
           user.data ? user.data.filter(
-              user => user.movies.includes(+id),
-            ).map(
-              user => (
-                <td key={user.id}>
-                  <Link to={'/user/' + user.id}>
-                    <img src={user.avatar}
-                         width="75px"
-                         alt={user.first_name + ' avatar'}
-                         title={user.first_name}/>
-                  </Link>
-                </td>
-              )
-            ) :
+            user => user.movies.includes(+id),
+          ).map(
+            user => (
+              <td key={user.id}>
+                <Link to={'/user/' + user.id}>
+                  <img src={user.avatar}
+                       alt={user.first_name + ' avatar'}
+                       title={user.first_name}
+                       className="avatar-img"/>
+                </Link>
+              </td>
+            )
+          ) :
             <td> brak danych</td>
         }
       </tr>

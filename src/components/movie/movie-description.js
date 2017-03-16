@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import './movie-styles.css';
+
 
 class MovieDescription extends React.Component {
 
@@ -7,7 +9,7 @@ class MovieDescription extends React.Component {
   render() {
     const { id, movie } = this.props;
     return (
-      <div>
+      <div className="movie-description">
         {
           movie.data? movie.data.filter(
         movie => movie.id === parseInt(id, 10)

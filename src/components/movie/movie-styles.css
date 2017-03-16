@@ -5,34 +5,28 @@
   margin-top: 30px;
 }
 
-.profile-container {
+.col {
   font-family: 'Varela Round', sans-serif;
   color: white;
 }
 
-.login-container {
-  margin-top: 50px; }
 
-.logo {
-  max-height: 150px;
-  width: auto; }
-
-.black-background {
-  background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px; }
-
-.name {
+.movie-title {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
   color: #DC810E;}
 
-.welcome ~ p {
-  font-size: 1.3rem;
-  color: white; }
-
-.avatar-img {
-  width: 75px;
-  padding: 5px;
+.movie-description {
+  background-color: rgba(33, 33, 33, 0.7);
+  padding: 30px;
+  color: #ffffff;
 }
 
-/*# sourceMappingURL=styles-all.css.map */
+.title {
+  background-color: rgba(33, 33, 33, 0.7);
+}
+
+/*.movie-img {*/
+  /*width: 40%;*/
+  /*height: 60%;*/
+/*}*/

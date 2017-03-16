@@ -23,9 +23,9 @@ class MovieView extends React.Component {
     return (
       <Grid>
         {/*<Row className="show-grid">*/}
-          {/*<Col xs={12} md={12}>*/}
-            {/*<MovieSearch/>*/}
-          {/*</Col>*/}
+        {/*<Col xs={12} md={12}>*/}
+        {/*<MovieSearch/>*/}
+        {/*</Col>*/}
         {/*</Row>*/}
         <Row className="show-grid">
           <Col xs={12} md={6}>
@@ -44,12 +44,14 @@ class MovieView extends React.Component {
               <UserList id={id}/>
               </tbody>
             </table>
+            <br/>
+
           </Col>
         </Row>
         {/*<Row className="show-grid">*/}
-          {/*<Col xs={12} md={12}>*/}
-            {/*<h2>Footer</h2>*/}
-          {/*</Col></Row>*/}
+        {/*<Col xs={12} md={12}>*/}
+        {/*<h2>Footer</h2>*/}
+        {/*</Col></Row>*/}
       </Grid>
     )
   }
