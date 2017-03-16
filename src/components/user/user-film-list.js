@@ -19,7 +19,7 @@ class UserFilmList extends React.Component {
     return (
       <div className="profile-container black-background">
         <h3>Filmy użytkownika <span className="name"> {filteredUser.login}</span></h3>
-        <Table striped>
+        <Table className="film-table">
           <tbody>
           {
             moviesList.data ? moviesList.data.filter(

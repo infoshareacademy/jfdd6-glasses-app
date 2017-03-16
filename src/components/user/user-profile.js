@@ -12,20 +12,20 @@ class UserProfile extends React.Component {
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
       <div className="profile-container black-background">
-        <h3>User:</h3>
+        <h2>{filteredUser.first_name} {filteredUser.last_name}</h2>
 
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
         <p>
-          {filteredUser.first_name} {filteredUser.last_name}, {filteredUser.gender}
+         {filteredUser.gender}
         </p>
 
         <p>
-          Login: {filteredUser.login}
+          <span className="strong"> Login: {filteredUser.login}</span>
         </p>
 
         <p>
-          About {filteredUser.first_name}: {filteredUser.description}
+          <span className="strong"> About {filteredUser.first_name}: </span> {filteredUser.description}
         </p>
 
       </div>
