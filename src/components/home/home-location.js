@@ -1,25 +1,32 @@
 import React from 'react'
 import { Form, ControlLabel, Button, FormControl, FormGroup } from 'react-bootstrap'
 
+import { fetchLocation } from '../../state/home-fetch-location'
+
+export default connect(
+  state=> ({
+    address: state.address
+  }),
+  dispatch=> ({
+    fetchLocationHelper: (address) => dispatch(fetchLocation(address))
+  })
+)(
+
 class HomeLocation extends React.Component {
   constructor(props){
     super(props)
 
     this.state = {
-      value: ''
+      address: ''
     }
   }
 
-  getValidationState() {
-    // to be discussed
-  }
-
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
+ componentWillMount() {
+   this.props.fetchLocationHelper()
+ }
 
   render() {
-    return (
+    return this.props.address.location === null ?
       <Form inline>
         <FormControl
           id="addressField"
@@ -33,13 +40,6 @@ class HomeLocation extends React.Component {
         >
           Potwierdź
         </Button>
-      </Form>
-    )
+      </Form : ''
   }
-}
-
-HomeLocation.PropTypes = {
-  // tbd
-}
-
-export default HomeLocation
+})

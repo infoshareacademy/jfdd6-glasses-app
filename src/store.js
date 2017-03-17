@@ -7,6 +7,7 @@ import movieReducer from './state/movie'
 import userReducer from './state/user'
 import homeFetchReducer from './state/home-fetch'
 import homeFiltersReducer from './state/home-filters'
+import homeLocationReducer from './state/home-fetch-location'
 
 const reducer = combineReducers({
   movies: moviesReducer,
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   movie: movieReducer,
   homeFetch: homeFetchReducer,
   homeFilters: homeFiltersReducer,
+  homeLocation: homeLocationReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
