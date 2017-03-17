@@ -26,15 +26,16 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
                       value={tag.id}
                       bsStyle="success"
                       bsSize="small"
-                      className="movies-tag-button"
+                      className="movies-tag-button movies-tag-button-active"
                       onClick={() => removeTag(tag.id)}
                     >{tag.name}</Button>
                 )
               )
           }
           <Button
-            bsStyle="warning"
-            className="movies-tag-button"
+            bsStyle="info"
+            bsSize="small"
+            className="movies-tag-button movies-tag-button-reset"
             onClick={() => resetTags()}
           >Usuń filtry</Button>
         </Col>

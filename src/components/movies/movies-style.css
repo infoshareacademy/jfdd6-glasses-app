@@ -29,6 +29,28 @@
   margin: 5px;
 }
 
+.movies-tag-button-active,
+.movies-tag-button-active:hover,
+.movies-tag-button-active:focus,
+.movies-tag-button-active:active,
+.movies-tag-button-active:active:hover,
+.movies-tag-button-active:active:focus {
+  background-color: #DC810E;
+  background-image: linear-gradient(to bottom, #FF8C00 0%, #DC810E 100%);
+  border-color: #DC810E;
+}
+
+.movies-tag-button-reset,
+.movies-tag-button-reset:hover,
+.movies-tag-button-reset:focus,
+.movies-tag-button-reset:active,
+.movies-tag-button-reset:active:hover,
+.movies-tag-button-reset:active:focus {
+  background-color: #808080;
+  background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
+  border-color: #808080;
+}
+
 .movies-position-hints {
   position: relative;
 }
@@ -43,7 +65,10 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: ghostwhite;
+  background-color: #fff;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
   list-style-type: none;
 }
 
@@ -57,22 +82,32 @@
 }
 
 .movies-search-hints-titles a {
-  /*color: darkslateblue;*/
+  color: #4D4D4D;
 }
 
 .movies-search-hints-titles:hover {
-  background-color: lightsteelblue;
+  background-color: #DC810E;
 }
 
 .movies-search-hints-tags {
-  color: green;
+  color: #DC810E;
 }
 
 .movies-search-hints-tags:hover {
-  background-color: lightgreen;
+  background-color: #808080;
+  color: #fff;
 }
 
 .no-padding {
   padding-left: 0;
   padding-right: 0;
+}
+
+.left-padding {
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+.form-control:focus {
+  border-color: #DC810E;
 }
