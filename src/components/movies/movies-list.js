@@ -6,7 +6,7 @@ import { Row, Col, Table } from 'react-bootstrap'
 const MovieList = ({movies, customTags, query, queryTag}) => (
   <Row>
     <Col xs={10} xsOffset={1}>
-      <Table bordered striped className="movies-list">
+      <Table bordered className="movies-list film-table">
         <tbody>
         {
           movies.length === 0
