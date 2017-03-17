@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, FormControl } from 'react-bootstrap'
+import { Form, ControlLabel, Button, FormControl, FormGroup } from 'react-bootstrap'
 
 class HomeLocation extends React.Component {
   constructor(props){
@@ -20,19 +20,20 @@ class HomeLocation extends React.Component {
 
   render() {
     return (
-      <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
+      <Form inline>
+        <FormControl
+          id="addressField"
+          type="text"
+          placeholder="Twoja lokalizacja"
+        />
+        {' '}
+        <Button
+          id="confirmBtn"
+          type="submit"
         >
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder="Twoja lokalizacja"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-      </form>
+          Potwierdź
+        </Button>
+      </Form>
     )
   }
 }
