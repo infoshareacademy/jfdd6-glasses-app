@@ -9,7 +9,7 @@ const QueryButton = ({ query, movies, activateQuery }) => (
   >
     Wyszukaj
   </Button>
-  )
+)
 
 export default connect(
   state => ({

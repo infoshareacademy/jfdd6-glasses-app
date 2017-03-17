@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import QueryButton from './movies-search'
+import QueryButton from './movies-search-button'
 import { Col, Row, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
@@ -33,8 +33,8 @@ class SearchBar extends React.Component {
     const {fieldValue, createQuery, movies, tags, activateTagQuery} = this.props
 
     return (
-      <Row>
-      <Col xs={6} xsOffset={2} className="no-padding">
+      <div>
+      <Col xs={12} md={6} mdOffset={2} className="no-padding">
         <div className="movies-position-hints">
           <div className="movies-stick-hints">
               <FormControl
@@ -82,10 +82,10 @@ class SearchBar extends React.Component {
           </div>
         </div>
       </Col>
-      <Col xs={1} className="no-padding">
+      <Col xs={12} md={1} className="no-padding">
       <QueryButton />
         </Col>
-        </Row>
+        </div>
     )
   }
 }

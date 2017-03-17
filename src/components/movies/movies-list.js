@@ -1,11 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import { Row, Col, Table } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
 const MovieList = ({movies, customTags, query, queryTag}) => (
-  <Row>
-    <Col xs={10} xsOffset={1}>
       <Table bordered className="movies-list film-table">
         <tbody>
         {
@@ -41,8 +39,6 @@ const MovieList = ({movies, customTags, query, queryTag}) => (
         }
         </tbody>
       </Table>
-    </Col>
-  </Row>
 )
 
 export default connect(
