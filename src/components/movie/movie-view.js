@@ -37,15 +37,15 @@ class MovieView extends React.Component {
           </Col>
         </Row>
         <Row className="show-grid">
-          <Col md={10} mdOffset={1}>
-            <h4>Obejrzyj ten film z sąsiadem !! Zobacz kto już go posiada: </h4>
-            <table>
-              <tbody>
-              <UserList id={id}/>
-              </tbody>
-            </table>
+          <Col md={9} mdOffset={1}>
+            <div className="movie-user-list">
+              <h4>Obejrzyj ten film z sąsiadem !! Zobacz kto ma go już w swojej
+                kolekcji: </h4>
+              <div id="x">
+                <UserList id={id}/>
+              </div>
+            </div>
             <br/>
-
           </Col>
         </Row>
         {/*<Row className="show-grid">*/}

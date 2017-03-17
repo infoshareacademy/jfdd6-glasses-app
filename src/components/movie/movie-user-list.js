@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import './movie-styles.css';
+
 
 class UserList extends React.Component {
 
@@ -8,25 +10,25 @@ class UserList extends React.Component {
     const {user, id} = this.props;
 
     return (
-      <tr>
+      <div>
         {
           user.data ? user.data.filter(
             user => user.movies.includes(+id),
           ).map(
-            user => (
-              <td key={user.id}>
+            (user, index) => (
+              <div key={user.id} className={ (index % 2 !== 0 ? 'abc' : 'bcd')}>
                 <Link to={'/user/' + user.id}>
                   <img src={user.avatar}
                        alt={user.first_name + ' avatar'}
                        title={user.first_name}
                        className="avatar-img"/>
                 </Link>
-              </td>
+              </div>
             )
           ) :
-            <td> brak danych</td>
+            <div> brak danych</div>
         }
-      </tr>
+      </div>
     );
   }
 }
