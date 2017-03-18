@@ -65,7 +65,7 @@ const HomeEvents = ({ events, start, change }) => {
                         {event.desc}
                       </ListGroupItem>
                       <ListGroupItem>
-                        Lokalizacja: {event.dist}
+                        Odległość: {event.distance} m
                       </ListGroupItem>
                     </Panel>
                     </Link>

@@ -1,45 +1,35 @@
 import React from 'react'
-import { Form, ControlLabel, Button, FormControl, FormGroup } from 'react-bootstrap'
+import { Button, FormControl, InputGroup } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
 import { fetchLocation } from '../../state/home-fetch-location'
 
 export default connect(
-  state=> ({
-    address: state.address
-  }),
-  dispatch=> ({
-    fetchLocationHelper: (address) => dispatch(fetchLocation(address))
+  state => ({}),
+  dispatch => ({
+    fetchLocationHelper: address => dispatch(fetchLocation(address))
   })
 )(
+  class HomeLocation extends React.Component {
+    render () {
+      return (
+        <form onSubmit={(event) => {
+          event.preventDefault()
+          this.props.fetchLocationHelper(this.address.value || 'Gdańsk, Hynka 5')
+        }}>
+        <InputGroup>
+          <FormControl
+            type="text"
+            inputRef={input => this.address = input}
+            placeholder="Wpisz Twoją lokalizację i suwakiem zmień dystans."
+          />
+          {' '}
+          <InputGroup.Button >
+            <Button type="submit">OK</Button>
+          </InputGroup.Button>
+        </InputGroup>
+        </form>
 
-class HomeLocation extends React.Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-      address: ''
+      )
     }
-  }
-
- componentWillMount() {
-   this.props.fetchLocationHelper()
- }
-
-  render() {
-    return this.props.address.location === null ?
-      <Form inline>
-        <FormControl
-          id="addressField"
-          type="text"
-          placeholder="Twoja lokalizacja"
-        />
-        {' '}
-        <Button
-          id="confirmBtn"
-          type="submit"
-        >
-          Potwierdź
-        </Button>
-      </Form : ''
-  }
-})
+  })

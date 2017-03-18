@@ -18,24 +18,34 @@ class HomeView extends React.Component {
   }
 
   render() {
-    const { events, range } = this.props
+    const { events, range, userLocation } = this.props
+    const userLattitude = userLocation[0].geometry.location.lat;
+    const userLongitude = userLocation[0].geometry.location.lng;
 
     const eventsFiltered = events ?
-      events.slice().filter(
-        event =>
-          moment( event.start ) >= moment() &&
-            event.dist < range
+      events.map(event => {
+        return Object.assign({}, event, {
+          distance: Math.round((Math.sqrt(
+                Math.pow((event.location.lat - userLattitude), 2) +
+                Math.pow((Math.cos(userLattitude * Math.PI / 180) *
+                (event.location.lng - userLongitude)), 2))
+              * (40075.704 / 360)
+            ) * 1000)
+        })
+      }).filter(
+        (event, index) =>
+        moment(event.start) >= moment() && event.distance < range
       ).sort(
-        ( prev, next ) =>
-          moment( prev.start ) - moment( next.start )) : null
+        (prev, next) =>
+        moment(prev.start) - moment(next.start)) : null
 
     return (
       <Grid>
         <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={6}>
             <HomeLocation/>
           </Col>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={6}>
             <HomeSlider />
           </Col>
         </Row>
@@ -55,7 +65,8 @@ class HomeView extends React.Component {
 export default connect(
   state => ({
     events: state.homeFetch.data,
-    range: state.homeFilters.value
+    range: state.homeFilters.value,
+    userLocation: state.homeLocation.data.results
   }),
   dispatch => ({
     fetchData: () => dispatch(fetchData())

@@ -4,10 +4,8 @@ const FETCH__FAIL = 'location/FETCH__FAILED'
 
 export const fetchLocation = (address) => dispatch => {
   dispatch({ type: FETCH__BEGIN })
-  return fetch(
-    'https://maps.googleapis.com/maps/api/geocode/json?&address=' + address, {
-     method: 'GET'
-    }).then(
+  return fetch('https://maps.googleapis.com/maps/api/geocode/json?&address=' + address, {method: 'GET'}
+  ).then(
     response => {
       if (response.ok) {
         return response.json().catch(
@@ -33,7 +31,17 @@ export const fetchLocation = (address) => dispatch => {
 }
 
 const initialState = {
-  data: null,
+  data: {
+    results: [{
+        geometry: {
+            location: {
+                lat: 54.3881021,
+                lng: 18.606417
+              }
+        }
+    }
+    ]
+  },
   fetching: false,
   error: null
 }
