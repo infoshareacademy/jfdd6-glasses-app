@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import QueryButton from './movies-search'
-import { Col, Row, FormControl } from 'react-bootstrap'
+import QueryButton from './movies-search-button'
+import { Row, Col, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
 
@@ -33,13 +33,14 @@ class SearchBar extends React.Component {
     const {fieldValue, createQuery, movies, tags, activateTagQuery} = this.props
 
     return (
-      <Row>
-      <Col xs={6} xsOffset={2} className="no-padding">
-        <div className="movies-position-hints">
-          <div className="movies-stick-hints">
+      <Row className="movies-top">
+        <Col xs={12} sm={6} smOffset={2} className="movies-search-input-align">
+          <div className="movies-position-hints">
+            <div className="movies-stick-hints">
               <FormControl
                 id="search"
                 type="text"
+                className="search-group-input"
                 value={fieldValue}
                 onChange={(event) => createQuery(event.target.value)}
                 onKeyDown={this.showHints}
@@ -59,7 +60,7 @@ class SearchBar extends React.Component {
                 }
                 {tags
                   .filter(tag =>
-                    fieldValue.length > 1 ? tag.name.indexOf(fieldValue.toLowerCase()) !== -1 : false
+                    fieldValue.length > 1 ? tag.name.toLowerCase().indexOf(fieldValue.toLowerCase()) !== -1 : false
                   )
                   .map(tag =>
                     <li key={tag.id} className="movies-search-hints-tags">
@@ -79,13 +80,13 @@ class SearchBar extends React.Component {
                   )
                 }
               </ul>
+            </div>
           </div>
-        </div>
-      </Col>
-      <Col xs={1} className="no-padding">
-      <QueryButton />
         </Col>
-        </Row>
+        <Col xs={12} sm={2} className="movies-search-button-align">
+          <QueryButton />
+        </Col>
+      </Row>
     )
   }
 }

@@ -5,11 +5,12 @@ import { Button } from 'react-bootstrap'
 const QueryButton = ({ query, movies, activateQuery }) => (
   <Button
     type="button"
+    className="search-group-button"
     onClick={ () => activateQuery() }
   >
     Wyszukaj
   </Button>
-  )
+)
 
 export default connect(
   state => ({
