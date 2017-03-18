@@ -42,7 +42,7 @@ class Tags extends React.Component {
         <div id="tags-list">
           {
             tags.length === 0
-              ? <p>Ładowanie&hellip;</p>
+              ? <p>Ładowanie…</p>
               :
               tags.map((tag) => (
                   customTags.indexOf(tag.id) === -1
@@ -69,7 +69,7 @@ class Tags extends React.Component {
             bsSize="small"
             className="movies-tag-button movies-tag-button-reset"
             onClick={() => resetTags()}
-          >Usuń wybrane filtry</Button>
+          >Usuń aktywne filtry</Button>
         </div>
       </div>
     )

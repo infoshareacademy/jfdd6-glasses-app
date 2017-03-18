@@ -33,8 +33,8 @@ class SearchBar extends React.Component {
     const {fieldValue, createQuery, movies, tags, activateTagQuery} = this.props
 
     return (
-      <Row className="no-top-margin">
-        <Col xs={12} sm={6} smOffset={2} className="no-right-padding">
+      <Row className="movies-top">
+        <Col xs={12} sm={6} smOffset={2} className="movies-search-input-align">
           <div className="movies-position-hints">
             <div className="movies-stick-hints">
               <FormControl
@@ -83,7 +83,7 @@ class SearchBar extends React.Component {
             </div>
           </div>
         </Col>
-        <Col xs={12} sm={2} className="align-search-button">
+        <Col xs={12} sm={2} className="movies-search-button-align">
           <QueryButton />
         </Col>
       </Row>

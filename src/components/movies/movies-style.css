@@ -1,3 +1,11 @@
+.movies-bottom {
+  margin-bottom: 20px;
+}
+
+.movies-top:first-child {
+  margin-top: 0;
+}
+
 .movies-list-movie {
   margin-bottom: 5px;
   float: left;
@@ -112,10 +120,6 @@
   color: #fff;
 }
 
-.no-top-margin:first-child {
-  margin-top: 0;
-}
-
 .form-control:focus {
   border-color: #DC810E;
 }
@@ -126,17 +130,17 @@
 }
 
 @media (max-width: 767px) {
-  .align-search-button {
+  .movies-search-button-align {
     margin-top: 5px;
   }
 }
 
 @media (min-width: 768px) {
-  .align-search-button {
+  .movies-search-button-align {
     padding-left: 0;
   }
 
-  .no-right-padding {
+  .movies-search-input-align {
     padding-right: 0;
   }
 
