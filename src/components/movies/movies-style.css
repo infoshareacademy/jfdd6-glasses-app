@@ -7,17 +7,13 @@
 }
 
 .movies-tags {
-  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.movies-border {
-  border: 1px dashed #d3d3d3;
-}
-
 .movies-tag-button {
-  margin: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .movies-tag-button-active,
@@ -95,6 +91,11 @@
 
 .form-control:focus {
   border-color: #DC810E;
+}
+
+#tags-list,
+#tags-turn-off {
+  display: none;
 }
 
 @media (max-width: 767px) {
