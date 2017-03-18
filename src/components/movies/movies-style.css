@@ -1,9 +1,36 @@
-.movies-list tr td:first-child {
-  width: 10%;
+.movies-list-movie {
+  margin-bottom: 5px;
+  float: left;
 }
 
-.movies-list img {
+.movies-list-movie img {
   width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.movies-list-movie a {
+  display: block;
+  padding: 10px 10px 40px 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #6B6B6B;
+}
+
+.movies-list-movie a:hover {
+  background-color: #808080;
+}
+
+.movies-original-title {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #cbcbcb;
+}
+
+.movies-no-padding {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .movies-tags {
@@ -121,5 +148,9 @@
   .search-group-button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  .movies-spaced-list {
+    margin-right: 5px;
   }
 }
