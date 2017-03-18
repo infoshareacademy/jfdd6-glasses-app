@@ -106,4 +106,14 @@
 {"id":22,"name":"Interstellar","originalTitle":"Interstellar","year":"2014","director":"Christopher Nolan",
   "pics":["https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SY1000_CR0,0,640,1000_AL_.jpg","https://images-na.ssl-images-amazon.com/images/M/MV5BMzAzMDczMTM4MV5BMl5BanBnXkFtZTgwMTU0Mjk3MjE@._V1_.jpg"],
   "tags":[6,1,20],
-  "description":"Ziemia w niedalekiej przyszłości. Planeta jest sukcesywnie niszczona przez klęski suszy, a ludziom grozi wyginięcie. Nieoczekiwanie naukowcy odkrywają możliwość podróżowania poza granice Układu Słonecznego.Grupa astronautów wyrusza w najważniejszą w dziejach ludzkości podróż – muszą znaleźć miejsce, gdzie nasz gatunek będzie mógł przetrwać. Na czele załogi staje Cooper (Matthew McConaughey), były pilot NASA, który obecnie zajmuje się uprawą roli."}]
+  "description":"Ziemia w niedalekiej przyszłości. Planeta jest sukcesywnie niszczona przez klęski suszy, a ludziom grozi wyginięcie. Nieoczekiwanie naukowcy odkrywają możliwość podróżowania poza granice Układu Słonecznego.Grupa astronautów wyrusza w najważniejszą w dziejach ludzkości podróż – muszą znaleźć miejsce, gdzie nasz gatunek będzie mógł przetrwać. Na czele załogi staje Cooper (Matthew McConaughey), były pilot NASA, który obecnie zajmuje się uprawą roli."},
+
+  {"id":23,"name":"Przekręt","originalTitle":"Snatch","year":"2000","director":"Guy Ritchie",
+    "pics":["https://images-na.ssl-images-amazon.com/images/M/MV5BNDcwN2VjZDEtNWNhMS00MDc4LWIwZWQtM2Q2NjQyZTcwYzBjXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_.jpg","https://images-na.ssl-images-amazon.com/images/M/MV5BMTAyMDM5OTIzNDdeQTJeQWpwZ15BbWU3MDY0Nzk3MzU@._V1_SY1000_CR0,0,1487,1000_AL_.jpg"],
+    "tags":[4,3,14],
+    "description":"Film złożony z kilku opowieści, które splatają się wokół historii o handlu diamentami. Fabuła opowiada poza tym o walkach psów, kradzieży samochodów, walce na pięści i upodobaniach środowiska przestępczego. Zawikłana intryga kryminalna służy ukazaniu barwnego świata ekscentrycznych postaci – wśród których odnajdziemy gangsterów, szefów mafii, bokserów i Cyganów."},
+
+  {"id":24,"name":"Sędzia","originalTitle":"The Judge","year":"2014","director":"David Dobkin",
+    "pics":["https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyNzIxOTIwMV5BMl5BanBnXkFtZTgwMzE0NjQwMjE@._V1_SY1000_CR0,0,648,1000_AL_.jpg","https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5ODY0NDUzOV5BMl5BanBnXkFtZTgwODczMDA4MjE@._V1_SY1000_CR0,0,964,1000_AL_.jpg"],
+    "tags":[1,3,25,40],
+    "description":"W filmie \"Sędzia\" Robert Downey Jr. wciela się w rolę Hanka Palmera, adwokata z wielkiego miasta, który powraca w rodzinne strony. Na miejscu dowiaduje się, że jego owdowiały ojciec, sędzia (Robert Duvall), jest podejrzany o popełnienie morderstwa. Hank postanawia dotrzeć do prawdy, a w trakcie swoich poszukiwań odnawia relacje z rodziną, z którą stracił kontakt wiele lat wcześniej."}]
