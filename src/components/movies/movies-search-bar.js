@@ -60,7 +60,7 @@ class SearchBar extends React.Component {
                 }
                 {tags
                   .filter(tag =>
-                    fieldValue.length > 1 ? tag.name.indexOf(fieldValue.toLowerCase()) !== -1 : false
+                    fieldValue.length > 1 ? tag.name.toLowerCase().indexOf(fieldValue.toLowerCase()) !== -1 : false
                   )
                   .map(tag =>
                     <li key={tag.id} className="movies-search-hints-tags">
