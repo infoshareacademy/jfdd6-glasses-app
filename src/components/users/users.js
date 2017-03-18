@@ -9,7 +9,7 @@ class AllUsers extends React.Component {
     return (
       <Grid>
         <h1>Wszyscy użytkownicy</h1>
-        <Table striped bordered>
+        <Table bordered className="film-table">
           <tbody>
           {users.data ? users.data.map(
             (arg) => <tr key={arg.id}>
