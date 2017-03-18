@@ -18,10 +18,7 @@ class MoviesView extends React.Component {
       <Grid>
         <Row>
           <Col xs={12}>
-            <Grid>
-              <SearchBar />
-            </Grid>
-
+            <SearchBar />
             <Tags />
             <MovieList />
           </Col>

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import QueryButton from './movies-search-button'
-import { Col, Row, FormControl } from 'react-bootstrap'
+import { Row, Col, FormControl } from 'react-bootstrap'
 
 class SearchBar extends React.Component {
 
@@ -33,13 +33,14 @@ class SearchBar extends React.Component {
     const {fieldValue, createQuery, movies, tags, activateTagQuery} = this.props
 
     return (
-      <div>
-      <Col xs={12} md={6} mdOffset={2} className="no-padding">
-        <div className="movies-position-hints">
-          <div className="movies-stick-hints">
+      <Row className="no-top-margin">
+        <Col xs={12} sm={6} smOffset={2} className="no-right-padding">
+          <div className="movies-position-hints">
+            <div className="movies-stick-hints">
               <FormControl
                 id="search"
                 type="text"
+                className="search-group-input"
                 value={fieldValue}
                 onChange={(event) => createQuery(event.target.value)}
                 onKeyDown={this.showHints}
@@ -79,13 +80,13 @@ class SearchBar extends React.Component {
                   )
                 }
               </ul>
+            </div>
           </div>
-        </div>
-      </Col>
-      <Col xs={12} md={1} className="no-padding">
-      <QueryButton />
         </Col>
-        </div>
+        <Col xs={12} sm={2} className="align-search-button">
+          <QueryButton />
+        </Col>
+      </Row>
     )
   }
 }
