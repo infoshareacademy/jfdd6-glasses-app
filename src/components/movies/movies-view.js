@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SearchBar from './movies-search-bar'
 import Tags from './movies-tags'
 import MovieList from './movies-list'
-import {Grid} from 'react-bootstrap'
+import { Grid, Row, Col } from 'react-bootstrap'
 
 import { fetchData } from '../../state/movies'
 
@@ -15,10 +15,14 @@ class MoviesView extends React.Component {
 
   render() {
     return (
-      <Grid className="movies-container">
-        <SearchBar />
-        <Tags />
-        <MovieList />
+      <Grid>
+        <Row>
+          <Col xs={12} className="movies-bottom">
+            <SearchBar />
+            <Tags />
+            <MovieList />
+          </Col>
+        </Row>
       </Grid>
     )
   }

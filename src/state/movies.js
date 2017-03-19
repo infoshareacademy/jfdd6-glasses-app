@@ -56,7 +56,7 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           fetching: false,
-          tagsList: action.data
+          tagsList: action.data.sort((a, b) => a.name.localeCompare(b.name))
         }
       }
       break
