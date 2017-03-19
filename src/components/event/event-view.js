@@ -4,12 +4,14 @@ import {connect} from 'react-redux'
 import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
+import {fetchUsers} from '../../state/user'
+import EventUserProfile from './event-user-profile'
 import './event-styles.css';
-
 
 class EventView extends React.Component {
   componentWillMount() {
     this.props.fetchMovie();
+    this.props.fetchUsers()
   }
 
   render() {
@@ -40,12 +42,10 @@ class EventView extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={12}>
-            <p>abc</p>
+          <Col xs={12} md={6}>
+            <EventUserProfile id="7" />
           </Col>
         </Row>
-
-
       </Grid>
     )
   }
@@ -57,5 +57,6 @@ export default connect(
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
+    fetchUsers: () => dispatch(fetchUsers())
   })
 )(EventView)

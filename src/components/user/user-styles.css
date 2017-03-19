@@ -26,10 +26,39 @@
   font-size: 2rem;
   color: #DC810E;}
 
-.welcome ~ p {
-  font-size: 1.3rem;
-  color: white; }
+.film-table tr:nth-child(even){
+  background-color: #6b6b6b;
+}
 
+.film-table tr:nth-child(odd){
+  background-color: #808080;
+}
+
+.film-table tr:hover {
+  background-color: #DC810E;
+}
+
+.film-table a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.film-table a:hover {
+  color: #474747;
+  display: block;
+}
+
+.table > tbody > tr > td{
+  padding: 0;
+}
+
+.strong {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
 .avatar-img {
   width: 75px;
   padding: 5px;
