@@ -55,23 +55,24 @@ export default connect(
                         event.preventDefault()
                         this.props.fetchSessionHelper(this.state.username, this.state.password)
                       }}>
-                  <p>Twój login</p>
+                  <p>Twój login:</p>
                   <input
+                    className="login"
                     type="text"
-                    placeholder="login"
+                    placeholder="DobrySąsiad"
                     value={this.state.username}
                     onChange={(event) => this.setState({username: event.target.value})}
                   />
-                  <p>Twoje hasło</p>
+                  <p>Twoje hasło:</p>
                   <input
+                    className="login"
                     type="password"
-                    placeholder="password"
+                    placeholder="silneHasło"
                     value={this.state.password}
                     onChange={(event) => this.setState({password: event.target.value})}
                   />
-                  <p>
-                    <Button type="submit">Zaloguj</Button>
-                  </p>
+
+                    <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
                 </form>
               </Col>
             </Row>

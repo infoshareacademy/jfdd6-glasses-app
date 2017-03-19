@@ -18,6 +18,23 @@ body {
 .login-container {
   margin-top: 80px; }
 
+.login {
+  margin: 0 0 10px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+.login:focus {
+  outline-color: #DC810E;
+  /*border-color: #DC810E;
+  border-bottom-color: #DC810E;
+  border-top-color: #DC810E;*/
+}
+
+.login-button {
+  margin: 10px 0
+}
+
 .logo {
   max-height: 150px;
   width: auto; }
