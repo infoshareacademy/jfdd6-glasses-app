@@ -19,7 +19,6 @@ import MoviesView from './components/movies/movies-view'
 import UserView from './components/user/user-view'
 import UsersView from './components/users/users-view'
 import EventView from './components/event/event-view'
-import LoginView from './components/login/login-view'
 
 ReactDOM.render(
   (
@@ -27,7 +26,6 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={HomeView}/>
-          {/*<Route path="login" component={LoginView}/>*/}
           <Route path="movie/:movieId" component={MovieView}/>
           <Route path="movies" component={MoviesView}/>
           <Route path="user/:userId" component={UserView}/>

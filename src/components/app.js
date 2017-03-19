@@ -1,10 +1,15 @@
 import React from "react";
 import {Navbar, Nav, NavItem, Image, NavDropdown} from "react-bootstrap";
 import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
-//import LoginView from "./login/login-view"
-
 import {connect} from 'react-redux'
 import {fetchSession} from '../state/session'
+
+import {Grid, Row, Col, Button} from 'react-bootstrap'
+//import FieldGroup from './login/forms'
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import '../styles/styles-all.css'
 
 
 export default connect(
@@ -17,7 +22,6 @@ export default connect(
   })
 )(
   class App extends React.Component {
-
     constructor(props) {
       super(props)
 
@@ -31,26 +35,50 @@ export default connect(
     }
 
     render() {
-
       return this.props.session.data === null ?
-        <form onSubmit={(event) => {
-          event.preventDefault()
-          this.props.fetchSessionHelper(this.state.username, this.state.password)
-        }}>
-          <input
-            type="text"
-            placeholder="username"
-            value={this.state.username}
-            onChange={(event) => this.setState({username: event.target.value})}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={(event) => this.setState({password: event.target.value})}
-          />
-          <button type="submit">Zaloguj</button>
-        </form> :
+
+        <div className="log-in-background">
+          <Grid>
+            <Row className="show-grid login-container">
+              <Col xs={12} sm={6} className="black-background">
+                <p className="welcome">Witaj sąsiedzie!</p>
+                <p>
+                  Połącz się ze swoimi znajomymi – i innymi ciekawymi ludźmi.
+                  Otrzymuj natychmiastowe aktualizacje na tematy, które Cię interesują.
+                  Obserwuj rozwój wydarzeń w czasie rzeczywistym, z każdej strony.
+                </p>
+                <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive/>
+              </Col>
+              <Col xs={12} sm={6}>
+                <form className="form-background"
+                      onSubmit={(event) => {
+                        event.preventDefault()
+                        this.props.fetchSessionHelper(this.state.username, this.state.password)
+                      }}>
+                  <p>Twój login</p>
+                  <input
+                    type="text"
+                    placeholder="login"
+                    value={this.state.username}
+                    onChange={(event) => this.setState({username: event.target.value})}
+                  />
+                  <p>Twoje hasło</p>
+                  <input
+                    type="password"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={(event) => this.setState({password: event.target.value})}
+                  />
+                  <p>
+                    <Button type="submit">Zaloguj</Button>
+                  </p>
+                </form>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
+
+        :
         (
           <div>
             <Navbar collapseOnSelect>
@@ -69,9 +97,6 @@ export default connect(
                     <NavItem eventKey={2}>Lista filmów</NavItem>
                   </LinkContainer>
                   <NavDropdown eventKey={3} id="dropdown1" title="Pozostałe">
-                    <LinkContainer to="/login">
-                      <NavItem eventKey={3.1}>Zaloguj</NavItem>
-                    </LinkContainer>
                     <LinkContainer to="/movie/1">
                       <NavItem eventKey={3.2}>Film</NavItem>
                     </LinkContainer>
@@ -87,7 +112,10 @@ export default connect(
                   </NavDropdown>
                 </Nav>
                 <Nav pullRight>
-                  <NavDropdown eventKey={4} id="dropdown2" title="Użytkownik">
+
+                  <NavDropdown eventKey={4} id="dropdown2"
+                               title={ this.props.user.data ? this.props.user.data.username : 'nieznany'}>
+
                     <LinkContainer to="/user/3">
                       <NavItem eventKey={4.1}>Moje Konto</NavItem>
                     </LinkContainer>

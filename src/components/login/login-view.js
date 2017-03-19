@@ -67,4 +67,5 @@ export default connect(
   dispatch => ({
     fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password))
   })
-)(LoginView)*/
+)(LoginView)
+*/
