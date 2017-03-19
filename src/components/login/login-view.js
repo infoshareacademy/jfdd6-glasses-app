@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col, Image, Button} from 'react-bootstrap'
@@ -66,4 +67,4 @@ export default connect(
   dispatch => ({
     fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password))
   })
-)(LoginView)
+)(LoginView)*/

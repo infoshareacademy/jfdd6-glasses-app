@@ -27,7 +27,7 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={HomeView}/>
-          <Route path="login" component={LoginView}/>
+          {/*<Route path="login" component={LoginView}/>*/}
           <Route path="movie/:movieId" component={MovieView}/>
           <Route path="movies" component={MoviesView}/>
           <Route path="user/:userId" component={UserView}/>
