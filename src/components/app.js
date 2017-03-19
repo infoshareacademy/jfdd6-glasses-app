@@ -3,14 +3,10 @@ import {Navbar, Nav, NavItem, Image, NavDropdown} from "react-bootstrap";
 import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
 import {connect} from 'react-redux'
 import {fetchSession} from '../state/session'
-
 import {Grid, Row, Col, Button} from 'react-bootstrap'
-//import FieldGroup from './login/forms'
-
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import '../styles/styles-all.css'
-
 
 export default connect(
   state => ({
@@ -78,9 +74,7 @@ export default connect(
             </Row>
           </Grid>
         </div>
-
-        :
-        (
+        : (
           <div>
             <Navbar collapseOnSelect>
               <Navbar.Header>
