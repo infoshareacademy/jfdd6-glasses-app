@@ -20,10 +20,7 @@ class EventUserProfile extends React.Component {
           <p><img src={filteredUser.avatar} alt="avatar"/></p>
         </Col>
         <Col xs={12} md={4}>
-          <p>
-            <h3>{filteredUser.first_name} {filteredUser.last_name}</h3>
-          </p>
-
+          <h3>{filteredUser.first_name} {filteredUser.last_name}</h3>
           <p>
             <span className="strong"> O {filteredUser.first_name}: </span>
             {filteredUser.description}
