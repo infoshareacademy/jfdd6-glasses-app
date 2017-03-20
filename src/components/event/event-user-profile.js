@@ -1,8 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Col, Grid} from 'react-bootstrap'
-import './event-styles.css';
-
 
 class EventUserProfile extends React.Component {
   render() {
@@ -22,10 +20,7 @@ class EventUserProfile extends React.Component {
           <p><img src={filteredUser.avatar} alt="avatar"/></p>
         </Col>
         <Col xs={12} md={4}>
-
-            <h3>{filteredUser.first_name} {filteredUser.last_name}</h3>
-
-
+          <h3>{filteredUser.first_name} {filteredUser.last_name}</h3>
           <p>
             <span className="strong"> O {filteredUser.first_name}: </span>
             {filteredUser.description}
