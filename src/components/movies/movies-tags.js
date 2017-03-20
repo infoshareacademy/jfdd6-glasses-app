@@ -1,16 +1,48 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
-const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
-  // console.log(customTags)
-  return (
-    <Col xs={10} xsOffset={1}>
-      <Row>
-        <Col className="movies-tags movies-border">
+class Tags extends React.Component {
+
+  showTags() {
+    document.getElementById('tags-list').style.display = 'block'
+    document.getElementById('tags-turn-on').style.display = 'none'
+    document.getElementById('tags-turn-off').style.display = 'block'
+  }
+
+  hideTags() {
+    document.getElementById('tags-list').style.display = 'none'
+    document.getElementById('tags-turn-on').style.display = 'block'
+    document.getElementById('tags-turn-off').style.display = 'none'
+  }
+
+  render() {
+    const {tags, customTags, sendTag, removeTag, resetTags} = this.props
+
+    return (
+      <div className="movies-tags">
+        <div id="tags-turn-on">
+          <Button
+            bsStyle="info"
+            bsSize="small"
+            className="movies-tag-button movies-tag-button-reset"
+            onClick={this.showTags}
+          >Pokaż filtry</Button>
+        </div>
+
+        <div id="tags-turn-off">
+          <Button
+            bsStyle="info"
+            bsSize="small"
+            className="movies-tag-button movies-tag-button-reset"
+            onClick={this.hideTags}
+          >Ukryj filtry</Button>
+        </div>
+
+        <div id="tags-list">
           {
             tags.length === 0
-              ? <p>Ładowanie&hellip;</p>
+              ? <p>Ładowanie…</p>
               :
               tags.map((tag) => (
                   customTags.indexOf(tag.id) === -1
@@ -20,27 +52,28 @@ const Tags = ({ tags, customTags, sendTag, removeTag, resetTags}) => {
                       bsSize="small"
                       className="movies-tag-button"
                       onClick={() => sendTag(tag.id)}
-                    >{tag.id} {tag.name}</Button>
+                    >{tag.name}</Button>
                     : <Button
                       key={tag.id}
                       value={tag.id}
                       bsStyle="success"
                       bsSize="small"
-                      className="movies-tag-button"
+                      className="movies-tag-button movies-tag-button-active"
                       onClick={() => removeTag(tag.id)}
-                    >{tag.id} {tag.name}</Button>
+                    >{tag.name}</Button>
                 )
               )
           }
           <Button
-            bsStyle="warning"
-            className="movies-tag-button"
+            bsStyle="info"
+            bsSize="small"
+            className="movies-tag-button movies-tag-button-reset"
             onClick={() => resetTags()}
-          >Usuń filtry</Button>
-        </Col>
-      </Row>
-    </Col>
-  )
+          >Usuń aktywne filtry</Button>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default connect(
