@@ -3,11 +3,11 @@ import React from 'react'
 import UserProfile from './user-profile.js'
 import UserFilmList from './user-film-list.js'
 import {connect} from 'react-redux'
-
+import {Grid, Row, Col} from 'react-bootstrap'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
 
-import {Grid, Row, Col} from 'react-bootstrap'
+
 
 class UserView extends React.Component {
   componentWillMount() {

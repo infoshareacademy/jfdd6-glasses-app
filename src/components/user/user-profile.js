@@ -1,6 +1,4 @@
 import React from 'react'
-//import {Grid} from 'react-bootstrap'
-import './user-styles.css';
 import {connect} from 'react-redux'
 
 class UserProfile extends React.Component {

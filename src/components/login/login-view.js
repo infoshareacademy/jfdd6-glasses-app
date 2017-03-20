@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col, Image, Button} from 'react-bootstrap'
@@ -6,6 +7,9 @@ import FieldGroup from './forms'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import '../../styles/styles-all.css'
+
+import { fetchSession } from '../../state/session'
+
 
 class LoginView extends React.Component {
   componentWillMount() {
@@ -56,6 +60,12 @@ class LoginView extends React.Component {
 }
 
 export default connect(
-  state => ({}),
-  dispatch => ({})
+  state => ({
+    session: state.session,
+    user: state.user
+  }),
+  dispatch => ({
+    fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password))
+  })
 )(LoginView)
+*/

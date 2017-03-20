@@ -13,10 +13,27 @@ body {
   background: url(../img/login-background.jpg);
   background-size: cover;
   margin-top: -20px;
-  height: 70vh; }
+  height: 80vh; }
 
 .login-container {
-  margin-top: 50px; }
+  margin-top: 80px; }
+
+.login {
+  margin: 0 0 10px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+.login:focus {
+  outline-color: #DC810E;
+  /*border-color: #DC810E;
+  border-bottom-color: #DC810E;
+  border-top-color: #DC810E;*/
+}
+
+.login-button {
+  margin: 10px 0
+}
 
 .logo {
   max-height: 150px;
@@ -31,7 +48,7 @@ body {
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px;
-min-height: 400px}
+  min-height: 400px}
 
 .welcome {
   font-family: 'Anton', sans-serif;

@@ -9,6 +9,9 @@ import homeFetchReducer from './state/home-fetch'
 import homeFiltersReducer from './state/home-filters'
 import homeLocationReducer from './state/home-fetch-location'
 
+import userReducerLogin from './state/userLogin'
+import sessionReducer from './state/session'
+
 const reducer = combineReducers({
   movies: moviesReducer,
   moviesFilters: moviesFiltersReducer,
@@ -16,6 +19,9 @@ const reducer = combineReducers({
   movie: movieReducer,
   homeFetch: homeFetchReducer,
   homeFilters: homeFiltersReducer,
+
+  session: sessionReducer,
+  userLogin: userReducerLogin
   homeLocation: homeLocationReducer
 })
 
