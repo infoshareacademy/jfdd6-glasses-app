@@ -49,7 +49,7 @@ const HomeEvents = ({ events, start, change }) => {
                       bsStyle="info"
                       defaultExpanded
                       key={event.id}
-                      header={event.title}
+                      header={event.start}
                       style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
