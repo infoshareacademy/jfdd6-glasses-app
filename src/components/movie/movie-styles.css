@@ -45,26 +45,30 @@
 }
 
 .abc {
-  background: #6b6b6b;
-  border: 3px solid #4d4d4d;;
+  background: #808080;
+  border: 3px solid #4d4d4d;
+  background-image: url("../../img/abc.png");
+  background-size: contain;
   width: 100px;
   float: left;
 }
 
 .bcd {
-  background: #808080;
+  background: #6b6b6b;
+  background-image: url("../../img/abc.png");
+  background-size: contain;
   border: 3px solid #4d4d4d;
   width: 100px;
   float: left;
 }
 
 .bcd:hover {
-  border-top: 3px solid #DC810E;;
-  border-bottom: 3px solid #DC810E;;
+  background: #DC810E;
+  border: 3px solid #4d4d4d;
 }
 .abc:hover {
-  border-left: 3px solid #DC810E;;
-  border-right: 3px solid #DC810E;;
+  background: #DC810E;
+  border: 3px solid #4d4d4d;
 }
 
 .movie-user-list {
@@ -77,4 +81,16 @@
 #x {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.movie-user-link a, .movie-user-link a:visited ,.movie-user-link a:hover, .movie-user-link a:link {
+  color: #d1d1d1;
+  text-decoration: none;
+  margin: 1px;
+  padding: 1px;
+}
+
+.movie-center {
+  text-align: center;
 }

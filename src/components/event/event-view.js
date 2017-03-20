@@ -5,18 +5,23 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
+import {fetchreadEvent} from '../../state/add-event'
 import EventUserProfile from './event-user-profile'
+import SubscribedUsers from './subscribed-users'
 import './event-styles.css';
+
 
 class EventView extends React.Component {
   componentWillMount() {
     this.props.fetchMovie();
-    this.props.fetchUsers()
+    this.props.fetchUsers();
+    this.props.fetchreadEvent()
   }
 
   render() {
     const id = this.props.params.eventId;
     const { movie} = this.props;
+
     return (
       <Grid>
         <Row>
@@ -45,6 +50,9 @@ class EventView extends React.Component {
           <Col xs={12} md={6}>
             <EventUserProfile id="7" />
           </Col>
+          <Col xs={12} md={6}>
+            <SubscribedUsers/>
+          </Col>
         </Row>
       </Grid>
     )
@@ -53,10 +61,12 @@ class EventView extends React.Component {
 
 export default connect(
   state => ({
-    movie: state.movie
+    movie: state.movie,
+    posts: state.posts
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchreadEvent: () => dispatch(fetchreadEvent())
   })
 )(EventView)
