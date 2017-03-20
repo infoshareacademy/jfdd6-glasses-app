@@ -2,8 +2,6 @@ import React from 'react'
 import {Table} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
-import './user-styles.css';
-
 
 class UserFilmList extends React.Component {
   render() {
