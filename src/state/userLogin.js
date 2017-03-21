@@ -5,7 +5,7 @@ const FETCH__FAIL = 'user/FETCH__FAILED'
 export const fetchUser = (accessToken, userId) => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    'https://tranquil-ocean-17204.herokuapp.com/api/users/' + userId + '?access_token=' + accessToken
+    'https://mysterious-lake-35712.herokuapp.com/api/users/' + userId + '?access_token=' + accessToken
   ).then(
     response => {
       if (response.ok) {

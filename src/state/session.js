@@ -7,7 +7,7 @@ import { fetchUser } from './userLogin'
 export const fetchSession = (username, password) => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    'https://tranquil-ocean-17204.herokuapp.com/api/users/login', {
+    'https://mysterious-lake-35712.herokuapp.com/api/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
