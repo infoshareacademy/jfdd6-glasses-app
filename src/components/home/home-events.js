@@ -49,7 +49,7 @@ const HomeEvents = ({ events, start, change }) => {
                       bsStyle="info"
                       defaultExpanded
                       key={event.id}
-                      header={event.start}
+                      header={'tytul filmu'}
                       style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "movieId": 20,
     "start": "2017-04-30T12:30:00",
     "desc": "Napięcie i emocje większe niż podczas meczu",
@@ -8,7 +9,7 @@
       "lng": 18.590085984324105
     },
     "host": 2,
-    "guest": [
+    "guests": [
       10,
       7,
       11,
@@ -18,6 +19,7 @@
     "comment": ""
   },
   {
+    "id": 2,
     "movieId": 16,
     "start": "2017-04-06T10:00:00",
     "desc": "Słodko-smutna indyjska opowieść",
@@ -26,7 +28,7 @@
       "lng": 18.593347550486214
     },
     "host": 6,
-    "guest": [
+    "guests": [
       12,
       7
     ],
@@ -34,6 +36,7 @@
     "comment": "Zapraszam panie"
   },
   {
+    "id": 3,
     "movieId": 23,
     "start": "2017-03-31T21:00:00",
     "desc": "Genialny film",
@@ -42,7 +45,7 @@
       "lng": 18.590407849405892
     },
     "host": 18,
-    "guest": [
+    "guests": [
       15,
       5,
       20
@@ -51,6 +54,7 @@
     "comment": "Każdy przynosi własne przekąski."
   },
   {
+    "id": 4,
     "movieId": 13,
     "start": "2017-04-06T20:00:00",
     "desc": "Dla Meryl Streep zgłębiającej kuchnię francuską",
@@ -59,7 +63,7 @@
       "lng": 18.59018790826667
     },
     "host": 12,
-    "guest": [
+    "guests": [
       4,
       6,
       14
@@ -68,6 +72,7 @@
     "comment": "Będzie ciasto czekoladowo-migdałowe według przepisu samej Julii Child."
   },
   {
+    "id": 5,
     "movieId": 22,
     "start": "2017-03-26T19:00:00",
     "desc": "TARS czeka",
@@ -76,7 +81,7 @@
       "lng": 18.59570789441932
     },
     "host": 17,
-    "guest": [
+    "guests": [
       18,
       1,
       16,
@@ -86,367 +91,395 @@
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 6,
+    "movieId": 1,
     "start": "2017-03-28T21:00:00",
-    "desc": "",
+    "desc": "Zawsze chętnie wracam do tego filmu. Zemsta jest słodka.",
     "location": {
       "lat": 54.393552111808106,
       "lng": 18.590678215550724
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 7,
+    "movieId": 2,
     "start": "2017-04-15T17:30:00",
-    "desc": "",
+    "desc": "Chyba nikomu nie trzeba polecać. Klasyka gatunku w najlepszym wydaniu.",
     "location": {
       "lat": 54.39322729337499,
       "lng": 18.59376812033588
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 8,
+    "movieId": 3,
     "start": "2017-04-18T10:00:00",
-    "desc": "",
+    "desc": "Oj, będziecie się bać.",
     "location": {
       "lat": 54.39206542177648,
       "lng": 18.59125757269794
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 9,
+    "movieId": 4,
     "start": "2017-04-13T12:00:00",
-    "desc": "",
+    "desc": "Jak oglądałem to po raz pierwszy, uwierzyłem, że to prawdziwa historia.",
     "location": {
       "lat": 54.39137827792944,
       "lng": 18.59329605154926
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 10,
+    "movieId": 5,
     "start": "2017-04-12T15:00:00",
-    "desc": "",
+    "desc": "Każdy przynosi chipsy i browarka",
     "location": {
       "lat": 54.39187802005029,
       "lng": 18.595484734105412
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
-    "comment": ""
+    "host": "",
+    "guests": [],
+    "limit": "",
+    "comment": "."
   },
   {
-    "movieId":"",
+    "id": 11,
+    "movieId": 6,
     "start": "2017-04-12T18:00:00",
-    "desc": "",
+    "desc": "Świetne zdjęcia (wiadomo - Polak robił). Dla twardzieli.",
     "location": {
       "lat": 54.394026841815496,
       "lng": 18.59681081798044
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 12,
+    "movieId": 7,
     "start": "2017-04-02T19:00:00",
-    "desc": "",
+    "desc": "Dość brutalny, ale naprawdę rewelacyjny. Żadnych czipsów proszę.",
     "location": {
       "lat": 54.39062865333597,
       "lng": 18.598617554234806
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 13,
+    "movieId": 8,
     "start": "2017-03-21T18:00:00",
-    "desc": "",
+    "desc": "Zapraszam wszystkich lubiących dobre filmy wojenne.",
     "location": {
       "lat": 54.38952917916001,
       "lng": 18.598145485448185
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 14,
+    "movieId": 9,
     "start": "2017-04-13T17:00:00",
-    "desc": "",
+    "desc": "O dziwo, film lepszy niż książka. Wpadajcie.",
     "location": {
       "lat": 54.38879201520451,
       "lng": 18.60000693850452
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 15,
+    "movieId": 10,
     "start": "2017-03-31T11:00:00",
-    "desc": "",
+    "desc": "Wszyscy lubiący Russela Crowe i piękną muzykę Zimmera mile widziani.",
     "location": {
       "lat": 54.3896416267349,
       "lng": 18.601707459019963
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 16,
+    "movieId": 11,
     "start": "2017-06-23T23:15:00",
-    "desc": "",
+    "desc": "Trochę patetyczny, ale fajne krajobrazy. Przynieście chusteczki.",
     "location": {
       "lat": 54.3905037145723,
       "lng": 18.6017503743642
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 17,
+    "movieId": 12,
     "start": "2017-04-27T21:00:00",
-    "desc": "",
+    "desc": "Wpadajcie.",
     "location": {
       "lat": 54.391765578603795,
       "lng": 18.603853226231877
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 18,
+    "movieId": 13,
     "start": "2017-11-23T20:45:00",
-    "desc": "",
+    "desc": "Dziewczyny zapraszam do siebie. Jakieś ciastka mile widziane.",
     "location": {
       "lat": 54.39202794149968,
       "lng": 18.60250139288837
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 19,
+    "movieId": 14,
     "start": "2017-09-06T21:45:00",
-    "desc": "",
+    "desc": "Dla fanów przygód kulinarnych. Po filmie robimy ragou",
     "location": {
       "lat": 54.39199046118873,
       "lng": 18.601389885079698
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
-    "comment": ""
+    "host": "",
+    "guests": [],
+    "limit": "",
+    "comment": "t"
   },
   {
-    "movieId":"",
+    "id": 20,
+    "movieId": 15,
     "start": "2017-12-10T20:15:00",
-    "desc": "",
+    "desc": "Zapraszam wszystkie fanki Abby. W sumie fanów też. :-)",
     "location": {
       "lat": 54.3925963886859,
       "lng": 18.60157227529271
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 21,
+    "movieId": 16,
     "start": "2017-06-03T23:45:00",
-    "desc": "",
+    "desc": "Sypie mi się małżeństwo i taką sobie historię wybrałam. Pocieszcie mnie dziewczyny",
     "location": {
       "lat": 54.391409511990304,
       "lng": 18.601207494866685
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 22,
+    "movieId": 17,
     "start": "2017-10-15T11:30:00",
-    "desc": "",
+    "desc": "Jak ktoś nie pracuje to niech wpada.",
     "location": {
       "lat": 54.38856711509029,
       "lng": 18.60580587439472
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 23,
+    "movieId": 18,
     "start": "2017-05-19T14:30:00",
-    "desc": "",
+    "desc": "Dla wytrwałych fanów niezbyt popularnego u nas sportu.",
     "location": {
       "lat": 54.3948763449615,
       "lng": 18.607810021494515
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 24,
+    "movieId": 19,
     "start": "2017-08-05T17:15:00",
-    "desc": "",
+    "desc": "Zapraszam",
     "location": {
       "lat": 54.392502689142326,
       "lng": 18.610857010935433
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 25,
+    "movieId": 20,
     "start": "2017-05-15T12:10:00",
-    "desc": "",
+    "desc": "Piwko bierzcie, jakieś paluchy i wbitka.",
     "location": {
       "lat": 54.392115395425556,
       "lng": 18.613496304606088
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 26,
+    "movieId": 21,
     "start": "2017-12-16T19:28:00",
-    "desc": "",
+    "desc": "Chyba nie trzeba zachęcać. Świetny Matt.",
     "location": {
       "lat": 54.391553188364085,
       "lng": 18.609140397165902
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 27,
+    "movieId": 6,
     "start": "2017-04-03T10:15:00",
-    "desc": "",
+    "desc": "Kto lubi strzelanki niech wpada.",
     "location": {
       "lat": 54.405773,
       "lng": 18.58044
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 28,
+    "movieId": 22,
     "start": "2017-04-18T22:15:00",
-    "desc": "",
+    "desc": "SciFi w najlepszym wydaniu. Zapraszam",
     "location": {
       "lat": 54.39846155416774,
       "lng": 18.60829496436054
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 29,
+    "movieId": 23,
     "start": "2017-06-08T22:15:00",
-    "desc": "",
+    "desc": "Zarąbisty Bratt i reszta ekipy.",
     "location": {
       "lat": 54.39709996109116,
       "lng": 18.596085548924748
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 30,
+    "movieId": 24,
     "start": "2017-12-15T21:15:00",
-    "desc": "",
+    "desc": "Zapraszam",
     "location": {
       "lat": 54.39620365841446,
       "lng": 18.597397685116448
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 31,
+    "movieId": 11,
     "start": "2017-06-04T16:30:00",
-    "desc": "",
+    "desc": "Tylko nie przychodzić z katanami :-)",
     "location": {
       "lat": 54.396625266642346,
       "lng": 18.596646666592278
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 32,
+    "movieId": 7,
     "start": "2017-07-13T16:00:00",
-    "desc": "",
+    "desc": "Brian de Palma w formie",
     "location": {
       "lat": 54.3937020273313,
       "lng": 18.598675489556626
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   },
   {
-    "movieId":"",
+    "id": 33,
+    "movieId": 9,
     "start": "2017-01-17T17:00:00",
     "desc": "",
     "location": {
       "lat": 54.395326074990884,
       "lng": 18.598160505425767
     },
-    "host":"",
-    "guest": [],
-    "limit":"",
+    "host": "",
+    "guests": [],
+    "limit": "",
     "comment": ""
   }
 ]
