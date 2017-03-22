@@ -19,7 +19,7 @@ export default connect(
       super(props);
       this.state = {
         username: '',
-        password: '',
+        password: ''
       }
     }
 
