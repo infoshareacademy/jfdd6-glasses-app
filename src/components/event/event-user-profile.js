@@ -1,8 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Col, Grid} from 'react-bootstrap'
-import './event-styles.css';
-
 
 class EventUserProfile extends React.Component {
   render() {
