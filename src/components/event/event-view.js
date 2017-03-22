@@ -8,7 +8,6 @@ import {fetchUsers} from '../../state/user'
 import {fetchreadEvent} from '../../state/add-event'
 import EventUserProfile from './event-user-profile'
 import SubscribedUsers from './subscribed-users'
-import './event-styles.css';
 
 
 class EventView extends React.Component {
@@ -51,7 +50,7 @@ class EventView extends React.Component {
             <EventUserProfile id="7" />
           </Col>
           <Col xs={12} md={6}>
-            <SubscribedUsers/>
+            <SubscribedUsers id={id}/>
           </Col>
         </Row>
       </Grid>

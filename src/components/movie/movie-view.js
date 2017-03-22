@@ -9,14 +9,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchAddEvent, addEvent} from '../../state/add-event'
+import {addEvent} from '../../state/add-event'
 
 export default connect(
   state => ({
     session: state.session,
   }),
   dispatch => ({
-    fetchAddEventHelper: () => dispatch(fetchAddEvent()),
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
     addEvent: (id) => dispatch(addEvent(id))
