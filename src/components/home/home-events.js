@@ -78,7 +78,7 @@ const HomeEvents = ({ events, start, change }) => {
 
 export default connect(
   state => ({
-    start: state.homeFilters.start
+    start: state.eventsFilters.start
   }),
   dispatch => ({
     change: (value, eventsLength) => dispatch(change(value, eventsLength))

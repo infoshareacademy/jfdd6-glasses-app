@@ -15,6 +15,7 @@ class HomeView extends React.Component {
 
   componentWillMount() {
     this.props.fetchData()
+    //reducer filmów Krzyśka
   }
 
   render() {
@@ -64,9 +65,9 @@ class HomeView extends React.Component {
 
 export default connect(
   state => ({
-    events: state.homeFetch.data,
-    range: state.homeFilters.value,
-    userLocation: state.homeLocation.data.results
+    events: state.eventsFetch.data,
+    range: state.eventsFilters.value,
+    userLocation: state.userLocation.data.results
   }),
   dispatch => ({
     fetchData: () => dispatch(fetchData())

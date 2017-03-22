@@ -17,12 +17,11 @@ const reducer = combineReducers({
   moviesFilters: moviesFiltersReducer,
   user: userReducer,
   movie: movieReducer,
-  homeFetch: homeFetchReducer,
-  homeFilters: homeFiltersReducer,
-
+  eventsFetch: homeFetchReducer,
+  eventsFilters: homeFiltersReducer,
   session: sessionReducer,
   userLogin: userReducerLogin,
-  homeLocation: homeLocationReducer
+  userLocation: homeLocationReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
