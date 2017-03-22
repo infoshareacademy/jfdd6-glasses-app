@@ -44,12 +44,12 @@ const HomeEvents = ({ events, start, change }) => {
                   start, start + step
                 ).map(
                   event => (
-                    <Link key={event.id} to={"/event/" + event.id}>
+                    <Link key={event.id} to={"/event/" + event.movieId}>
                       <Panel
                       bsStyle="info"
                       defaultExpanded
                       key={event.id}
-                      header={'tytul filmu'}
+                      header={event.movieTitle}
                       style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
