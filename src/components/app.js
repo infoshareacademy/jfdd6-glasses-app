@@ -16,8 +16,7 @@ export default connect(
 )(
   class App extends React.Component {
     constructor(props) {
-      super(props)
-
+      super(props);
       this.state = {
         username: '',
         password: ''
@@ -64,7 +63,7 @@ export default connect(
                     value={this.state.password}
                     onChange={(event) => this.setState({password: event.target.value})}
                   />
-                    <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
+                  <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
                   {this.props.session.error ? <p className="login-error">Zły login lub hasło</p> : null}
                 </form>
               </Col>
@@ -72,58 +71,58 @@ export default connect(
           </Grid>
         </div>
         : (
-          <div>
-            <Navbar collapseOnSelect>
-              <Navbar.Header>
-                <Navbar.Brand>
-                  <Image src={process.env.PUBLIC_URL + '/data/home/logo.svg'}/>
-                </Navbar.Brand>
-                <Navbar.Toggle />
-              </Navbar.Header>
-              <Navbar.Collapse>
-                <Nav>
-                  <IndexLinkContainer to="/">
-                    <NavItem eventKey={1}>Wydarzenia</NavItem>
-                  </IndexLinkContainer>
-                  <LinkContainer to="/movies">
-                    <NavItem eventKey={2}>Lista filmów</NavItem>
+        <div>
+          <Navbar collapseOnSelect>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <Image src={process.env.PUBLIC_URL + '/data/home/logo.svg'}/>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav>
+                <IndexLinkContainer to="/">
+                  <NavItem eventKey={1}>Wydarzenia</NavItem>
+                </IndexLinkContainer>
+                <LinkContainer to="/movies">
+                  <NavItem eventKey={2}>Lista filmów</NavItem>
+                </LinkContainer>
+                <NavDropdown eventKey={3} id="dropdown1" title="Pozostałe">
+                  <LinkContainer to="/movie/1">
+                    <NavItem eventKey={3.2}>Film</NavItem>
                   </LinkContainer>
-                  <NavDropdown eventKey={3} id="dropdown1" title="Pozostałe">
-                    <LinkContainer to="/movie/1">
-                      <NavItem eventKey={3.2}>Film</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/user/3">
-                      <NavItem eventKey={3.3}>Sąsiad</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/users">
-                      <NavItem eventKey={3.4}>Lista sąsiadów</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/event/2">
-                      <NavItem eventKey={3.5}>Wydarzenie</NavItem>
-                    </LinkContainer>
-                  </NavDropdown>
-                </Nav>
-                <Nav pullRight>
+                  <LinkContainer to="/user/3">
+                    <NavItem eventKey={3.3}>Sąsiad</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/users">
+                    <NavItem eventKey={3.4}>Lista sąsiadów</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/event/2">
+                    <NavItem eventKey={3.5}>Wydarzenie</NavItem>
+                  </LinkContainer>
+                </NavDropdown>
+              </Nav>
+              <Nav pullRight>
 
-                  <NavDropdown eventKey={4} id="dropdown2"
-                               title={ this.props.user.data ? this.props.user.data.username : 'nieznany'}>
+                <NavDropdown eventKey={4} id="dropdown2"
+                             title={ this.props.user.data ? this.props.user.data.username : 'nieznany'}>
 
-                    <LinkContainer to="/user/3">
-                      <NavItem eventKey={4.1}>Moje Konto</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/">
-                      <NavItem eventKey={4.2}>Wyloguj</NavItem>
-                    </LinkContainer>
-                  </NavDropdown>
-                </Nav>
-                <Navbar.Text pullRight>
-                  Zalogowany jako:
-                </Navbar.Text>
-              </Navbar.Collapse>
-            </Navbar>
-            {this.props.children}
-          </div>
-        )
+                  <LinkContainer to="/user/3">
+                    <NavItem eventKey={4.1}>Moje Konto</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/">
+                    <NavItem eventKey={4.2}>Wyloguj</NavItem>
+                  </LinkContainer>
+                </NavDropdown>
+              </Nav>
+              <Navbar.Text pullRight>
+                Zalogowany jako:
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Navbar>
+          {this.props.children}
+        </div>
+      )
     }
   }
 )

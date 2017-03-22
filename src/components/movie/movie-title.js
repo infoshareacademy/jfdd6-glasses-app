@@ -1,18 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+
 class MovieTitle extends React.Component {
 
   render() {
     const { id, movie } = this.props;
     return (
-      <div>
+      <div className="movie-title">
         {
           movie.data? movie.data.filter(
               movie => movie.id === parseInt(id, 10)
             ).map(
               movie => (
-                <h2 key={movie.id}>{movie.name}</h2>
+                <h2 className="title" key={movie.id}>{movie.name}</h2>
               )
             ) : <p>brak danych</p>
         }
