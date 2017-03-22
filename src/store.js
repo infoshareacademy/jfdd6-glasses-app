@@ -22,6 +22,7 @@ const reducer = combineReducers({
   eventsFilters: homeFiltersReducer,
   session: sessionReducer,
   userLogin: userReducerLogin,
+  userLocation: homeLocationReducer,
   posts: addeventReducer,
 })
 
