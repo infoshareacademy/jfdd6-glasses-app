@@ -3,6 +3,7 @@ import {Navbar, Nav, NavItem, Image, NavDropdown} from "react-bootstrap";
 import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
 import {connect} from 'react-redux'
 import {fetchSession} from '../state/session'
+import {endSession} from '../state/session'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 
 export default connect(
@@ -12,6 +13,7 @@ export default connect(
   }),
   dispatch => ({
     fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password)),
+    endSessionHelper: (token) => dispatch(endSession(token))
   })
 )(
   class App extends React.Component {
@@ -34,11 +36,10 @@ export default connect(
           <Grid>
             <Row className="show-grid login-container">
               <Col xs={12} sm={6} className="black-background">
-                <p className="welcome">Witaj sąsiedzie!</p>
+                <p className="welcome">Witaj Sąsiedzie!</p>
                 <p>
-                  Połącz się ze swoimi znajomymi – i innymi ciekawymi ludźmi.
-                  Otrzymuj natychmiastowe aktualizacje na tematy, które Cię interesują.
-                  Obserwuj rozwój wydarzeń w czasie rzeczywistym, z każdej strony.
+                  Połącz się ze swoimi znajomymi i innymi ciekawymi ludźmi mieszkającymi nieopodal, którzy dzielą z Tobą tę samą pasję - FILMY.
+                  Obserwuj kalendarz z seansami filmowymi, zapisuj się na projekcje lub twórz własne wydarzenia.
                 </p>
                 <Image src={require("../img/logo.png")} alt="Logo Klatka" className="logo" responsive/>
               </Col>
@@ -109,11 +110,17 @@ export default connect(
                                title={ this.props.user.data ? this.props.user.data.username : 'nieznany'}>
 
                     <LinkContainer to="/user/3">
-                      <NavItem eventKey={4.1}>Moje Konto</NavItem>
+                      <NavItem eventKey={4.1}>Mój profil</NavItem>
                     </LinkContainer>
-                    <LinkContainer to="/">
-                      <NavItem eventKey={4.2}>Wyloguj</NavItem>
-                    </LinkContainer>
+
+                      <NavItem
+                        onClick={(event) => {
+                          event.preventDefault()
+                          this.props.endSessionHelper(this.props.session.data.id)
+                          console.log(this.props.session.data.id)
+                        }}
+                        eventKey={4.2}>Wyloguj mnie</NavItem>
+
                   </NavDropdown>
                 </Nav>
                 <Navbar.Text pullRight>
