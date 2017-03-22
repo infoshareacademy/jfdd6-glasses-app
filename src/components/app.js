@@ -11,16 +11,16 @@ export default connect(
     user: state.userLogin
   }),
   dispatch => ({
-    fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password)),
+    fetchSessionHelper: (username, password, id) => dispatch(fetchSession(username, password, id)),
   })
 )(
   class App extends React.Component {
     constructor(props) {
-      super(props)
-
+      super(props);
       this.state = {
         username: '',
-        password: ''
+        password: '',
+        id: ''
       }
     }
 
@@ -28,6 +28,7 @@ export default connect(
     }
 
     render() {
+      console.log(this.state.id);
       return this.props.session.data === null ?
 
         <div className="log-in-background">

@@ -36,7 +36,7 @@ export default connect(
       console.log('movie' + this.state.movieEventId)
       function addEvent() {
         return fetch(
-          'http://localhost:3000/posts', {
+          'http://localhost:3010/posts', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
