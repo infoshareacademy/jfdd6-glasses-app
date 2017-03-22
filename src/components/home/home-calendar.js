@@ -12,7 +12,7 @@ const HomeCalendar = ({events, router}) => (
         events.map(
           event => ({
             ...event,
-            title: event.desc,
+            title: event.movieTitle + 'bac',
             start: new Date(event.start),
             end: new Date(new Date(event.start
               ).setHours(new Date(event.start

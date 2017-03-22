@@ -20,7 +20,7 @@ class HomeView extends React.Component {
   }
 
   render() {
-    const { events, range, userLocation } = this.props
+    const { events, range, userLocation, movies } = this.props
     const userLattitude = userLocation[0].geometry.location.lat;
     const userLongitude = userLocation[0].geometry.location.lng;
 
@@ -32,7 +32,10 @@ class HomeView extends React.Component {
                 Math.pow((Math.cos(userLattitude * Math.PI / 180) *
                 (event.location.lng - userLongitude)), 2))
               * (40075.704 / 360)
-            ) * 1000)
+            ) * 1000),
+          movieTitle: (movies.find(function(movie){
+            return event.movieId === movie.id
+          }) || {name: 'no title'}).name
         })
       }).filter(
         (event, index) =>
@@ -69,7 +72,7 @@ export default connect(
     events: state.eventsFetch.data,
     range: state.eventsFilters.value,
     userLocation: state.userLocation.data.results,
-    movies: state.movie.Data
+    movies: state.movie.data
   }),
   dispatch => ({
     fetchData: () => dispatch(fetchData()),
