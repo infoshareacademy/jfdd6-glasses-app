@@ -4,9 +4,6 @@ import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
 import {connect} from 'react-redux'
 import {fetchSession} from '../state/session'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-import '../styles/styles-all.css'
 
 export default connect(
   state => ({
@@ -67,8 +64,8 @@ export default connect(
                     value={this.state.password}
                     onChange={(event) => this.setState({password: event.target.value})}
                   />
-
                     <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
+                  {this.props.session.error ? <p className="login-error">Zły login lub hasło</p> : null}
                 </form>
               </Col>
             </Row>
