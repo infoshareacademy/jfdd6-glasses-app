@@ -38,35 +38,35 @@
 
 .movie-img {
   max-height: 480px;
-  width: 100%;
+  max-width: 100%;
   margin: auto;
   display: block;
   /*object-fit: contain;*/
 }
 
-.abc {
+.movie-list-bg-1 {
   background: #808080;
   border: 3px solid #4d4d4d;
-  background-image: url("../../img/abc.png");
+  background-image: url("../../img/user-bg.png");
   background-size: contain;
   width: 100px;
   float: left;
 }
 
-.bcd {
+.movie-list-bg-2 {
   background: #6b6b6b;
-  background-image: url("../../img/abc.png");
+  background-image: url("../../img/user-bg.png");
   background-size: contain;
   border: 3px solid #4d4d4d;
   width: 100px;
   float: left;
 }
 
-.bcd:hover {
+.movie-list-bg-2:hover {
   background: #DC810E;
   border: 3px solid #4d4d4d;
 }
-.abc:hover {
+.movie-list-bg-1:hover {
   background: #DC810E;
   border: 3px solid #4d4d4d;
 }

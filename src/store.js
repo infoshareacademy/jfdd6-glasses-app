@@ -19,10 +19,10 @@ const reducer = combineReducers({
   movie: movieReducer,
   homeFetch: homeFetchReducer,
   homeFilters: homeFiltersReducer,
-  posts: addeventReducer,
 
   session: sessionReducer,
-  userLogin: userReducerLogin
+  userLogin: userReducerLogin,
+  posts: addeventReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

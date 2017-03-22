@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
-import './movie-styles.css';
 
 class UserList extends React.Component {
 
@@ -15,7 +14,7 @@ class UserList extends React.Component {
               user => user.movies.includes(+id),
             ).map(
               (user, index) => (
-                <div key={user.id} className={ (index % 2 !== 0 ? 'abc' : 'bcd') + ' movie-user-link'}><br/>
+                <div key={user.id} className={ (index % 2 !== 0 ? 'movie-list-bg-1' : 'movie-list-bg-2') + ' movie-user-link'}><br/>
                   <Link to={'/user/' + user.id} >
                     <img src={user.avatar}
                          alt={user.first_name + ' avatar'}

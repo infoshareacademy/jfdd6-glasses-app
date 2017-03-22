@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import './movie-styles.css';
 
 
 class MovieTitle extends React.Component {

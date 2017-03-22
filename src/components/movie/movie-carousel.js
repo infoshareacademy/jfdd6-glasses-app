@@ -1,6 +1,5 @@
 import React from 'react'
 import {Carousel} from 'react-bootstrap'
-import './movie-styles.css';
 import {connect} from 'react-redux'
 
 
