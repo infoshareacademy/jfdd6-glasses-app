@@ -116,8 +116,8 @@ export default connect(
                       <NavItem
                         onClick={(event) => {
                           event.preventDefault()
+                          this.setState({username: '', password: ''})
                           this.props.endSessionHelper(this.props.session.data.id)
-                          console.log(this.props.session.data.id)
                         }}
                         eventKey={4.2}>Wyloguj mnie</NavItem>
 

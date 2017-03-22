@@ -1,48 +1,9 @@
 const FETCH__BEGIN = 'session/FETCH__BEGIN'
 const FETCH__SUCCESS = 'session/FETCH__SUCCESS'
 const FETCH__FAIL = 'session/FETCH__FAILED'
+const FETCH__LOGOUT = 'session/FETCH__LOGOUT'
 
 import { fetchUser } from './userLogin'
-
-
-
-export const endSession = (accessToken) => dispatch => {
-  console.log(accessToken)
-  dispatch({ type: FETCH__BEGIN })
-  return fetch(
-    'https://mysterious-lake-35712.herokuapp.com/api/users/logout?access_token=' + accessToken, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-  ).then(
-    response => {
-      if (response.ok) {
-        return response.json().then(
-          data => {
-            dispatch({
-              type: FETCH__SUCCESS,
-              data
-            })
-          }
-        ).catch(
-          error => dispatch({
-            type: FETCH__FAIL,
-            error: 'Malformed JSON response'
-          })
-        )
-      }
-      throw new Error('Connection error')
-    }
-  ).catch(
-    error => dispatch({
-      type: FETCH__FAIL,
-      error: error.message
-    })
-  )
-}
-
 
 export const fetchSession = (username, password) => dispatch => {
   dispatch({ type: FETCH__BEGIN })
@@ -85,6 +46,20 @@ export const fetchSession = (username, password) => dispatch => {
   )
 }
 
+export const endSession = (accessToken) => dispatch => {
+  dispatch({ type: FETCH__BEGIN })
+  return fetch(
+    'https://mysterious-lake-35712.herokuapp.com/api/users/logout?access_token=' + accessToken,
+    { method: 'POST' }
+  ).then(() => dispatch({ type: FETCH__LOGOUT })
+  ).catch(
+    error => dispatch({
+      type: FETCH__FAIL,
+      error: error.message
+    })
+  )
+}
+
 const initialState = {
   data: null,
   fetching: false,
@@ -110,6 +85,12 @@ export default (state = initialState, action = {}) => {
         ...state,
         fetching: false,
         error: action.error
+      }
+    case FETCH__LOGOUT:
+      return {
+        data: null,
+        fetching: false,
+        error: false
       }
     default:
       return state
