@@ -33,9 +33,12 @@ class HomeView extends React.Component {
                 (event.location.lng - userLongitude)), 2))
               * (40075.704 / 360)
             ) * 1000),
-          movieTitle: (movies.find(function(movie){
-            return event.movieId === movie.id
-          }) || {name: 'no title'}).name
+          movieTitle: movies.reduce(function(found, nextMovie){
+            if( event.movieId === nextMovie.id ) {
+              return nextMovie.name;
+            }
+            return found
+          }, 'no title')
         })
       }).filter(
         (event, index) =>
