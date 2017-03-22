@@ -61,3 +61,32 @@ export default (state = initialState, action = {}) => {
       return state
   }
 }
+
+export const addEvent = (id) => {
+  return fetch(
+    'http://localhost:3010/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          title: 'movie title',
+          body: 'some description',
+          userId: id,
+          movieId: 1,
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      )
+    }
+  ).then(
+    response => {
+      if (response.ok) {
+        return response.json().then(
+          data =>
+
+            location.href = "http://localhost:3000/event/" + data.id,
+        )
+      }
+    })
+}
+
