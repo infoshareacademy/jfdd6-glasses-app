@@ -10,12 +10,13 @@ import HomeSlider from './home-slider'
 import HomeEvents from './home-events'
 
 import { fetchData } from '../../state/home-fetch'
+import { fetchMovie } from '../../state/movie'
 
 class HomeView extends React.Component {
 
   componentWillMount() {
     this.props.fetchData()
-    //reducer filmów Krzyśka
+    this.props.fetchMovie()
   }
 
   render() {
@@ -67,10 +68,12 @@ export default connect(
   state => ({
     events: state.eventsFetch.data,
     range: state.eventsFilters.value,
-    userLocation: state.userLocation.data.results
+    userLocation: state.userLocation.data.results,
+    movies: state.movie.Data
   }),
   dispatch => ({
-    fetchData: () => dispatch(fetchData())
+    fetchData: () => dispatch(fetchData()),
+    fetchMovie: () => dispatch(fetchMovie())
   })
 )(HomeView)
 
