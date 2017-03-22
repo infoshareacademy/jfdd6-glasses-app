@@ -7,6 +7,7 @@ import movieReducer from './state/movie'
 import userReducer from './state/user'
 import homeFetchReducer from './state/home-fetch'
 import homeFiltersReducer from './state/home-filters'
+import addeventReducer from './state/add-event'
 
 import userReducerLogin from './state/userLogin'
 import sessionReducer from './state/session'
@@ -20,7 +21,8 @@ const reducer = combineReducers({
   homeFilters: homeFiltersReducer,
 
   session: sessionReducer,
-  userLogin: userReducerLogin
+  userLogin: userReducerLogin,
+  posts: addeventReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
