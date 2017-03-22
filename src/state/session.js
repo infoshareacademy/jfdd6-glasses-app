@@ -2,6 +2,7 @@ const FETCH__BEGIN = 'session/FETCH__BEGIN'
 const FETCH__SUCCESS = 'session/FETCH__SUCCESS'
 const FETCH__FAIL = 'session/FETCH__FAILED'
 const FETCH__LOGOUT = 'session/FETCH__LOGOUT'
+const GUEST = 'session/GUEST'
 
 import { fetchUser } from './userLogin'
 
@@ -60,6 +61,10 @@ export const endSession = (accessToken) => dispatch => {
   )
 }
 
+export const letGuestIn = () => ({
+  type: GUEST
+})
+
 const initialState = {
   data: null,
   fetching: false,
@@ -91,6 +96,11 @@ export default (state = initialState, action = {}) => {
         data: null,
         fetching: false,
         error: false
+      }
+    case GUEST:
+      return {
+        ...state,
+        data: 'guest'
       }
     default:
       return state

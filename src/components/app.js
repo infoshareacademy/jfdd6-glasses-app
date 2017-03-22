@@ -2,8 +2,7 @@ import React from "react";
 import {Navbar, Nav, NavItem, Image, NavDropdown} from "react-bootstrap";
 import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
 import {connect} from 'react-redux'
-import {fetchSession} from '../state/session'
-import {endSession} from '../state/session'
+import {fetchSession, endSession, letGuestIn} from '../state/session'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 
 export default connect(
@@ -13,7 +12,8 @@ export default connect(
   }),
   dispatch => ({
     fetchSessionHelper: (username, password) => dispatch(fetchSession(username, password)),
-    endSessionHelper: (token) => dispatch(endSession(token))
+    endSessionHelper: (token) => dispatch(endSession(token)),
+    letGuestIn: () => dispatch(letGuestIn())
   })
 )(
   class App extends React.Component {
@@ -24,9 +24,6 @@ export default connect(
         username: '',
         password: ''
       }
-    }
-
-    componentWillMount() {
     }
 
     render() {
@@ -66,6 +63,7 @@ export default connect(
                     onChange={(event) => this.setState({password: event.target.value})}
                   />
                     <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
+                  &nbsp;&nbsp;<Button onClick={() => this.props.letGuestIn()}>Wejdź jako gość</Button>
                   {this.props.session.error ? <p className="login-error">Zły login lub hasło</p> : null}
                 </form>
               </Col>
