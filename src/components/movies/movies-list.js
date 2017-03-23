@@ -31,7 +31,7 @@ const MovieList = ({movies, customTags, query, queryTag, session, user, toggleMo
                     {movie.name}
                     <br/>
                     <span className="movies-original-title">({movie.originalTitle})</span>
-                    {user.movies.includes(movie.id) ? null
+                    {user === null || user.movies.includes(movie.id) ? null
                       :
                       < Button bsSize="xsmall" className="movies-list-button" onClick={
                         (event) => {
