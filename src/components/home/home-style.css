@@ -1,12 +1,10 @@
 /* Events */
-div.home-table a {
-  text-decoration: none;
-}
 
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 0 10px 10px 10px;
+  margin: 5px 0 0 5px;
+  height: 33%
 }
 
 .home-event-title {
@@ -15,9 +13,18 @@ div.home-table a {
   text-align: center;
 }
 
-.home-event-panel img {
-  max-width: 50px;
+.home-event-description {
+  color: white;
 }
+
+.home-event-description h6 {
+  line-height: 1.5em;
+}
+
+.home-btn-container {
+  padding: 15px 0 0 9px;
+}
+
 
 /* Slider overwriting */
 .input-range__label-container {
@@ -44,6 +51,6 @@ div.home-table a {
 }
 
 .rbc-toolbar button {
-
+  color: white;
 }
 
