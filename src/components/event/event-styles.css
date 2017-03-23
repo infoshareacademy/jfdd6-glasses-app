@@ -20,3 +20,11 @@
   font-weight: 900;
   font-size: 1.1rem;
 }
+
+.event-movie-img {
+  max-width: 320px;
+}
+
+.event-table {
+  width: 300px;
+}

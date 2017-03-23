@@ -1,44 +1,35 @@
 import React from 'react'
-import { FormGroup, FormControl } from 'react-bootstrap'
+import { Button, FormControl, InputGroup } from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-class HomeLocation extends React.Component {
-  constructor(props){
-    super(props)
+import { fetchLocation } from '../../state/home-fetch-location'
 
-    this.state = {
-      value: ''
-    }
-  }
-
-  getValidationState() {
-    // to be discussed
-  }
-
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
-
-  render() {
-    return (
-      <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
+export default connect(
+  state => ({}),
+  dispatch => ({
+    fetchLocationHelper: address => dispatch(fetchLocation(address))
+  })
+)(
+  class HomeLocation extends React.Component {
+    render () {
+      return (
+        <form onSubmit={(event) => {
+          event.preventDefault()
+          this.props.fetchLocationHelper(this.address.value || 'Gdańsk, Hynka 5')
+        }}>
+        <InputGroup>
           <FormControl
             type="text"
-            value={this.state.value}
-            placeholder="Twoja lokalizacja"
-            onChange={this.handleChange}
+            inputRef={input => this.address = input}
+            placeholder="Wpisz Twoją lokalizację i suwakiem zmień dystans."
           />
-        </FormGroup>
-      </form>
-    )
-  }
-}
+          {' '}
+          <InputGroup.Button >
+            <Button type="submit">OK</Button>
+          </InputGroup.Button>
+        </InputGroup>
+        </form>
 
-HomeLocation.PropTypes = {
-  // tbd
-}
-
-export default HomeLocation
+      )
+    }
+  })

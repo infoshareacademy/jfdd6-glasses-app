@@ -1,27 +1,31 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+
 class MovieDescription extends React.Component {
 
 
   render() {
     const { id, movie } = this.props;
+
     return (
-      <div>
+      <div className="movie-description">
         {
-          movie.data? movie.data.filter(
-        movie => movie.id === parseInt(id, 10)
-        ).map(
-        movie => (
-        <p key={movie.id}>{movie.description}</p>
-        )
-        ) : <p>brak danych</p>
+          movie.data ? movie.data.filter(
+              movie => movie.id === parseInt(id, 10)
+            ).map(
+              movie => (
+                <p key={movie.id}>{movie.description}</p>
+
+          )
+            ) : <p>brak danych</p>
         }
       </div>
 
     )
   }
 }
+
 
 export default connect(
   state => ({
