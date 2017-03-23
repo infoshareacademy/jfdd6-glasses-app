@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { Button } from 'react-bootstrap'
+import { addMovie } from '../../state/userLogin'
 
-const MovieList = ({movies, customTags, query, queryTag}) => (
+const MovieList = ({movies, customTags, query, queryTag, session, user, addMovie}) => (
   <div>
     {
       movies.length === 0
@@ -29,6 +31,8 @@ const MovieList = ({movies, customTags, query, queryTag}) => (
                     {movie.name}
                     <br/>
                     <span className="movies-original-title">({movie.originalTitle})</span>
+                    <br/>
+                    <Button bsSize="xsmall" onClick={ () => addMovie(user.id, user.movies.concat(movie.id), session.id) }>Dodaj do swojej listy</Button>
                   </Link>
                 </div>
               </div>
@@ -43,7 +47,12 @@ export default connect(
     movies: state.movies.moviesData,
     customTags: state.moviesFilters.customTags,
     query: state.moviesFilters.query,
-    queryTag: state.moviesFilters.queryTag
+    queryTag: state.moviesFilters.queryTag,
+    session: state.session.data,
+    user: state.userLogin.data
+  }),
+  dispatch => ({
+    addMovie: (userId, userMovies, accessToken) => dispatch(addMovie(userId, userMovies, accessToken))
   })
 )(MovieList)
 
