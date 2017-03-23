@@ -1,0 +1,28 @@
+/*HOME_VIEW SPECIFIC*/
+div.home-table a {
+  text-decoration: none;
+}
+
+.input-range__label-container {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.rbc-date-cell > a {
+  color: white;
+}
+
+.rbc-calendar * {
+  color: white;
+}
+
+.rbc-today {
+  background-color: #6B6B6B;
+}
+
+.rbc-event {
+  background-color: #DC810E;
+}
+
+.rbc-toolbar button {
+
+}

@@ -35,7 +35,10 @@ class HomeView extends React.Component {
             ) * 1000),
           movieTitle: (movies.find(movie => {
             return event.movieId === movie.id
-          }) || {name: 'Movie without a title.'}).name
+          }) || {name: 'Movie without a title.'}).name,
+          moviePicture: (movies.find(movie => {
+            return event.movieId === movie.id
+          })).pics[0]
         })
       }).filter(
         (event, index) =>

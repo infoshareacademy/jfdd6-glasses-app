@@ -11,7 +11,8 @@ import 'react-input-range/lib/css/index.css'
 import './components/movies/movies-style.css'
 import './components/movie/movie-styles.css'
 import './components/user/user-styles.css'
-import './components/event/event-styles.css';
+import './components/event/event-styles.css'
+import './components/home/home-style.css'
 import './styles/styles-all.css'
 
 import App from './components/app'
