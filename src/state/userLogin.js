@@ -1,6 +1,7 @@
 const FETCH__BEGIN = 'user/FETCH__BEGIN'
 const FETCH__SUCCESS = 'user/FETCH__SUCCESS'
 const FETCH__FAIL = 'user/FETCH__FAILED'
+const FETCH__LOGOUT = 'session/FETCH__LOGOUT'
 
 export const fetchUser = (accessToken, userId) => dispatch => {
   dispatch({ type: FETCH__BEGIN })
@@ -56,6 +57,12 @@ export default (state = initialState, action = {}) => {
         ...state,
         fetching: false,
         error: action.error
+      }
+    case FETCH__LOGOUT:
+      return {
+        data: null,
+        fetching: false,
+        error: null
       }
     default:
       return state
