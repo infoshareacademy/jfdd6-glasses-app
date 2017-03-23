@@ -17,7 +17,7 @@ class UserFilmList extends React.Component {
 
     return (
       <div className="profile-container black-background">
-        <h3>Filmy użytkownika <span className="name"> {filteredUser.login}</span></h3>
+        <h3>Filmy użytkownika <span className="name"> {filteredUser.username}</span></h3>
         <Table className="film-table">
           <tbody>
 
