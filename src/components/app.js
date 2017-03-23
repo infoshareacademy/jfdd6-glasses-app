@@ -105,7 +105,7 @@ export default connect(
                 <Nav pullRight>
 
                   <NavDropdown eventKey={4} id="dropdown2"
-                               title={ this.props.user.data ? this.props.user.data.username : 'nieznany'}>
+                               title={ this.props.user.data ? this.props.user.data.username : 'gość'}>
 
                     <LinkContainer to="/user/3">
                       <NavItem eventKey={4.1}>Mój profil</NavItem>
