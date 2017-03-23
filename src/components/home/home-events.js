@@ -45,21 +45,30 @@ const HomeEvents = ({events, start, change}) => {
             ).map(
               event => (
                 <Link key={event.id} to={"/event/" + event.movieId}>
-                  <Row >
-                    <Col className="movie-title" xs={12} md={12} key={event.id}>
-                      <h3 className="title rbc-ellipsis">{event.movieTitle}</h3>
+
+                  <Row className="home-event-panel">
+                    <Col xs={12} md={12} key={event.id}>
+                      <h3 className="home-event-title rbc-ellipsis">
+                        {event.movieTitle}
+                      </h3>
                     </Col>
-                  </Row>
-                    <Col className="movies-list-movie movie-description" xs={4}>
-                      <img src={event.moviePicture} alt={event.movieTitle}/>
+
+                    <Col xs={3}>
+                      <img
+                        src={event.moviePicture}
+                        alt={event.movieTitle}
+                        responsive
+                      />
                     </Col>
-                    <Col className="movie-description" xs={8}>
+
+                    <Col xs={9}>
                       <p className="text-right">
                         {moment(event.start).format('dddd, D MMMM, H:mm')}
                       </p>
                       <p className="rbc-ellipsis">{event.desc}</p>
                       <p>Odległość: {event.distance} m</p>
                     </Col>
+                  </Row>
 
                 </Link>
               )
