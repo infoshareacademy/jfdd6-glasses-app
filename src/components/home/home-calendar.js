@@ -8,7 +8,7 @@ moment.locale('pl')
 const HomeCalendar = ({events, router}) => (
   <div style={{height: 635}}>
     <BigCalendar
-      views={['month', 'week', 'day']}
+      views={['month']}
       events={ events ?
         events.map(
           event => ({
@@ -22,16 +22,6 @@ const HomeCalendar = ({events, router}) => (
           })
         ) : []
       }
-      formats={{
-        dateFormat: 'dd',
-
-        dayFormat: (date, culture, localizer) =>
-        localizer.format(date, 'DDD', culture),
-
-        agendaTimeFormat: ({ start, end }, culture, local) =>
-        local.format(start, 'HH:mm', culture) + ' — ' +
-        local.format(end, 'HH:mm', culture)
-      }}
       onSelectEvent={event => router.push('/event/' + event.movieId)}
     />
   </div>

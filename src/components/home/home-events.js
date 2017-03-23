@@ -44,12 +44,15 @@ const HomeEvents = ({ events, start, change }) => {
                   start, start + step
                 ).map(
                   event => (
+                    <div>
                     <Link key={event.id} to={"/event/" + event.movieId}>
+                      <div className="movie-title" key={event.id}>
+                        <h3 className="title">{event.movieTitle}</h3>
+                      </div>
                       <Panel
                       bsStyle="info"
                       defaultExpanded
-                      key={event.id}
-                      header={event.movieTitle}
+
                       style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
@@ -69,6 +72,7 @@ const HomeEvents = ({ events, start, change }) => {
                       </ListGroupItem>
                     </Panel>
                     </Link>
+                    </div>
                   )
                 )
       }
