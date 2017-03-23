@@ -107,10 +107,11 @@ export default connect(
                   <NavDropdown eventKey={4} id="dropdown2"
                                title={ this.props.user.data ? this.props.user.data.username : 'gość'}>
 
-                    <LinkContainer to="/user/3">
-                      <NavItem eventKey={4.1}>Mój profil</NavItem>
-                    </LinkContainer>
-
+                    {this.props.session.data.id === 'guest' ? null :
+                      <LinkContainer to={'/user/' + this.props.session.data.userId}>
+                        <NavItem eventKey={4.1}>Mój profil</NavItem>
+                      </LinkContainer>
+                    }
                       <NavItem
                         onClick={(event) => {
                           event.preventDefault()
