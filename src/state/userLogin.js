@@ -33,7 +33,7 @@ export const fetchUser = (accessToken, userId) => dispatch => {
 }
 
 export const toggleMovie = (userId, userMovies, accessToken) => dispatch => {
-  console.log(userId, userMovies, accessToken)
+  // console.log(userId, userMovies, accessToken)
   return fetch(
     'https://mysterious-lake-35712.herokuapp.com/api/users/' + userId + '?access_token=' + accessToken, {
       method: 'PATCH',
