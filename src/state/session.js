@@ -48,17 +48,21 @@ export const fetchSession = (username, password) => dispatch => {
 }
 
 export const endSession = (accessToken) => dispatch => {
-  dispatch({ type: FETCH__BEGIN })
-  return fetch(
-    'https://mysterious-lake-35712.herokuapp.com/api/users/logout?access_token=' + accessToken,
-    { method: 'POST' }
-  ).then(() => dispatch({ type: FETCH__LOGOUT })
-  ).catch(
-    error => dispatch({
-      type: FETCH__FAIL,
-      error: error.message
-    })
-  )
+  if (accessToken === 'guest') {
+    dispatch({ type: FETCH__LOGOUT })
+  } else {
+    dispatch({ type: FETCH__BEGIN })
+    return fetch(
+      'https://mysterious-lake-35712.herokuapp.com/api/users/logout?access_token=' + accessToken,
+      {method: 'POST'}
+    ).then(() => dispatch({ type: FETCH__LOGOUT })
+    ).catch(
+      error => dispatch({
+        type: FETCH__FAIL,
+        error: error.message
+      })
+    )
+  }
 }
 
 export const letGuestIn = () => ({
@@ -100,7 +104,7 @@ export default (state = initialState, action = {}) => {
     case GUEST:
       return {
         ...state,
-        data: 'guest'
+        data: {id: 'guest'}
       }
     default:
       return state
