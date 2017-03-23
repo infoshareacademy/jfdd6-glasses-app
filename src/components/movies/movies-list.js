@@ -31,15 +31,17 @@ const MovieList = ({movies, customTags, query, queryTag, session, user, toggleMo
                     {movie.name}
                     <br/>
                     <span className="movies-original-title">({movie.originalTitle})</span>
-                    <br/>
-                    <Button bsSize="xsmall" onClick={
-                      (event) => {
-                        event.preventDefault()
-                        return toggleMovie(user.id,
-                          user.movies.includes(movie.id) ? user.movies : user.movies.concat(movie.id),
-                          session.id)
-                      }
-                    }>Dodaj do swojej listy</Button>
+                    {user.movies.includes(movie.id) ? null
+                      :
+                      < Button bsSize="xsmall" className="movies-list-button" onClick={
+                        (event) => {
+                          event.preventDefault()
+                          return toggleMovie(user.id,
+                            user.movies.includes(movie.id) ? user.movies : user.movies.concat(movie.id),
+                            session.id)
+                        }
+                      }>Dodaj do swojej listy</Button>
+                    }
                   </Link>
                 </div>
               </div>
