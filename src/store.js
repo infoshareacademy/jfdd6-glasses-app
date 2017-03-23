@@ -7,6 +7,7 @@ import movieReducer from './state/movie'
 import userReducer from './state/user'
 import homeFetchReducer from './state/home-fetch'
 import homeFiltersReducer from './state/home-filters'
+import homeLocationReducer from './state/home-fetch-location'
 import addeventReducer from './state/add-event'
 
 import userReducerLogin from './state/userLogin'
@@ -17,11 +18,11 @@ const reducer = combineReducers({
   moviesFilters: moviesFiltersReducer,
   user: userReducer,
   movie: movieReducer,
-  homeFetch: homeFetchReducer,
-  homeFilters: homeFiltersReducer,
-
+  eventsFetch: homeFetchReducer,
+  eventsFilters: homeFiltersReducer,
   session: sessionReducer,
   userLogin: userReducerLogin,
+  userLocation: homeLocationReducer,
   posts: addeventReducer,
 })
 

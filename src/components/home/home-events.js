@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button, ButtonToolbar, Panel, ListGroupItem } from 'react-bootstrap'
+import { Link } from 'react-router'
 import moment from 'moment'
 
 import { change } from '../../state/home-filters'
@@ -43,11 +44,12 @@ const HomeEvents = ({ events, start, change }) => {
                   start, start + step
                 ).map(
                   event => (
-                    <Panel
+                    <Link key={event.id} to={"/event/" + event.movieId}>
+                      <Panel
                       bsStyle="info"
                       defaultExpanded
                       key={event.id}
-                      header={event.title}
+                      header={event.movieTitle}
                       style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
@@ -63,9 +65,10 @@ const HomeEvents = ({ events, start, change }) => {
                         {event.desc}
                       </ListGroupItem>
                       <ListGroupItem>
-                        Lokalizacja: {event.dist}
+                        Odległość: {event.distance} m
                       </ListGroupItem>
                     </Panel>
+                    </Link>
                   )
                 )
       }
@@ -75,7 +78,7 @@ const HomeEvents = ({ events, start, change }) => {
 
 export default connect(
   state => ({
-    start: state.homeFilters.start
+    start: state.eventsFilters.start
   }),
   dispatch => ({
     change: (value, eventsLength) => dispatch(change(value, eventsLength))

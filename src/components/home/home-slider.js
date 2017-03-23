@@ -25,7 +25,7 @@ class HomeSlider extends React.Component {
 
 export default connect(
   state => ({
-    rangeValue: state.homeFilters.value
+    rangeValue: state.eventsFilters.value
   }),
   dispatch => ({
     slide: (value) => dispatch(slide(value))

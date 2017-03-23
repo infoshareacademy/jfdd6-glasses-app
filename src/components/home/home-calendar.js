@@ -5,22 +5,26 @@ import moment from 'moment'
 BigCalendar.momentLocalizer(moment)
 moment.locale('pl')
 
-const HomeCalendar = ({ events }) => {
-  return (
-  <div style={{ height: 600 }}>
+const HomeCalendar = ({events, router}) => (
+  <div style={{height: 635}}>
     <BigCalendar
       events={ events ?
         events.map(
           event => ({
             ...event,
-            start: new Date( event.start ),
-            end: new Date( event.end )
+            title: event.movieTitle,
+            start: new Date(event.start),
+            end: new Date(new Date(event.start
+              ).setHours(new Date(event.start
+                ).getHours() + 2)
+            )
           })
         ) : []
       }
+      onSelectEvent={event => router.push('/event/' + event.movieId)}
     />
   </div>
-  )}
+)
 
 HomeCalendar.propTypes = {
   calendarEvents: React.PropTypes.arrayOf(React.PropTypes.shape({
