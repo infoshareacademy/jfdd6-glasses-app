@@ -5,7 +5,7 @@ const FETCH__FAIL = 'readEvent/FETCH__FAILED'
 export const fetchreadEvent = () => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    'http://localhost:3010/posts/'
+    'http://localhost:3010/events/'
   ).then(
     response => {
       if (response.ok) {
@@ -91,7 +91,8 @@ export const addEvent = (id) => {
         return response.json().then(
           data =>
 
-            location.href = "http://localhost:3000/event/" + data.id,
+            location.href = "http://localhost:3000/event/" + parseInt(data.id, 10),
+
         )
       }
     })
