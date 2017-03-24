@@ -28,12 +28,12 @@ class UserFilmList extends React.Component {
               ).map(
                 userTitle => <tr key={userTitle.id}>
                   <td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td>
-                  <td>
-                    <Button bsSize="xsmall" onClick={
+                  <td className="film-table-button">
+                    <Button bsSize="xsmall" title="Usuń z listy" onClick={
                       () => toggleMovie(user.id,
                         user.movies.filter(mov => mov !== userTitle.id),
                         session.id)
-                    }>Usuń z listy</Button></td>
+                    }>–</Button></td>
                 </tr>
               )
               :
