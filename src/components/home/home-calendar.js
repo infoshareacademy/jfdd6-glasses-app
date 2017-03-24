@@ -23,6 +23,14 @@ const HomeCalendar = ({events, router}) => (
         ) : []
       }
       onSelectEvent={event => router.push('/event/' + event.movieId)}
+      messages={{
+        previous: 'poprzedni',
+        next: 'następny',
+        today: 'dziś',
+        month: 'miesiąc',
+        week: 'tydzień',
+        day: 'dzień'
+      }}
     />
     <br />
     <br />
