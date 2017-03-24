@@ -20,8 +20,7 @@ class UserFilmList extends React.Component {
         <h3>Filmy użytkownika <span className="name"> {filteredUser.username}</span></h3>
         <Table className="film-table">
           <tbody>
-
-          {user !== null
+          {user !== null && user.id === filteredUser.id
             ?
             moviesList.data ? moviesList.data.filter(
                 title => user.movies.indexOf(title.id) !== -1
