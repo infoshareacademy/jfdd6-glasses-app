@@ -11,12 +11,11 @@ class UserProfile extends React.Component {
     return (
       <div className="profile-container black-background">
         <h2>{filteredUser.first_name} {filteredUser.last_name}</h2>
-        <span className="strong"></span>
 
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
         <p>
-          {filteredUser.login}, {filteredUser.gender}
+          {filteredUser.username}, {filteredUser.gender}
         </p>
 
         <p>
