@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, ButtonToolbar, Panel, Grid, Row, Col, Image } from 'react-bootstrap'
+import { Button, ButtonToolbar, Row, Col, Image } from 'react-bootstrap'
 import { Link } from 'react-router'
 import moment from 'moment'
 
