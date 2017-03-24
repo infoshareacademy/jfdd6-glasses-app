@@ -1,11 +1,12 @@
 import React from 'react'
-import {Table} from 'react-bootstrap'
+import {Table, Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import {toggleMovie} from '../../state/userLogin'
 
 class UserFilmList extends React.Component {
   render() {
-    const {id, users, moviesList} = this.props
+    const {id, users, moviesList, session, user, toggleMovie} = this.props
     if (users.data === null) {
       return <p>Waiting for user data…</p>
     }
@@ -16,18 +17,36 @@ class UserFilmList extends React.Component {
 
     return (
       <div className="profile-container black-background">
-        <h3>Filmy użytkownika <span className="name"> {filteredUser.login}</span></h3>
+        <h3>Filmy użytkownika <span className="name"> {filteredUser.username}</span></h3>
         <Table className="film-table">
           <tbody>
-          {
+
+          {user !== null
+            ?
             moviesList.data ? moviesList.data.filter(
-              title => filteredUser.movies.indexOf(title.id) !== -1
-            ).map(
-              userTitle => <tr key={userTitle.id}>
-                <td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td>
-              </tr>
-            )
-             :
+                title => user.movies.indexOf(title.id) !== -1
+              ).map(
+                userTitle => <tr key={userTitle.id}>
+                  <td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td>
+                  <td>
+                    <Button bsSize="xsmall" onClick={
+                      () => toggleMovie(user.id,
+                        user.movies.filter(mov => mov !== userTitle.id),
+                        session.id)
+                    }>Usuń z listy</Button></td>
+                </tr>
+              )
+              :
+              <td>Chwilowy brak danych</td>
+            :
+            moviesList.data ? moviesList.data.filter(
+                title => filteredUser.movies.indexOf(title.id) !== -1
+              ).map(
+                userTitle => <tr key={userTitle.id}>
+                  <td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td>
+                </tr>
+              )
+              :
               <td>Chwilowy brak danych</td>
           }
           </tbody>
@@ -40,6 +59,11 @@ class UserFilmList extends React.Component {
 export default connect(
   state => ({
     users: state.user,
-    moviesList: state.movie
+    moviesList: state.movie,
+    session: state.session.data,
+    user: state.userLogin.data
+  }),
+  dispatch => ({
+    toggleMovie: (userId, userMovies, accessToken) => dispatch(toggleMovie(userId, userMovies, accessToken))
   })
 )(UserFilmList)

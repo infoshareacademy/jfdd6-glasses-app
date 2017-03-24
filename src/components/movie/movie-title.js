@@ -12,9 +12,13 @@ class MovieTitle extends React.Component {
           movie.data? movie.data.filter(
               movie => movie.id === parseInt(id, 10)
             ).map(
-              movie => (
-                <h2 className="title" key={movie.id}>{movie.name}</h2>
-              )
+              movie => (<div key="0">
+                <h2 className="title" key="1">{movie.originalTitle}
+                <p className="" key="2">{movie.name}</p></h2>
+                  <h6>Rok produkcji: {movie.year}</h6>
+                  <h6>Reżyser: {movie.director}</h6>
+</div>
+          )
             ) : <p>brak danych</p>
         }
       </div>

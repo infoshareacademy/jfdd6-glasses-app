@@ -29,7 +29,8 @@ body {
 }
 
 .login-button {
-  margin: 10px 0
+  margin: 10px 0;
+  background-color: #2a2a2a;
 }
 
 .login-error {
@@ -60,6 +61,11 @@ body {
 .welcome ~ p {
   font-size: 1.3rem;
   color: white; }
+
+img.navbar-brand {
+  height: 50px;
+  padding: 0 20px 0 0;
+}
 
 /*HOME_VIEW SPECIFIC*/
 div.home-table a {

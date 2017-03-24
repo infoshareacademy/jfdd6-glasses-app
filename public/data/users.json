@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "login": "agreene0",
+    "username": "agreene0",
     "first_name": "Andrew",
     "last_name": "Greene",
     "email": "agre@wp.pl",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "login": "kprice1",
+    "username": "kprice1",
     "first_name": "Keith",
     "last_name": "Price",
     "email": "kpri@wp.pl",
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "login": "kdiaz2",
+    "username": "kdiaz2",
     "first_name": "Kathy",
     "last_name": "Diaz",
     "email": "kdia@wp.pl",
@@ -45,7 +45,7 @@
   },
   {
     "id": 4,
-    "login": "ccampbell3",
+    "username": "ccampbell3",
     "first_name": "Catherine",
     "last_name": "Campbell",
     "email": "ccam@wp.pl",
@@ -59,7 +59,7 @@
   },
   {
     "id": 5,
-    "login": "plawrence4",
+    "username": "plawrence4",
     "first_name": "Phillip",
     "last_name": "Lawrence",
     "email": "plaw@wp.pl",
@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "login": "jelliott5",
+    "username": "jelliott5",
     "first_name": "Jane",
     "last_name": "Elliott",
     "email": "jell@wp.pl",
@@ -91,7 +91,7 @@
   },
   {
     "id": 7,
-    "login": "rthomas6",
+    "username": "rthomas6",
     "first_name": "Ruth",
     "last_name": "Thomas",
     "email": "rtho@wp.pl",
@@ -108,7 +108,7 @@
   },
   {
     "id": 8,
-    "login": "bhall7",
+    "username": "bhall7",
     "first_name": "Bobby",
     "last_name": "Hall",
     "email": "bhall@wp.pl",
@@ -124,7 +124,7 @@
   },
   {
     "id": 9,
-    "login": "jmurray8",
+    "username": "jmurray8",
     "first_name": "Jason",
     "last_name": "Murray",
     "email": "jmur@wp.pl",
@@ -140,7 +140,7 @@
   },
   {
     "id": 10,
-    "login": "ptorres9",
+    "username": "ptorres9",
     "first_name": "Peter",
     "last_name": "Torres",
     "email": "ptor@wp.pl",
@@ -153,7 +153,7 @@
   },
   {
     "id": 11,
-    "login": "ewhitea",
+    "username": "ewhitea",
     "first_name": "Elizabeth",
     "last_name": "White",
     "email": "ewhi@wp.pl",
@@ -167,7 +167,7 @@
   },
   {
     "id": 12,
-    "login": "mthompsonb",
+    "username": "mthompsonb",
     "first_name": "Marilyn",
     "last_name": "Thompson",
     "email": "mth@wp.pl",
@@ -183,7 +183,7 @@
   },
   {
     "id": 13,
-    "login": "ndunnc",
+    "username": "ndunnc",
     "first_name": "Nicole",
     "last_name": "Dunn",
     "email": "ndu@wp.pl",
@@ -199,7 +199,7 @@
   },
   {
     "id": 14,
-    "login": "jalvarezd",
+    "username": "jalvarezd",
     "first_name": "Julia",
     "last_name": "Alvarez",
     "email": "jal@wp.pl",
@@ -213,7 +213,7 @@
   },
   {
     "id": 15,
-    "login": "jfullere",
+    "username": "jfullere",
     "first_name": "John",
     "last_name": "Fuller",
     "email": "jfull@wp.pl",
@@ -229,7 +229,7 @@
   },
   {
     "id": 16,
-    "login": "kturnerf",
+    "username": "kturnerf",
     "first_name": "Kathryn",
     "last_name": "Turner",
     "email": "ktu@wp.pl",
@@ -244,7 +244,7 @@
   },
   {
     "id": 17,
-    "login": "cmorgang",
+    "username": "cmorgang",
     "first_name": "Craig",
     "last_name": "Morgan",
     "email": "cmor@wp.pl",
@@ -257,7 +257,7 @@
   },
   {
     "id": 18,
-    "login": "hmurphyh",
+    "username": "hmurphyh",
     "first_name": "Henry",
     "last_name": "Murphy",
     "email": "hmur@wp.pl",
@@ -271,7 +271,7 @@
   },
   {
     "id": 19,
-    "login": "ahansoni",
+    "username": "ahansoni",
     "first_name": "Ashley",
     "last_name": "Hanson",
     "email": "ahan@wp.pl",
@@ -287,7 +287,7 @@
   },
   {
     "id": 20,
-    "login": "rbakerj",
+    "username": "rbakerj",
     "first_name": "Randy",
     "last_name": "Baker",
     "email": "rba@wp.pl",
