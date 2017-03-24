@@ -33,7 +33,7 @@ const MovieList = ({movies, customTags, query, queryTag, session, user, toggleMo
                     <span className="movies-original-title">({movie.originalTitle})</span>
                     {user === null || user.movies.includes(movie.id) ? null
                       :
-                      < Button bsSize="xsmall" className="movies-list-button" title="Dodaj do swojej listy" onClick={
+                      < Button bsSize="xsmall" bsStyle="info" className="movies-list-button movies-list-button-add" title="Dodaj do swojej listy" onClick={
                         (event) => {
                           event.preventDefault()
                           return toggleMovie(user.id,
