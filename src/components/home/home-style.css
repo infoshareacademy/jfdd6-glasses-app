@@ -1,0 +1,56 @@
+/* Events */
+
+.home-event-panel {
+  background-color: rgba(33, 33, 33, 0.7);
+  padding: 0 10px 10px 10px;
+  margin: 5px 0 0 5px;
+  height: 33%
+}
+
+.home-event-title {
+  font-family: 'Anton', sans-serif;
+  color: #dc810e;
+  text-align: center;
+}
+
+.home-event-description {
+  color: white;
+}
+
+.home-event-description h6 {
+  line-height: 1.5em;
+}
+
+.home-btn-container {
+  padding: 15px 0 0 9px;
+}
+
+
+/* Slider overwriting */
+.input-range__label-container {
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* Input field */
+
+/* Calendar overwriting  */
+.rbc-date-cell > a {
+  color: white;
+}
+
+.rbc-calendar * {
+  color: white;
+}
+
+.rbc-today {
+  background-color: #6b6b6b;
+}
+
+.rbc-event {
+  background-color: #dc810e;
+}
+
+.rbc-toolbar button {
+  color: white;
+}
+

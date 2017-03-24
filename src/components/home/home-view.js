@@ -35,7 +35,10 @@ class HomeView extends React.Component {
             ) * 1000),
           movieTitle: (movies.find(movie => {
             return event.movieId === movie.id
-          }) || {name: 'Movie without a title.'}).name
+          }) || {name: 'Movie without a title.'}).name,
+          moviePicture: (movies.find(movie => {
+            return event.movieId === movie.id
+          })).pics[0]
         })
       }).filter(
         (event, index) =>
@@ -55,10 +58,10 @@ class HomeView extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={7}>
             <HomeCalendar events={ eventsFiltered } router={this.props.router}/>
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={5}>
             <HomeEvents events={ eventsFiltered }/>
           </Col>
         </Row>
