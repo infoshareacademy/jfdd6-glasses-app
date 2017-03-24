@@ -11,6 +11,7 @@ import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
 import {addEvent} from '../../state/add-event'
 
+
 export default connect(
   state => ({
     session: state.session,
@@ -18,24 +19,41 @@ export default connect(
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    addEvent: (id) => dispatch(addEvent(id))
+    addEvent: (id, id2) => dispatch(addEvent(id, id2))
+
 
   })
 )(class MovieView extends React.Component {
+
+    constructor(props) {
+      super(props)
+
+      this.state = {
+        className: 'hide'
+      }
+    }
     componentWillMount() {
       this.props.fetchMovie();
       this.props.fetchUsers();
     }
 
     render() {
-      const {addEvent} = this.props;
+      const {addEvent, session} = this.props;
       const id = this.props.params.movieId;
+      const id2 = session.data.id;
       return (
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
-              <div className="movie-center"><Button onClick={() => addEvent(id)}>Utwórz wydarzenie</Button></div>
+              <div className="movie-center">
+                <Button onClick={() => addEvent(id, id2)}>Utwórz wydarzenie</Button>
+                <Button onClick={() => this.setState({ className: 'show' })}>Show</Button>
+                <form action="" id="formM" className={this.state.className}>
+                  <input type="text" />
+                  <input type="text" />
+                </form>
+              </div>
             </Col>
             <Col xs={12} md={5} mdOffset={1} mdPull={1}>
               <MovieTitle id={id}/>

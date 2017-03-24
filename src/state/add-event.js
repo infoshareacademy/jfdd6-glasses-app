@@ -62,24 +62,24 @@ export default (state = initialState, action = {}) => {
   }
 }
 
-export const addEvent = (id) => {
+export const addEvent = (id, id2) => {
   return fetch(
-    'http://localhost:3010/events', {
+    'https://mysterious-lake-35712.herokuapp.com/api/events', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(
         {
-          "movieId": 20,
+          "movieId": 21,
           "start": "2017-04-30T12:30:00",
-          "desc": "Napięcie i emocje większe niż podczas meczu",
+          "desc": "",
           "location": {
             "lat": 54.39680015470991,
             "lng": 18.590085984324105
           },
           "host": id,
-          "guests": [10,7,11,9],
+          "guests": [],
           "limit": 5,
           "comment": ""
         }
