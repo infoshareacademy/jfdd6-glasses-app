@@ -23,7 +23,7 @@ const reducer = combineReducers({
   session: sessionReducer,
   userLogin: userReducerLogin,
   userLocation: homeLocationReducer,
-  posts: addeventReducer,
+  events: addeventReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

@@ -18,7 +18,7 @@ export default connect(
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    addEvent: (id) => dispatch(addEvent(id))
+    addEvent: (id, user) => dispatch(addEvent(id, user))
 
   })
 )(class MovieView extends React.Component {
@@ -28,14 +28,15 @@ export default connect(
     }
 
     render() {
-      const {addEvent} = this.props;
-      const id = this.props.params.movieId;
+      const {addEvent, session} = this.props;
+      const id = parseInt(this.props.params.movieId);
+      const user = session.data.userId;
       return (
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
-              <div className="movie-center"><Button onClick={() => addEvent(id)}>Utwórz wydarzenie</Button></div>
+              <div className="movie-center"><Button onClick={() => addEvent(id, user)}>Utwórz wydarzenie</Button></div>
             </Col>
             <Col xs={12} md={5} mdOffset={1} mdPull={1}>
               <MovieTitle id={id}/>

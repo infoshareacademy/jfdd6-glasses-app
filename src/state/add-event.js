@@ -62,7 +62,7 @@ export default (state = initialState, action = {}) => {
   }
 }
 
-export const addEvent = (id) => {
+export const addEvent = (id, user) => {
   return fetch(
     'http://localhost:3010/events', {
       method: 'POST',
@@ -71,14 +71,14 @@ export const addEvent = (id) => {
       },
       body: JSON.stringify(
         {
-          "movieId": 20,
+          "movieId": id,
           "start": "2017-04-30T12:30:00",
           "desc": "Napięcie i emocje większe niż podczas meczu",
           "location": {
             "lat": 54.39680015470991,
             "lng": 18.590085984324105
           },
-          "host": id,
+          "host": user,
           "guests": [10,7,11,9],
           "limit": 5,
           "comment": ""
@@ -107,17 +107,7 @@ export const addUser = (id) => {
       },
       body: JSON.stringify(
         {
-          "movieId": 20,
-          "start": "2017-04-30T12:30:00",
-          "desc": "Napięcie i emocje większe niż podczas meczu",
-          "location": {
-            "lat": 54.39680015470991,
-            "lng": 18.590085984324105
-          },
-          "host": id,
-          "guests": [10,8,11,9],
-          "limit": 5,
-          "comment": ""
+          "guests": [10,8,5,9],
         }
       )
     }

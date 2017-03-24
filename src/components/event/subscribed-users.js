@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Col, Grid, Button, Table} from 'react-bootstrap'
-import {addUser} from '../../state/add-event'
+import {addUser, readEvents} from '../../state/add-event'
 
 
 class SubscribedUsers extends React.Component {
   render() {
-    const {posts, id} = this.props;
+    const {events, id, user} = this.props;
 
 
     return (
@@ -24,26 +24,30 @@ class SubscribedUsers extends React.Component {
             </thead>
             <tbody>
             {
-              posts.data ? posts.data.filter(
-                post => post.id === id,
+              events.data ? events.data.filter(
+                event => event.id === +id
               ).map(
-                (post, index) => (post.data).map(
-                  el => <tr>
+                (event) => event.guests.map( (guest, index) => <tr key={index}>
                     <td>
-                      {el}
+                      {user.data.filter(
+                        person => person.id === guest).map(
+                        person => <img src={person.avatar} key={guest} alt={guest} />
+                      )}
                     </td>
                     <td>
-                      {post.id}
+                      {user.data.filter(
+                        person => person.id === guest).map(
+                        person => <p key={index+10}>{person.login}</p>
+                      )}
                     </td>
                     <td>
-                      {post.body}
-                    </td>
+                    </td >
                   </tr>
-                )
-              ) : <tr>
-                <td >Brak zgłoszeń</td>
-                <td></td>
-                <td></td>
+
+              )) : <tr>
+                <td>Brak zgłoszeń</td>
+                {/*<td key={index+2000}></td>*/}
+                {/*<td key={index+3000}></td>*/}
               </tr>
             }
             </tbody>
@@ -57,10 +61,12 @@ class SubscribedUsers extends React.Component {
 
 export default connect(
   state => ({
-    users: state.user,
-    posts: state.posts
+    user: state.user,
+    events: state.events,
+    session: state.session
   }),
   dispatch => ({
-    addUser: (id) => dispatch(addUser(id))
+    addUser: (id) => dispatch(addUser(id)),
+    readEvents: () => dispatch(readEvents())
   })
 )(SubscribedUsers)
