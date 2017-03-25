@@ -16,12 +16,14 @@ const HomeEvents = ({events, start, change}) => {
       <Row className="home-btn-wrapper">
         <ButtonGroup>
           <Button
+            bsSize="small"
             bsStyle="info"
             className="movies-tag-button-reset"
             onClick={() => change(-step, events)}>
             &lt;
           </Button>
           <Button
+            bsSize="small"
             bsStyle="info"
             className="movies-tag-button-reset"
             onClick={() => change(step, events)}
