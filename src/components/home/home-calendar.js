@@ -6,12 +6,12 @@ BigCalendar.momentLocalizer(moment)
 moment.locale('pl')
 
 const HomeCalendar = ({events, router}) => (
-  <div style={{height: 635}}>
+  <div className="home-calendar">
     <BigCalendar
       views={['month']}
       messages={{
-        previous: "poprzedni",
-        next: "następny",
+        previous: "<",
+        next: ">",
         today: "dziś"
       }}
       events={ events ?

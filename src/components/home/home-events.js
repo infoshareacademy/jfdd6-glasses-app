@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, ButtonToolbar, Col, Image, Row } from "react-bootstrap";
+import { Button, ButtonGroup, Col, Image, Row, Glyphicon } from "react-bootstrap";
 import { Link } from "react-router";
 import moment from "moment";
 
@@ -14,32 +14,35 @@ const HomeEvents = ({events, start, change}) => {
   return (
     <Col xs={12}>
       <Row className="home-btn-wrapper">
-        <ButtonToolbar>
+        <ButtonGroup>
           <Button
             bsStyle="info"
             className="movies-tag-button-reset"
-            onClick={() => change(-step, events)}
-          >
-            Wcześniejsze
+            onClick={() => change(-step, events)}>
+            &lt;
           </Button>
           <Button
             bsStyle="info"
             className="movies-tag-button-reset"
             onClick={() => change(step, events)}
           >
-            Późniejsze
+            &gt;
           </Button>
-        </ButtonToolbar>
+        </ButtonGroup>
+      </Row>
+      <Row className="home-event-panel-header">
+        <Col xs={12}>
+          <h5 className="home-event-description text-center">
+            NADCHODZĄCE PROJEKCJE
+          </h5>
+        </Col>
       </Row>
       {
         !events ?
           null :
           events.length === 0 ?
             <Row className="home-event-panel">
-              <Col
-                xs={12}
-                key={1}
-              >
+              <Col xs={12}>
                 <h3 className="home-event-title">
                   Hmmm... Spróbuj wyszukać jeszcze raz.
                 </h3>
@@ -69,11 +72,22 @@ const HomeEvents = ({events, start, change}) => {
                         <Col
                           className="home-event-description"
                           xs={9}>
-                          <h4 className="text-right">
+                          <h4>
+                            <Glyphicon glyph="time" /> {' '}
                             {moment(event.start).format('dddd, D MMMM, H:mm')}
                           </h4>
-                          <p>Odległość: {event.distance} m</p>
-                          <h6>{event.desc}</h6>
+                          <h4>
+                            <Glyphicon glyph="map-marker" />
+                            {' '}
+                            {event.distance} m
+                          </h4>
+                          <div>
+                            <h4 >
+                              <Glyphicon glyph="bullhorn" />
+                              &nbsp;
+                            </h4>
+                            <h6>{event.desc}</h6>
+                          </div>
                         </Col>
                       </Row>
                     </Col>

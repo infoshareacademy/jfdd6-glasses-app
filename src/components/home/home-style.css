@@ -1,9 +1,13 @@
 /* Events */
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
-  /*margin: 10px 0 10px 0;*/
-  /*padding: 0 15px 15px 15px;*/
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+}
 
+.home-event-panel-header {
+  background-color: rgba(33, 33, 33, 0.7);
+  margin-bottom: 2px;
 }
 
 .home-event-title {
@@ -15,7 +19,15 @@
 
 .home-event-description {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
+
+.home-event-description div h4{
+  float: left;
+}
+
 
 .home-event-description h6 {
   line-height: 1.5em;
@@ -24,6 +36,9 @@
 .home-btn-wrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 9px;
+  margin-top: 10px;
+
 
   /*padding: 15px 0 0 9px;*/
 }
@@ -36,7 +51,11 @@
 
 /* Input field */
 
-/* Calendar overwriting  */
+/* Calendar */
+.home-calendar {
+  height: 650px;
+}
+
 .rbc-date-cell > a {
   color: white;
 }
@@ -58,5 +77,6 @@
   background-color: #808080;
   background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
   border-color: #808080;
+  margin-top: 10px;
 }
 
