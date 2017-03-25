@@ -5,7 +5,7 @@ const FETCH__FAIL = 'home/FETCH__FAILED'
 export const fetchData = () => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    process.env.PUBLIC_URL + '/data/home-events.json'
+    'https://mysterious-lake-35712.herokuapp.com/api/events'
   ).then(
     response => {
       if (response.ok) {

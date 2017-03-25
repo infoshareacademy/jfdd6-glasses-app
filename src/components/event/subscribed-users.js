@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Col, Grid, Button, Table} from 'react-bootstrap'
-import {addUser, readEvents} from '../../state/add-event'
+import {addUser} from '../../state/event'
 
 
 class SubscribedUsers extends React.Component {
@@ -62,11 +62,10 @@ class SubscribedUsers extends React.Component {
 export default connect(
   state => ({
     user: state.user,
-    events: state.events,
+    events: state.eventsFetch,
     session: state.session
   }),
   dispatch => ({
-    addUser: (id) => dispatch(addUser(id)),
-    readEvents: () => dispatch(readEvents())
+    addUser: (id) => dispatch(addUser(id))
   })
 )(SubscribedUsers)

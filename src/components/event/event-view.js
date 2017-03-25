@@ -5,8 +5,7 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchreadEvent} from '../../state/add-event'
-// import EventUserProfile from './event-user-profile'
+import {fetchData} from '../../state/home-fetch'
 import SubscribedUsers from './subscribed-users'
 import moment from 'moment'
 moment.locale('pl')
@@ -15,7 +14,7 @@ class EventView extends React.Component {
   componentWillMount() {
     this.props.fetchMovie();
     this.props.fetchUsers();
-    this.props.fetchreadEvent()
+    this.props.fetchEvent()
   }
 
   render() {
@@ -101,11 +100,11 @@ class EventView extends React.Component {
 export default connect(
   state => ({
     movie: state.movie,
-    events: state.events
+    events: state.eventsFetch
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchreadEvent: () => dispatch(fetchreadEvent())
+    fetchEvent: () => dispatch(fetchData())
   })
 )(EventView)
