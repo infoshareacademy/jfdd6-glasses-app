@@ -21,7 +21,7 @@ export default connect(
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    addEvent: (id, userSessionId, eventDate, eventTime, desc) => dispatch(addEvent(id, userSessionId, eventDate, eventTime, desc))
+    addEvent: (id, userSessionId, eventDate, eventTime, desc, userSessionToken) => dispatch(addEvent(id, userSessionId, eventDate, eventTime, desc, userSessionToken))
 
 
   })
@@ -51,11 +51,12 @@ export default connect(
       const {addEvent, session} = this.props;
       const id = this.props.params.movieId;
       const userSessionId = session.data.userId;
+      const userSessionToken = session.data.id;
       const valueData = moment(this.state.eventDate).format('YYYY-MM-DD');
       const valueTime = this.state.eventTime;
       const desc = this.state.eventDescription;
 
-      console.log(valueData,valueTime, userSessionId, desc, this.state.className );
+      console.log(valueData,valueTime, userSessionId, desc, this.state.className, userSessionToken );
       return (
         <Grid>
           <Row className="show-grid">
@@ -93,7 +94,7 @@ export default connect(
                        onChange={(event) => this.setState({eventDescription: event.target.value})}/>
                 <Button onClick={(event) => {
                   event.preventDefault();
-                  return addEvent(id, userSessionId, valueData, valueTime, desc);}}>Zapisz</Button>
+                  return addEvent(id, userSessionId, valueData, valueTime, desc, userSessionToken);}}>Zapisz</Button>
               </form>
             </Col>
           </Row>
