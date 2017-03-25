@@ -53,12 +53,14 @@
 
 /* Slider */
 .input-range {
-  margin-top: 10px;
+  width: 95%;
+  margin: auto;
 }
 
 .input-range__label--value {
   top: 0.6rem;
 }
+
 
 .input-range__label-container {
   font-family: 'Varela Round', sans-serif;
@@ -73,9 +75,6 @@
   border: 1px solid white;
 }
 
-input-range__label--value {
-
-}
 
 /* Input field */
 
