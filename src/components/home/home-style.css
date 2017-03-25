@@ -44,10 +44,29 @@
 }
 
 
-/* Slider overwriting */
+/* Slider */
+.input-range {
+  margin-top: 10px;
+}
+
+.input-range__label--value {
+  top: 0.6rem;
+}
+
 .input-range__label-container {
   font-family: 'Varela Round', sans-serif;
 }
+
+.input-range__track--active {
+  background-color: #dc810e;
+}
+
+.input-range__slider {
+  background-color: #dc810e;
+  border: 1px solid white;
+}
+
+
 
 /* Input field */
 
