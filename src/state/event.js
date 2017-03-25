@@ -53,18 +53,21 @@ export const addEvent = (id, userSessionId, valueData, valueTime, eventDescripti
       error: error.message
     })
   )
-}
+};
 
-export const addUser = (id) => {
+export const addUser = (userSessionId, userSessionToken, id) => dispatch => {
   return fetch(
-    'http://localhost:3010/events/' + id, {
+    console.log(userSessionId, userSessionToken, id),
+    'https://mysterious-lake-35712.herokuapp.com/api/events/?access_token=nkIfWmsgiSRV3uRe2gPiKjUP2Fb7RUeDWyNHHYV5UjyH46ma5GDe2MEb9BND2f1F',
+    {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(
         {
-          "guests": [10, 8, 5, 9],
+          "id": 58,
+          "desc": 'dupa'
         }
       )
     }
@@ -72,41 +75,26 @@ export const addUser = (id) => {
     response => {
       if (response.ok) {
         return response.json().then(
-          data =>
-
-            console.log(data.id, data),
+          data => {
+            dispatch({
+              type: FETCH__SUCCESS,
+              data
+            })
+            dispatch(fetchData())
+          }
+        ).catch(
+          error => dispatch({
+            type: FETCH__FAIL,
+            error: 'Malformed JSON response'
+          })
         )
       }
+      throw new Error('Connection error')
+    }
+  ).catch(
+    error => dispatch({
+      type: FETCH__FAIL,
+      error: error.message
     })
-}
-
-const initialState = {
-  data: null,
-  fetching: false,
-  error: null
-}
-
-export default (state = initialState, action = {}) => {
-  switch (action.type) {
-    case FETCH__BEGIN:
-      return {
-        ...state,
-        fetching: true,
-        error: null
-      }
-    case FETCH__SUCCESS:
-      return {
-        ...state,
-        data: action.data,
-        fetching: false
-      }
-    case FETCH__FAIL:
-      return {
-        ...state,
-        fetching: false,
-        error: action.error
-      }
-    default:
-      return state
-  }
-}
+  )
+};

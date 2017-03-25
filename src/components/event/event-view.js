@@ -8,7 +8,7 @@ import {fetchUsers} from '../../state/user'
 import {fetchData} from '../../state/home-fetch'
 import SubscribedUsers from './subscribed-users'
 import moment from 'moment'
-moment.locale('pl')
+moment.locale('pl');
 
 class EventView extends React.Component {
   componentWillMount() {
