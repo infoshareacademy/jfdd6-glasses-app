@@ -64,7 +64,7 @@ export default (state = initialState, action = {}) => {
 
 export const addEvent = (id, userSessionId, valueData, valueTime, eventDescription, userSessionToken) => {
   return fetch(
-    'https://mysterious-lake-35712.herokuapp.com/api/events/' + '?access_token=' + userSessionToken, {
+    'https://mysterious-lake-35712.herokuapp.com/api/events/?access_token=' + userSessionToken, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

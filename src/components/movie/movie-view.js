@@ -64,7 +64,7 @@ export default connect(
               <MovieCarousel id={id}/>
               <div className="movie-center title">
                 <Button className="addEvent-button"
-                  onClick={() => this.state.className == 'hide' ?
+                  onClick={() => this.state.className === 'hide' ?
                     this.setState({className: 'show'}) :
                     this.setState({className: 'hide'}) }>
                   Zoorganizuj projekcję:

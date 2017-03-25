@@ -20,23 +20,29 @@ class EventView extends React.Component {
 
   render() {
     const id = this.props.params.eventId;
+    let movieIde, eventStart, eventTime, eventDesc;
 
     // const host = events.data.filter(event => event == 1? event.host : null);
     const {movie, events} = this.props;
-    const movieIde = (events.data ? events.data.filter(
+
+    if (events.data) {
+      movieIde = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.movieId): 'Waiting for data' );
-    console.log(movieIde);
-    const eventStart = (events.data ? events.data.filter(
+      ).map(event => event.movieId));
+      eventStart = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.start).toString(eventStart).slice(0,10): 'Waiting for data' );
-    const eventTime = (events.data ? events.data.filter(
+      ).map(event => event.start).toString(eventStart).slice(0, 10));
+      eventTime = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.start).toString(eventStart).slice(11,16): 'Waiting for data' );
-    console.log(eventTime);
-    const eventDesc = (events.data ? events.data.filter(
-        event => event.id === +id
-      ).map(event => event.desc): 'Waiting for data' );
+      ).map(event => event.start).toString(eventStart).slice(11, 16));
+      eventDesc = (events.data.filter(
+          event => event.id === +id
+        ).map(event => event.desc));
+    } else {
+      movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych';
+    }
+    console.log(movieIde, eventStart, eventTime);
+
 
     //     (event) => event.movieId) : 0);
     // const userIde = (events.data ? events.data.filter(
@@ -51,7 +57,7 @@ class EventView extends React.Component {
 
               {
                 movie.data ? movie.data.filter(
-                    movie => movie.id === parseInt(movieIde)
+                    movie => movie.id === parseInt(movieIde, 10)
                   ).map(
                     (movie, index) => (
                       <img className="movie-img" alt={movie.name + ' poster'} src={movie.pics[0]} key={movie.id}/>
