@@ -1,16 +1,16 @@
 /* Events */
-
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 0 10px 10px 10px;
-  margin: 5px 0 0 5px;
-  height: 33%
+  /*margin: 10px 0 10px 0;*/
+  /*padding: 0 15px 15px 15px;*/
+
 }
 
 .home-event-title {
-  font-family: 'Anton', sans-serif;
   color: #dc810e;
+  font-family: 'Anton', sans-serif;
   text-align: center;
+  text-shadow: 3px 3px 8px black;
 }
 
 .home-event-description {
@@ -21,8 +21,11 @@
   line-height: 1.5em;
 }
 
-.home-btn-container {
-  padding: 15px 0 0 9px;
+.home-btn-wrapper {
+  display: flex;
+  justify-content: center;
+
+  /*padding: 15px 0 0 9px;*/
 }
 
 
@@ -52,5 +55,8 @@
 
 .rbc-toolbar button {
   color: white;
+  background-color: #808080;
+  background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
+  border-color: #808080;
 }
 

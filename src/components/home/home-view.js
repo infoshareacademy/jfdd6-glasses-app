@@ -21,15 +21,15 @@ class HomeView extends React.Component {
 
   render() {
     const { events, range, userLocation, movies } = this.props
-    const userLattitude = userLocation[0].geometry.location.lat;
+    const userLatitude = userLocation[0].geometry.location.lat;
     const userLongitude = userLocation[0].geometry.location.lng;
 
     const eventsFiltered = events ?
       events.map(event => {
         return Object.assign({}, event, {
           distance: Math.round((Math.sqrt(
-                Math.pow((event.location.lat - userLattitude), 2) +
-                Math.pow((Math.cos(userLattitude * Math.PI / 180) *
+                Math.pow((event.location.lat - userLatitude), 2) +
+                Math.pow((Math.cos(userLatitude * Math.PI / 180) *
                 (event.location.lng - userLongitude)), 2))
               * (40075.704 / 360)
             ) * 1000),
@@ -57,6 +57,7 @@ class HomeView extends React.Component {
             <HomeSlider />
           </Col>
         </Row>
+        <hr />
         <Row>
           <Col xs={12} md={7}>
             <HomeCalendar events={ eventsFiltered } router={this.props.router}/>
