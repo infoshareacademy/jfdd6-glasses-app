@@ -9,6 +9,11 @@ const HomeCalendar = ({events, router}) => (
   <div style={{height: 635}}>
     <BigCalendar
       views={['month']}
+      messages={{
+        previous: "poprzedni",
+        next: "następny",
+        today: "dziś"
+      }}
       events={ events ?
         events.map(
           event => ({

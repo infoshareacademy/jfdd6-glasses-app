@@ -18,7 +18,6 @@ const HomeEvents = ({events, start, change}) => {
           <Button
             bsStyle="info"
             className="movies-tag-button-reset"
-            bsSize="small"
             onClick={() => change(-step, events)}
           >
             Wcześniejsze
@@ -26,7 +25,6 @@ const HomeEvents = ({events, start, change}) => {
           <Button
             bsStyle="info"
             className="movies-tag-button-reset"
-            bsSize="small"
             onClick={() => change(step, events)}
           >
             Późniejsze
