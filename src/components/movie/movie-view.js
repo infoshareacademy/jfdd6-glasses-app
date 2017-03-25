@@ -4,6 +4,7 @@ import {Grid, Row, Col, Button} from 'react-bootstrap'
 import MovieCarousel from './movie-carousel'
 import MovieDescription from './movie-description'
 import MovieTitle from './movie-title'
+import MovieTitleDetails from './movie-title-details'
 import UserList from './movie-user-list'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -71,6 +72,7 @@ export default connect(
             </Col>
             <Col xs={12} md={5} mdOffset={1} mdPull={1}>
               <MovieTitle id={id}/>
+              <MovieTitleDetails id={id}/>
               <MovieDescription id={id}/>
             </Col>
           </Row>

@@ -65,12 +65,14 @@ class EventView extends React.Component {
             </div>
           </Col>
           <Col xs={12} md={6}>
-            <h2>Na film</h2>
+            <h2 className="event-details">Na film</h2>
             <MovieTitle id={movieIde}/>
-            <h3>zaprasza</h3>
-            {eventDesc}
-            <MovieDescription id={movieIde}/>
-            <h3>projekcja
+            <h3 className="event-details">zaprasza <br/>
+
+            </h3>
+            <p className="event-details">{eventDesc}</p>
+
+            <h3 className="event-details">projekcja <br/>
               {moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}
             </h3>
 
@@ -79,6 +81,7 @@ class EventView extends React.Component {
         <Row>
           <Col xs={12} md={6}>
             {/*<EventUserProfile id={id}/>*/}
+            <MovieDescription id={movieIde}/>
           </Col>
           <Col xs={12} md={6}>
             <SubscribedUsers id={id}/>

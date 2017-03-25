@@ -133,3 +133,10 @@
   color: #cbcbcb;
   letter-spacing: 3px;
 }
+
+.title-details {
+  background-color: rgba(33, 33, 33, 0.7);
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+}
