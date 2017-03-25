@@ -37,6 +37,6 @@ console.log()
 export default connect(
   state => ({
     users: state.user,
-    events: state.events
+    events: state.eventsFetch
   })
 )(EventUserProfile)
