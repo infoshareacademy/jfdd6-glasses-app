@@ -1,4 +1,10 @@
 /* Events */
+
+.home-centered-vert {
+  display: flex;
+  align-items: center;
+}
+
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
   margin-bottom: 5px;
@@ -22,6 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
+
 }
 
 .home-event-description div h4{
@@ -66,7 +73,9 @@
   border: 1px solid white;
 }
 
+input-range__label--value {
 
+}
 
 /* Input field */
 

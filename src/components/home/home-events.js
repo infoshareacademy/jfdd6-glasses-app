@@ -61,7 +61,7 @@ const HomeEvents = ({events, start, change}) => {
                   <Row className="home-event-panel">
                     <Col xs={12} key={event.id}>
                       <h3 className="home-event-title rbc-ellipsis">{event.movieTitle}</h3>
-                      <Row>
+                      <Row className="home-centered-vert">
                         <Col xs={3}>
                           <Image
                             src={event.moviePicture}
