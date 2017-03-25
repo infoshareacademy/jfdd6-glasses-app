@@ -10,7 +10,8 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
 import {addEvent} from '../../state/add-event'
-
+import moment from 'moment'
+moment.locale('pl')
 
 export default connect(
   state => ({
@@ -19,7 +20,7 @@ export default connect(
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    addEvent: (id, id2) => dispatch(addEvent(id, id2))
+    addEvent: (id, userSessionId, eventDate, eventTime, desc) => dispatch(addEvent(id, userSessionId, eventDate, eventTime, desc))
 
 
   })
@@ -29,35 +30,69 @@ export default connect(
       super(props)
 
       this.state = {
-        className: 'hide'
+        className: 'hide',
+        eventDescription: '',
+        eventDate: '',
+        eventTime: '12:00'
       }
     }
+
     componentWillMount() {
       this.props.fetchMovie();
       this.props.fetchUsers();
     }
 
+  componentDidUpdate() {
+
+  }
+
     render() {
       const {addEvent, session} = this.props;
       const id = this.props.params.movieId;
-      const id2 = session.data.id;
+      const userSessionId = session.data.userId;
+      const valueData = moment(this.state.eventDate).format('YYYY-MM-DD');
+      const valueTime = this.state.eventTime;
+      const desc = this.state.eventDescription;
+
+      console.log(valueData,valueTime, userSessionId, desc, this.state.className );
       return (
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
-              <div className="movie-center">
-                <Button onClick={() => addEvent(id, id2)}>Utwórz wydarzenie</Button>
-                <Button onClick={() => this.setState({ className: 'show' })}>Show</Button>
-                <form action="" id="formM" className={this.state.className}>
-                  <input type="text" />
-                  <input type="text" />
-                </form>
+              <div className="movie-center title">
+                <Button className="addEvent-button"
+                  onClick={() => this.state.className == 'hide' ?
+                    this.setState({className: 'show'}) :
+                    this.setState({className: 'hide'}) }>
+                  Zoorganizuj projekcję:
+                </Button>
               </div>
             </Col>
             <Col xs={12} md={5} mdOffset={1} mdPull={1}>
               <MovieTitle id={id}/>
               <MovieDescription id={id}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} md={9} mdOffset={2} mdPull={1}>
+
+              <form action="" id="formM" className={this.state.className}>
+                <p>Data projekcji:</p>
+                <input type="time"
+                       value={this.state.eventTime}
+                       onChange={(event) => this.setState({eventTime: event.target.value})}/>
+                <input type="date" placeholder="Enter text" label="sdfsadfasdfasdfa" className="login"
+                       value={this.state.eventDate}
+                       onChange={(event) => this.setState({eventDate: event.target.value})}/>
+                <p>Krótki opis wydarzenia:</p>
+                <input type="text" placeholder="Enter text" label="Text" className="login"
+                       value={this.state.eventDescription}
+                       onChange={(event) => this.setState({eventDescription: event.target.value})}/>
+                <Button onClick={(event) => {
+                  event.preventDefault();
+                  return addEvent(id, userSessionId, valueData, valueTime, desc);}}>Zapisz</Button>
+              </form>
             </Col>
           </Row>
           <Row className="show-grid">

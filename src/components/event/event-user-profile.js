@@ -4,10 +4,12 @@ import {Col, Grid} from 'react-bootstrap'
 
 class EventUserProfile extends React.Component {
   render() {
-    const {id, users} = this.props;
+    const {id, users, events} = this.props;
     if (users.data === null) {
       return <p>Waiting for user data…</p>
     }
+console.log()
+    const c = (events.data.filter(event => event.host === id ? event.host : 0));
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
 
@@ -34,6 +36,7 @@ class EventUserProfile extends React.Component {
 
 export default connect(
   state => ({
-    users: state.user
+    users: state.user,
+    events: state.events
   })
 )(EventUserProfile)

@@ -23,7 +23,8 @@
 .movie-description {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px;
-  color: #ffffff;
+  font-size: 1.0rem;
+  color: #cbcbcb;
 }
 
 .title {
@@ -93,6 +94,7 @@
 
 .movie-center {
   text-align: center;
+  padding: 15px;
 }
 
 .hide {
@@ -101,4 +103,33 @@
 
 .show {
   display: block;
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px 0 15px 0;
+  color: #DC810E;
+  /*max-width: 400px;*/
+}
+
+.login:focus {
+  outline-color: #DC810E;
+}
+
+.movie-original-title {
+  font-style: italic;
+  font-size: 1.0rem;
+  color: #cbcbcb;
+}
+
+.addEvent-button,
+.addEvent-button:hover,
+.addEvent-button:focus,
+.addEvent-button:active,
+.addEvent-button:active:hover,
+.addEvent-button:active:focus {
+  background-color: #808080;
+  background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
+  border-color: #808080;
+  color: #cbcbcb;
+  letter-spacing: 3px;
 }

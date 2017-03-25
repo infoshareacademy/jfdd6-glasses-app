@@ -27,7 +27,7 @@ class SubscribedUsers extends React.Component {
               events.data ? events.data.filter(
                 event => event.id === +id
               ).map(
-                (event) => event.guests.map( (guest, index) => <tr key={index}>
+                (event) => event.guests ? event.guests.map( (guest, index) => <tr key={index}>
                     <td>
                       {user.data.filter(
                         person => person.id === guest).map(
@@ -42,9 +42,9 @@ class SubscribedUsers extends React.Component {
                     </td>
                     <td>
                     </td >
-                  </tr>
+                  </tr>) : null
 
-              )) : <tr>
+              )  : <tr>
                 <td>Brak zgłoszeń</td>
                 {/*<td key={index+2000}></td>*/}
                 {/*<td key={index+3000}></td>*/}

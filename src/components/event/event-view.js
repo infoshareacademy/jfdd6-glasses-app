@@ -6,9 +6,10 @@ import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
 import {fetchreadEvent} from '../../state/add-event'
-import EventUserProfile from './event-user-profile'
+// import EventUserProfile from './event-user-profile'
 import SubscribedUsers from './subscribed-users'
-
+import moment from 'moment'
+moment.locale('pl')
 
 class EventView extends React.Component {
   componentWillMount() {
@@ -19,15 +20,29 @@ class EventView extends React.Component {
 
   render() {
     const id = this.props.params.eventId;
-    const { movie, events} = this.props;
-const movieIde = (events.data ? events.data.filter(
+
+    // const host = events.data.filter(event => event == 1? event.host : null);
+    const {movie, events} = this.props;
+    const movieIde = (events.data ? events.data.filter(
         event => event.id === +id
-      ).map(
-        (event) => event.movieId): 0);
-    const userIde = (events.data ? events.data.filter(
+      ).map(event => event.movieId): 'Waiting for data' );
+    console.log(movieIde);
+    const eventStart = (events.data ? events.data.filter(
         event => event.id === +id
-      ).map(
-        (event) => event.host): 0);
+      ).map(event => event.start).toString(eventStart).slice(0,10): 'Waiting for data' );
+    const eventTime = (events.data ? events.data.filter(
+        event => event.id === +id
+      ).map(event => event.start).toString(eventStart).slice(11,16): 'Waiting for data' );
+    console.log(eventTime);
+    const eventDesc = (events.data ? events.data.filter(
+        event => event.id === +id
+      ).map(event => event.desc): 'Waiting for data' );
+
+    //     (event) => event.movieId) : 0);
+    // const userIde = (events.data ? events.data.filter(
+    //     event => event.id === +id
+    //   ).map(
+    //     (event) => event.host) : 0);
     return (
       <Grid>
         <Row>
@@ -36,25 +51,34 @@ const movieIde = (events.data ? events.data.filter(
 
               {
                 movie.data ? movie.data.filter(
-                    movie => movie.id === movieIde[0]
+                    movie => movie.id === parseInt(movieIde)
                   ).map(
                     (movie, index) => (
                       <img className="movie-img" alt={movie.name + ' poster'} src={movie.pics[0]} key={movie.id}/>
 
                     )
-                  ) : <img className="movie-img" alt={movie.name + ' poster'} src="http://lorempixel.com/320/440/sports/" key={movie.id + 1}/>
+                  ) :
+                  <img className="movie-img" alt={movie.name + ' poster'} src="http://lorempixel.com/320/440/sports/"
+                       key={movie.id + 1}/>
               }
 
             </div>
           </Col>
           <Col xs={12} md={6}>
-            <MovieTitle id={movieIde[0]}/>
-            <MovieDescription id={movieIde[0]}/>
+            <h2>Na film</h2>
+            <MovieTitle id={movieIde}/>
+            <h3>zaprasza</h3>
+            {eventDesc}
+            <MovieDescription id={movieIde}/>
+            <h3>projekcja
+              {moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}
+            </h3>
+
           </Col>
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <EventUserProfile id={userIde} />
+            {/*<EventUserProfile id={id}/>*/}
           </Col>
           <Col xs={12} md={6}>
             <SubscribedUsers id={id}/>
