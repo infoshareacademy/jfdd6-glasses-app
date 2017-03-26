@@ -29,10 +29,12 @@ class SubscribedUsers extends React.Component {
                 const addFilter = (events.data.filter(
                     event => event.id === parseInt(id, 10)
                   ).map((event) =>
-                    event.guests.includes(userSessionId) ? event.guests : event.guests.push(userSessionId))
+                    event.guests.includes(userSessionId) ? event.guests : event.guests.concat(userSessionId))
                 );
-                return (addUser(id, userSessionId, userSessionToken, addFilter),
-                console.log(addFilter));
+                console.log(parseInt(addFilter));
+                return (addUser(id, userSessionId, userSessionToken, addFilter));
+
+
               }}>Zgłoś się</Button></th>
                 </tr>
                 </thead>
@@ -59,8 +61,7 @@ class SubscribedUsers extends React.Component {
                 </tr>) : 'oczekiwanie na dane'
                 ) : <tr>
                 <td>Brak zgłoszeń</td>
-                {/*<td key={index+2000}></td>*/}
-                {/*<td key={index+3000}></td>*/}
+
                 </tr>
               }
                 </tbody>
@@ -79,6 +80,6 @@ class SubscribedUsers extends React.Component {
                 events: state.eventsFetch
               }),
                 dispatch => ({
-                  addUser: (id, userSessionId, userSessionToken) => dispatch(addUser(id, userSessionId, userSessionToken)),
+                  addUser: (id, userSessionId, userSessionToken, addFilter) => dispatch(addUser(id, userSessionId, userSessionToken, addFilter)),
                 })
                 )(SubscribedUsers)
