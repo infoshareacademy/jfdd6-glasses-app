@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&amp;subset=latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Anton&amp;subset=latin,latin-ext");
 
-
-
-.col {
-  font-family: 'Varela Round', sans-serif;
-  color: white;
-}
-
 .movie-title {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
@@ -21,7 +14,8 @@
 .movie-description {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px;
-  color: #ffffff;
+  font-size: 1.0rem;
+  color: #cbcbcb;
 }
 
 .title {
@@ -39,7 +33,6 @@
   max-width: 100%;
   margin: auto;
   display: block;
-  /*object-fit: contain;*/
 }
 
 .movie-list-bg-1 {
@@ -91,4 +84,48 @@
 
 .movie-center {
   text-align: center;
+  padding: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px 0 15px 0;
+  color: #DC810E;
+}
+
+.login:focus {
+  outline-color: #DC810E;
+}
+
+.movie-original-title {
+  font-style: italic;
+  font-size: 1.0rem;
+  color: #cbcbcb;
+}
+
+.addEvent-button,
+.addEvent-button:hover,
+.addEvent-button:focus,
+.addEvent-button:active,
+.addEvent-button:active:hover,
+.addEvent-button:active:focus {
+  background-color: #808080;
+  background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
+  border-color: #808080;
+  color: #cbcbcb;
+  letter-spacing: 3px;
+}
+
+.title-details {
+  background-color: rgba(33, 33, 33, 0.7);
+  margin: 0;
+  padding: 10px;
+  text-align: right;
 }

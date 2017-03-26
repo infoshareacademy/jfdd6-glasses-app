@@ -1,55 +1,76 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Col, Grid, Button, Table} from 'react-bootstrap'
-import {addUser} from '../../state/add-event'
-
+import {Button, Table} from 'react-bootstrap'
+import {addUser} from '../../state/event'
 
 class SubscribedUsers extends React.Component {
   render() {
-    const {posts, id} = this.props;
-
+    const {events, id, user, session, addUser} = this.props
+    let userSessionToken, userSessionId, thisEvent
+    if (session.data) {
+      userSessionToken = session.data.id
+      userSessionId = session.data.userId
+    } else {
+      userSessionId = userSessionToken = 'Ładowanie danych'
+    }
+    if (events.data) {
+      thisEvent = events.data.find(event => event.id === parseInt(id, 10))
+    }
 
     return (
 
-      <Grid className="profile-container-event">
+      <div className="profile-container-event">
         <h2>Zapisani użytkownicy:</h2>
-        <Col xs={12} md={2}>
-          <Table striped bordered condensed hover className="event-table">
-            <thead>
-            <tr>
-              <th>Avatar</th>
-              <th>Imię</th>
-              <th><Button onClick={() => addUser(id)}>Zgłoś się</Button></th>
-            </tr>
-            </thead>
-            <tbody>
-            {
-              posts.data ? posts.data.filter(
-                post => post.id === id,
-              ).map(
-                (post, index) => (post.data).map(
-                  el => <tr>
+        <Table className="film-table table table-bordered">
+          <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Imię</th>
+            <th><Button onClick={(event) => {
+              event.preventDefault()
+              if (userSessionToken === 'guest') {
+                alert('Zaloguj się, aby zapisać się na projekcję.')
+              } else {
+                const guests = thisEvent.guests.includes(userSessionId) ?
+                  thisEvent.guests.filter(delUser => delUser !== userSessionId) :
+                  thisEvent.guests.concat(userSessionId)
+                return (addUser(id, userSessionId, userSessionToken, guests))
+              }
+            }}>
+              {events.data ?
+                thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
+                : null}
+            </Button></th>
+          </tr>
+          </thead>
+          <tbody>
+          {
+            events.data ?
+              thisEvent.guests ? thisEvent.guests.map((guest, index) =>
+                  <tr key={index}>
                     <td>
-                      {el}
+                      {user.data ? user.data.filter(
+                          person => person.id === guest).map(
+                          person => <img src={person.avatar} key={guest} alt={guest}/>
+                        ) : 'oczekiwanie na dane'}
                     </td>
                     <td>
-                      {post.id}
+                      {user.data ? user.data.filter(
+                          person => person.id === guest).map(
+                          person => <p key={index + 10}>{person.username}</p>
+                        ) : 'oczekiwanie na dane'}
                     </td>
                     <td>
-                      {post.body}
-                    </td>
-                  </tr>
-                )
-              ) : <tr>
-                <td >Brak zgłoszeń</td>
-                <td></td>
-                <td></td>
+                    </td >
+                  </tr>) : 'oczekiwanie na dane'
+              :
+              <tr>
+                <td>Brak zgłoszeń</td>
               </tr>
-            }
-            </tbody>
-          </Table>
-        </Col>
-      </Grid>
+          }
+          </tbody>
+        </Table>
+      </div>
     )
   }
 }
@@ -57,10 +78,11 @@ class SubscribedUsers extends React.Component {
 
 export default connect(
   state => ({
-    users: state.user,
-    posts: state.posts
+    user: state.user,
+    session: state.session,
+    events: state.eventsFetch
   }),
   dispatch => ({
-    addUser: (id) => dispatch(addUser(id))
+    addUser: (id, userSessionId, userSessionToken, guests) => dispatch(addUser(id, userSessionId, userSessionToken, guests)),
   })
 )(SubscribedUsers)
