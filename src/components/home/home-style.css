@@ -38,6 +38,12 @@ p.home-user-location {
   line-height: 1.5em;
 }
 
+.home-event-info {
+  background-color: rgba(33, 33, 33, 0.7);
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
   margin-bottom: 5px;
@@ -65,7 +71,6 @@ p.home-user-location {
 color: #dc810e;
 font-family: 'Anton', sans-serif;
 text-align: center;
-text-shadow: 3px 3px 8px black;
 }
 
 /* Slider */

@@ -41,7 +41,7 @@ const HomeEvents = ({events, start, change}) => {
               </Col>
             </Row>
             <HomeInfo
-              classRow="home-event-panel"
+              classRow="home-event-info"
               classH4="home-event-title"
               classH5="home-event-description"
               title="Jeszcze chwila..."
@@ -74,7 +74,7 @@ const HomeEvents = ({events, start, change}) => {
                 </Col>
               </Row>
               <HomeInfo
-                classRow="home-event-panel"
+                classRow="home-event-info"
                 classH4="home-event-title"
                 classH5="home-event-description"
                 title="Hmmm... Spróbuj wyszukać jeszcze raz."
