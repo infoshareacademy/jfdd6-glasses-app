@@ -5,7 +5,7 @@ const FETCH__FAIL = 'home/FETCH__FAILED'
 export const fetchData = () => dispatch => {
   dispatch({ type: FETCH__BEGIN })
   return fetch(
-    'https://mysteriousd-lake-35712.herokuapp.com/api/events/'
+    'https://mysterious-lake-35712.herokuapp.com/api/events/'
   ).then(
     response => {
       if (response.ok) {

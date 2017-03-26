@@ -47,16 +47,40 @@ const HomeEvents = ({events, start, change}) => {
               title="Jeszcze chwila..."
               description="Nasza ekipa montuje filmy."
             />
-          </div>
-          :
+          </div> :
           events.length === 0 ?
-            <HomeInfo
+            <div>
+              <Row className="home-btn-wrapper">
+                <ButtonGroup>
+                  <Button
+                    disabled
+                    bsSize="small"
+                    className="movies-tag-button-reset">
+                    &lt;
+                  </Button>
+                  <Button
+                    disabled
+                    bsSize="small"
+                    className="movies-tag-button-reset">
+                    &gt;
+                  </Button>
+                </ButtonGroup>
+              </Row>
+              <Row className="home-event-panel-header">
+                <Col xs={12}>
+                  <h5 className="home-event-description text-center">
+                    NADCHODZĄCE PROJEKCJE
+                  </h5>
+                </Col>
+              </Row>
+              <HomeInfo
               classRow="home-event-panel"
               classH3="home-event-title"
               classH4="home-event-description"
               title="Hmmm... Spróbuj wyszukać jeszcze raz."
               description="Zmień Twoją lokalizację lub odległość."
-            /> :
+            />
+            </div>:
             events.slice(
               start, start + step
             ).map(
