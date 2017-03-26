@@ -10,7 +10,7 @@ class AllUsers extends React.Component {
       <Grid>
           {users.data ? users.data.map(
               (arg) => (
-                <div className="users-list-user col-xs-12 col-sm-6 col-lg-4 movies-no-padding">
+                <div key={arg.id} className="users-list-user col-xs-12 col-sm-6 col-lg-4 movies-no-padding">
                   <div className="movies-spaced-list">
                     <Link to={'/user/' + arg.id}>
                       <img src={arg.avatar} alt={arg.first_name} height="50px" width="50px"/>
