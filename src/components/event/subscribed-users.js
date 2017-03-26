@@ -29,7 +29,7 @@ class SubscribedUsers extends React.Component {
         <Table className="film-table table table-bordered">
           <thead>
           <tr>
-            <th>Avatar</th>
+            <th>Awatar</th>
             <th>Imię</th>
             <th>
               <Button
