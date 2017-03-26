@@ -127,7 +127,6 @@ export default connect(
                 </div>
                 );
               </div>
-              <div>
 
               <div className="coming-soon">
                 <h4> Nadchodzące projekcje tego filmu:</h4>
