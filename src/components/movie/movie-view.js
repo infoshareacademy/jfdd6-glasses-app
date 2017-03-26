@@ -133,7 +133,7 @@ export default connect(
                 <ul>
                   {events === null ? null :
                     events.filter(
-                      ev => ev.movieId === parseInt(id, 10)
+                      ev => ev.movieId === id
                     ).map((ev, index) =>
                       userSessionId === ev.host
                         ?
