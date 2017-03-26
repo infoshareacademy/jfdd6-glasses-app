@@ -8,7 +8,6 @@ class AllUsers extends React.Component {
     const {users} = this.props;
     return (
       <Grid>
-        <h1 className="profile-container">Wszyscy użytkownicy</h1>
           {users.data ? users.data.map(
               (arg) => (
                 <div className="users-list-user col-xs-12 col-sm-6 col-lg-4 movies-no-padding">
