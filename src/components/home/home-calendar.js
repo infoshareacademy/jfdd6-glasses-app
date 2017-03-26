@@ -8,11 +8,13 @@ moment.locale('pl')
 const HomeCalendar = ({events, router}) => (
   <div className="home-calendar">
     <BigCalendar
-      views={['month']}
+      views={['month', 'day']}
       messages={{
         previous: "<",
         next: ">",
-        today: "dziś"
+        today: "dziś",
+        month: 'm',
+        day: 'd'
       }}
       events={ events ?
         events.map(
