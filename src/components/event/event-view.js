@@ -5,21 +5,39 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchreadEvent} from '../../state/add-event'
-import EventUserProfile from './event-user-profile'
+import {fetchData} from '../../state/home-fetch'
 import SubscribedUsers from './subscribed-users'
-
+import moment from 'moment'
+moment.locale('pl')
 
 class EventView extends React.Component {
   componentWillMount() {
-    this.props.fetchMovie();
-    this.props.fetchUsers();
-    this.props.fetchreadEvent()
+    this.props.fetchMovie()
+    this.props.fetchUsers()
+    this.props.fetchEvent()
   }
 
   render() {
-    const id = this.props.params.eventId;
-    const { movie} = this.props;
+    const id = this.props.params.eventId
+    const {movie, events} = this.props
+    let movieIde, eventStart, eventTime, eventDesc
+
+    if (events.data) {
+      movieIde = (events.data.filter(
+        event => event.id === +id
+      ).map(event => event.movieId))
+      eventStart = (events.data.filter(
+        event => event.id === +id
+      ).map(event => event.start).toString(eventStart).slice(0, 10))
+      eventTime = (events.data.filter(
+        event => event.id === +id
+      ).map(event => event.start).toString(eventStart).slice(11, 16))
+      eventDesc = (events.data.filter(
+          event => event.id === +id
+        ).map(event => event.desc))
+    } else {
+      movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych'
+    }
 
     return (
       <Grid>
@@ -29,27 +47,39 @@ class EventView extends React.Component {
 
               {
                 movie.data ? movie.data.filter(
-                    movie => movie.id === parseInt(id, 10)
+                    movie => movie.id === parseInt(movieIde, 10)
                   ).map(
-                    movie => (
+                    (movie, index) => (
                       <img className="movie-img" alt={movie.name + ' poster'} src={movie.pics[0]} key={movie.id}/>
 
                     )
-                  ) : <img className="movie-img" alt={movie.name + ' poster'} src="http://lorempixel.com/320/440/sports/"/>
+                  ) :
+                  <img className="movie-img" alt={movie.name + ' poster'} src="http://lorempixel.com/320/440/sports/"
+                       key={movie.id + 1}/>
               }
 
             </div>
           </Col>
           <Col xs={12} md={6}>
-            <MovieTitle id={id}/>
-            <MovieDescription id={id}/>
+            <h2 className="event-details">Na film</h2>
+            <MovieTitle id={movieIde}/>
+            <h3 className="event-details">zaprasza <br/>
+
+            </h3>
+            <p className="event-details">{eventDesc}</p>
+
+            <h3 className="event-details">projekcja <br/>
+              {moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}
+            </h3>
+
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={6}>
-            <EventUserProfile id="7" />
+          <Col xs={12} md={5} mdOffset={1}><br/><br/><br/>
+            {/*<EventUserProfile id={id}/>*/}
+            <MovieDescription id={movieIde}/>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5}>
             <SubscribedUsers id={id}/>
           </Col>
         </Row>
@@ -61,11 +91,11 @@ class EventView extends React.Component {
 export default connect(
   state => ({
     movie: state.movie,
-    posts: state.posts
+    events: state.eventsFetch
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchreadEvent: () => dispatch(fetchreadEvent())
+    fetchEvent: () => dispatch(fetchData())
   })
 )(EventView)

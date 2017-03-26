@@ -28,3 +28,12 @@
 .event-table {
   width: 300px;
 }
+
+.event-details {
+  background-color: rgba(33, 33, 33, 0.7);
+  font-size: 1.2rem;
+  color: #cbcbcb;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
