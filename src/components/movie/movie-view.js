@@ -17,7 +17,8 @@ moment.locale('pl')
 export default connect(
   state => ({
     session: state.session,
-    events: state.eventsFetch.data
+    events: state.eventsFetch.data,
+    user: state.user
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),
@@ -45,15 +46,18 @@ export default connect(
     }
 
     render() {
-      const {addEvent, events, session} = this.props
-      const id = this.props.params.movieId
+      const {addEvent, events, session, user} = this.props
+      const id = parseInt(this.props.params.movieId, 10)
       const userSessionId = session.data.userId
       const userSessionToken = session.data.id
       const valueData = moment(this.state.eventDate).format('YYYY-MM-DD')
       const valueTime = this.state.eventTime
       const desc = this.state.eventDescription
-      let close = () => this.setState({show: false});
+      let close = () => this.setState({show: false, showNoMovie: false});
+      const MovieHost = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.movies) : 'ładowanie danych'
+      const UserName = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.username) : 'ładowanie danych'
 
+      console.log(id, MovieHost[0])
       return (
         <Grid>
           <Row className="show-grid">
@@ -67,9 +71,13 @@ export default connect(
                     className="addEvent-button"
                     onClick={userSessionToken === 'guest' ?
                       () => this.setState({show: true}) :
-                      () => this.state.className === 'hide' ?
-                        this.setState({className: 'show'}) : this.setState({className: 'hide'})
+                      MovieHost[0].includes(id) ? () =>
+
+                          this.state.className === 'hide' ?
+                            this.setState({className: 'show'}) : this.setState({className: 'hide'}) : () => this.setState({showNoMovie: true})
                     }
+
+
                   >
                     Zorganizuj pokaz filmu
                   </Button>
@@ -86,7 +94,9 @@ export default connect(
                     <Modal.Body>
                       <p>Drogi gościu.
                         <br/><br/>
-                        Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości tworzenia nowych wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
+                        Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba
+                        niezalogowana nie masz możliwości tworzenia nowych wydarzeń ani korzystania z wielu
+                        funkcjonalności naszej aplikacji.
                         <br/><br/>
                         Załóż konto już dziś i ciesz się pełnią możliwości serwisu.</p>
                     </Modal.Body>
@@ -94,6 +104,28 @@ export default connect(
                       <Button onClick={close}>Close</Button>
                     </Modal.Footer>
                   </Modal>
+
+
+                  <Modal
+                    show={this.state.showNoMovie}
+                    onHide={close}
+                    container={this}
+                    aria-labelledby="contained-modal-title"
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title id="contained-modal-title">Nie posiadasz tego filmu</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <p>Drogi {UserName}.
+                        <br/><br/>
+                        Wygląda na to, że nie masz lub nie dodałeś jeszcze tego filmu do swojej kolekcji. Poniżej znajdziesz listę sąsiadów
+                        z którymi mógłbyś go obejrzeć.</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button onClick={close}>Close</Button>
+                    </Modal.Footer>
+                  </Modal>
+
                 </div>
                 );
               </div>
