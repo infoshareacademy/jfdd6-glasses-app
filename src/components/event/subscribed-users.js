@@ -29,7 +29,7 @@ class SubscribedUsers extends React.Component {
                 const addFilter = (events.data.filter(
                     event => event.id === parseInt(id, 10)
                   ).map((event) =>
-                    event.guests.includes(userSessionId) ? event.guests : event.guests.concat(userSessionId))
+                    event.guests.includes(userSessionId) ? event.guests.filter(delUser => delUser !== userSessionId) : event.guests.concat(userSessionId))
                 );
                 console.log(parseInt(addFilter));
                 return (addUser(id, userSessionId, userSessionToken, addFilter));
@@ -53,7 +53,7 @@ class SubscribedUsers extends React.Component {
                 <td>
                 {user.data ? user.data.filter(
                     person => person.id === guest).map(
-                    person => <p key={index + 10}>{person.login}</p>
+                    person => <p key={index + 10}>{person.username}</p>
                   ) : 'oczekiwanie na dane'}
                 </td>
                 <td>
