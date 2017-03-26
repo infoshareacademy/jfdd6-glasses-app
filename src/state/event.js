@@ -2,7 +2,7 @@ const FETCH__BEGIN = 'event/FETCH__BEGIN'
 const FETCH__SUCCESS = 'event/FETCH__SUCCESS'
 const FETCH__FAIL = 'event/FETCH__FAILED'
 
-import { fetchData } from './home-fetch'
+import {fetchData} from './home-fetch'
 
 export const addEvent = (id, userSessionId, valueData, valueTime, eventDescription, userSessionToken) => dispatch => {
   return fetch(
@@ -55,10 +55,9 @@ export const addEvent = (id, userSessionId, valueData, valueTime, eventDescripti
   )
 };
 
-export const addUser = (userSessionId, userSessionToken, id) => dispatch => {
+export const addUser = (id, userSessionId, userSessionToken, addFilter) => dispatch => {
   return fetch(
-    console.log(userSessionId, userSessionToken, id),
-    'https://mysterious-lake-35712.herokuapp.com/api/events/?access_token=nkIfWmsgiSRV3uRe2gPiKjUP2Fb7RUeDWyNHHYV5UjyH46ma5GDe2MEb9BND2f1F',
+    'https://mysterious-lake-35712.herokuapp.com/api/events/' + id + '?access_token=' + userSessionToken,
     {
       method: 'PATCH',
       headers: {
@@ -66,8 +65,7 @@ export const addUser = (userSessionId, userSessionToken, id) => dispatch => {
       },
       body: JSON.stringify(
         {
-          "id": 58,
-          "desc": 'dupa'
+          "guests": [addFilter],
         }
       )
     }
@@ -75,26 +73,50 @@ export const addUser = (userSessionId, userSessionToken, id) => dispatch => {
     response => {
       if (response.ok) {
         return response.json().then(
-          data => {
+          data =>
             dispatch({
               type: FETCH__SUCCESS,
               data
             })
-            dispatch(fetchData())
-          }
-        ).catch(
-          error => dispatch({
-            type: FETCH__FAIL,
-            error: 'Malformed JSON response'
-          })
-        )
+            ).catch(
+              error => dispatch({
+                type: FETCH__FAIL,
+                error: error.message
+              })
+            )
+
       }
-      throw new Error('Connection error')
-    }
-  ).catch(
-    error => dispatch({
-      type: FETCH__FAIL,
-      error: error.message
+
     })
-  )
-};
+}
+
+const initialState = {
+  data: null,
+  fetching: false,
+  error: null
+}
+
+export default (state = initialState, action = {}) => {
+  switch (action.type) {
+    case FETCH__BEGIN:
+      return {
+        ...state,
+        fetching: true,
+        error: null
+      }
+    case FETCH__SUCCESS:
+      return {
+        ...state,
+        data: action.data,
+        fetching: false
+      }
+    case FETCH__FAIL:
+      return {
+        ...state,
+        fetching: false,
+        error: action.error
+      }
+    default:
+      return state
+  }
+}
