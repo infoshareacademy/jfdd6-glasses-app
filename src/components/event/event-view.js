@@ -19,10 +19,13 @@ class EventView extends React.Component {
 
   render() {
     const id = this.props.params.eventId
-    const {movie, events} = this.props
-    let movieIde, eventStart, eventTime, eventDesc
+    const {movie, events, user} = this.props
+    let movieIde, eventStart, eventTime, eventDesc, host
 
     if (events.data) {
+      host = (events.data.filter(
+        event => event.id === +id
+      ).map(event => event.host))
       movieIde = (events.data.filter(
         event => event.id === +id
       ).map(event => event.movieId))
@@ -36,7 +39,7 @@ class EventView extends React.Component {
           event => event.id === +id
         ).map(event => event.desc))
     } else {
-      movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych'
+      host = movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych'
     }
 
     return (
@@ -66,6 +69,9 @@ class EventView extends React.Component {
             <h3 className="event-details">zaprasza <br/>
 
             </h3>
+            <h1>{
+
+              user.data ? user.data.filter( person => person.id === parseInt(host,10)).map(person => person.username): 'oczekiwanie na dane'}</h1>
             <p className="event-details">{eventDesc}</p>
 
             <h3 className="event-details">projekcja <br/>
@@ -91,6 +97,7 @@ class EventView extends React.Component {
 export default connect(
   state => ({
     movie: state.movie,
+    user: state.user,
     events: state.eventsFetch
   }),
   dispatch => ({
