@@ -6,13 +6,6 @@
   color: white;
 }
 
-.login-container {
-  margin-top: 50px; }
-
-.logo {
-  max-height: 150px;
-  width: auto; }
-
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px; }
@@ -63,4 +56,26 @@
 
 .film-table td.film-table-button {
   vertical-align: middle;
+}
+
+/* --- for USERS --- */
+
+.users-list-user {
+  margin-bottom: 5px;
+  float: left;
+}
+
+.movies-list-movie img {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.users-list-user a {
+  display: block;
+  padding: 20px 10px 20px 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #6B6B6B;
 }
