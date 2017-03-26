@@ -4,8 +4,11 @@ p.home-user-location {
   margin-top: 5px;
   font-style: italic;
 }
-/* Events */
 
+.home-ruller {
+  margin: 10px;
+}
+/* Events */
 .home-centered-vert {
   display: flex;
   align-items: center;
@@ -34,7 +37,6 @@ p.home-user-location {
   display: flex;
   flex-direction: column;
   align-items: left;
-
 }
 
 .home-event-description div h4{
@@ -56,7 +58,6 @@ p.home-user-location {
   padding-right: 16px;
   padding-left: 16px;
 }
-
 
 /* Slider */
 .input-range {
@@ -81,21 +82,14 @@ p.home-user-location {
   border: 1px solid white;
 }
 
-
 /* Input field */
 .home-location {
   margin-bottom: 20px;
 }
 
-@media (min-width: 992px){
-  .home-location {
-    margin-bottom: 0px;
-  }
-}
-
 /* Calendar */
 .home-calendar {
-  height: 650px;
+  height: 600px;
   margin-bottom: 20px;
 }
 
@@ -134,5 +128,25 @@ p.home-user-location {
   cursor: default;
 }
 
+@media (max-width: 480px){
+  .home-calendar {
+    height: 400px;
+  }
+  .rbc-event {
+    padding: 0;
+    border-radius: 0;
+  }
+  .rbc-event-content {
+    font-size: 0.5rem;
+  }
+  .home-ruller {
+    margin: 3px;
+  }
+}
 
+@media (min-width: 992px){
+  .home-location {
+    margin-bottom: 0;
+  }
+}
 

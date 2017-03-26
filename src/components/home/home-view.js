@@ -62,7 +62,7 @@ class HomeView extends React.Component {
         <p className="text-center home-user-location">
           Wybrana lokalizacja to: {userLocation[0].formatted_address}
         </p>
-        <hr />
+        <hr className="home-ruller" />
         <Row>
           <Col xs={12} md={7}>
             <HomeCalendar events={ eventsFiltered } router={this.props.router}/>
