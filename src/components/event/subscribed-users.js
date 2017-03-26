@@ -19,10 +19,10 @@ class SubscribedUsers extends React.Component {
 
     return (
 
-      <Grid className="profile-container-event">
+      <div className="profile-container-event">
         <h2>Zapisani użytkownicy:</h2>
-        <Col xs={12} md={2}>
-          <Table striped bordered condensed hover className="event-table">
+        {/*<Col xs={12} md={2}>*/}
+          <Table className="film-table table table-bordered">
             <thead>
             <tr>
               <th>Avatar</th>
@@ -71,8 +71,8 @@ class SubscribedUsers extends React.Component {
                 }
                 </tbody>
                 </Table>
-                </Col>
-                </Grid>
+                {/*</Col>*/}
+                </div>
                 )
                 }
                 }

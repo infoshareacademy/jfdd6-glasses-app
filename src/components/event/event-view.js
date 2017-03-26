@@ -84,11 +84,11 @@ class EventView extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5} mdOffset={1}><br/><br/><br/>
             {/*<EventUserProfile id={id}/>*/}
             <MovieDescription id={movieIde}/>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5}>
             <SubscribedUsers id={id}/>
           </Col>
         </Row>
