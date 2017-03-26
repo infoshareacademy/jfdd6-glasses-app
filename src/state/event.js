@@ -57,8 +57,8 @@ export const addEvent = (id, userSessionId, valueData, valueTime, eventDescripti
 
 export const addUser = (id, userSessionId, userSessionToken, addFilter) => dispatch => {
   return fetch(
-    // 'https://mysterious-lake-35712.herokuapp.com/api/events/' + id + '?access_token=' + userSessionToken,
-    console.log(id, userSessionId, userSessionToken, addFilter),
+    'https://mysterious-lake-35712.herokuapp.com/api/events/' + id + '?access_token=' + userSessionToken,
+    // console.log(id, userSessionId, userSessionToken, addFilter),
     {
       method: 'PATCH',
       headers: {
