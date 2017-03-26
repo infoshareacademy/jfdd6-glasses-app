@@ -45,7 +45,8 @@ class HomeView extends React.Component {
         moment(event.start) >= moment() && event.distance < range
       ).sort(
         (prev, next) =>
-        moment(prev.start) - moment(next.start)) : null
+        moment(prev.start) - moment(next.start)
+      ) : null
 
     return (
       <Grid>

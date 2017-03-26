@@ -41,7 +41,16 @@ const HomeEvents = ({events, start, change}) => {
       </Row>
       {
         !events ?
-          null :
+          <Row className="home-event-panel">
+            <Col xs={12}>
+              <h3 className="home-event-title">
+                Jeszcze chwila...
+              </h3>
+              <h4 className="home-event-description">
+                Nasza ekipa montuje filmy.
+              </h4>
+            </Col>
+          </Row> :
           events.length === 0 ?
             <Row className="home-event-panel">
               <Col xs={12}>
