@@ -16,7 +16,7 @@ class UserFilmList extends React.Component {
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10))
 
     return (
-      <div className="profile-container black-background">
+      <div className="profile-container black-background user-main-data">
         <h3>Filmy użytkownika <span className="name"> {filteredUser.username}</span></h3>
         <Table className="film-table">
           <tbody>

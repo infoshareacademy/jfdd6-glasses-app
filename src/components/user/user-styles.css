@@ -13,10 +13,6 @@
   max-height: 150px;
   width: auto; }
 
-.black-background {
-  background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px; }
-
 .name {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
@@ -63,4 +59,12 @@
 
 .film-table td.film-table-button {
   vertical-align: middle;
+}
+
+.events-list {
+  margin-top: 10px;
+}
+
+.user-main-data {
+  min-height: 400px;
 }
