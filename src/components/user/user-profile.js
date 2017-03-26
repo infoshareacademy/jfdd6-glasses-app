@@ -9,19 +9,14 @@ class UserProfile extends React.Component {
     }
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10));
     return (
-      <div className="profile-container black-background">
+      <div className="profile-container black-background user-main-data">
         <h2>{filteredUser.first_name} {filteredUser.last_name}</h2>
 
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
         <p>
-          {filteredUser.username}, {filteredUser.gender}
+          <span className="strong"> O mnie: </span> {filteredUser.description}
         </p>
-
-        <p>
-          <span className="strong"> Na temat {filteredUser.first_name}: </span> {filteredUser.description}
-        </p>
-
       </div>
     )
   }

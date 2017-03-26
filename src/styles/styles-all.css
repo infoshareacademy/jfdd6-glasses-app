@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&amp;subset=latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Anton&amp;subset=latin,latin-ext");
+
 html,
 body {
   background-color: #4d4d4d;
@@ -13,7 +14,7 @@ body {
   background: url(../img/login-background.jpg);
   background-size: cover;
   margin-top: -20px;
-  height: 80vh; }
+  height: 110vh; }
 
 .login-container {
   margin-top: 80px; }
@@ -50,8 +51,7 @@ body {
 
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px;
-  min-height: 400px}
+  padding: 30px; }
 
 .welcome {
   font-family: 'Anton', sans-serif;
@@ -65,4 +65,19 @@ body {
 img.navbar-brand {
   height: 50px;
   padding: 0 20px 0 0;
+}
+
+.coming-soon {
+  background-color: rgba(33, 33, 33, 0.7);
+  padding: 10px 30px;
+  color: white;
+}
+
+.coming-soon ul a{
+  color: white;
+  text-decoration: none;
+}
+
+.coming-soon ul a:hover{
+  color: #DC810E;
 }
