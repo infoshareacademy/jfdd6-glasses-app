@@ -3,7 +3,7 @@ import {Navbar, Nav, NavItem, Image, NavDropdown} from "react-bootstrap";
 import {LinkContainer, IndexLinkContainer} from "react-router-bootstrap";
 import {connect} from 'react-redux'
 import {fetchSession, endSession, letGuestIn} from '../state/session'
-import {Grid, Row, Col, Button} from 'react-bootstrap'
+import {Grid, Row, Col, Button, ButtonToolbar} from 'react-bootstrap'
 
 export default connect(
   state => ({
@@ -62,8 +62,10 @@ export default connect(
                     value={this.state.password}
                     onChange={(event) => this.setState({password: event.target.value})}
                   />
+                  <ButtonToolbar>
                     <Button bsStyle="warning" className="login-button" type="submit">Zaloguj</Button>
-                  &nbsp;&nbsp;<Button onClick={() => this.props.letGuestIn()}>Wejdź jako gość</Button>
+                    <Button type="button" className="login-button" onClick={() => this.props.letGuestIn()}>Wejdź jako gość</Button>
+                  </ButtonToolbar>
                   {this.props.session.error ? <p className="login-error">Zły login lub hasło</p> : null}
                 </form>
               </Col>
@@ -85,27 +87,15 @@ export default connect(
                     <NavItem eventKey={1}>Wydarzenia</NavItem>
                   </IndexLinkContainer>
                   <LinkContainer to="/movies">
-                    <NavItem eventKey={2}>Lista filmów</NavItem>
+                    <NavItem eventKey={2}>Filmy</NavItem>
                   </LinkContainer>
-                  <NavDropdown eventKey={3} id="dropdown1" title="Pozostałe">
-                    <LinkContainer to="/movie/1">
-                      <NavItem eventKey={3.2}>Film</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/user/3">
-                      <NavItem eventKey={3.3}>Sąsiad</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/users">
-                      <NavItem eventKey={3.4}>Lista sąsiadów</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/event/2">
-                      <NavItem eventKey={3.5}>Wydarzenie</NavItem>
-                    </LinkContainer>
-                  </NavDropdown>
+                  <LinkContainer to="/users">
+                    <NavItem eventKey={3}>Sąsiedzi</NavItem>
+                  </LinkContainer>
                 </Nav>
                 <Nav pullRight>
-
                   <NavDropdown eventKey={4} id="dropdown2"
-                               title={ this.props.user.data ? this.props.user.data.username : 'gość'}>
+                               title={ this.props.user.data ? 'Zalogowany jako: ' + this.props.user.data.username : 'Zalogowany jako: gość'}>
 
                     {this.props.session.data.id === 'guest' ? null :
                       <LinkContainer to={'/user/' + this.props.session.data.userId}>
@@ -119,12 +109,8 @@ export default connect(
                           this.props.endSessionHelper(this.props.session.data.id)
                         }}
                         eventKey={4.2}>Wyloguj mnie</NavItem>
-
                   </NavDropdown>
                 </Nav>
-                <Navbar.Text pullRight>
-                  Zalogowany jako:
-                </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
             {this.props.children}
