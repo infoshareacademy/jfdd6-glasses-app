@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&amp;subset=latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Anton&amp;subset=latin,latin-ext");
 
-.col {
-  font-family: 'Varela Round', sans-serif;
-  color: white;
-}
-
 .movie-title {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
