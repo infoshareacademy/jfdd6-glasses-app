@@ -15,13 +15,8 @@ class UserProfile extends React.Component {
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
         <p>
-          {filteredUser.username}, {filteredUser.gender}
+          <span className="strong"> O mnie: </span> {filteredUser.description}
         </p>
-
-        <p>
-          <span className="strong"> Na temat {filteredUser.first_name}: </span> {filteredUser.description}
-        </p>
-
       </div>
     )
   }
