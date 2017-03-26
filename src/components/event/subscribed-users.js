@@ -29,10 +29,14 @@ class SubscribedUsers extends React.Component {
               <th>Imię</th>
               <th><Button onClick={(event) => {
                 event.preventDefault()
-                const guests = thisEvent.guests.includes(userSessionId) ?
-                  thisEvent.guests.filter(delUser => delUser !== userSessionId) :
-                  thisEvent.guests.concat(userSessionId)
-                return (addUser(id, userSessionId, userSessionToken, guests))
+                if (userSessionToken === 'guest') {
+                  alert('Zaloguj się, aby zapisać się na projekcję.')
+                } else {
+                  const guests = thisEvent.guests.includes(userSessionId) ?
+                    thisEvent.guests.filter(delUser => delUser !== userSessionId) :
+                    thisEvent.guests.concat(userSessionId)
+                  return (addUser(id, userSessionId, userSessionToken, guests))
+                }
               }}>
                 {events.data ?
                   thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
