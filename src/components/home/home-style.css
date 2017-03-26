@@ -18,11 +18,13 @@ p.home-user-location {
   background-color: rgba(33, 33, 33, 0.7);
   margin-bottom: 5px;
   padding-bottom: 15px;
+  box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.76);
 }
 
 .home-event-panel-header {
   background-color: rgba(33, 33, 33, 0.7);
   margin-bottom: 2px;
+  box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.76);
 }
 
 .home-event-title {
@@ -128,19 +130,48 @@ p.home-user-location {
   cursor: default;
 }
 
+.rbc-month-view {
+  background-color: #6B6B6B;
+}
+
 @media (max-width: 480px){
   .home-calendar {
-    height: 400px;
+    height: 420px;
   }
+
   .rbc-event {
     padding: 0;
     border-radius: 0;
   }
+
   .rbc-event-content {
     font-size: 0.5rem;
   }
+
   .home-ruller {
     margin: 3px;
+  }
+
+  .home-centered-vert img{
+    max-height: 96px;
+  }
+
+  .home-event-panel {
+    height:185px;
+    font-size: 1rem;
+  }
+
+  .home-event-panel h3 {
+    font-size: 1rem;
+  }
+
+  .home-event-panel h4 {
+    font-size: 0.8rem;
+  }
+
+  .home-event-panel h6 {
+    font-size: 0.6rem;
+    line-height: 1rem;
   }
 }
 
