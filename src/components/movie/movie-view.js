@@ -67,7 +67,8 @@ export default connect(
                 </Button>
               </div>
 
-              <div>
+              <div className="coming-soon">
+                <h4> Nadchodzące projekcje tego filmu:</h4>
                 <ul>
                   {events === null ? null :
                     events.filter(
