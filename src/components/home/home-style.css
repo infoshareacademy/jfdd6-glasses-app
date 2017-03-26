@@ -1,39 +1,90 @@
 /* Events */
 
+.home-centered-vert {
+  display: flex;
+  align-items: center;
+}
+
 .home-event-panel {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 0 10px 10px 10px;
-  margin: 5px 0 0 5px;
-  height: 33%
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+}
+
+.home-event-panel-header {
+  background-color: rgba(33, 33, 33, 0.7);
+  margin-bottom: 2px;
 }
 
 .home-event-title {
-  font-family: 'Anton', sans-serif;
   color: #dc810e;
+  font-family: 'Anton', sans-serif;
   text-align: center;
+  text-shadow: 3px 3px 8px black;
 }
 
 .home-event-description {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
 }
+
+.home-event-description div h4{
+  float: left;
+}
+
 
 .home-event-description h6 {
   line-height: 1.5em;
 }
 
-.home-btn-container {
-  padding: 15px 0 0 9px;
+.home-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9px;
+  margin-top: 10px;
+}
+
+.home-btn-wrapper button {
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 
-/* Slider overwriting */
+/* Slider */
+.input-range {
+  width: 95%;
+  margin: auto;
+}
+
+.input-range__label--value {
+  top: 0.6rem;
+}
+
 .input-range__label-container {
   font-family: 'Varela Round', sans-serif;
 }
 
+.input-range__track--active {
+  background-color: #dc810e;
+}
+
+.input-range__slider {
+  background-color: #dc810e;
+  border: 1px solid white;
+}
+
+
 /* Input field */
 
-/* Calendar overwriting  */
+/* Calendar */
+.home-calendar {
+  height: 650px;
+  margin-bottom: 20px;
+}
+
 .rbc-date-cell > a {
   color: white;
 }
@@ -52,5 +103,13 @@
 
 .rbc-toolbar button {
   color: white;
+  background-color: #808080;
+  background-image: linear-gradient(to bottom, #949494 0%, #808080 100%);
+  border-color: #808080;
+  margin-top: 10px;
+  font-size: 12px;
+  padding-bottom: 7px;
+  padding-top: 7px;
 }
+
 

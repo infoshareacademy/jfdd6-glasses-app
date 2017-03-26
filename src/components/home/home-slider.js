@@ -14,7 +14,7 @@ class HomeSlider extends React.Component {
             minValue={0}
             step={250}
             value={this.props.rangeValue}
-            formatLabel={(value) => `${value} m`}
+            formatLabel={(value) => `${value/1000} km`}
             onChange={(value) => this.props.slide(value)}
           />
           <br />

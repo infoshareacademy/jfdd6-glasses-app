@@ -26,7 +26,7 @@ export const fetchData = () => dispatch => {
   ).catch(
     error => dispatch({
       type: FETCH__FAIL,
-      error: error.message
+      error: error.message + ' zonk'
     })
   )
 }

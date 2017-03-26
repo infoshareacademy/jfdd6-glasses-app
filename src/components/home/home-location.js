@@ -21,7 +21,7 @@ export default connect(
           <FormControl
             type="text"
             inputRef={input => this.address = input}
-            placeholder="Wpisz Twoją lokalizację i suwakiem zmień dystans."
+            placeholder="Gdańsk, Hynka 5"
           />
           {' '}
           <InputGroup.Button >
