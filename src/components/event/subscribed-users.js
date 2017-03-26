@@ -5,15 +5,18 @@ import {addUser} from '../../state/event'
 
 class SubscribedUsers extends React.Component {
   render() {
-    const {events, id, user, session, addUser, addFilter} = this.props;
-    let userSessionToken, userSessionId;
+    const {events, id, user, session, addUser} = this.props
+    let userSessionToken, userSessionId, thisEvent
     if (session.data) {
-      userSessionToken = session.data.id;
-      userSessionId = session.data.userId;
+      userSessionToken = session.data.id
+      userSessionId = session.data.userId
     } else {
-      userSessionId = userSessionToken = 'Ładowanie danych';
+      userSessionId = userSessionToken = 'Ładowanie danych'
     }
-    console.log(userSessionToken)
+    if (events.data) {
+      thisEvent = events.data.find(event => event.id === parseInt(id, 10))
+    }
+
     return (
 
       <Grid className="profile-container-event">
@@ -25,45 +28,43 @@ class SubscribedUsers extends React.Component {
               <th>Avatar</th>
               <th>Imię</th>
               <th><Button onClick={(event) => {
-                event.preventDefault();
-                const addFilter = (events.data.filter(
-                    event => event.id === parseInt(id, 10)
-                  ).map((event) =>
-                    event.guests.includes(userSessionId) ? event.guests.filter(delUser => delUser !== userSessionId) : event.guests.concat(userSessionId))
-                );
-                console.log(parseInt(addFilter));
-                return (addUser(id, userSessionId, userSessionToken, addFilter));
-
-
-              }}>Zgłoś się</Button></th>
+                event.preventDefault()
+                const guests = thisEvent.guests.includes(userSessionId) ?
+                  thisEvent.guests.filter(delUser => delUser !== userSessionId) :
+                  thisEvent.guests.concat(userSessionId)
+                return (addUser(id, userSessionId, userSessionToken, guests))
+              }}>
+                {events.data ?
+                  thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
+                  : null}
+              </Button></th>
                 </tr>
                 </thead>
                 <tbody>
-              {
-                events.data ? events.data.filter(
-                event => event.id === parseInt(id, 10)
-                ).map(
-                (event) => event.guests ? event.guests.map((guest, index) => <tr key={index}>
-                <td>
-                {user.data ? user.data.filter(
-                    person => person.id === guest).map(
-                    person => <img src={person.avatar} key={guest} alt={guest}/>
-                  ) : 'oczekiwanie na dane'}
-                </td>
-                <td>
-                {user.data ? user.data.filter(
-                    person => person.id === guest).map(
-                    person => <p key={index + 10}>{person.username}</p>
-                  ) : 'oczekiwanie na dane'}
-                </td>
-                <td>
-                </td >
-                </tr>) : 'oczekiwanie na dane'
-                ) : <tr>
-                <td>Brak zgłoszeń</td>
-
-                </tr>
-              }
+                {
+                  events.data ?
+                    thisEvent.guests ? thisEvent.guests.map((guest, index) =>
+                        <tr key={index}>
+                          <td>
+                            {user.data ? user.data.filter(
+                                person => person.id === guest).map(
+                                person => <img src={person.avatar} key={guest} alt={guest}/>
+                              ) : 'oczekiwanie na dane'}
+                          </td>
+                          <td>
+                            {user.data ? user.data.filter(
+                                person => person.id === guest).map(
+                                person => <p key={index + 10}>{person.username}</p>
+                              ) : 'oczekiwanie na dane'}
+                          </td>
+                          <td>
+                          </td >
+                        </tr>) : 'oczekiwanie na dane'
+                    :
+                    <tr>
+                      <td>Brak zgłoszeń</td>
+                    </tr>
+                }
                 </tbody>
                 </Table>
                 </Col>
@@ -80,6 +81,6 @@ class SubscribedUsers extends React.Component {
                 events: state.eventsFetch
               }),
                 dispatch => ({
-                  addUser: (id, userSessionId, userSessionToken, addFilter) => dispatch(addUser(id, userSessionId, userSessionToken, addFilter)),
+                  addUser: (id, userSessionId, userSessionToken, guests) => dispatch(addUser(id, userSessionId, userSessionToken, guests)),
                 })
                 )(SubscribedUsers)

@@ -55,10 +55,9 @@ export const addEvent = (id, userSessionId, valueData, valueTime, eventDescripti
   )
 };
 
-export const addUser = (id, userSessionId, userSessionToken, addFilter) => dispatch => {
+export const addUser = (id, userSessionId, userSessionToken, guests) => dispatch => {
   return fetch(
     'https://mysterious-lake-35712.herokuapp.com/api/events/' + id + '?access_token=' + userSessionToken,
-    // console.log(id, userSessionId, userSessionToken, addFilter[0]),
     {
       method: 'PATCH',
       headers: {
@@ -66,7 +65,7 @@ export const addUser = (id, userSessionId, userSessionToken, addFilter) => dispa
       },
       body: JSON.stringify(
         {
-          "guests": addFilter[0],
+          "guests": guests
         }
       )
     }
@@ -74,17 +73,19 @@ export const addUser = (id, userSessionId, userSessionToken, addFilter) => dispa
     response => {
       if (response.ok) {
         return response.json().then(
-          data =>
+          data => {
             dispatch({
               type: FETCH__SUCCESS,
               data
             })
-            ).catch(
-              error => dispatch({
-                type: FETCH__FAIL,
-                error: error.message
-              })
-            )
+            dispatch(fetchData())
+          }
+        ).catch(
+          error => dispatch({
+            type: FETCH__FAIL,
+            error: error.message
+          })
+        )
 
       }
 

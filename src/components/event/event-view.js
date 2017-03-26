@@ -40,7 +40,7 @@ class EventView extends React.Component {
     } else {
       movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych';
     }
-    console.log(movieIde, eventStart, eventTime);
+    // console.log(movieIde, eventStart, eventTime);
 
 
     //     (event) => event.movieId) : 0);
