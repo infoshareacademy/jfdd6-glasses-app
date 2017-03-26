@@ -13,21 +13,21 @@ export default connect(
   class HomeLocation extends React.Component {
     render () {
       return (
-        <form onSubmit={(event) => {
+        <form className="home-location"  onSubmit={(event) => {
           event.preventDefault()
           this.props.fetchLocationHelper(this.address.value || 'Gdańsk, Hynka 5')
         }}>
-        <InputGroup>
-          <FormControl
-            type="text"
-            inputRef={input => this.address = input}
-            placeholder="Gdańsk, Hynka 5"
-          />
-          {' '}
-          <InputGroup.Button >
-            <Button type="submit">OK</Button>
-          </InputGroup.Button>
-        </InputGroup>
+          <InputGroup>
+            <FormControl
+              type="text"
+              inputRef={input => this.address = input}
+              placeholder="Gdańsk, Hynka 5"
+            />
+            {' '}
+            <InputGroup.Button >
+              <Button type="submit">OK</Button>
+            </InputGroup.Button>
+          </InputGroup>
         </form>
 
       )

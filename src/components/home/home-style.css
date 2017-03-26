@@ -77,6 +77,15 @@
 
 
 /* Input field */
+.home-location {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px){
+  .home-location {
+    margin-bottom: 0px;
+  }
+}
 
 /* Calendar */
 .home-calendar {
