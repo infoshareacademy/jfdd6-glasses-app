@@ -98,14 +98,14 @@ export default connect(
 
               <form action="" id="formM" className={this.state.className}>
                 <p>Data projekcji:</p>
-                <input type="date" placeholder="Enter text" label="sdfsadfasdfasdfa" className="login"
+                <input type="date" placeholder="2017-05-27" className="login"
                        value={this.state.eventDate}
                        onChange={(event) => this.setState({eventDate: event.target.value})}/>
                 <input type="time"
                        value={this.state.eventTime}
                        onChange={(event) => this.setState({eventTime: event.target.value})}/>
                 <p>Krótki opis wydarzenia:</p>
-                <input type="text" placeholder="Enter text" label="Text" className="login"
+                <input type="text" placeholder="wprowadź opis" className="login"
                        value={this.state.eventDescription}
                        onChange={(event) => this.setState({eventDescription: event.target.value})}/>
                 <Button onClick={(event) => {
