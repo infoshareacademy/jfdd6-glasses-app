@@ -114,46 +114,45 @@ const HomeEvents = ({events, start, change}) => {
                 start, start + step
               ).map(
                 event => (
-                  <div>
-                    <Link
-                      key={event.id}
-                      to={"/event/" + event.id}>
-                      <Row className="home-event-panel">
-                        <Col xs={12} key={event.id}>
-                          <h3 className="home-event-title rbc-ellipsis">{event.movieTitle}</h3>
-                          <Row className="home-centered-vert">
-                            <Col xs={3}>
-                              <Image
-                                src={event.moviePicture}
-                                alt={event.movieTitle}
-                                responsive
-                              />
-                            </Col>
-                            <Col
-                              className="home-event-description"
-                              xs={9}>
-                              <h4>
-                                <Glyphicon glyph="time"/> {' '}
-                                {moment(event.start).format('dddd, D MMMM, H:mm')}
+
+                  <Link
+                    key={event.id}
+                    to={"/event/" + event.id}>
+                    <Row className="home-event-panel">
+                      <Col xs={12} key={event.id}>
+                        <h3 className="home-event-title rbc-ellipsis">{event.movieTitle}</h3>
+                        <Row className="home-centered-vert">
+                          <Col xs={3}>
+                            <Image
+                              src={event.moviePicture}
+                              alt={event.movieTitle}
+                              responsive
+                            />
+                          </Col>
+                          <Col
+                            className="home-event-description"
+                            xs={9}>
+                            <h4>
+                              <Glyphicon glyph="time"/> {' '}
+                              {moment(event.start).format('dddd, D MMMM, H:mm')}
+                            </h4>
+                            <h4>
+                              <Glyphicon glyph="map-marker"/>
+                              {' '}
+                              {event.distance} m
+                            </h4>
+                            <div>
+                              <h4 >
+                                <Glyphicon glyph="bullhorn"/>
+                                &nbsp;
                               </h4>
-                              <h4>
-                                <Glyphicon glyph="map-marker"/>
-                                {' '}
-                                {event.distance} m
-                              </h4>
-                              <div>
-                                <h4 >
-                                  <Glyphicon glyph="bullhorn"/>
-                                  &nbsp;
-                                </h4>
-                                <h6>{event.desc}</h6>
-                              </div>
-                            </Col>
-                          </Row>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </div>
+                              <h6>{event.desc}</h6>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Link>
                 )
               )}
             </div>

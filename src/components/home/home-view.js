@@ -38,7 +38,8 @@ class HomeView extends React.Component {
           }) || {name: 'Movie without a title.'}).name,
           moviePicture: (movies.find(movie => {
             return event.movieId === movie.id
-          })).pics[0]
+          })).pics[0],
+          start: moment(event.start).format('YYYY-MM-DD H:mm')
         })
       }).filter(
         (event, index) =>
