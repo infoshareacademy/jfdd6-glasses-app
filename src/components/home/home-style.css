@@ -35,7 +35,6 @@
   float: left;
 }
 
-
 .home-event-description h6 {
   line-height: 1.5em;
 }
@@ -55,7 +54,7 @@
 
 /* Slider */
 .input-range {
-  width: 95%;
+  width: 90%;
   margin: auto;
 }
 
@@ -101,6 +100,10 @@
   background-color: #dc810e;
 }
 
+.rbc-event-content {
+  font-size: 0.75rem;
+}
+
 .rbc-toolbar button {
   color: white;
   background-color: #808080;
@@ -115,4 +118,6 @@
 .rbc-row div a {
   cursor: default;
 }
+
+
 
