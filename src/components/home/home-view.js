@@ -38,31 +38,33 @@ class HomeView extends React.Component {
           }) || {name: 'Movie without a title.'}).name,
           moviePicture: (movies.find(movie => {
             return event.movieId === movie.id
-          })).pics[0]
+          })).pics[0],
+          start: moment(event.start).format('YYYY-MM-DD H:mm')
         })
       }).filter(
         (event, index) =>
         moment(event.start) >= moment() && event.distance < range
       ).sort(
         (prev, next) =>
-        moment(prev.start) - moment(next.start)) : null
+        moment(prev.start) - moment(next.start)
+      ) : null
 
     return (
       <Grid>
         <Row>
-          <Col xs={12} sm={6}>
+          <Col xs={12} md={6}>
             <HomeLocation/>
           </Col>
-          <Col xs={12} sm={6}>
+          <Col xs={12} md={6}>
             <HomeSlider />
           </Col>
         </Row>
         <hr />
         <Row>
-          <Col xs={12} sm={7}>
+          <Col xs={12} md={7}>
             <HomeCalendar events={ eventsFiltered } router={this.props.router}/>
           </Col>
-          <Col xs={12} sm={5}>
+          <Col xs={12} md={5}>
             <HomeEvents events={ eventsFiltered }/>
           </Col>
         </Row>
