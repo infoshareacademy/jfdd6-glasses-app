@@ -53,7 +53,6 @@ export default connect(
       const valueTime = this.state.eventTime
       const desc = this.state.eventDescription
 
-      console.log(valueData,valueTime, userSessionId, desc, this.state.className, userSessionToken )
       return (
         <Grid>
           <Row className="show-grid">

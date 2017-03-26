@@ -8,46 +8,37 @@ import {fetchUsers} from '../../state/user'
 import {fetchData} from '../../state/home-fetch'
 import SubscribedUsers from './subscribed-users'
 import moment from 'moment'
-moment.locale('pl');
+moment.locale('pl')
 
 class EventView extends React.Component {
   componentWillMount() {
-    this.props.fetchMovie();
-    this.props.fetchUsers();
+    this.props.fetchMovie()
+    this.props.fetchUsers()
     this.props.fetchEvent()
   }
 
   render() {
-    const id = this.props.params.eventId;
-    let movieIde, eventStart, eventTime, eventDesc;
-
-    // const host = events.data.filter(event => event == 1? event.host : null);
-    const {movie, events} = this.props;
+    const id = this.props.params.eventId
+    const {movie, events} = this.props
+    let movieIde, eventStart, eventTime, eventDesc
 
     if (events.data) {
       movieIde = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.movieId));
+      ).map(event => event.movieId))
       eventStart = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.start).toString(eventStart).slice(0, 10));
+      ).map(event => event.start).toString(eventStart).slice(0, 10))
       eventTime = (events.data.filter(
         event => event.id === +id
-      ).map(event => event.start).toString(eventStart).slice(11, 16));
+      ).map(event => event.start).toString(eventStart).slice(11, 16))
       eventDesc = (events.data.filter(
           event => event.id === +id
-        ).map(event => event.desc));
+        ).map(event => event.desc))
     } else {
-      movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych';
+      movieIde = eventStart = eventTime = eventDesc = 'Ładowanie danych'
     }
-    // console.log(movieIde, eventStart, eventTime);
 
-
-    //     (event) => event.movieId) : 0);
-    // const userIde = (events.data ? events.data.filter(
-    //     event => event.id === +id
-    //   ).map(
-    //     (event) => event.host) : 0);
     return (
       <Grid>
         <Row>
