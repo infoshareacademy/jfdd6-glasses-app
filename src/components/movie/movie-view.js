@@ -12,7 +12,7 @@ import {fetchUsers} from '../../state/user'
 import {fetchData} from '../../state/home-fetch'
 import {addEvent} from '../../state/event'
 import moment from 'moment'
-moment.locale('pl')
+moment.locale('pl');
 
 export default connect(
   state => ({
@@ -29,7 +29,7 @@ export default connect(
 )(class MovieView extends React.Component {
 
     constructor(props) {
-      super(props)
+      super(props);
 
       this.state = {
         className: 'hide',
@@ -40,24 +40,23 @@ export default connect(
     }
 
     componentWillMount() {
-      this.props.fetchMovie()
-      this.props.fetchUsers()
+      this.props.fetchMovie();
+      this.props.fetchUsers();
       this.props.fetchEvents()
     }
 
     render() {
-      const {addEvent, events, session, user} = this.props
-      const id = parseInt(this.props.params.movieId, 10)
-      const userSessionId = session.data.userId
-      const userSessionToken = session.data.id
-      const valueData = moment(this.state.eventDate).format('YYYY-MM-DD')
-      const valueTime = this.state.eventTime
-      const desc = this.state.eventDescription
+      const {addEvent, events, session, user} = this.props;
+      const id = parseInt(this.props.params.movieId, 10);
+      const userSessionId = session.data.userId;
+      const userSessionToken = session.data.id;
+      const valueData = moment(this.state.eventDate).format('YYYY-MM-DD');
+      const valueTime = this.state.eventTime;
+      const desc = this.state.eventDescription;
       let close = () => this.setState({show: false, showNoMovie: false});
-      const MovieHost = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.movies) : 'ładowanie danych'
-      const UserName = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.username) : 'ładowanie danych'
+      const MovieHost = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.movies) : 'ładowanie danych';
+      const UserName = user.data ? user.data.filter(user => user.id === userSessionId).map(user => user.username) : 'ładowanie danych';
 
-      console.log(id, MovieHost[0])
       return (
         <Grid>
           <Row className="show-grid">
@@ -118,7 +117,8 @@ export default connect(
                     <Modal.Body>
                       <p>Drogi {UserName}.
                         <br/><br/>
-                        Wygląda na to, że nie masz lub nie dodałeś jeszcze tego filmu do swojej kolekcji. Poniżej znajdziesz listę sąsiadów
+                        Wygląda na to, że nie masz lub nie dodałeś jeszcze tego filmu do swojej kolekcji. Poniżej
+                        znajdziesz listę sąsiadów
                         z którymi mógłbyś go obejrzeć.</p>
                     </Modal.Body>
                     <Modal.Footer>
@@ -171,8 +171,8 @@ export default connect(
                        value={this.state.eventDescription}
                        onChange={(event) => this.setState({eventDescription: event.target.value})}/>
                 <Button onClick={(event) => {
-                  event.preventDefault()
-                  this.setState({className: 'hide'})
+                  event.preventDefault();
+                  this.setState({className: 'hide'});
                   return addEvent(id, userSessionId, valueData, valueTime, desc, userSessionToken);
                 }}>Zapisz</Button>
               </form>
