@@ -1,3 +1,9 @@
+/* General */
+p.home-user-location {
+  color: white;
+  margin-top: 5px;
+  font-style: italic;
+}
 /* Events */
 
 .home-centered-vert {

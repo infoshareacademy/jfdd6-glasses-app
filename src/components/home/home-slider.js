@@ -17,10 +17,8 @@ class HomeSlider extends React.Component {
         overlay={tooltip}
         trigger={['hover']}
         delay={100}
-
       >
         <div>
-
           <InputRange
             //disabled
             maxValue={3000}

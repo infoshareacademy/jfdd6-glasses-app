@@ -59,6 +59,9 @@ class HomeView extends React.Component {
             <HomeSlider />
           </Col>
         </Row>
+        <p className="text-center home-user-location">
+          Wybrana lokalizacja to: {userLocation[0].formatted_address}
+        </p>
         <hr />
         <Row>
           <Col xs={12} md={7}>
