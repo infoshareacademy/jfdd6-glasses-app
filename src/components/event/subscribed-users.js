@@ -24,23 +24,29 @@ class SubscribedUsers extends React.Component {
         <Table className="film-table table table-bordered">
           <thead>
           <tr>
-            <th>Avatar</th>
+            <th>Awatar</th>
             <th>Imię</th>
-            <th><Button onClick={(event) => {
-              event.preventDefault()
-              if (userSessionToken === 'guest') {
-                alert('Zaloguj się, aby zapisać się na projekcję.')
-              } else {
-                const guests = thisEvent.guests.includes(userSessionId) ?
-                  thisEvent.guests.filter(delUser => delUser !== userSessionId) :
-                  thisEvent.guests.concat(userSessionId)
-                return (addUser(id, userSessionId, userSessionToken, guests))
+            <th>
+              {userSessionId === thisEvent.host ? null :
+                <Button onClick={(event) => {
+                  event.preventDefault()
+                  if (userSessionToken === 'guest') {
+                    alert('Zaloguj się, aby zapisać się na projekcję.')
+                  } else if (userSessionId === thisEvent.host) {
+                    return false
+                  } else {
+                    const guests = thisEvent.guests.includes(userSessionId) ?
+                      thisEvent.guests.filter(delUser => delUser !== userSessionId) :
+                      thisEvent.guests.concat(userSessionId)
+                    return (addUser(id, userSessionId, userSessionToken, guests))
+                  }
+                }}>
+                  {events.data ?
+                    thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
+                    : null}
+                </Button>
               }
-            }}>
-              {events.data ?
-                thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
-                : null}
-            </Button></th>
+            </th>
           </tr>
           </thead>
           <tbody>
