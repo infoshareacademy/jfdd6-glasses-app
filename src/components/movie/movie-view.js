@@ -52,7 +52,7 @@ export default connect(
       const valueData = moment(this.state.eventDate).format('YYYY-MM-DD')
       const valueTime = this.state.eventTime
       const desc = this.state.eventDescription
-      let close = () => this.setState({ show: false});
+      let close = () => this.setState({show: false});
 
       return (
         <Grid>
@@ -60,21 +60,18 @@ export default connect(
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
               <div className="movie-center title">
-
                 (
-                <div className="modal-container" style={{height: 200}}>
+                <div>
                   <Button
-                    bsStyle="primary"
-                    bsSize="large"
+                    bsStyle="info"
+                    className="addEvent-button"
                     onClick={userSessionToken === 'guest' ?
-
-                      () => this.setState({ show: true}) : () =>        this.state.className === 'hide' ?
+                      () => this.setState({show: true}) :
+                      () => this.state.className === 'hide' ?
                         this.setState({className: 'show'}) : this.setState({className: 'hide'})
-
-
                     }
                   >
-                    Launch contained modal
+                    Zorganizuj pokaz filmu
                   </Button>
 
                   <Modal
@@ -84,10 +81,14 @@ export default connect(
                     aria-labelledby="contained-modal-title"
                   >
                     <Modal.Header closeButton>
-                      <Modal.Title id="contained-modal-title">Contained Modal</Modal.Title>
+                      <Modal.Title id="contained-modal-title">Brak uprawnień</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
+                      <p>Drogi gościu.
+                        <br/><br/>
+                        Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości tworzenia nowych wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
+                        <br/><br/>
+                        Załóż konto już dziś i ciesz się pełnią możliwości serwisu.</p>
                     </Modal.Body>
                     <Modal.Footer>
                       <Button onClick={close}>Close</Button>
@@ -95,26 +96,7 @@ export default connect(
                   </Modal>
                 </div>
                 );
-
-                <Button bsStyle="info" className="addEvent-button"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    if (userSessionToken === 'guest') {
-
-
-
-                    } else {
-
-
-                    this.state.className === 'hide' ?
-                    this.setState({className: 'show'}) :
-                    this.setState({className: 'hide'}) }}}>
-                  Zorganizuj projekcję
-                </Button>
-
-
               </div>
-
               <div>
                 <ul>
                   {events === null ? null :
@@ -159,7 +141,8 @@ export default connect(
                 <Button onClick={(event) => {
                   event.preventDefault()
                   this.setState({className: 'hide'})
-                  return addEvent(id, userSessionId, valueData, valueTime, desc, userSessionToken);}}>Zapisz</Button>
+                  return addEvent(id, userSessionId, valueData, valueTime, desc, userSessionToken);
+                }}>Zapisz</Button>
               </form>
             </Col>
           </Row>
