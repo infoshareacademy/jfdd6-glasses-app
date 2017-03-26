@@ -115,8 +115,6 @@ const HomeEvents = ({events, start, change}) => {
               ).map(
                 event => (
                   <div>
-
-
                     <Link
                       key={event.id}
                       to={"/event/" + event.id}>

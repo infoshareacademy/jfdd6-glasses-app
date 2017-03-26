@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, FormControl, InputGroup } from 'react-bootstrap'
+import { Button, FormControl, InputGroup, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import { fetchLocation } from '../../state/home-fetch-location'
@@ -12,11 +12,24 @@ export default connect(
 )(
   class HomeLocation extends React.Component {
     render () {
+      const tooltip = (
+        <Tooltip id="tooltip">Podaj lokalizację, w pobliżu której poszukujesz wydarzenia.</Tooltip>
+      )
       return (
-        <form className="home-location"  onSubmit={(event) => {
+      <OverlayTrigger
+        placement="bottom"
+        overlay={tooltip}
+        trigger={['hover']}
+        delay={100}
+
+      >
+        <form
+          className="home-location"
+          onSubmit={(event) => {
           event.preventDefault()
           this.props.fetchLocationHelper(this.address.value || 'Gdańsk, Hynka 5')
-        }}>
+        }}
+        >
           <InputGroup>
             <FormControl
               type="text"
@@ -29,7 +42,7 @@ export default connect(
             </InputGroup.Button>
           </InputGroup>
         </form>
-
+      </OverlayTrigger>
       )
     }
   })
