@@ -67,15 +67,13 @@ class EventView extends React.Component {
             <h2 className="event-details">Na film</h2>
             <MovieTitle id={movieIde}/>
             <h3 className="event-details">zaprasza <br/>
-
-            </h3>
-            <h1>{
-
-              user.data ? user.data.filter( person => person.id === parseInt(host,10)).map(person => person.username): 'oczekiwanie na dane'}</h1>
+              <span className="name">{user.data ? user.data.filter( person => person.id === parseInt(host,10)).map(person => person.username)
+                : 'oczekiwanie na dane'}</span>
+          </h3>
             <p className="event-details">{eventDesc}</p>
 
             <h3 className="event-details">projekcja <br/>
-              {moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}
+              <span className="strong">{moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}</span>
             </h3>
 
           </Col>
