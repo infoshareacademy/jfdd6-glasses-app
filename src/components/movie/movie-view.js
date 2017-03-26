@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 import {connect} from 'react-redux'
-import {Grid, Row, Col, Button} from 'react-bootstrap'
+import {Grid, Row, Col, Button, Modal} from 'react-bootstrap'
 import MovieCarousel from './movie-carousel'
 import MovieDescription from './movie-description'
 import MovieTitle from './movie-title'
@@ -52,6 +52,7 @@ export default connect(
       const valueData = moment(this.state.eventDate).format('YYYY-MM-DD')
       const valueTime = this.state.eventTime
       const desc = this.state.eventDescription
+      let close = () => this.setState({ show: false});
 
       return (
         <Grid>
@@ -59,12 +60,59 @@ export default connect(
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
               <div className="movie-center title">
+
+                (
+                <div className="modal-container" style={{height: 200}}>
+                  <Button
+                    bsStyle="primary"
+                    bsSize="large"
+                    onClick={userSessionToken === 'guest' ?
+
+                      () => this.setState({ show: true}) : () =>        this.state.className === 'hide' ?
+                        this.setState({className: 'show'}) : this.setState({className: 'hide'})
+
+
+                    }
+                  >
+                    Launch contained modal
+                  </Button>
+
+                  <Modal
+                    show={this.state.show}
+                    onHide={close}
+                    container={this}
+                    aria-labelledby="contained-modal-title"
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title id="contained-modal-title">Contained Modal</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button onClick={close}>Close</Button>
+                    </Modal.Footer>
+                  </Modal>
+                </div>
+                );
+
                 <Button bsStyle="info" className="addEvent-button"
-                  onClick={() => this.state.className === 'hide' ?
+                  onClick={(event) => {
+                    event.preventDefault();
+                    if (userSessionToken === 'guest') {
+
+
+
+                    } else {
+
+
+                    this.state.className === 'hide' ?
                     this.setState({className: 'show'}) :
-                    this.setState({className: 'hide'}) }>
+                    this.setState({className: 'hide'}) }}}>
                   Zorganizuj projekcję
                 </Button>
+
+
               </div>
 
               <div>
