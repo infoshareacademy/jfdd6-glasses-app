@@ -59,7 +59,7 @@ const HomeEvents = ({events, start, change}) => {
               event => (
                 <Link
                   key={event.id}
-                  to={"/event/" + event.movieId}>
+                  to={"/event/" + event.id}>
                   <Row className="home-event-panel">
                     <Col xs={12} key={event.id}>
                       <h3 className="home-event-title rbc-ellipsis">{event.movieTitle}</h3>

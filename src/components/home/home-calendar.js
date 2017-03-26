@@ -27,7 +27,7 @@ const HomeCalendar = ({events, router}) => (
           })
         ) : []
       }
-      onSelectEvent={event => router.push('/event/' + event.movieId)}
+      onSelectEvent={event => router.push('/event/' + event.id)}
     />
   </div>
 )
