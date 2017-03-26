@@ -15,15 +15,11 @@ class UserProfile extends React.Component {
         <p><img src={filteredUser.avatar} alt="avatar"/></p>
 
         <p>
-         {filteredUser.gender}
+          {filteredUser.username}, {filteredUser.gender}
         </p>
 
         <p>
-          <span className="strong"> Login: {filteredUser.login}</span>
-        </p>
-
-        <p>
-          <span className="strong"> About {filteredUser.first_name}: </span> {filteredUser.description}
+          <span className="strong"> Na temat {filteredUser.first_name}: </span> {filteredUser.description}
         </p>
 
       </div>

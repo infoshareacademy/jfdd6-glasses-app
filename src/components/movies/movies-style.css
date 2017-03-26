@@ -124,6 +124,10 @@
   background-color: #808080;
 }
 
+.movies-list-button {
+  float: right;
+}
+
 .movies-original-title {
   font-style: italic;
   font-size: 0.8rem;
@@ -133,6 +137,18 @@
 .movies-no-padding {
   padding-left: 0;
   padding-right: 0;
+}
+
+.movies-list-button-add,
+.movies-list-button-add:hover,
+.movies-list-button-add:focus,
+.movies-list-button-add:active,
+.movies-list-button-add:active:hover,
+.movies-list-button-add:active:focus {
+  color: #CBCBCB;
+  background-color: #5D5D5D;
+  background-image: linear-gradient(to bottom, #6B6B6B 0%, #5A5A5A 100%);
+  border-color: #5A5A5A;
 }
 
 /* media queries for search bar and movie list */

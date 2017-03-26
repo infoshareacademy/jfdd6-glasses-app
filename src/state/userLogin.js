@@ -32,6 +32,43 @@ export const fetchUser = (accessToken, userId) => dispatch => {
   )
 }
 
+export const toggleMovie = (userId, userMovies, accessToken) => dispatch => {
+  // console.log(userId, userMovies, accessToken)
+  return fetch(
+    'https://mysterious-lake-35712.herokuapp.com/api/users/' + userId + '?access_token=' + accessToken, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        movies: userMovies
+      })
+    }
+  ).then(
+    response => {
+      if (response.ok) {
+        return response.json().then(
+          data => dispatch({
+            type: FETCH__SUCCESS,
+            data
+          })
+        ).catch(
+          error => dispatch({
+            type: FETCH__FAIL,
+            error: 'Malformed JSON response'
+          })
+        )
+      }
+      throw new Error('Connection error')
+    }
+  ).catch(
+    error => dispatch({
+      type: FETCH__FAIL,
+      error: error.message
+    })
+  )
+}
+
 const initialState = {
   data: null,
   fetching: false,

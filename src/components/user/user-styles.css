@@ -55,9 +55,12 @@
   font-weight: 900;
   font-size: 1.1rem;
 }
+
 .avatar-img {
   width: 75px;
   padding: 5px;
 }
 
-/*# sourceMappingURL=styles-all.css.map */
+.film-table td.film-table-button {
+  vertical-align: middle;
+}

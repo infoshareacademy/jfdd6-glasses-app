@@ -6,7 +6,8 @@ export const fetchUsers = () => dispatch => {
   dispatch({ type: FETCH__BEGIN });
 
   return fetch(
-    process.env.PUBLIC_URL + '/data/users.json'
+    // process.env.PUBLIC_URL + '/data/users.json'
+    'https://mysterious-lake-35712.herokuapp.com/api/users?access_token=ABC1'
   ).then(
     response => {
       if (response.ok) {
