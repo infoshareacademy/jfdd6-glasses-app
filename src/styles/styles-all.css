@@ -66,3 +66,18 @@ img.navbar-brand {
   height: 50px;
   padding: 0 20px 0 0;
 }
+
+.coming-soon {
+  background-color: rgba(33, 33, 33, 0.7);
+  padding: 10px 30px;
+  color: white;
+}
+
+.coming-soon ul a{
+  color: white;
+  text-decoration: none;
+}
+
+.coming-soon ul a:hover{
+  color: #DC810E;
+}
