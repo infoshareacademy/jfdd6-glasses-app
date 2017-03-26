@@ -6,9 +6,12 @@
   color: white;
 }
 
-.black-background {
-  background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px; }
+.login-container {
+  margin-top: 50px; }
+
+.logo {
+  max-height: 150px;
+  width: auto; }
 
 .name {
   font-family: 'Anton', sans-serif;
@@ -58,6 +61,13 @@
   vertical-align: middle;
 }
 
+.events-list {
+  margin-top: 10px;
+}
+
+.user-main-data {
+  min-height: 350px;
+}
 /* --- for USERS --- */
 
 .users-list-user {

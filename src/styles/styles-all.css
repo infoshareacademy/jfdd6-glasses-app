@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&amp;subset=latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Anton&amp;subset=latin,latin-ext");
+
 html,
 body {
   background-color: #4d4d4d;
@@ -50,8 +51,7 @@ body {
 
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px;
-  min-height: 350px}
+  padding: 30px; }
 
 .welcome {
   font-family: 'Anton', sans-serif;
