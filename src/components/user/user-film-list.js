@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table, Button} from 'react-bootstrap'
+import {Table, Button, Tooltip, OverlayTrigger} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
 import {toggleMovie} from '../../state/userLogin'
@@ -14,6 +14,11 @@ class UserFilmList extends React.Component {
       return <p>Waiting for user data…</p>
     }
     const filteredUser = users.data.find(user => user.id === parseInt(id, 10))
+    const tooltip = (
+      <Tooltip id="tooltip">
+        Usuń z listy
+      </Tooltip>
+    )
 
     return (
       <div className="profile-container black-background user-main-data">
@@ -28,11 +33,19 @@ class UserFilmList extends React.Component {
                 userTitle => <tr key={userTitle.id}>
                   <td><Link to={'/movie/' + userTitle.id}>{userTitle.name}</Link></td>
                   <td className="film-table-button">
-                    <Button bsSize="xsmall" title="Usuń z listy" onClick={
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={tooltip}
+                      trigger={['hover']}
+                      delay={100}
+                    >
+                    <Button bsSize="xsmall" onClick={
                       () => toggleMovie(user.id,
                         user.movies.filter(mov => mov !== userTitle.id),
                         session.id)
-                    }>–</Button></td>
+                    }>–</Button>
+                    </OverlayTrigger>
+                  </td>
                 </tr>
               )
               :
