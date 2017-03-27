@@ -9,12 +9,14 @@
 
 .black-background {
   background-color: rgba(33, 33, 33, 0.7);
-  padding: 30px; }
+  padding: 30px;
+}
 
 .name {
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
-  color: #DC810E;}
+  color: #DC810E;
+}
 
 .strong {
   font-weight: 900;
@@ -26,7 +28,39 @@
 }
 
 .event-table {
-  width: 300px;
+  min-width: 290px;
+}
+
+.event-table th {
+  background-color: rgba(33, 33, 33, 0.7);
+  text-align: center;
+}
+
+.event-table th:hover {
+  background-color: rgba(33, 33, 33, 0.7);
+}
+
+.event-table td {
+  background-color: #6B6B6B;
+}
+
+.event-table td:hover {
+  background-color: #808080;
+}
+
+.table > tbody > tr > td {
+  padding: 0;
+
+}
+
+.event-table {
+  color: #cbcbcb;
+  text-align: center;
+}
+
+.event-table img {
+  width: 50px;
+  height: 50px;
 }
 
 .event-details {
@@ -36,4 +70,8 @@
   margin: 0;
   padding: 10px;
   text-align: center;
+}
+
+.left {
+  float: left;
 }

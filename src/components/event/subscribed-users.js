@@ -25,30 +25,28 @@ class SubscribedUsers extends React.Component {
     return (
 
       <div className="profile-container-event">
-        <h2>Zapisani użytkownicy:</h2>
-        <Table className="film-table table table-bordered">
+
+
+        <Table className="event-table table">
           <thead>
           <tr>
-            <th>Awatar</th>
-            <th>Imię</th>
-            <th>
-              <Button
-                bsStyle="info"
-                className="addEvent-button"
-                onClick={userSessionToken === 'guest' ?
-                  () => this.setState({show: true}) :
-                  () => {
-                    const guests = thisEvent.guests.includes(userSessionId) ?
-                      thisEvent.guests.filter(delUser => delUser !== userSessionId) :
-                      thisEvent.guests.concat(userSessionId)
-                    return (addUser(id, userSessionId, userSessionToken, guests))
-                  }}
-              >
-                {events.data ?
-                  thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
-                  : null}
-              </Button>
-               <Modal
+            <th><h2>Goście wydarzenia:</h2>         <Button
+              bsStyle="info"
+              className="addEvent-button"
+              onClick={userSessionToken === 'guest' ?
+                () => this.setState({show: true}) :
+                () => {
+                  const guests = thisEvent.guests.includes(userSessionId) ?
+                    thisEvent.guests.filter(delUser => delUser !== userSessionId) :
+                    thisEvent.guests.concat(userSessionId)
+                  return (addUser(id, userSessionId, userSessionToken, guests))
+                }}
+            >
+              {events.data ?
+                thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
+                : null}
+            </Button>
+              <Modal
                 show={this.state.show}
                 onHide={close}
                 container={this}
@@ -59,16 +57,15 @@ class SubscribedUsers extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                   <p>Drogi gościu.
-                  <br/><br/>
-                  Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości dopisywania się do istniejących wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
-                  <br/><br/>
-                  Załóż konto już dziś i ciesz się pełnią możliwości serwisu.</p>
+                    <br/><br/>
+                    Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości dopisywania się do istniejących wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
+                    <br/><br/>
+                    Załóż konto już dziś i ciesz się pełnią możliwości serwisu.</p>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={close}>Close</Button>
                 </Modal.Footer>
-              </Modal>
-            </th>
+              </Modal></th>
           </tr>
           </thead>
           <tbody>
@@ -79,18 +76,16 @@ class SubscribedUsers extends React.Component {
                     <td>
                       {user.data ? user.data.filter(
                           person => person.id === guest).map(
-                          person => <img src={person.avatar} key={guest} alt={guest}/>
+                          person => <img src={person.avatar} key={guest} alt={guest} className="left"/>
                         ) : 'oczekiwanie na dane'}
-                    </td>
-                    <td>
+
+
                       {user.data ? user.data.filter(
                           person => person.id === guest).map(
-                          person => <p key={index + 10}>{person.username}</p>
+                          person => <h3 className="left" key={index + 10}>{person.username}</h3>
                         ) : 'oczekiwanie na dane'}
-                    </td>
-                    <td>
-                    </td >
-                  </tr>) : 'oczekiwanie na dane'
+
+                    </td></tr>) : 'oczekiwanie na dane'
               :
               <tr>
                 <td>Brak zgłoszeń</td>
