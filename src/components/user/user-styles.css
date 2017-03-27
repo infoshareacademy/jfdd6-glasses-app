@@ -75,12 +75,6 @@
   float: left;
 }
 
-.movies-list-movie img {
-  width: 50px;
-  float: left;
-  margin-right: 10px;
-}
-
 .users-list-user a {
   display: block;
   padding: 20px 10px 20px 10px;
@@ -88,4 +82,8 @@
   font-size: 1.1rem;
   color: #fff;
   background-color: #6B6B6B;
+}
+
+.users-list-user a:hover {
+  background-color: #808080;
 }

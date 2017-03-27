@@ -80,7 +80,7 @@ export default connect(
                   >
                     Zorganizuj pokaz filmu
                   </Button>
-
+  
                   <Modal
                     show={this.state.show}
                     onHide={close}
@@ -104,7 +104,6 @@ export default connect(
                     </Modal.Footer>
                   </Modal>
 
-
                   <Modal
                     show={this.state.showNoMovie}
                     onHide={close}
@@ -125,15 +124,16 @@ export default connect(
                       <Button onClick={close}>Close</Button>
                     </Modal.Footer>
                   </Modal>
-
                 </div>
                 );
               </div>
-              <div>
+
+              <div className="coming-soon">
+                <h4> Nadchodzące projekcje tego filmu:</h4>
                 <ul>
                   {events === null ? null :
                     events.filter(
-                      ev => ev.movieId === parseInt(id, 10)
+                      ev => ev.movieId === id
                     ).map((ev, index) =>
                       userSessionId === ev.host
                         ?
