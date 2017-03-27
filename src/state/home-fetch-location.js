@@ -38,7 +38,8 @@ const initialState = {
                 lat: 54.3881021,
                 lng: 18.606417
               }
-        }
+        },
+        formatted_address: "Hynka 5, 80-465 Gdańsk, Polska"
     }
     ]
   },

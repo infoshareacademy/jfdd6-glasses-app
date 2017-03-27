@@ -37,7 +37,7 @@ class HomeView extends React.Component {
             return event.movieId === movie.id
           }) || {name: 'Movie without a title.'}).name,
           moviePicture: (movies.find(movie => {
-            return event.movieId === movie.id
+            return parseInt(event.movieId, 10) === movie.id
           })).pics[0],
           start: moment(event.start).format('YYYY-MM-DD H:mm')
         })
@@ -59,7 +59,10 @@ class HomeView extends React.Component {
             <HomeSlider />
           </Col>
         </Row>
-        <hr />
+        <p className="text-center home-user-location">
+          Wybrana lokalizacja to: {userLocation[0].formatted_address}
+        </p>
+        <hr className="home-ruller" />
         <Row>
           <Col xs={12} md={7}>
             <HomeCalendar events={ eventsFiltered } router={this.props.router}/>

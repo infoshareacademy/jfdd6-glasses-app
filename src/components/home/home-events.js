@@ -41,9 +41,9 @@ const HomeEvents = ({events, start, change}) => {
               </Col>
             </Row>
             <HomeInfo
-              classRow="home-event-panel"
-              classH3="home-event-title"
-              classH4="home-event-description"
+              classRow="home-event-info"
+              classH4="home-event-title"
+              classH5="home-event-description"
               title="Jeszcze chwila..."
               description="Nasza ekipa montuje filmy."
             />
@@ -74,9 +74,9 @@ const HomeEvents = ({events, start, change}) => {
                 </Col>
               </Row>
               <HomeInfo
-                classRow="home-event-panel"
-                classH3="home-event-title"
-                classH4="home-event-description"
+                classRow="home-event-info"
+                classH4="home-event-title"
+                classH5="home-event-description"
                 title="Hmmm... Spróbuj wyszukać jeszcze raz."
                 description="Zmień Twoją lokalizację lub odległość."
               />
@@ -142,7 +142,7 @@ const HomeEvents = ({events, start, change}) => {
                               {event.distance} m
                             </h4>
                             <div>
-                              <h4 >
+                              <h4>
                                 <Glyphicon glyph="bullhorn"/>
                                 &nbsp;
                               </h4>
