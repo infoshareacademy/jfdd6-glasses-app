@@ -30,7 +30,7 @@ export default connect(
         }}
         >
           <InputGroup>
-            <FormControl id="fc"
+            <FormControl
               type="text"
               inputRef={input => this.address = input}
               placeholder={'Gdańsk, Hynka 5'}
