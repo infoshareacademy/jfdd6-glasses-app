@@ -59,11 +59,34 @@ export default connect(
 
       return (
         <Grid>
+
           <Row className="show-grid">
             <Col xs={12} md={4} mdOffset={1}>
               <MovieCarousel id={id}/>
+              <div className="coming-soon center">
+                <h4> Nadchodzące projekcje tego filmu:</h4>
+                <ul>
+                  {events === null ? null :
+                    events.filter(
+                      ev => ev.movieId === id
+                    ).map((ev, index) =>
+                      userSessionId === ev.host
+                        ?
+                        <li key={index}>
+                          <Link to={'/event/' + ev.id}>Twoja projekcja ({ev.start.substring(0, 10)})</Link>
+                        </li>
+                        :
+                        <li key={index}>
+                          <Link to={'/event/' + ev.id}>Projekcja ({ev.start.substring(0, 10)})</Link>
+                        </li>
+                    )
+                  }
+                </ul>
+              </div>
+            </Col>
+            <Col xs={12} md={5} mdOffset={1} mdPull={1}>
               <div className="movie-center title">
-                (
+
                 <div>
                   <Button
                     bsStyle="info"
@@ -80,7 +103,6 @@ export default connect(
                   >
                     Zorganizuj pokaz filmu
                   </Button>
-  
                   <Modal
                     show={this.state.show}
                     onHide={close}
@@ -103,7 +125,6 @@ export default connect(
                       <Button onClick={close}>Close</Button>
                     </Modal.Footer>
                   </Modal>
-
                   <Modal
                     show={this.state.showNoMovie}
                     onHide={close}
@@ -125,38 +146,8 @@ export default connect(
                     </Modal.Footer>
                   </Modal>
                 </div>
-                );
-              </div>
 
-              <div className="coming-soon">
-                <h4> Nadchodzące projekcje tego filmu:</h4>
-                <ul>
-                  {events === null ? null :
-                    events.filter(
-                      ev => ev.movieId === id
-                    ).map((ev, index) =>
-                      userSessionId === ev.host
-                        ?
-                        <li key={index}>
-                          <Link to={'/event/' + ev.id}>Twoja projekcja ({ev.start.substring(0, 10)})</Link>
-                        </li>
-                        :
-                        <li key={index}>
-                          <Link to={'/event/' + ev.id}>Projekcja ({ev.start.substring(0, 10)})</Link>
-                        </li>
-                    )
-                  }
-                </ul>
               </div>
-            </Col>
-            <Col xs={12} md={5} mdOffset={1} mdPull={1}>
-              <MovieTitle id={id}/>
-              <MovieTitleDetails id={id}/>
-              <MovieDescription id={id}/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} md={9} mdOffset={2} mdPull={1}>
 
               <form action="" id="formM" className={this.state.className}>
                 <p>Data projekcji:</p>
@@ -176,21 +167,27 @@ export default connect(
                   return addEvent(id, userSessionId, valueData, valueTime, desc, userSessionToken);
                 }}>Zapisz</Button>
               </form>
+
+
+              <MovieTitle id={id}/>
+              <MovieTitleDetails id={id}/>
+              <MovieDescription id={id}/>
             </Col>
           </Row>
+          <Row>
+            <Col xs={12} md={9} mdOffset={2} mdPull={1}>
+
+            </Col>
+          </Row><br/>
           <Row className="show-grid">
-            <Col md={9} mdOffset={1}>
+            <Col md={9} mdOffset={1} >
               <div className="movie-user-list">
                 <h4>
                   Obejrzyj ten film z sąsiadem!! Zobacz, kto ma go już w swojej kolekcji:
-                </h4>
-              </div>
-              <div id="x"><br/>
+                </h4><br/>
                 <UserList id={id}/>
               </div>
-              <br/>
 
-              <br/>
             </Col>
           </Row>
         </Grid>

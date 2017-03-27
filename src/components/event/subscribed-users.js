@@ -82,7 +82,7 @@ class SubscribedUsers extends React.Component {
 
                       {user.data ? user.data.filter(
                           person => person.id === guest).map(
-                          person => <h3 className="left" key={index + 10}>{person.username}</h3>
+                          person => <h3 className="left " key={index + 10}>{person.username}</h3>
                         ) : 'oczekiwanie na dane'}
 
                     </td></tr>) : 'oczekiwanie na dane'

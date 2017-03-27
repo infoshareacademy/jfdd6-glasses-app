@@ -45,7 +45,7 @@ class EventView extends React.Component {
     return (
       <Grid>
         <Row>
-          <Col xs={12} md={4} mdOffset={1}>
+          <Col xs={12} md={4} mdOffset={1} className="xxx">
             <div className="event-movie-img">
 
               {
@@ -66,23 +66,26 @@ class EventView extends React.Component {
           <Col xs={12} md={6}>
             <h2 className="event-details">Na film</h2>
             <MovieTitle id={movieIde}/>
-            <h3 className="event-details">zaprasza <br/>
-              <span className="name">{user.data ? user.data.filter( person => person.id === parseInt(host,10)).map(person => person.username)
-                : 'oczekiwanie na dane'}</span>
-          </h3>
-            <p className="event-details">{eventDesc}</p>
+            <div className="event-details">zaprasza <br/>
+              <h3 className="home-event-title rbc-ellipsis title">{user.data ? user.data.filter( person => person.id === parseInt(host,10)).map(person => person.username)
+                : 'oczekiwanie na dane'}</h3>
+          </div>
+            <p className="event-details"><span className="glyphicon glyphicon-bullhorn"></span>  {eventDesc}</p>
             <h3 className="event-details">projekcja <br/>
-              <span className="strong">{moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}</span>
+              <span className="strong"><span className="glyphicon glyphicon-time"></span> {moment(eventStart +"T"+ eventTime).format('dddd, D MMMM, H:mm')}</span>
             </h3>
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={5} mdOffset={1}><br/><br/><br/>
-            <MovieDescription id={movieIde}/>
-          </Col>
-          <Col xs={12} md={5}>
+          <br/>
+
+          <Col xs={12} md={4} mdOffset={1}>
             <SubscribedUsers id={id}/>
           </Col>
+          <Col xs={12} md={6} >
+            <MovieDescription id={movieIde}/>
+          </Col>
+
         </Row>
       </Grid>
     )

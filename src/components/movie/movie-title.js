@@ -13,8 +13,8 @@ class MovieTitle extends React.Component {
               movie => movie.id === parseInt(id, 10)
             ).map(
               movie => (<div key="0">
-                  <h2 className="title" key="1">{movie.originalTitle + " (" + movie.year + ")"}
-                    <br/><span className="movie-original-title" key="2">( {movie.name} )</span></h2>
+                  <h3 className="home-event-title rbc-ellipsis title" key="1">{movie.originalTitle + " (" + movie.year + ")"}
+                    <br/><span className="movie-original-title" key="2">( {movie.name} )</span></h3>
                 </div>
               )
             ) : <p>brak danych</p>
