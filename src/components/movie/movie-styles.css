@@ -21,6 +21,7 @@
 .title {
   background-color: rgba(33, 33, 33, 0.7);
   padding: 30px;
+  margin: 0;
 }
 
 .carousel {
@@ -46,7 +47,7 @@
 
 .movie-list-bg-2 {
   background: #6b6b6b;
-  background-image: url("../../img/user-bg.png");
+    background-image: url("../../img/user-bg.png");
   background-size: contain;
   border: 3px solid #4d4d4d;
   width: 100px;
@@ -67,12 +68,7 @@
   color: #DC810E;
   text-align: center;
   padding: 10px;
-}
-
-#x {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  min-height: 250px;
 }
 
 .movie-user-link a, .movie-user-link a:visited ,.movie-user-link a:hover, .movie-user-link a:link {
@@ -84,7 +80,7 @@
 
 .movie-center {
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 .hide {
@@ -128,4 +124,12 @@
   margin: 0;
   padding: 10px;
   text-align: right;
+}
+
+.center-movie-user-list {
+ margin-left: 8.33%;
+}
+
+.center {
+  text-align: center;
 }
