@@ -56,7 +56,7 @@ class SubscribedUsers extends React.Component {
                   <Modal.Title id="contained-modal-title">Brak uprawnień</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <p>Drogi gościu.
+                  <p>Drogi gościu
                     <br/><br/>
                     Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości dopisywania się do istniejących wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
                     <br/><br/>
