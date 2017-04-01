@@ -1,6 +1,6 @@
 [
-
   {
+    "id": 1,
     "movieId": 20,
     "start": "2017-04-30T12:30:00",
     "desc": "Napięcie i emocje większe niż podczas meczu",
@@ -14,6 +14,7 @@
     "comment": ""
   },
   {
+    "id": 2,
     "movieId": 16,
     "start": "2017-04-06T10:00:00",
     "desc": "Słodko-smutna indyjska opowieść",
@@ -27,8 +28,9 @@
     "comment": "Zapraszam panie"
   },
   {
+    "id": 3,
     "movieId": 23,
-    "start": "2017-03-31T21:00:00",
+    "start": "2017-05-31T21:00:00",
     "desc": "Genialny film",
     "location": {
       "lat": 54.39585699951458,
@@ -40,6 +42,7 @@
     "comment": "Każdy przynosi własne przekąski."
   },
   {
+    "id": 4,
     "movieId": 13,
     "start": "2017-04-06T20:00:00",
     "desc": "Dla Meryl Streep zgłębiającej kuchnię francuską",
@@ -53,8 +56,9 @@
     "comment": "Będzie ciasto czekoladowo-migdałowe według przepisu samej Julii Child."
   },
   {
+    "id": 5,
     "movieId": 22,
-    "start": "2017-03-26T19:00:00",
+    "start": "2017-05-26T19:00:00",
     "desc": "TARS czeka",
     "location": {
       "lat": 54.394251712007076,
@@ -66,8 +70,9 @@
     "comment": ""
   },
   {
+    "id": 6,
     "movieId": 1,
-    "start": "2017-03-28T21:00:00",
+    "start": "2017-05-28T21:00:00",
     "desc": "Zawsze chętnie wracam do tego filmu. Zemsta jest słodka.",
     "location": {
       "lat": 54.393552111808106,
@@ -79,6 +84,7 @@
     "comment": "Jeśli jeszcze nie widzieliście i nie czytaliście książki, to nie czytajcie :) Adaptacja lepsza niż oryginał"
   },
   {
+    "id": 7,
     "movieId": 2,
     "start": "2017-04-15T17:30:00",
     "desc": "Chyba nikomu nie trzeba polecać. Klasyka gatunku w najlepszym wydaniu.",
@@ -92,6 +98,7 @@
     "comment": ""
   },
   {
+    "id": 8,
     "movieId": 3,
     "start": "2017-04-18T10:00:00",
     "desc": "Oj, będziecie się bać.",
@@ -105,6 +112,7 @@
     "comment": "Chcę też pożyczyć książkę Lśnienie, jeśli ktoś ma"
   },
   {
+    "id": 9,
     "movieId": 4,
     "start": "2017-04-13T21:55:00",
     "desc": "Jak oglądałem to po raz pierwszy, uwierzyłem, że to prawdziwa historia.",
@@ -118,6 +126,7 @@
     "comment": "Czas rozpoczęcia taki późny, bo najlepiej ogląda się w nocy"
   },
   {
+    "id": 10,
     "movieId": 5,
     "start": "2017-04-12T15:00:00",
     "desc": "Każdy przynosi chipsy i browarka",
@@ -131,6 +140,7 @@
     "comment": "To jest na podstawie prawdziwej historii. Sprawdźcie w necie!"
   },
   {
+    "id": 11,
     "movieId": 6,
     "start": "2017-04-12T18:00:00",
     "desc": "Świetne zdjęcia (wiadomo - Polak robił). Dla twardzieli.",
@@ -144,6 +154,7 @@
     "comment": ""
   },
   {
+    "id": 12,
     "movieId": 7,
     "start": "2017-04-02T19:00:00",
     "desc": "Dość brutalny, ale naprawdę rewelacyjny. Żadnych czipsów proszę.",
@@ -157,8 +168,9 @@
     "comment": ""
   },
   {
+    "id": 13,
     "movieId": 8,
-    "start": "2017-03-21T18:00:00",
+    "start": "2017-05-21T18:00:00",
     "desc": "Zapraszam wszystkich lubiących dobre filmy wojenne.",
     "location": {
       "lat": 54.38952917916001,
@@ -170,6 +182,7 @@
     "comment": ""
   },
   {
+    "id": 14,
     "movieId": 9,
     "start": "2017-04-13T17:00:00",
     "desc": "O dziwo, film lepszy niż książka. Wpadajcie.",
@@ -183,8 +196,9 @@
     "comment": ""
   },
   {
+    "id": 15,
     "movieId": 10,
-    "start": "2017-03-31T11:00:00",
+    "start": "2017-05-31T11:00:00",
     "desc": "Wszyscy lubiący Russela Crowe i piękną muzykę Zimmera mile widziani.",
     "location": {
       "lat": 54.3896416267349,
@@ -196,6 +210,7 @@
     "comment": ""
   },
   {
+    "id": 16,
     "movieId": 11,
     "start": "2017-06-23T19:15:00",
     "desc": "Trochę patetyczny, ale fajne krajobrazy. Przynieście chusteczki.",
@@ -209,6 +224,7 @@
     "comment": ""
   },
   {
+    "id": 17,
     "movieId": 12,
     "start": "2017-04-27T21:00:00",
     "desc": "Wpadajcie.",
@@ -222,6 +238,7 @@
     "comment": ""
   },
   {
+    "id": 18,
     "movieId": 13,
     "start": "2017-11-23T20:45:00",
     "desc": "Dziewczyny zapraszam do siebie. Jakieś ciastka mile widziane.",
@@ -235,6 +252,7 @@
     "comment": ""
   },
   {
+    "id": 19,
     "movieId": 14,
     "start": "2017-09-06T21:45:00",
     "desc": "Dla fanów przygód kulinarnych. Po filmie robimy ragout",
@@ -248,6 +266,7 @@
     "comment": ""
   },
   {
+    "id": 20,
     "movieId": 15,
     "start": "2017-12-10T20:15:00",
     "desc": "Zapraszam wszystkie fanki Abby. W sumie fanów też. :-)",
@@ -261,6 +280,7 @@
     "comment": ""
   },
   {
+    "id": 21,
     "movieId": 16,
     "start": "2017-06-03T19:45:00",
     "desc": "Sypie mi się małżeństwo i taką sobie historię wybrałam. Pocieszcie mnie dziewczyny",
@@ -274,6 +294,7 @@
     "comment": ""
   },
   {
+    "id": 22,
     "movieId": 17,
     "start": "2017-10-15T11:30:00",
     "desc": "Jak ktoś nie pracuje to niech wpada.",
@@ -287,6 +308,7 @@
     "comment": ""
   },
   {
+    "id": 23,
     "movieId": 18,
     "start": "2017-05-19T14:30:00",
     "desc": "Dla wytrwałych fanów niezbyt popularnego u nas sportu.",
@@ -300,6 +322,7 @@
     "comment": ""
   },
   {
+    "id": 24,
     "movieId": 19,
     "start": "2017-08-05T17:15:00",
     "desc": "Zapraszam",
@@ -313,6 +336,7 @@
     "comment": ""
   },
   {
+    "id": 25,
     "movieId": 20,
     "start": "2017-05-15T12:10:00",
     "desc": "Piwko bierzcie, jakieś paluchy i wbitka.",
@@ -326,6 +350,7 @@
     "comment": ""
   },
   {
+    "id": 26,
     "movieId": 21,
     "start": "2017-12-16T19:28:00",
     "desc": "Chyba nie trzeba zachęcać. Świetny Matt.",
@@ -339,6 +364,7 @@
     "comment": ""
   },
   {
+    "id": 27,
     "movieId": 6,
     "start": "2017-04-03T10:15:00",
     "desc": "Kto lubi strzelanki niech wpada.",
@@ -352,6 +378,7 @@
     "comment": ""
   },
   {
+    "id": 28,
     "movieId": 22,
     "start": "2017-04-18T20:30:00",
     "desc": "SciFi w najlepszym wydaniu. Zapraszam",
@@ -365,6 +392,7 @@
     "comment": ""
   },
   {
+    "id": 29,
     "movieId": 23,
     "start": "2017-06-08T20:15:00",
     "desc": "Zarąbisty Bratt i reszta ekipy.",
@@ -378,6 +406,7 @@
     "comment": ""
   },
   {
+    "id": 30,
     "movieId": 24,
     "start": "2017-12-15T21:15:00",
     "desc": "Zapraszam",
@@ -391,6 +420,7 @@
     "comment": ""
   },
   {
+    "id": 31,
     "movieId": 11,
     "start": "2017-06-04T16:30:00",
     "desc": "Tylko nie przychodzić z katanami :-)",
@@ -404,6 +434,7 @@
     "comment": ""
   },
   {
+    "id": 32,
     "movieId": 7,
     "start": "2017-07-13T16:00:00",
     "desc": "Brian de Palma w formie",
@@ -417,6 +448,7 @@
     "comment": ""
   },
   {
+    "id": 33,
     "movieId": 9,
     "start": "2017-01-17T17:00:00",
     "desc": "Ciągle pamiętam Chamberleina ale Damon lepszy.",
@@ -430,11 +462,3 @@
     "comment": ""
   }
 ]
-
-
-
-
-
-
-
-

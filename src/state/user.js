@@ -2,12 +2,12 @@ const FETCH__BEGIN = 'users/FETCH__BEGIN';
 const FETCH__SUCCESS = 'users/FETCH__SUCCESS';
 const FETCH__FAIL = 'users/FETCH__FAILED';
 
-export const fetchUsers = () => dispatch => {
-  dispatch({ type: FETCH__BEGIN });
-
+export const fetchUsers = () => (dispatch, getState) => {
+  const { id } = getState().session.data
+  dispatch({ type: FETCH__BEGIN })
   return fetch(
-    // process.env.PUBLIC_URL + '/data/users.json'
-    'https://mysterious-lake-35712.herokuapp.com/api/users?access_token=ABC1'
+    id === 'guest' ? process.env.PUBLIC_URL + '/data/users.json'
+      : 'https://mysterious-lake-35712.herokuapp.com/api/users'
   ).then(
     response => {
       if (response.ok) {
