@@ -47,7 +47,6 @@ class MovieList extends React.Component {
                             overlay={tooltip}
                             trigger={['hover']}
                             delay={100}
-
                           >
                           < Button bsSize="xsmall"
                                    bsStyle="info"
