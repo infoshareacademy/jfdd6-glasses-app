@@ -2,7 +2,7 @@ const FETCH__BEGIN = 'event/FETCH__BEGIN'
 const FETCH__SUCCESS = 'event/FETCH__SUCCESS'
 const FETCH__FAIL = 'event/FETCH__FAILED'
 
-import {fetchData} from './home'
+import {fetchData} from './events'
 
 export const addEvent = (id, userSessionId, valueData, valueTime, eventDescription, userSessionToken) => dispatch => {
   return fetch(

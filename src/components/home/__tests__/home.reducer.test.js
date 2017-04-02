@@ -1,4 +1,4 @@
-import reducer from '../../../state/home'
+import reducer from '../../../state/events'
 
 describe('home reducer', () => {
   test('should return initial state', () => {

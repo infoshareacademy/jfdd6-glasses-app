@@ -106,7 +106,7 @@ export default connect(
   state => ({
     user: state.user,
     session: state.session,
-    events: state.eventsFetch
+    events: state.events
   }),
   dispatch => ({
     addUser: (id, userSessionId, userSessionToken, guests) => dispatch(addUser(id, userSessionId, userSessionToken, guests)),
