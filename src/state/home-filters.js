@@ -17,7 +17,7 @@ export const slide = (value) => ({
 // INITIAL VALUE
 const initialState = {
   start: 0,
-  value: 3000,
+  value: 3000
 }
 
 // REDUCER
