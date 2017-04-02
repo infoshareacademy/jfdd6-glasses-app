@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, FormControl, InputGroup, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import { fetchLocation } from '../../state/home-fetch-location'
+import { fetchLocation } from '../../state/home-location'
 
 export default connect(
   state => ({}),

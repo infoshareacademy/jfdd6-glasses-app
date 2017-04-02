@@ -9,7 +9,7 @@ import HomeLocation from './home-location'
 import HomeSlider from './home-slider'
 import HomeEvents from './home-events'
 
-import { fetchData } from '../../state/home-fetch'
+import { fetchData } from '../../state/home'
 import { fetchMovie } from '../../state/movie'
 
 class HomeView extends React.Component {

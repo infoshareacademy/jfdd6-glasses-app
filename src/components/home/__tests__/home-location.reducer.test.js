@@ -1,4 +1,4 @@
-import reducer from '../../../state/home-fetch-location'
+import reducer from '../../../state/home-location'
 
 describe('location reducer', () => {
   test('should return initial state', () => {

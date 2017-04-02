@@ -5,7 +5,7 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchData} from '../../state/home-fetch'
+import {fetchData} from '../../state/home'
 import SubscribedUsers from './subscribed-users'
 import moment from 'moment'
 moment.locale('pl')

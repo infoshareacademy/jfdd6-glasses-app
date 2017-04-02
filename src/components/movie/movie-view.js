@@ -9,7 +9,7 @@ import MovieTitleDetails from './movie-title-details'
 import UserList from './movie-user-list'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchData} from '../../state/home-fetch'
+import {fetchData} from '../../state/home'
 import {addEvent} from '../../state/event'
 import moment from 'moment'
 moment.locale('pl');

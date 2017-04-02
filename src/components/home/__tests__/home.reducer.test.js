@@ -1,4 +1,4 @@
-import reducer from '../../../state/home-fetch'
+import reducer from '../../../state/home'
 
 describe('home reducer', () => {
   test('should return initial state', () => {
