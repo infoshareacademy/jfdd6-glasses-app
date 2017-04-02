@@ -25,22 +25,25 @@ class SubscribedUsers extends React.Component {
     return (
 
       <div className="profile-container-event">
-
-
         <Table className="event-table table">
           <thead>
           <tr>
-            <th><h2>Goście wydarzenia:</h2>         <Button
+            <th>
+              <h2>Goście wydarzenia:</h2>
+              <Button
               bsStyle="info"
               className="addEvent-button"
-              onClick={userSessionToken === 'guest' ?
-                () => this.setState({show: true}) :
-                () => {
+              onClick={() => {
+                if (userSessionToken === 'guest') {
+                  this.setState({show: true})
+                } else if (userSessionId === thisEvent.host) {
+                  return false
+                } else {
                   const guests = thisEvent.guests.includes(userSessionId) ?
                     thisEvent.guests.filter(delUser => delUser !== userSessionId) :
                     thisEvent.guests.concat(userSessionId)
                   return (addUser(id, userSessionId, userSessionToken, guests))
-                }}
+                }}}
             >
               {events.data ?
                 thisEvent.guests.includes(userSessionId) ? 'Wypisz się' : 'Zgłoś się'
@@ -56,7 +59,7 @@ class SubscribedUsers extends React.Component {
                   <Modal.Title id="contained-modal-title">Brak uprawnień</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <p>Drogi gościu
+                  <p>Drogi gościu!
                     <br/><br/>
                     Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba niezalogowana nie masz możliwości dopisywania się do istniejących wydarzeń ani korzystania z wielu funkcjonalności naszej aplikacji.
                     <br/><br/>

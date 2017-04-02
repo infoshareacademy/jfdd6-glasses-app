@@ -113,7 +113,7 @@ export default connect(
                       <Modal.Title id="contained-modal-title">Brak uprawnień</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <p>Drogi gościu.
+                      <p>Drogi gościu!
                         <br/><br/>
                         Cieszymy się, iż zainteresowała cię funkcjonalność naszego serwisu. Jednak jako osoba
                         niezalogowana nie masz możliwości tworzenia nowych wydarzeń ani korzystania z wielu
@@ -135,11 +135,11 @@ export default connect(
                       <Modal.Title id="contained-modal-title">Nie posiadasz tego filmu</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <p>Drogi {UserName}.
+                      <p>Drogi {UserName}!
                         <br/><br/>
-                        Wygląda na to, że nie masz lub nie dodałeś jeszcze tego filmu do swojej kolekcji. Poniżej
-                        znajdziesz listę sąsiadów
-                        z którymi mógłbyś go obejrzeć.</p>
+                        Wygląda na to, że nie masz tego filmu lub nie dodałeś go jeszcze do swojej kolekcji. Poniżej
+                        znajdziesz listę sąsiadów, z którymi mógłbyś go obejrzeć.
+                      </p>
                     </Modal.Body>
                     <Modal.Footer>
                       <Button onClick={close}>Close</Button>
