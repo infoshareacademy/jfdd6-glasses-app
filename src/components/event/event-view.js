@@ -5,7 +5,7 @@ import MovieTitle from '../movie/movie-title'
 import MovieDescription from '../movie/movie-description'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchData} from '../../state/home-fetch'
+import {fetchData} from '../../state/events'
 import SubscribedUsers from './subscribed-users'
 import moment from 'moment'
 moment.locale('pl')
@@ -96,7 +96,7 @@ export default connect(
   state => ({
     movie: state.movie,
     user: state.user,
-    events: state.eventsFetch
+    events: state.events
   }),
   dispatch => ({
     fetchMovie: () => dispatch(fetchMovie()),

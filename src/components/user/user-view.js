@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 import {fetchMovie} from '../../state/movie'
 import {fetchUsers} from '../../state/user'
-import {fetchData} from '../../state/home-fetch'
+import {fetchData} from '../../state/events'
 
 
 class UserView extends React.Component {

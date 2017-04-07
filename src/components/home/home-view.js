@@ -9,7 +9,7 @@ import HomeLocation from './home-location'
 import HomeSlider from './home-slider'
 import HomeEvents from './home-events'
 
-import { fetchData } from '../../state/home-fetch'
+import { fetchData } from '../../state/events'
 import { fetchMovie } from '../../state/movie'
 
 class HomeView extends React.Component {
@@ -78,7 +78,7 @@ class HomeView extends React.Component {
 
 export default connect(
   state => ({
-    events: state.eventsFetch.data,
+    events: state.events.data,
     range: state.eventsFilters.value,
     userLocation: state.userLocation.data.results,
     movies: state.movie.data

@@ -17,7 +17,7 @@ export const slide = (value) => ({
 // INITIAL VALUE
 const initialState = {
   start: 0,
-  value: 3000,
+  value: 3000
 }
 
 // REDUCER
@@ -28,15 +28,15 @@ export default (state = initialState, action = {}) => {
         ...state,
         start: state.start + action.value < 0 ?
           initialState.start :
-            state.start  + action.value > action.remainingEvents.length - 1?
-              state.start :
+          state.start + action.value > action.remainingEvents.length - 1 ?
+            state.start :
             state.start + action.value
       }
     case SLIDE:
       return {
         ...state,
         value: action.value,
-        start:0
+        start: 0
       }
     default:
       return state

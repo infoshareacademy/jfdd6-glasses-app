@@ -40,8 +40,7 @@ const initialState = {
               }
         },
         formatted_address: "Hynka 5, 80-465 Gdańsk, Polska"
-    }
-    ]
+    }]
   },
   fetching: false,
   error: null

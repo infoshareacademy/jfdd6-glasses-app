@@ -61,7 +61,7 @@ export default connect(
     moviesList: state.movie,
     session: state.session.data,
     user: state.userLogin.data,
-    events: state.eventsFetch
+    events: state.events
   }),
   dispatch => ({ })
 )(UserEventList)
